@@ -1,0 +1,22 @@
+{
+  "name": "sundown-shakedown",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "assets:prepare": "node scripts/prepare-assets.mjs",
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest run",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "phaser": "4.2.1"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5",
+    "typescript": "7.0.2",
+    "vite": "8.3.1",
+    "vitest": "5.0.3"
+  }
+}
