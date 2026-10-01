@@ -21,7 +21,19 @@ export interface MoveDefinition {
   range: number;
   cooldownMs: number;
   meterGain: number;
+  knockback: number;
   kind: 'light' | 'heavy' | 'special' | 'super';
+  hitLevel: 'high' | 'mid' | 'low' | 'overhead';
+}
+
+export interface CharacterAnimationSheet {
+  textureKey: string;
+  animationKey: string;
+  url: string;
+  frameWidth: number;
+  frameHeight: number;
+  frameCount: number;
+  frameRate: number;
 }
 
 export interface CharacterDefinition {
@@ -34,12 +46,19 @@ export interface CharacterDefinition {
     fighterUrl: string;
     portraitTextureKey: string;
     portraitUrl: string;
+    nativeFacing?: 1 | -1;
+    renderScale?: number;
+    idleSheet?: CharacterAnimationSheet;
+    walkSheet?: CharacterAnimationSheet;
   };
   palette: CharacterPalette;
   stats: CharacterStats;
   moves: {
     light: MoveDefinition;
     heavy: MoveDefinition;
+    crouchLight: MoveDefinition;
+    airLight: MoveDefinition;
+    airHeavy: MoveDefinition;
     special: MoveDefinition;
     super: MoveDefinition;
   };

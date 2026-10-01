@@ -4,12 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#170f2a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Sundown Shakedown" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link
+      rel="apple-touch-icon"
+      href="/src/content/characters/todd/assets/portraits/todd-portrait.png"
+    />
     <title>Sundown Shakedown</title>
   </head>
   <body>
     <main id="game-shell" aria-label="Sundown Shakedown game">
       <div id="game"></div>
     </main>
+    <aside id="rotate-device" role="status" aria-live="polite">
+      <div class="rotate-device__phone" aria-hidden="true">
+        <span></span>
+      </div>
+      <strong>ROTATE TO PLAY</strong>
+      <p>Turn your phone sideways for full-size controls and the best view of the fight.</p>
+    </aside>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

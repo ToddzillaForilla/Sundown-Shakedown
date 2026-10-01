@@ -12,3 +12,12 @@ export const gameSession: GameSession = {
   difficulty: 'normal',
 };
 
+export function applyFightSelection(
+  session: GameSession,
+  playerCharacter: CharacterId,
+  difficulty: Difficulty,
+): void {
+  session.playerCharacter = playerCharacter;
+  session.difficulty = difficulty;
+}
+

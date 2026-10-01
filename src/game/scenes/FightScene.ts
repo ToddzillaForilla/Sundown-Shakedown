@@ -1,9 +1,25 @@
 import Phaser from 'phaser';
 import { characterList, characters, type CharacterDefinition, type CharacterId, type MoveDefinition } from '../../content/characters';
 import { backyard } from '../../content/stages/backyard';
-import { OpponentAi } from '../../engine/ai/OpponentAi';
+import { OpponentAi, getAiDifficultyProfile } from '../../engine/ai/OpponentAi';
+import { canUseSuper, isHitInRange, resolvePlayerMoveSlot } from '../../engine/combat/CombatAttacks';
+import { canGuardMove, resolveGuardStance } from '../../engine/combat/CombatBlocking';
+import {
+  canFightersCross,
+  faceTowardOpponent,
+  separateFighterPositions,
+} from '../../engine/combat/CombatMovement';
 import { FIGHTER_GROUND_Y, Fighter } from '../../engine/combat/Fighter';
+import {
+  completeRoundOnce,
+  createRoundEndLatch,
+  createMatchState,
+  resetRoundClock,
+  resetRoundEndLatch,
+  tickRoundClock,
+} from '../../engine/combat/MatchState';
 import { GAME_HEIGHT, GAME_WIDTH } from '../config';
+import { PlayerInputBuffer, resolveDirectionalIntent, type BufferedAction } from '../input/PlayerInput';
 import { TouchControls } from '../input/TouchControls';
 import { gameSession } from '../session';
 import { createButton } from '../ui/button';
@@ -17,6 +33,7 @@ export class FightScene extends Phaser.Scene {
   private touch!: TouchControls;
   private keys!: Record<ControlAction, Phaser.Input.Keyboard.Key[]>;
   private mousePressed = { light: false, heavy: false, super: false };
+  private inputBuffer = new PlayerInputBuffer();
   private playerHealthBar!: Phaser.GameObjects.Rectangle;
   private opponentHealthBar!: Phaser.GameObjects.Rectangle;
   private playerMeterBar!: Phaser.GameObjects.Rectangle;
@@ -26,16 +43,19 @@ export class FightScene extends Phaser.Scene {
   private comboText!: Phaser.GameObjects.Text;
   private playerWinMarkers!: Phaser.GameObjects.Arc[];
   private opponentWinMarkers!: Phaser.GameObjects.Arc[];
-  private roundSeconds = 60;
+  private topHudElements: Array<
+    Phaser.GameObjects.Rectangle | Phaser.GameObjects.Text | Phaser.GameObjects.Arc
+  > = [];
+  private match = createMatchState();
+  private roundEndLatch = createRoundEndLatch();
   private lastSecondAt = 0;
-  private playerWins = 0;
-  private opponentWins = 0;
-  private roundNumber = 1;
   private roundActive = false;
   private audioContext?: AudioContext;
   private comboAttacker?: CharacterId;
   private comboCount = 0;
   private comboExpiresAt = 0;
+  private playerGuardReady = false;
+  private opponentGuardReady = false;
 
   constructor() {
     super('FightScene');
@@ -49,10 +69,36 @@ export class FightScene extends Phaser.Scene {
       if (!this.textures.exists(character.art.fighterTextureKey)) {
         this.load.image(character.art.fighterTextureKey, character.art.fighterUrl);
       }
+      if (character.art.idleSheet && !this.textures.exists(character.art.idleSheet.textureKey)) {
+        this.load.spritesheet(character.art.idleSheet.textureKey, character.art.idleSheet.url, {
+          frameWidth: character.art.idleSheet.frameWidth,
+          frameHeight: character.art.idleSheet.frameHeight,
+          endFrame: character.art.idleSheet.frameCount - 1,
+        });
+      }
+      if (character.art.walkSheet && !this.textures.exists(character.art.walkSheet.textureKey)) {
+        this.load.spritesheet(character.art.walkSheet.textureKey, character.art.walkSheet.url, {
+          frameWidth: character.art.walkSheet.frameWidth,
+          frameHeight: character.art.walkSheet.frameHeight,
+          endFrame: character.art.walkSheet.frameCount - 1,
+        });
+      }
     }
   }
 
   create(): void {
+    this.match = createMatchState();
+    this.roundEndLatch = createRoundEndLatch();
+    this.roundActive = false;
+    this.lastSecondAt = 0;
+    this.mousePressed = { light: false, heavy: false, super: false };
+    this.inputBuffer = new PlayerInputBuffer();
+    this.comboAttacker = undefined;
+    this.comboCount = 0;
+    this.comboExpiresAt = 0;
+    this.playerGuardReady = false;
+    this.opponentGuardReady = false;
+    this.topHudElements = [];
     this.drawBackyard();
 
     const playerDefinition = characters[gameSession.playerCharacter];
@@ -65,6 +111,7 @@ export class FightScene extends Phaser.Scene {
     this.createKeyboardControls();
     this.createMouseControls();
     this.touch = new TouchControls(this);
+    this.showControlGuide();
     this.startRound();
   }
 
@@ -84,11 +131,12 @@ export class FightScene extends Phaser.Scene {
     this.updatePlayer(time, deltaSeconds);
     this.updateOpponent(time, deltaSeconds);
     this.separateFighters();
+    this.updateFacing();
     this.updateTimer(time);
     this.updateComboDisplay(time);
     this.updateHud();
 
-    if (this.player.health <= 0 || this.opponent.health <= 0 || this.roundSeconds <= 0) {
+    if (this.player.health <= 0 || this.opponent.health <= 0 || this.match.roundSeconds <= 0) {
       this.endRound();
     }
   }
@@ -142,17 +190,17 @@ export class FightScene extends Phaser.Scene {
   }
 
   private createHud(playerDefinition: CharacterDefinition, opponentDefinition: CharacterDefinition): void {
-    this.add.rectangle(230, 58, 370, 30, 0x180f25, 0.9).setStrokeStyle(3, 0xffd477);
-    this.add.rectangle(730, 58, 370, 30, 0x180f25, 0.9).setStrokeStyle(3, 0xffd477);
+    const playerHealthFrame = this.add.rectangle(230, 58, 370, 30, 0x180f25, 0.9).setStrokeStyle(3, 0xffd477);
+    const opponentHealthFrame = this.add.rectangle(730, 58, 370, 30, 0x180f25, 0.9).setStrokeStyle(3, 0xffd477);
     this.playerHealthBar = this.add.rectangle(48, 58, 360, 20, 0x57c46b).setOrigin(0, 0.5);
     this.opponentHealthBar = this.add.rectangle(912, 58, 360, 20, 0xe15d68).setOrigin(1, 0.5);
     this.playerMeterBar = this.add.rectangle(48, 85, 0, 8, playerDefinition.palette.accent).setOrigin(0, 0.5);
     this.opponentMeterBar = this.add.rectangle(912, 85, 0, 8, opponentDefinition.palette.accent).setOrigin(1, 0.5);
 
-    this.add.text(48, 25, playerDefinition.displayName.toUpperCase(), {
+    const playerName = this.add.text(48, 25, playerDefinition.displayName.toUpperCase(), {
       color: '#fff8df', fontFamily: 'Impact, sans-serif', fontSize: '23px',
     });
-    this.add.text(912, 25, opponentDefinition.displayName.toUpperCase(), {
+    const opponentName = this.add.text(912, 25, opponentDefinition.displayName.toUpperCase(), {
       color: '#fff8df', fontFamily: 'Impact, sans-serif', fontSize: '23px',
     }).setOrigin(1, 0);
 
@@ -176,6 +224,19 @@ export class FightScene extends Phaser.Scene {
     this.opponentWinMarkers = [0, 1].map((index) => this.add
       .circle(902 - index * 22, 105, 7, 0x20162f, 0.7)
       .setStrokeStyle(2, 0xffd477, 0.8));
+    this.topHudElements = [
+      playerHealthFrame,
+      opponentHealthFrame,
+      this.playerHealthBar,
+      this.opponentHealthBar,
+      this.playerMeterBar,
+      this.opponentMeterBar,
+      playerName,
+      opponentName,
+      this.timerText,
+      ...this.playerWinMarkers,
+      ...this.opponentWinMarkers,
+    ];
   }
 
   private createKeyboardControls(): void {
@@ -203,6 +264,25 @@ export class FightScene extends Phaser.Scene {
     });
   }
 
+  private showControlGuide(): void {
+    const guide = this.add.text(
+      GAME_WIDTH / 2,
+      505,
+      'HOLD AWAY: STAND GUARD   •   ↓ + AWAY: LOW GUARD\nCROUCH + L: LOW ATTACK   •   JUMP + L/H: AIR ATTACK   •   ↓ + TOWARD + H: SPECIAL',
+      {
+      align: 'center',
+      color: '#f5e8c8',
+      backgroundColor: '#171525cc',
+      fontFamily: 'Trebuchet MS, sans-serif',
+      fontSize: '11px',
+      padding: { x: 10, y: 5 },
+      },
+    ).setOrigin(0.5).setDepth(160);
+    this.time.delayedCall(6000, () => {
+      this.tweens.add({ targets: guide, alpha: 0, duration: 500, onComplete: () => guide.destroy() });
+    });
+  }
+
   private isKeyHeld(action: ControlAction): boolean {
     return this.keys[action].some((key) => key.isDown);
   }
@@ -217,70 +297,143 @@ export class FightScene extends Phaser.Scene {
     return pressed;
   }
 
+  private capturePressedInputs(time: number): void {
+    const sources: Record<BufferedAction, boolean> = {
+      jump: this.consumeKeyPress('up') || this.touch.consumePress('jump'),
+      light: this.consumeKeyPress('light') || this.consumeMousePress('light') || this.touch.consumePress('light'),
+      heavy: this.consumeKeyPress('heavy') || this.consumeMousePress('heavy') || this.touch.consumePress('heavy'),
+      super: this.consumeKeyPress('super') || this.consumeMousePress('super') || this.touch.consumePress('super'),
+    };
+    for (const [action, pressed] of Object.entries(sources) as Array<[BufferedAction, boolean]>) {
+      if (pressed) this.inputBuffer.press(action, time);
+    }
+  }
+
   private updatePlayer(time: number, deltaSeconds: number): void {
     const left = this.isKeyHeld('left') || this.touch.isHeld('left');
     const right = this.isKeyHeld('right') || this.touch.isHeld('right');
     const down = this.isKeyHeld('down') || this.touch.isHeld('down');
-    const movement: -1 | 0 | 1 = left === right ? 0 : left ? -1 : 1;
-    const away = this.opponent.x > this.player.x ? -1 : 1;
-    const crouching = down && this.player.isGrounded;
+    const { movement, crouching, guardReady, blocking } = resolveDirectionalIntent(
+      { left, right, down },
+      this.opponent.x > this.player.x,
+      this.player.isGrounded,
+      this.opponent.presentationState === 'attack',
+    );
+    this.playerGuardReady = guardReady;
     this.player.setCrouching(crouching);
-    this.player.setBlocking(movement === away && this.player.isGrounded);
+    this.player.setBlocking(blocking);
     if (!crouching && this.player.canAct(time)) this.player.move(movement, deltaSeconds);
 
-    const jumpPressed = this.consumeKeyPress('up') || this.touch.consumePress('up');
-    if (jumpPressed && this.player.canAct(time)) this.player.jump();
+    this.capturePressedInputs(time);
+    if (blocking) return;
+    if (!this.player.canAct(time)) return;
 
-    const lightPressed = this.consumeKeyPress('light') || this.consumeMousePress('light') || this.touch.consumePress('light');
-    const heavyPressed = this.consumeKeyPress('heavy') || this.consumeMousePress('heavy') || this.touch.consumePress('heavy');
-    const superPressed = this.consumeKeyPress('super') || this.consumeMousePress('super') || this.touch.consumePress('super');
+    const launchedThisFrame = this.player.isGrounded && this.inputBuffer.consume('jump', time);
+    if (launchedThisFrame) this.player.jump();
 
-    if (superPressed && this.player.meter >= 100) {
-      this.tryAttack(this.player, this.opponent, this.player.definition.moves.super, time);
-      this.player.spendSuper();
-    } else if (heavyPressed) {
-      const move = down && movement === this.player.facing
-        ? this.player.definition.moves.special
-        : this.player.definition.moves.heavy;
-      this.tryAttack(this.player, this.opponent, move, time);
-    } else if (lightPressed) {
-      this.tryAttack(this.player, this.opponent, this.player.definition.moves.light, time);
-    }
+    const attackPriority: BufferedAction[] = canUseSuper(this.player.meter)
+      ? ['super', 'heavy', 'light']
+      : ['heavy', 'light'];
+    const attack = this.inputBuffer.consumeFirst(attackPriority, time);
+    if (!attack || attack === 'jump') return;
+
+    const moveSlot = resolvePlayerMoveSlot(attack, {
+      grounded: this.player.isGrounded,
+      launchedThisFrame,
+      crouching,
+      down,
+      movement,
+      facing: this.player.facing,
+      meter: this.player.meter,
+    });
+    if (!moveSlot) return;
+
+    const attackStarted = this.tryAttack(this.player, this.opponent, this.player.definition.moves[moveSlot], time);
+    if (moveSlot === 'super' && attackStarted) this.player.spendSuper();
   }
 
   private updateOpponent(time: number, deltaSeconds: number): void {
     const intent = this.opponentAi.update(time, this.opponent, this.player);
-    this.opponent.setBlocking(intent.block);
+    this.opponentGuardReady = intent.block && this.opponent.isGrounded;
+    this.opponent.setBlocking(this.opponentGuardReady && this.player.presentationState === 'attack');
     this.opponent.setCrouching(false);
-    if (!intent.block && this.opponent.canAct(time)) this.opponent.move(intent.move, deltaSeconds);
+    if (!this.opponent.blocking && this.opponent.canAct(time)) this.opponent.move(intent.move, deltaSeconds);
     if (intent.jump && this.opponent.canAct(time)) this.opponent.jump();
     if (intent.attack) {
       const isSuper = intent.attack.kind === 'super';
-      this.tryAttack(this.opponent, this.player, intent.attack, time);
-      if (isSuper) this.opponent.spendSuper();
-      intent.attack = undefined;
+      const attackStarted = this.tryAttack(this.opponent, this.player, intent.attack, time);
+      if (isSuper && attackStarted) this.opponent.spendSuper();
     }
   }
 
-  private tryAttack(attacker: Fighter, defender: Fighter, move: MoveDefinition, time: number): void {
-    if (!attacker.canAct(time)) return;
+  private tryAttack(attacker: Fighter, defender: Fighter, move: MoveDefinition, time: number): boolean {
+    if (!attacker.canAct(time)) return false;
     attacker.attack(move, time);
+    const guardReady = defender === this.player ? this.playerGuardReady : this.opponentGuardReady;
+    defender.setBlocking(guardReady && defender.isGrounded);
     this.showAttackEffect(attacker, move);
-    const distance = Math.abs(attacker.x - defender.x);
-    const defenderInFront = Math.sign(defender.x - attacker.x) === attacker.facing;
-    const hit = distance <= move.range && defenderInFront;
+    const hit = isHitInRange(attacker.x, defender.x, attacker.facing, move.range);
     this.playAttackTone(attacker.definition.id, move, hit);
     if (hit) {
-      defender.takeHit(move, defender.blocking);
+      const guardStance = resolveGuardStance(defender.blocking, defender.isCrouching, defender.isGrounded);
+      const blocked = canGuardMove(move, guardStance);
+      const damageMultiplier = attacker === this.opponent
+        ? getAiDifficultyProfile(gameSession.difficulty).damageMultiplier
+        : 1;
+      const damage = defender.takeHit(move, blocked, damageMultiplier);
       attacker.gainMeter(move.meterGain);
-      this.showHitBurst(defender, move, defender.blocking);
-      if (!defender.blocking) this.registerComboHit(attacker, time);
+      this.showHitBurst(defender, move, blocked);
+      this.showDamageNumber(defender, damage, blocked);
+      if (!blocked) this.registerComboHit(attacker, time);
       this.cameras.main.shake(move.kind === 'heavy' ? 70 : move.kind === 'super' ? 150 : 35, move.kind === 'super' ? 0.012 : 0.004);
-      if (move.kind === 'super') {
-        this.announcement.setText(move.name.toUpperCase()).setVisible(true);
-        this.time.delayedCall(600, () => this.announcement.setVisible(false));
+      if (move.kind === 'special' || move.kind === 'super') {
+        this.showMoveName(attacker, move);
       }
     }
+    return true;
+  }
+
+  private showMoveName(attacker: Fighter, move: MoveDefinition): void {
+    if (move.kind === 'super') {
+      this.announcement.setText(move.name.toUpperCase()).setVisible(true);
+      this.time.delayedCall(600, () => this.announcement.setVisible(false));
+      return;
+    }
+
+    const label = this.add.text(attacker.x, attacker.y - 270, move.name.toUpperCase(), {
+      color: attacker.definition.id === 'todd' ? '#87ecff' : '#a8ef86',
+      fontFamily: 'Impact, sans-serif',
+      fontSize: '18px',
+      stroke: '#18202b',
+      strokeThickness: 4,
+    }).setOrigin(0.5).setDepth(170);
+    this.tweens.add({
+      targets: label,
+      y: label.y - 24,
+      alpha: 0,
+      duration: 620,
+      ease: 'Power2',
+      onComplete: () => label.destroy(),
+    });
+  }
+
+  private showDamageNumber(defender: Fighter, damage: number, blocked: boolean): void {
+    const label = this.add.text(defender.x, defender.y - 205, blocked ? `BLOCK -${damage}` : `-${damage}`, {
+      color: blocked ? '#c7efff' : '#fff0a8',
+      fontFamily: 'Impact, sans-serif',
+      fontSize: blocked ? '15px' : '20px',
+      stroke: '#24152f',
+      strokeThickness: 4,
+    }).setOrigin(0.5).setDepth(170);
+    this.tweens.add({
+      targets: label,
+      y: label.y - 34,
+      alpha: 0,
+      scale: blocked ? 0.92 : 1.18,
+      duration: 520,
+      ease: 'Power2',
+      onComplete: () => label.destroy(),
+    });
   }
 
   private registerComboHit(attacker: Fighter, time: number): void {
@@ -376,6 +529,19 @@ export class FightScene extends Phaser.Scene {
   private showHitBurst(defender: Fighter, move: MoveDefinition, blocked: boolean): void {
     const color = blocked ? 0xbfe8ff : move.kind === 'super' ? 0xffd45d : 0xff735f;
     const amount = blocked ? 4 : move.kind === 'super' ? 14 : move.kind === 'heavy' ? 9 : 6;
+    const impactRing = this.add
+      .circle(defender.x, defender.y - 120, blocked ? 24 : 15, color, blocked ? 0.04 : 0.16)
+      .setStrokeStyle(blocked ? 4 : 3, color, 0.95)
+      .setDepth(59)
+      .setBlendMode(Phaser.BlendModes.ADD);
+    this.tweens.add({
+      targets: impactRing,
+      alpha: 0,
+      scale: blocked ? 1.45 : 1.85,
+      duration: blocked ? 150 : 120,
+      ease: 'Power2',
+      onComplete: () => impactRing.destroy(),
+    });
     for (let index = 0; index < amount; index += 1) {
       const angle = (Math.PI * 2 * index) / amount;
       const distance = move.kind === 'super' ? 72 : 44;
@@ -418,28 +584,26 @@ export class FightScene extends Phaser.Scene {
   }
 
   private updateFacing(): void {
-    this.player.setFacing(this.opponent.x >= this.player.x ? 1 : -1);
-    this.opponent.setFacing(this.player.x >= this.opponent.x ? 1 : -1);
+    this.player.setFacing(faceTowardOpponent(this.player.x, this.opponent.x, this.player.facing));
+    this.opponent.setFacing(faceTowardOpponent(this.opponent.x, this.player.x, this.opponent.facing));
   }
 
   private separateFighters(): void {
-    const playerCanCross = !this.player.isGrounded && this.player.y <= FIGHTER_GROUND_Y - 44;
-    const opponentCanCross = !this.opponent.isGrounded && this.opponent.y <= FIGHTER_GROUND_Y - 44;
-    if (playerCanCross || opponentCanCross) return;
+    if (canFightersCross(
+      { y: this.player.y, grounded: this.player.isGrounded },
+      { y: this.opponent.y, grounded: this.opponent.isGrounded },
+      FIGHTER_GROUND_Y,
+    )) return;
 
-    const minimumDistance = 78;
-    const distance = Math.abs(this.player.x - this.opponent.x);
-    if (distance >= minimumDistance) return;
-    const push = (minimumDistance - distance) / 2;
-    const direction = this.player.x < this.opponent.x ? -1 : 1;
-    this.player.view.x = Phaser.Math.Clamp(this.player.x + direction * push, 72, 888);
-    this.opponent.view.x = Phaser.Math.Clamp(this.opponent.x - direction * push, 72, 888);
+    const positions = separateFighterPositions(this.player.x, this.opponent.x);
+    this.player.view.x = positions.playerX;
+    this.opponent.view.x = positions.opponentX;
   }
 
   private updateTimer(time: number): void {
     if (time - this.lastSecondAt < 1000) return;
     this.lastSecondAt = time;
-    this.roundSeconds = Math.max(0, this.roundSeconds - 1);
+    tickRoundClock(this.match);
   }
 
   private updateHud(): void {
@@ -447,21 +611,29 @@ export class FightScene extends Phaser.Scene {
     this.opponentHealthBar.displayWidth = 360 * (this.opponent.health / this.opponent.definition.stats.maxHealth);
     this.playerMeterBar.displayWidth = 360 * (this.player.meter / 100);
     this.opponentMeterBar.displayWidth = 360 * (this.opponent.meter / 100);
-    this.timerText.setText(String(this.roundSeconds));
+    this.timerText.setText(String(this.match.roundSeconds));
+    const fighterInHud = this.player.y < 318 || this.opponent.y < 318;
+    const hudAlpha = fighterInHud ? 0.38 : 1;
+    for (const element of this.topHudElements) element.setAlpha(hudAlpha);
     this.touch.setSuperAvailable(this.player.meter >= 100 && this.roundActive);
   }
 
   private startRound(): void {
     this.roundActive = false;
+    this.inputBuffer.clear();
+    this.opponentAi.reset();
+    this.playerGuardReady = false;
+    this.opponentGuardReady = false;
     this.player.reset(260, 1);
     this.opponent.reset(700, -1);
-    this.roundSeconds = 60;
+    resetRoundClock(this.match);
+    resetRoundEndLatch(this.roundEndLatch);
     this.comboCount = 0;
     this.comboAttacker = undefined;
     this.comboExpiresAt = 0;
     this.comboText.setVisible(false);
     this.lastSecondAt = this.time.now;
-    this.announcement.setText(`ROUND ${this.roundNumber}`);
+    this.announcement.setVisible(true).setText(`ROUND ${this.match.roundNumber}`);
     this.time.delayedCall(850, () => this.announcement.setText('FIGHT!'));
     this.time.delayedCall(1450, () => {
       this.announcement.setVisible(false);
@@ -473,20 +645,29 @@ export class FightScene extends Phaser.Scene {
   private endRound(): void {
     if (!this.roundActive) return;
     this.roundActive = false;
-    const playerWon = this.player.health > this.opponent.health;
-    if (playerWon) this.playerWins += 1;
-    else this.opponentWins += 1;
-    if (playerWon) this.playerWinMarkers[this.playerWins - 1]?.setFillStyle(0xffd45d, 1);
-    else this.opponentWinMarkers[this.opponentWins - 1]?.setFillStyle(0xffd45d, 1);
+    const result = completeRoundOnce(
+      this.match,
+      this.roundEndLatch,
+      this.player.health,
+      this.opponent.health,
+    );
+    if (!result) return;
 
-    const winner = playerWon ? this.player.definition.displayName : this.opponent.definition.displayName;
-    this.announcement.setVisible(true).setText(`${winner.toUpperCase()} WINS`);
-    const matchOver = this.playerWins >= 2 || this.opponentWins >= 2;
-    if (matchOver) {
+    if (result.winner === 'player') {
+      this.playerWinMarkers[result.playerWins - 1]?.setFillStyle(0xffd45d, 1);
+    } else if (result.winner === 'opponent') {
+      this.opponentWinMarkers[result.opponentWins - 1]?.setFillStyle(0xffd45d, 1);
+    }
+
+    const winner = result.winner === 'player'
+      ? this.player.definition.displayName
+      : this.opponent.definition.displayName;
+    const announcement = result.winner === 'draw' ? 'DRAW' : `${winner.toUpperCase()} WINS`;
+    this.announcement.setVisible(true).setText(announcement);
+    if (result.matchOver) {
       this.time.delayedCall(900, () => this.showMatchResult(winner));
       return;
     }
-    this.roundNumber += 1;
     this.time.delayedCall(1600, () => this.startRound());
   }
 

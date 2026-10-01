@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import { characterList, type CharacterDefinition } from '../../content/characters';
 import type { Difficulty } from '../session';
-import { gameSession } from '../session';
+import { applyFightSelection, gameSession } from '../session';
 import { GAME_WIDTH } from '../config';
 import { createButton } from '../ui/button';
 
@@ -109,8 +109,11 @@ export class CharacterSelectScene extends Phaser.Scene {
 
   private startFight(): void {
     const difficulties: Difficulty[] = ['easy', 'normal', 'hard'];
-    gameSession.playerCharacter = characterList[this.selectedIndex].id;
-    gameSession.difficulty = difficulties[this.difficultyIndex];
+    applyFightSelection(
+      gameSession,
+      characterList[this.selectedIndex].id,
+      difficulties[this.difficultyIndex],
+    );
     this.scene.start('FightScene');
   }
 }

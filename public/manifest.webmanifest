@@ -1,0 +1,11 @@
+{
+  "name": "Sundown Shakedown",
+  "short_name": "Shakedown",
+  "description": "A backyard browser fighter built for quick local matches.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#0b151c",
+  "theme_color": "#170f2a"
+}

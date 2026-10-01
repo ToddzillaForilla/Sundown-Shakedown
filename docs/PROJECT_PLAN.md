@@ -21,11 +21,11 @@ Sundown Shakedown is a browser-based, retro arcade fighting game that can be sha
 
 ### Todd
 
-- Themes: computer hacking, video games, and skateboarding.
+- Themes: computer hacking, video games, and technology.
 - Style: fast, technical, and combo-focused.
 - Harmless roast: falls asleep easily.
-- Signature concepts: Glitch Grind, Lag Spike, System Crash, and Fatal Error.
-- Todd has no camping theme.
+- Signature concepts: Quick Patch, Hard Reboot, Glitch Surge, System Crash, and Fatal Error.
+- Todd carries a rugged laptop with cyan code effects; he has no skateboard or camping theme.
 
 ### Kristen
 
