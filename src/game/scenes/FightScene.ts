@@ -25,6 +25,7 @@ import { gameSession } from '../session';
 
 type ControlAction = 'left' | 'right' | 'up' | 'down' | 'kick' | 'punch' | 'jump' | 'super';
 const PIXEL_FONT = '"Courier New", Courier, monospace';
+const SUPER_METER_WIDTH = 180;
 
 export class FightScene extends Phaser.Scene {
   private player!: Fighter;
@@ -36,8 +37,12 @@ export class FightScene extends Phaser.Scene {
   private inputBuffer = new PlayerInputBuffer();
   private playerHealthBar!: Phaser.GameObjects.Rectangle;
   private opponentHealthBar!: Phaser.GameObjects.Rectangle;
+  private playerMeterFrame!: Phaser.GameObjects.Rectangle;
+  private opponentMeterFrame!: Phaser.GameObjects.Rectangle;
   private playerMeterBar!: Phaser.GameObjects.Rectangle;
   private opponentMeterBar!: Phaser.GameObjects.Rectangle;
+  private playerMeterLabel!: Phaser.GameObjects.Text;
+  private opponentMeterLabel!: Phaser.GameObjects.Text;
   private timerText!: Phaser.GameObjects.Text;
   private announcement!: Phaser.GameObjects.Text;
   private comboText!: Phaser.GameObjects.Text;
@@ -214,8 +219,18 @@ export class FightScene extends Phaser.Scene {
     const opponentHealthFrame = this.add.rectangle(730, 58, 370, 30, 0x180f25, 0.9).setStrokeStyle(3, 0xffd477);
     this.playerHealthBar = this.add.rectangle(48, 58, 360, 20, 0x57c46b).setOrigin(0, 0.5);
     this.opponentHealthBar = this.add.rectangle(912, 58, 360, 20, 0xe15d68).setOrigin(1, 0.5);
-    this.playerMeterBar = this.add.rectangle(48, 85, 0, 8, playerDefinition.palette.accent).setOrigin(0, 0.5);
-    this.opponentMeterBar = this.add.rectangle(912, 85, 0, 8, opponentDefinition.palette.accent).setOrigin(1, 0.5);
+    this.playerMeterFrame = this.add.rectangle(138, 85, 185, 14, 0x0b0810, 0.9).setStrokeStyle(2, 0x7a6c84, 0.75);
+    this.opponentMeterFrame = this.add.rectangle(822, 85, 185, 14, 0x0b0810, 0.9).setStrokeStyle(2, 0x7a6c84, 0.75);
+    this.playerMeterBar = this.add.rectangle(48, 85, SUPER_METER_WIDTH, 8, playerDefinition.palette.accent).setOrigin(0, 0.5);
+    this.opponentMeterBar = this.add.rectangle(912, 85, SUPER_METER_WIDTH, 8, opponentDefinition.palette.accent).setOrigin(1, 0.5);
+    this.playerMeterBar.displayWidth = 0;
+    this.opponentMeterBar.displayWidth = 0;
+    this.playerMeterLabel = this.add.text(54, 85, 'SUPER', {
+      color: '#d7cfdf', fontFamily: PIXEL_FONT, fontSize: '9px', fontStyle: 'bold', letterSpacing: 1,
+    }).setOrigin(0, 0.5);
+    this.opponentMeterLabel = this.add.text(906, 85, 'SUPER', {
+      color: '#d7cfdf', fontFamily: PIXEL_FONT, fontSize: '9px', fontStyle: 'bold', letterSpacing: 1,
+    }).setOrigin(1, 0.5);
 
     const playerName = this.add.text(48, 25, playerDefinition.displayName.toUpperCase(), {
       color: '#fff8df', fontFamily: 'Impact, sans-serif', fontSize: '23px',
@@ -259,8 +274,12 @@ export class FightScene extends Phaser.Scene {
       opponentHealthFrame,
       this.playerHealthBar,
       this.opponentHealthBar,
+      this.playerMeterFrame,
+      this.opponentMeterFrame,
       this.playerMeterBar,
       this.opponentMeterBar,
+      this.playerMeterLabel,
+      this.opponentMeterLabel,
       playerName,
       opponentName,
       this.timerText,
@@ -647,8 +666,20 @@ export class FightScene extends Phaser.Scene {
   private updateHud(): void {
     this.playerHealthBar.displayWidth = 360 * (this.player.health / this.player.definition.stats.maxHealth);
     this.opponentHealthBar.displayWidth = 360 * (this.opponent.health / this.opponent.definition.stats.maxHealth);
-    this.playerMeterBar.displayWidth = 360 * (this.player.meter / 100);
-    this.opponentMeterBar.displayWidth = 360 * (this.opponent.meter / 100);
+    this.playerMeterBar.displayWidth = SUPER_METER_WIDTH * (this.player.meter / 100);
+    this.opponentMeterBar.displayWidth = SUPER_METER_WIDTH * (this.opponent.meter / 100);
+    const playerSuperReady = canUseSuper(this.player.meter);
+    const opponentSuperReady = canUseSuper(this.opponent.meter);
+    this.playerMeterBar.setFillStyle(playerSuperReady ? 0xffd45d : this.player.definition.palette.accent);
+    this.opponentMeterBar.setFillStyle(opponentSuperReady ? 0xffd45d : this.opponent.definition.palette.accent);
+    this.playerMeterFrame.setStrokeStyle(2, playerSuperReady ? 0xffd45d : 0x7a6c84, playerSuperReady ? 1 : 0.75);
+    this.opponentMeterFrame.setStrokeStyle(2, opponentSuperReady ? 0xffd45d : 0x7a6c84, opponentSuperReady ? 1 : 0.75);
+    this.playerMeterLabel
+      .setText(playerSuperReady ? 'SUPER READY' : 'SUPER')
+      .setColor(playerSuperReady ? '#fff2a8' : '#d7cfdf');
+    this.opponentMeterLabel
+      .setText(opponentSuperReady ? 'SUPER READY' : 'SUPER')
+      .setColor(opponentSuperReady ? '#fff2a8' : '#d7cfdf');
     this.timerText.setText(String(this.match.roundSeconds));
     const fighterInHud = this.player.y < 318 || this.opponent.y < 318;
     const hudAlpha = fighterInHud ? 0.38 : 1;

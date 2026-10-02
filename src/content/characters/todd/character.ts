@@ -7,7 +7,7 @@ import kickAttackSheetUrl from './assets/sprites/todd-kick-attack-sheet-v2.png';
 import punchAttackSheetUrl from './assets/sprites/todd-punch-attack-sheet-v7-arm-continuity.png';
 import crouchPunchAttackSheetUrl from './assets/sprites/todd-crouch-punch-attack-sheet-v1.png';
 import reactionSheetUrl from './assets/sprites/todd-reactions-sheet-v1.png';
-import portraitUrl from './assets/portraits/todd-portrait.png';
+import portraitUrl from './assets/portraits/todd-portrait-v2.png';
 
 export const todd: CharacterDefinition = {
   id: 'todd',
