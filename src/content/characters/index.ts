@@ -9,5 +9,12 @@ export const characters: Record<CharacterId, CharacterDefinition> = {
 
 export const characterList = [todd, kristen] as const;
 
-export type { CharacterDefinition, CharacterId, MoveDefinition } from './types';
+export type {
+  CharacterAnimationClip,
+  CharacterAnimationSheet,
+  CharacterDefinition,
+  CharacterId,
+  CharacterReactionSheet,
+  MoveDefinition,
+} from './types';
 

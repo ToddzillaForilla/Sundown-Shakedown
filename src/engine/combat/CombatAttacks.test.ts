@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { characters } from '../../content/characters';
 import {
   canUseSuper,
+  getAuthoredAttackAnimation,
   getAttackPresentation,
   getHitStunMs,
   isHitInRange,
@@ -30,6 +31,11 @@ describe('player move selection', () => {
     ['heavy', { ...grounded, down: true, movement: 1 }, 'special'],
     ['heavy', { ...grounded, grounded: false }, 'airHeavy'],
     ['heavy', { ...grounded, launchedThisFrame: true }, 'airHeavy'],
+    ['kick', grounded, 'crouchLight'],
+    ['kick', { ...grounded, grounded: false }, 'airLight'],
+    ['punch', grounded, 'heavy'],
+    ['punch', { ...grounded, down: true, movement: 1 }, 'heavy'],
+    ['punch', { ...grounded, grounded: false }, 'airHeavy'],
     ['super', { ...grounded, meter: 100 }, 'super'],
   ] as Array<[AttackAction, AttackContext, string]>)('maps %s input to %s', (action, context, expected) => {
     expect(resolvePlayerMoveSlot(action, context)).toBe(expected);
@@ -68,6 +74,17 @@ describe('attack rules and content', () => {
         return JSON.stringify(presentation);
       });
       expect(new Set(signatures).size).toBe(7);
+    }
+  });
+
+  it('maps grounded kick and punch moves to authored attack animations', () => {
+    for (const character of Object.values(characters)) {
+      expect(getAuthoredAttackAnimation(character.moves, character.moves.light)).toBe('kick');
+      expect(getAuthoredAttackAnimation(character.moves, character.moves.crouchLight)).toBe('kick');
+      expect(getAuthoredAttackAnimation(character.moves, character.moves.heavy)).toBe('punch');
+      expect(getAuthoredAttackAnimation(character.moves, character.moves.heavy, true)).toBe('crouchPunch');
+      expect(getAuthoredAttackAnimation(character.moves, character.moves.airLight)).toBeUndefined();
+      expect(getAuthoredAttackAnimation(character.moves, character.moves.special)).toBeUndefined();
     }
   });
 });

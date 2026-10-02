@@ -30,10 +30,32 @@ export interface CharacterAnimationSheet {
   textureKey: string;
   animationKey: string;
   url: string;
+  nativeFacing?: 1 | -1;
   frameWidth: number;
   frameHeight: number;
   frameCount: number;
   frameRate: number;
+}
+
+export interface CharacterAnimationClip {
+  animationKey: string;
+  startFrame: number;
+  endFrame: number;
+  frameRate: number;
+  repeat?: number;
+  yoyo?: boolean;
+}
+
+export interface CharacterReactionSheet {
+  textureKey: string;
+  url: string;
+  nativeFacing?: 1 | -1;
+  frameWidth: number;
+  frameHeight: number;
+  frameCount: number;
+  block: CharacterAnimationClip;
+  hit: CharacterAnimationClip;
+  landing: CharacterAnimationClip;
 }
 
 export interface CharacterDefinition {
@@ -50,6 +72,10 @@ export interface CharacterDefinition {
     renderScale?: number;
     idleSheet?: CharacterAnimationSheet;
     walkSheet?: CharacterAnimationSheet;
+    kickAttackSheet?: CharacterAnimationSheet;
+    punchAttackSheet?: CharacterAnimationSheet;
+    crouchPunchAttackSheet?: CharacterAnimationSheet;
+    reactionSheet?: CharacterReactionSheet;
   };
   palette: CharacterPalette;
   stats: CharacterStats;

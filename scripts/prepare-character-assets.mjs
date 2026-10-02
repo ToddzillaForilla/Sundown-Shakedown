@@ -158,9 +158,18 @@ async function prepareIdleSheet(sourcePath, destinationPath, sourceFrameEdges, l
   console.log(`Prepared ${label} six-frame idle animation sheet`);
 }
 
-async function prepareAnimationSheetFromComponents(sourcePath, destinationPath, label, animationName) {
-  const idleFrameWidth = 260;
-  const idleFrameHeight = 362;
+async function prepareAnimationSheetFromComponents(
+  sourcePath,
+  destinationPath,
+  label,
+  animationName,
+  options = {},
+) {
+  const {
+    poseScale = 0.56,
+    frameWidth = 260,
+    frameHeight = 362,
+  } = options;
   const { data, info } = await sharp(sourcePath).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   const visited = new Uint8Array(info.width * info.height);
   const components = [];
@@ -221,8 +230,8 @@ async function prepareAnimationSheetFromComponents(sourcePath, destinationPath, 
       poseData[destinationIndex + 2] = data[sourceIndex + 2];
       poseData[destinationIndex + 3] = data[sourceIndex + 3];
     }
-    const outputWidth = Math.round(poseWidth * 0.56);
-    const outputHeight = Math.round(poseHeight * 0.56);
+    const outputWidth = Math.round(poseWidth * poseScale);
+    const outputHeight = Math.round(poseHeight * poseScale);
     const poseBuffer = await sharp(poseData, {
       raw: { width: poseWidth, height: poseHeight, channels: 4 },
     })
@@ -231,16 +240,16 @@ async function prepareAnimationSheetFromComponents(sourcePath, destinationPath, 
       .toBuffer();
     composites.push({
       input: poseBuffer,
-      left: frameIndex * idleFrameWidth + Math.round((idleFrameWidth - outputWidth) / 2),
-      top: 356 - outputHeight + 1,
+      left: frameIndex * frameWidth + Math.round((frameWidth - outputWidth) / 2),
+      top: frameHeight - 5 - outputHeight,
     });
   }
 
   await mkdir(dirname(destinationPath), { recursive: true });
   await sharp({
     create: {
-      width: idleFrameWidth * 6,
-      height: idleFrameHeight,
+      width: frameWidth * 6,
+      height: frameHeight,
       channels: 4,
       background: { r: 0, g: 0, b: 0, alpha: 0 },
     },
@@ -265,10 +274,66 @@ await prepareAnimationSheetFromComponents(
   'idle',
 );
 await prepareAnimationSheetFromComponents(
-  resolve(projectRoot, 'art-source/characters/todd/animations/todd-walk-sheet-v2-laptop.png'),
-  resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-walk-sheet-v2-laptop.png'),
+  resolve(projectRoot, 'art-source/characters/kristen/animations/kristen-walk-sheet-v1-hands-free.png'),
+  resolve(projectRoot, 'src/content/characters/kristen/assets/sprites/kristen-walk-sheet-v1-hands-free.png'),
+  'Kristen',
+  'walk',
+  { poseScale: 0.5334 },
+);
+await prepareAnimationSheetFromComponents(
+  resolve(projectRoot, 'art-source/characters/todd/animations/todd-walk-sheet-v5-idle-scale.png'),
+  resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-walk-sheet-v5-idle-scale.png'),
   'Todd',
   'walk',
+);
+await prepareAnimationSheetFromComponents(
+  resolve(projectRoot, 'art-source/characters/todd/animations/todd-kick-attack-sheet-v2.png'),
+  resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-kick-attack-sheet-v2.png'),
+  'Todd',
+  'kick attack',
+  { frameWidth: 320 },
+);
+await prepareAnimationSheetFromComponents(
+  resolve(projectRoot, 'art-source/characters/todd/animations/todd-punch-attack-sheet-v7-arm-continuity.png'),
+  resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-punch-attack-sheet-v7-arm-continuity.png'),
+  'Todd',
+  'punch attack',
+  { poseScale: 0.821, frameWidth: 320, frameHeight: 430 },
+);
+await prepareAnimationSheetFromComponents(
+  resolve(projectRoot, 'art-source/characters/todd/animations/todd-crouch-punch-attack-sheet-v1.png'),
+  resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-crouch-punch-attack-sheet-v1.png'),
+  'Todd',
+  'crouching punch attack',
+  { frameWidth: 320, frameHeight: 430 },
+);
+await prepareAnimationSheetFromComponents(
+  resolve(projectRoot, 'art-source/characters/kristen/animations/kristen-kick-attack-sheet-v2.png'),
+  resolve(projectRoot, 'src/content/characters/kristen/assets/sprites/kristen-kick-attack-sheet-v2.png'),
+  'Kristen',
+  'kick attack',
+  { poseScale: 0.5334, frameWidth: 320 },
+);
+await prepareAnimationSheetFromComponents(
+  resolve(projectRoot, 'art-source/characters/kristen/animations/kristen-punch-attack-sheet-v3.png'),
+  resolve(projectRoot, 'src/content/characters/kristen/assets/sprites/kristen-punch-attack-sheet-v3.png'),
+  'Kristen',
+  'punch attack',
+  { poseScale: 0.6061, frameWidth: 320, frameHeight: 430 },
+);
+await prepareAnimationSheetFromComponents(
+  resolve(projectRoot, 'art-source/characters/todd/animations/todd-reactions-sheet-v1.png'),
+  resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-reactions-sheet-v1.png'),
+  'Todd',
+  'reaction',
+  { frameWidth: 320 },
+);
+await prepareAnimationSheetFromComponents(
+  resolve(projectRoot, 'art-source/characters/kristen/animations/kristen-reactions-sheet-v1.png'),
+  resolve(projectRoot, 'src/content/characters/kristen/assets/sprites/kristen-reactions-sheet-v1.png'),
+  'Kristen',
+  'reaction',
+  { poseScale: 0.5334, frameWidth: 320 },
 );
 
 // The concept illustration intentionally has an atmospheric backdrop. Runtime

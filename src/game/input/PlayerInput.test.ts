@@ -34,37 +34,46 @@ describe('player directional input', () => {
 describe('player input buffer', () => {
   it('retains a quick press through a short action lockout', () => {
     const buffer = new PlayerInputBuffer(180);
-    buffer.press('light', 1_000);
+    buffer.press('kick', 1_000);
 
-    expect(buffer.consume('light', 1_179)).toBe(true);
+    expect(buffer.consume('kick', 1_179)).toBe(true);
   });
 
   it('expires stale presses instead of firing them late', () => {
     const buffer = new PlayerInputBuffer(180);
-    buffer.press('heavy', 1_000);
+    buffer.press('punch', 1_000);
 
-    expect(buffer.consume('heavy', 1_181)).toBe(false);
+    expect(buffer.consume('punch', 1_181)).toBe(false);
   });
 
   it('keeps rapid distinct and repeated inputs available independently', () => {
     const buffer = new PlayerInputBuffer(180);
     buffer.press('jump', 1_000);
-    buffer.press('light', 1_010);
-    buffer.press('light', 1_020);
+    buffer.press('kick', 1_010);
+    buffer.press('kick', 1_020);
 
     expect(buffer.consume('jump', 1_030)).toBe(true);
-    expect(buffer.consume('light', 1_030)).toBe(true);
-    expect(buffer.consume('light', 1_030)).toBe(true);
-    expect(buffer.consume('light', 1_030)).toBe(false);
+    expect(buffer.consume('kick', 1_030)).toBe(true);
+    expect(buffer.consume('kick', 1_030)).toBe(true);
+    expect(buffer.consume('kick', 1_030)).toBe(false);
   });
 
   it('consumes only the highest-priority available attack', () => {
     const buffer = new PlayerInputBuffer(180);
-    buffer.press('light', 1_000);
-    buffer.press('heavy', 1_010);
+    buffer.press('kick', 1_000);
+    buffer.press('punch', 1_010);
 
-    expect(buffer.consumeFirst(['super', 'heavy', 'light'], 1_020)).toBe('heavy');
-    expect(buffer.consumeFirst(['super', 'heavy', 'light'], 1_020)).toBe('light');
+    expect(buffer.consumeFirst(['super', 'punch', 'kick'], 1_020)).toBe('punch');
+    expect(buffer.consumeFirst(['super', 'punch', 'kick'], 1_020)).toBe('kick');
+  });
+
+  it('buffers the dedicated touch kick and punch attacks independently', () => {
+    const buffer = new PlayerInputBuffer(180);
+    buffer.press('kick', 1_000);
+    buffer.press('punch', 1_010);
+
+    expect(buffer.consumeFirst(['super', 'punch', 'kick'], 1_020)).toBe('punch');
+    expect(buffer.consumeFirst(['super', 'punch', 'kick'], 1_020)).toBe('kick');
   });
 
   it('clears queued presses between rounds', () => {

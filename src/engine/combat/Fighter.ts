@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
-import type { CharacterDefinition, MoveDefinition } from '../../content/characters';
-import { getAttackPresentation, getHitStunMs } from './CombatAttacks';
+import type { CharacterAnimationSheet, CharacterDefinition, MoveDefinition } from '../../content/characters';
+import { getAttackPresentation, getAuthoredAttackAnimation, getHitStunMs } from './CombatAttacks';
 import { calculateHitDamage } from './CombatBlocking';
 import { getCombatFlashProfile, type CombatFeedbackKind } from './CombatEffects';
 import { FighterAnimationStateMachine, type FighterAnimationState } from './FighterAnimationState';
@@ -87,6 +87,38 @@ export class Fighter {
         frameRate: walkSheet.frameRate,
         repeat: -1,
       });
+    }
+    for (const sheet of [
+      definition.art.kickAttackSheet,
+      definition.art.punchAttackSheet,
+      definition.art.crouchPunchAttackSheet,
+    ]) {
+      if (!sheet || scene.anims.exists(sheet.animationKey)) continue;
+      scene.anims.create({
+        key: sheet.animationKey,
+        frames: scene.anims.generateFrameNumbers(sheet.textureKey, {
+          start: 0,
+          end: sheet.frameCount - 1,
+        }),
+        frameRate: sheet.frameRate,
+        repeat: 0,
+      });
+    }
+    const reactionSheet = definition.art.reactionSheet;
+    if (reactionSheet) {
+      for (const clip of [reactionSheet.block, reactionSheet.hit, reactionSheet.landing]) {
+        if (scene.anims.exists(clip.animationKey)) continue;
+        scene.anims.create({
+          key: clip.animationKey,
+          frames: scene.anims.generateFrameNumbers(reactionSheet.textureKey, {
+            start: clip.startFrame,
+            end: clip.endFrame,
+          }),
+          frameRate: clip.frameRate,
+          repeat: clip.repeat ?? 0,
+          yoyo: clip.yoyo ?? false,
+        });
+      }
     }
     this.baseVisualScale = (255 / this.visual.height) * (definition.art.renderScale ?? 1);
     this.visual.setScale(this.baseVisualScale);
@@ -184,22 +216,31 @@ export class Fighter {
     }
 
     if (state === 'landing') {
-      this.playMotionAnimation(this.definition.art.idleSheet?.animationKey);
-      this.visual.setPosition(0, 2).setAngle(0);
-      this.refreshVisualScale();
-      this.visual.scaleY *= 0.92;
+      const reactionSheet = this.definition.art.reactionSheet;
+      const landingAnimation = reactionSheet?.landing.animationKey;
+      this.playMotionAnimation(landingAnimation ?? this.definition.art.idleSheet?.animationKey);
+      this.visual.setPosition(0, landingAnimation ? 0 : 2).setAngle(0);
+      this.refreshVisualScale(1, reactionSheet?.nativeFacing);
+      if (!landingAnimation) this.visual.scaleY *= 0.92;
       return;
     }
 
-    this.refreshVisualScale();
+    const motionNativeFacing = state === 'block'
+      ? this.definition.art.reactionSheet?.nativeFacing
+      : undefined;
+    this.refreshVisualScale(1, motionNativeFacing);
     const motionAnimation = state === 'walk'
       ? this.definition.art.walkSheet?.animationKey
-      : this.definition.art.idleSheet?.animationKey;
+      : state === 'block'
+        ? this.definition.art.reactionSheet?.block.animationKey
+        : this.definition.art.idleSheet?.animationKey;
     this.playMotionAnimation(motionAnimation);
     this.visual.setX(state === 'block' ? -7 : 0);
     const usesAuthoredMotion = state === 'walk'
       ? Boolean(this.definition.art.walkSheet)
-      : Boolean(this.definition.art.idleSheet);
+      : state === 'block'
+        ? Boolean(this.definition.art.reactionSheet)
+        : Boolean(this.definition.art.idleSheet);
     this.visual.setY(usesAuthoredMotion ? 0 : Math.sin(time / (state === 'walk' ? 55 : 210)) * (state === 'walk' ? 3.5 : 1.8));
     this.visual.setAngle(usesAuthoredMotion ? 0 : state === 'walk' ? Math.sin(time / 70) * 1.8 : 0);
   }
@@ -209,20 +250,35 @@ export class Fighter {
   }
 
   attack(move: MoveDefinition, now: number): void {
-    this.nextActionAt = now + move.cooldownMs;
     const presentation = getAttackPresentation(this.definition.moves, move);
-    const durationMs = presentation.durationMs * 2;
+    const authoredAnimation = getAuthoredAttackAnimation(this.definition.moves, move, this.crouching);
+    const attackSheet: CharacterAnimationSheet | undefined = authoredAnimation === 'kick'
+      ? this.definition.art.kickAttackSheet
+      : authoredAnimation === 'crouchPunch'
+        ? this.definition.art.crouchPunchAttackSheet ?? this.definition.art.punchAttackSheet
+        : authoredAnimation === 'punch'
+          ? this.definition.art.punchAttackSheet
+          : undefined;
+    const durationMs = attackSheet
+      ? Math.round((attackSheet.frameCount / attackSheet.frameRate) * 1000)
+      : presentation.durationMs * 2;
+    this.nextActionAt = now + Math.max(move.cooldownMs, durationMs);
     const revision = ++this.presentationRevision;
     this.animationState.beginAttack(now, durationMs);
     this.scene.tweens.killTweensOf(this.visual);
-    this.visual.anims.pause();
     this.flashCombatFeedback('attack');
-    this.refreshVisualScale(presentation.scale);
+    if (attackSheet) {
+      this.refreshVisualScale(1, attackSheet.nativeFacing);
+      this.visual.play(attackSheet.animationKey, true);
+    } else {
+      this.visual.anims.pause();
+      this.refreshVisualScale(presentation.scale);
+    }
     this.scene.tweens.add({
       targets: this.visual,
       x: presentation.lunge,
-      y: presentation.offsetY,
-      angle: presentation.angle,
+      y: attackSheet ? 0 : presentation.offsetY,
+      angle: attackSheet ? 0 : presentation.angle,
       duration: presentation.durationMs,
       ease: 'Power2',
       yoyo: true,
@@ -231,7 +287,7 @@ export class Fighter {
       if (this.presentationRevision !== revision || this.knockedOut) return;
       this.visual.setPosition(0, 0).setAngle(0);
       this.refreshVisualScale();
-      this.visual.anims.resume();
+      this.playMotionAnimation(this.definition.art.idleSheet?.animationKey);
     });
   }
 
@@ -246,7 +302,15 @@ export class Fighter {
     const revision = ++this.presentationRevision;
     this.animationState.beginHit(this.scene.time.now, presentationDuration);
     this.scene.tweens.killTweensOf(this.visual);
-    this.visual.anims.pause();
+    const reactionAnimation = blocked
+      ? this.definition.art.reactionSheet?.block.animationKey
+      : this.definition.art.reactionSheet?.hit.animationKey;
+    if (reactionAnimation) {
+      this.refreshVisualScale(1, this.definition.art.reactionSheet?.nativeFacing);
+      this.visual.play(reactionAnimation, true);
+    } else {
+      this.visual.anims.pause();
+    }
     this.scene.tweens.add({
       targets: this.visual,
       x: blocked ? -8 : -22,
@@ -269,7 +333,7 @@ export class Fighter {
     this.scene.time.delayedCall(presentationDuration, () => {
       if (this.presentationRevision !== revision || this.knockedOut) return;
       this.visual.setPosition(this._blocking ? -7 : 0, 0).setAngle(0);
-      this.visual.anims.resume();
+      this.playMotionAnimation(this.definition.art.idleSheet?.animationKey);
     });
     const pushDistance = blocked ? Math.max(8, move.knockback * 0.28) : move.knockback;
     this.view.x = Phaser.Math.Clamp(this.view.x - this.facing * pushDistance, STAGE_MIN_X, STAGE_MAX_X);
@@ -323,9 +387,11 @@ export class Fighter {
     });
   }
 
-  private refreshVisualScale(multiplier = 1): void {
+  private refreshVisualScale(multiplier = 1, animationNativeFacing?: 1 | -1): void {
+    const defaultNativeFacing = this.definition.art.nativeFacing ?? 1;
+    const localFacing = animationNativeFacing && animationNativeFacing !== defaultNativeFacing ? -1 : 1;
     this.visual.setScale(
-      this.baseVisualScale * multiplier,
+      this.baseVisualScale * multiplier * localFacing,
       this.baseVisualScale * multiplier * (this.crouching ? 0.78 : 1),
     );
   }

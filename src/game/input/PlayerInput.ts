@@ -1,4 +1,4 @@
-export type BufferedAction = 'jump' | 'light' | 'heavy' | 'super';
+export type BufferedAction = 'jump' | 'kick' | 'punch' | 'super';
 
 export interface DirectionalInput {
   left: boolean;

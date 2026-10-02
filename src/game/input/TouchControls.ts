@@ -1,7 +1,14 @@
 import Phaser from 'phaser';
 
-export type TouchAction = 'left' | 'right' | 'down' | 'jump' | 'light' | 'heavy' | 'super';
+export type TouchAction = 'left' | 'right' | 'down' | 'jump' | 'kick' | 'punch' | 'super';
 type DPadDirection = 'up' | 'down' | 'left' | 'right';
+
+export function shouldShowTouchControls(): boolean {
+  if (typeof window === 'undefined' || typeof navigator === 'undefined') return false;
+  const hasTouch = navigator.maxTouchPoints > 0 || 'ontouchstart' in window;
+  const usesCoarsePointer = window.matchMedia?.('(pointer: coarse)').matches ?? false;
+  return hasTouch && usesCoarsePointer;
+}
 
 export class TouchControls {
   private readonly held = new Map<TouchAction, boolean>();
@@ -16,8 +23,8 @@ export class TouchControls {
     const actionCenterY = 420;
     const actionSpacing = 68;
     const actionRadius = 43;
-    this.createRoundButton(scene, actionCenterX - actionSpacing, actionCenterY, 'LOW', 'light', actionRadius, 0x2f7898, 14);
-    this.createRoundButton(scene, actionCenterX, actionCenterY - actionSpacing, 'HIGH', 'heavy', actionRadius, 0x9a365c, 14);
+    this.createRoundButton(scene, actionCenterX - actionSpacing, actionCenterY, 'KICK', 'kick', actionRadius, 13);
+    this.createRoundButton(scene, actionCenterX, actionCenterY - actionSpacing, 'PUNCH', 'punch', actionRadius, 12);
     this.superButton = this.createRoundButton(
       scene,
       actionCenterX + actionSpacing,
@@ -25,10 +32,9 @@ export class TouchControls {
       'SUPER',
       'super',
       actionRadius,
-      0xd28a23,
       13,
     );
-    this.createRoundButton(scene, actionCenterX, actionCenterY + actionSpacing, 'JUMP', 'jump', actionRadius, 0x4b8b54, 14);
+    this.createRoundButton(scene, actionCenterX, actionCenterY + actionSpacing, 'JUMP', 'jump', actionRadius, 14);
     this.setSuperAvailable(false);
   }
 
@@ -126,28 +132,34 @@ export class TouchControls {
     label: string,
     action: TouchAction,
     radius: number,
-    color: number,
     fontSize = 26,
   ): Phaser.GameObjects.Container {
-    const circle = scene.add.circle(0, 0, radius, color, 0.72)
-      .setStrokeStyle(3, 0xffe1a1, 0.7)
+    const shadow = scene.add.circle(4, 5, radius, 0x020508, 0.34);
+    const circle = scene.add.circle(0, 0, radius, 0x172437, 0.46)
+      .setStrokeStyle(3, 0xc8d2da, 0.38)
       .setInteractive({ useHandCursor: true });
+    const inset = scene.add.circle(0, -2, radius - 7, 0x8fa5b5, 0.07)
+      .setStrokeStyle(1, 0xe8eef2, 0.14);
     const text = scene.add.text(0, 0, label, {
-      color: '#fff8df',
+      color: '#eaf0f2',
       fontFamily: 'Trebuchet MS, sans-serif',
       fontSize: `${fontSize}px`,
       fontStyle: 'bold',
-    }).setOrigin(0.5);
-    const container = scene.add.container(x, y, [circle, text]).setScrollFactor(0).setDepth(100);
+    }).setOrigin(0.5).setAlpha(0.82);
+    const container = scene.add.container(x, y, [shadow, circle, inset, text]).setScrollFactor(0).setDepth(100);
 
     circle.on('pointerdown', () => {
       if (action === 'super' && !this.superAvailable) return;
       this.held.set(action, true);
       this.pressed.set(action, true);
+      circle.setFillStyle(0x263b55, 0.62);
+      inset.setFillStyle(0xb9cada, 0.13);
       container.setScale(0.92);
     });
     const release = (): void => {
       this.held.set(action, false);
+      circle.setFillStyle(0x172437, 0.46);
+      inset.setFillStyle(0x8fa5b5, 0.07);
       container.setScale(1);
     };
     circle.on('pointerup', release);

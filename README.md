@@ -1,6 +1,6 @@
 # Sundown Shakedown
 
-A browser-first, two-dimensional neighborhood fighting game starring Todd and Kristen. The game uses detailed pixel-art characters, exaggerated hobby-inspired powers, a good-natured roast tone, and a mobile-friendly two-button control scheme.
+A browser-first, two-dimensional neighborhood fighting game starring Todd and Kristen. The game uses detailed pixel-art characters, exaggerated hobby-inspired powers, a good-natured roast tone, and mobile-friendly four-button controls.
 
 ## Current foundation
 
@@ -22,13 +22,12 @@ The approved Todd and Kristen concepts are integrated as optimized static fighte
 
 | Action | Keyboard | Touch |
 |---|---|---|
-| Move and block | WASD or arrow keys | Direction pad |
-| Jump | W or Up arrow | Up |
-| Crouch | S or Down arrow | Down |
-| Light attack | J or Z; left mouse button | L |
-| Heavy attack | K or X; right mouse button | H |
-| Directional special | Down + toward + Heavy | Down + toward + H |
-| Super | L, C, Space, or middle mouse when meter is full | Appears when meter is full |
+| Move and block | A/D to move, S to crouch, W reserved | Direction pad; Up reserved |
+| Kick | J; left mouse button | Left action button |
+| Punch | I; right mouse button | Top action button |
+| Jump | K | Bottom action button |
+| Crouching uppercut | S + I | Down + Punch |
+| Super | L or middle mouse when meter is full | Right action button when meter is full |
 
 Walking away from the opponent visibly retreats while blocking; a small `GUARD` label confirms that defense is active. Jumping fighters can cross over one another once they have enough clearance.
 
