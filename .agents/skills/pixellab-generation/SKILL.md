@@ -7,7 +7,7 @@ description: Run a scoped PixelLab asset generation batch for Sundown Shakedown 
 
 ## Establish the batch
 
-Read [PixelLab access](../../../docs/PIXELLAB_API.md) for authentication and tooling. For Todd, read [the current rebuild plan](../../../docs/TODD_PIXELLAB_ANIMATION_PLAN.md) for identity, selected tools, existing character/job IDs, and motion acceptance criteria. Inspect the relevant scene, approved assets, and source manifest before proposing substantial visual work.
+Read [PixelLab tool selection](../../../docs/PIXELLAB_API.md#tool-selection) and choose the user-selected tool for the asset category. Use the same reference for authentication and tooling. For Todd, read [the current rebuild plan](../../../docs/TODD_PIXELLAB_ANIMATION_PLAN.md) for identity, selected tools, existing character/job IDs, and motion acceptance criteria. Inspect the relevant scene, approved assets, and source manifest before proposing substantial visual work.
 
 Check live balance and the selected tool's current limits/costs before each batch. Subscription generations and USD credits are different units. Earlier allowances, trial bonuses, and estimates are historical; confirm paid scope and allowance before spending. Prefer local or no-new-cost approaches when suitable.
 

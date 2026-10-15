@@ -2,6 +2,24 @@
 
 MCP and the project's direct REST v2 client are configured separately and use the same `PIXELLAB_API_TOKEN` variable. Successful REST authentication does not by itself establish that PixelLab MCP tools are loaded in a chat.
 
+## Tool selection
+
+Use Todd's following tool selections for project asset work, supplied October 15, 2026. These are user-selected tool labels; verify the current callable tool, version/mode, access, limits, and cost before use. Do not silently substitute another tool or version if a selected option is unavailable.
+
+| Asset task | Selected PixelLab tools |
+|---|---|
+| New characters and character variants | Create Character (4/8-direction, Pro, v3); Create Character State |
+| Character animations | Animate with Text v3; Interpolation v3 |
+| Maps and tilesets | Create Topdown Tileset; Create Sidescroller Tileset; Create Tiles Pro (iso/hex/oblique/square topdown); Create Building Kit (wall/floor systems for interiors and exteriors) |
+| Objects and props | Create 1-Direction Object; Create 8-Direction Object; Animate Object; Object States |
+| UI | UI Template Pro |
+| Fonts | Create Font |
+| Faces and dialogue portraits | Create Portrait Character; Create Vocal Animation |
+| Raw image generation | Create Image (Pixen); Create Image (Pro) |
+| Image editing | Edit Image (Pro) |
+
+For Todd's rebuild, also follow the photo-reference, identity, and motion requirements in [the Todd animation plan](TODD_PIXELLAB_ANIMATION_PLAN.md). Follow the [generation workflow](../.agents/skills/pixellab-generation/SKILL.md) for batch scope, costs, and review. Tool selection does not authorize generation or purchases by itself.
+
 ## Direct REST client
 
 Run with Node.js 22 or newer from the repository root:
