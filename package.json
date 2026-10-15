@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "pixellab": "node --env-file-if-exists=.env.local scripts/pixellab.mjs",
     "assets:prepare": "node scripts/prepare-assets.mjs",
     "dev": "vite --host 0.0.0.0",
     "build": "tsc --noEmit && vite build",

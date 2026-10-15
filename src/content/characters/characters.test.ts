@@ -56,7 +56,7 @@ describe('character content packages', () => {
       },
       {
         definition: todd?.art.kickAttackSheet,
-        path: localPath(new URL('./todd/assets/sprites/todd-kick-attack-sheet-v2.png', import.meta.url)),
+        path: localPath(new URL('./todd/assets/sprites/todd-kick-attack-sheet-v3-mid-side.png', import.meta.url)),
       },
       {
         definition: todd?.art.punchAttackSheet,

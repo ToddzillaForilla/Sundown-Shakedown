@@ -3,7 +3,7 @@ import { toddMoves } from './moves';
 import fighterUrl from './assets/sprites/todd-concept-fighter.png';
 import idleSheetUrl from './assets/sprites/todd-idle-sheet-v2-laptop.png';
 import walkSheetUrl from './assets/sprites/todd-walk-sheet-v5-idle-scale.png';
-import kickAttackSheetUrl from './assets/sprites/todd-kick-attack-sheet-v2.png';
+import kickAttackSheetUrl from './assets/sprites/todd-kick-attack-sheet-v3-mid-side.png';
 import punchAttackSheetUrl from './assets/sprites/todd-punch-attack-sheet-v7-arm-continuity.png';
 import crouchPunchAttackSheetUrl from './assets/sprites/todd-crouch-punch-attack-sheet-v1.png';
 import reactionSheetUrl from './assets/sprites/todd-reactions-sheet-v1.png';
@@ -40,8 +40,8 @@ export const todd: CharacterDefinition = {
       frameRate: 10,
     },
     kickAttackSheet: {
-      textureKey: 'fighter-todd-kick-attack-sheet-v2',
-      animationKey: 'fighter-todd-kick-attack-v2',
+      textureKey: 'fighter-todd-kick-attack-sheet-v3-mid-side',
+      animationKey: 'fighter-todd-kick-attack-v3-mid-side',
       url: kickAttackSheetUrl,
       nativeFacing: 1,
       frameWidth: 320,

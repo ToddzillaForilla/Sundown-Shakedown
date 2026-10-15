@@ -5,6 +5,18 @@ import sharp from 'sharp';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
+// Rebuild just this sheet while iterating, without regenerating other artwork.
+if (process.argv.includes('--todd-side-kick')) {
+  await prepareAnimationSheetFromComponents(
+    resolve(projectRoot, 'art-source/characters/todd/animations/todd-kick-attack-sheet-v3-mid-side.png'),
+    resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-kick-attack-sheet-v3-mid-side.png'),
+    'Todd',
+    'mid side kick',
+    { frameWidth: 320 },
+  );
+  process.exit(0);
+}
+
 const characters = [
   {
     id: 'todd',
@@ -287,8 +299,8 @@ await prepareAnimationSheetFromComponents(
   'walk',
 );
 await prepareAnimationSheetFromComponents(
-  resolve(projectRoot, 'art-source/characters/todd/animations/todd-kick-attack-sheet-v2.png'),
-  resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-kick-attack-sheet-v2.png'),
+  resolve(projectRoot, 'art-source/characters/todd/animations/todd-kick-attack-sheet-v3-mid-side.png'),
+  resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-kick-attack-sheet-v3-mid-side.png'),
   'Todd',
   'kick attack',
   { frameWidth: 320 },
