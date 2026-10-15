@@ -10,26 +10,27 @@ A browser-first, two-dimensional neighborhood fighting game starring Todd and Kr
 - Todd and Kristen as selectable fighters
 - Easy, Normal, and Hard computer opponents
 - Approved cool-natural Backyard pixel-art stage
-- Approved Todd and Kristen concept art used as static fighter and selection assets
-- Temporary code-driven idle, movement, attack, hit, knockout, and character-effect animation
-- Touch and keyboard controls
+- Approved Todd and Kristen portraits with authored idle, walk, attack, and reaction sheets
+- Code-driven crouch/airborne transformations, knockout, and character effects
+- Touch, keyboard, and mouse controls
 - Health, power meter, blocking, jumping, attacks, rounds, and rematches
 - Character- and stage-centered content folders
 
-The approved Todd and Kristen concepts are integrated as optimized static fighter assets. They remain temporary until full animation sprite sheets are produced. The approved Backyard concept is also integrated as an optimized runtime asset. Runtime exports live inside each character or stage package, while editable source art remains under `art-source`.
+The approved Backyard and older authored fighter animation sets are integrated. Todd's photo-based PixelLab pilot is available for source-art review and is not mapped into the playable game. Runtime exports live inside each character or stage package, while editable source art remains under `art-source`.
 
 ## Controls
 
-| Action | Keyboard | Touch |
-|---|---|---|
-| Move and block | A/D to move, S to crouch, W reserved | Direction pad; Up reserved |
-| Kick | J; left mouse button | Left action button |
-| Punch | I; right mouse button | Top action button |
-| Jump | K | Bottom action button |
-| Crouching uppercut | S + I | Down + Punch |
-| Super | L or middle mouse when meter is full | Right action button when meter is full |
+| Action | Keyboard | Mouse | Touch |
+|---|---|---|---|
+| Move | A/D or Left/Right | — | Direction pad Left/Right |
+| Crouch | S or Down | — | Direction pad Down |
+| Kick | J | Left click | Left action button |
+| Punch | K | Right click | Top action button |
+| Jump | L | — | Bottom action button |
+| Crouching uppercut | S + K or Down + K | Crouch + right click | Down + Punch |
+| Super | I when meter is full | Middle click when meter is full | Right action button when meter is full |
 
-Walking away from the opponent visibly retreats while blocking; a small `GUARD` label confirms that defense is active. Jumping fighters can cross over one another once they have enough clearance.
+W/Up and touch D-pad Up are reserved and do not jump. Holding away retreats normally and becomes a guard while the opponent attacks. Jumping fighters can cross over one another once they have enough clearance. The touch Super button remains visible but dim and inactive until ready.
 
 ## Commands
 
@@ -38,7 +39,10 @@ npm install
 npm run dev
 npm run build
 npm test
+npm run preview
 ```
 
-See [docs/PROJECT_PLAN.md](docs/PROJECT_PLAN.md) for the approved product and architecture plan.
+Use the URL printed by Vite; the preview remains available only while its server runs. Phone access requires the computer's current LAN address and network reachability.
+
+See [the project plan](docs/PROJECT_PLAN.md) for product and architecture direction, [gameplay and presentation](docs/GAMEPLAY_AND_PRESENTATION.md) for detailed runtime behavior, and [PixelLab access](docs/PIXELLAB_API.md) for asset tooling. The [Todd animation plan](docs/TODD_PIXELLAB_ANIMATION_PLAN.md) records the pilot and remaining rebuild work.
 
