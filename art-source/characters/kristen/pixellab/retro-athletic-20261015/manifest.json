@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-15",
+  "status": "standing-reference-review",
+  "scope": "One Pro standing redraw after previous shorts candidate rejected as stocky. No animations or retries.",
+  "tool": "Create Image (Pro)",
+  "request": {
+    "description": "One full-body transparent pixel-art sprite of Kristen, an attractive confident ADULT woman fighter, recognizable from the two photo likeness references. REDESIGN THE BODY SILHOUETTE to be noticeably LEAN, athletic and shapely: defined narrower waist, fit slender arms, graceful long-looking legs with natural thighs/calves, balanced mature adult anatomy, small proportional head about 1/7 body height. Flattering fitted forest-green short-sleeve T-shirt following waist, tailored charcoal SHORT cargo shorts ending high on thighs with small flat side pockets, visible bare legs, brown ankle hiking boots. Blue neck bandana. Preserve recognizable mature facial features, black rectangular clear-lens glasses, shoulder-length wavy dark brown hair and side part. Confident appealing expression. Hands EMPTY, both fists raised in relaxed balanced guard, facing SCREEN LEFT three-quarter arcade view, feet apart with only slight knee bend. Match approved Todd reference exact late-1990s CPS2 arcade pixel density, crisp selective dark outlines, clustered detail, stepped cel shading, natural skin and cool neutral shadows. Kristen is about 5 percent SHORTER than Todd: draw a naturally proportioned roughly 224px-tall figure on 256x256, top of hair near y28, bottom boot sole y251. Achieve height through balanced overall anatomy, not squat torso or short compressed legs. Head proportion scales with body. Keep waist high enough and shorts short enough for elegant long-looking legs. Reference outfit supplies green shirt, blue bandana and brown boots only: replace pants with fitted short cargo shorts. Do not copy Todd's male face, beard, tattoo, clothes or broad build. No chibi head, bulky shoulders, thick square torso, baggy long shorts, pinched impossible waist, props, hat, weapons, text, scenery, floor or ground shadow. Full figure with transparent margins. One standing candidate only.",
+    "width": 256,
+    "height": 256,
+    "max_colors": 48,
+    "no_background": true,
+    "seed": 151123,
+    "style_image_url": "upload:9c47d5f6-467b-4161-9678-bcf751490088",
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "url": "upload:638fc2cb-35d6-4126-9a06-8dd7e7bb8086",
+        "usage": "Kristen adult facial likeness, black glasses, wavy brown hair ONLY. Draw body with requested lean athletic silhouette; no room, text or held jacket."
+      },
+      {
+        "url": "upload:8eb82000-8320-4709-b61c-f0954fe009e9",
+        "usage": "Kristen adult profile likeness and blue neck bandana. No hat, sunglasses, pole or scenery."
+      },
+      {
+        "url": "upload:c33d495c-86ce-49fe-9f89-da6e7248980d",
+        "usage": "Outfit colors only: fitted green shirt, blue bandana, brown boots. Replace pants with fitted SHORT cargo shorts. Do not copy bulk, props, backdrop or lighting."
+      },
+      {
+        "url": "upload:9c47d5f6-467b-4161-9678-bcf751490088",
+        "usage": "Approved Todd STYLE and SCALE only: crisp detailed arcade pixel art, mature adult proportions, sole baseline y251. Kristen should be about 5 percent shorter, with lean feminine silhouette. No Todd identity or clothing."
+      }
+    ]
+  },
+  "receipt": "id: 04751846-947b-4a2d-919b-5d9ee811dc9d\njob_id: 04751846-947b-4a2d-919b-5d9ee811dc9d\nmodel: pro\ndescription: One full-body transparent pixel-art sprite of Kristen, an attractive confident ADULT woman fighter, recognizable from the two photo likeness references. REDESIGN THE BODY SILHOUETTE to be noticeably LEAN, athletic and shapely: defined narrower waist, fit slender arms, graceful long-looking legs with natural thighs/calves, balanced mature adult anatomy, small proportional head about 1/7 body height. Flattering fitted forest-green short-sleeve T-shirt following waist, tailored charcoal SHORT cargo shorts ending high on thighs with small flat side pockets, visible bare legs, brown ankle hiking boots. Blue neck bandana. Preserve recognizable mature facial features, black rectangular clear-lens glasses, shoulder-length wavy dark brown hair and side part. Confident appealing expression. Hands EMPTY, both fists raised in relaxed balanced guard, facing SCREEN LEFT three-quarter arcade view, feet apart with only slight knee bend. Match approved Todd reference exact late-1990s CPS2 arcade pixel density, crisp selective dark outlines, clustered detail, stepped cel shading, natural skin and cool neutral shadows. Kristen is about 5 percent SHORTER than Todd: draw a naturally proportioned roughly 224px-tall figure on 256x256, top of hair near y28, bottom boot sole y251. Achieve height through balanced overall anatomy, not squat torso or short compressed legs. Head proportion scales with body. Keep waist high enough and shorts short enough for elegant long-looking legs. Reference outfit supplies green shirt, blue bandana and brown boots only: replace pants with fitted short cargo shorts. Do not copy Todd's male face, beard, tattoo, clothes or broad build. No chibi head, bulky shoulders, thick square torso, baggy long shorts, pinched impossible waist, props, hat, weapons, text, scenery, floor or ground shadow. Full figure with transparent margins. One standing candidate only.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 4\nstyle_image: yes (outline, detail, shading)\nmax colours: 48 per image\nseed: 151123\nasset_id: 13cfe6c0-2727-5669-9920-513581a1b39e\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"04751846-947b-4a2d-919b-5d9ee811dc9d\")",
+  "quotedGenerations": 10,
+  "balanceBefore": 4811,
+  "accepted": false,
+  "runtimeIntegrated": false,
+  "referencesManifest": "../retro-reference-20261015/uploads.json",
+  "jobs": {
+    "concept": {
+      "jobId": "04751846-947b-4a2d-919b-5d9ee811dc9d",
+      "status": "completed",
+      "frameCount": 1,
+      "usage": {
+        "type": "generations",
+        "generations": 10
+      }
+    }
+  },
+  "constraints": "Preserve raw output. No anatomical row cuts. Target 224px silhouette and y251 baseline; measure actual result before acceptance.",
+  "balanceAfter": 4801,
+  "chargedGenerations": 10,
+  "measurements": {
+    "label": "Kristen — revised candidate",
+    "path": "art-source/characters/kristen/pixellab/retro-athletic-20261015/concept.png",
+    "width": 256,
+    "height": 256,
+    "bounds": {
+      "left": 55,
+      "top": 28,
+      "right": 183,
+      "bottom": 251
+    },
+    "silhouetteHeight": 224,
+    "opaqueColors": 48,
+    "transparentPixels": 54384,
+    "edgeContact": false
+  },
+  "rawGeneratedImage": "concept-0.png",
+  "exactAdjustments": "adjustments.json",
+  "qualityNotes": "Leaner defined waist and longer-looking bare legs, fitted short cargo shorts, recognizable glasses and brown hair, green shirt and blue bandana. Pro output faced right and measured 239px; review copy mirrored and uniformly scaled 0.9375 with nearest-neighbor sampling to 224px, about 5.1% shorter than Todd 236px. Both sole baselines y251. 48 colors, transparent margins, no edge contact. Guard is wider and more open than Todd. Source browser review verified both facings; likeness, proportions and guard await user approval. No animation or runtime changes."
+}

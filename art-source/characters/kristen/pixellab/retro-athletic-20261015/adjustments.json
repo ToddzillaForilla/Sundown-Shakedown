@@ -1,0 +1,12 @@
+{
+  "source": "concept-0.png",
+  "output": "concept.png",
+  "operations": [
+    "Horizontal mirror to face screen left",
+    "Uniform nearest-neighbor scale: 256x256 to 240x240",
+    "Place at x8,y16 on transparent 256x256 canvas"
+  ],
+  "scale": 0.9375,
+  "anatomicalRowCuts": false,
+  "rawOutputPreserved": true
+}

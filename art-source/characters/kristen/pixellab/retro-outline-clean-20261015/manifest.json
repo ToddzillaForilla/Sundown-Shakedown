@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-15",
+  "status": "standing-reference-approved",
+  "scope": "Clean screen-right leg outline on approved restored design",
+  "source": "art-source/characters/kristen/pixellab/retro-bandana-restored-20261015/concept.png",
+  "tool": "PixelLab pixelart_workbench",
+  "imageId": "a6afc806-508b-4461-811a-7227c2512247",
+  "chargedGenerations": 0,
+  "baseDesignAccepted": true,
+  "runtimeIntegrated": false,
+  "changes": "outline-patch.json",
+  "verification": {
+    "changedPixels": 27,
+    "unexpectedChanges": 0,
+    "alphaChanges": 0,
+    "silhouetteAndProportionsPreserved": true
+  },
+  "measurements": {
+    "label": "Kristen — approved standing reference",
+    "path": "art-source/characters/kristen/pixellab/retro-outline-clean-20261015/concept.png",
+    "width": 256,
+    "height": 256,
+    "bounds": {
+      "left": 55,
+      "top": 28,
+      "right": 183,
+      "bottom": 251
+    },
+    "silhouetteHeight": 224,
+    "opaqueColors": 58,
+    "transparentPixels": 54361,
+    "edgeContact": false
+  },
+  "accepted": true,
+  "approvedOn": "2026-10-15",
+  "approvedBy": "Todd",
+  "approval": "yep that look great lets go with that. I approve the standing reference for Kristen",
+  "approvedImage": "art-source/characters/kristen/pixellab/retro-outline-clean-20261015/concept.png",
+  "approvedImageSha256": "c89031826ed59470d8750f6e84f09c3c83d1d23961cfb543d54dacee6e29dcda"
+}

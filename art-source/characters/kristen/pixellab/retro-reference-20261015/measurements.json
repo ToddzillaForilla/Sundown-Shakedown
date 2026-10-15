@@ -1,0 +1,34 @@
+[
+  {
+    "label": "Kristen — standing candidate",
+    "path": "art-source/characters/kristen/pixellab/retro-reference-20261015/concept.png",
+    "width": 256,
+    "height": 256,
+    "bounds": {
+      "left": 73,
+      "top": 15,
+      "right": 187,
+      "bottom": 251
+    },
+    "silhouetteHeight": 237,
+    "opaqueColors": 48,
+    "transparentPixels": 51815,
+    "edgeContact": false
+  },
+  {
+    "label": "Todd — approved style reference",
+    "path": "art-source/characters/todd/pixellab/retro-option-b-20261015/concept.png",
+    "width": 256,
+    "height": 256,
+    "bounds": {
+      "left": 73,
+      "top": 16,
+      "right": 188,
+      "bottom": 251
+    },
+    "silhouetteHeight": 236,
+    "opaqueColors": 48,
+    "transparentPixels": 52119,
+    "edgeContact": false
+  }
+]

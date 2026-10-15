@@ -1,0 +1,17 @@
+{
+  "request": {
+    "action": "A seamless subtle fighting-idle breathing loop in place, facing screen left. Both boot soles remain planted on the original ground line y251 throughout. Small chest breathing, slight shoulder and raised-fist movement, minimal hair/bandana sway. Head movement no more than one or two pixels. No stepping, bouncing, turning or lowering the guard. Return to the exact original stance. Fixed camera, constant 224px standing body scale on transparent 256x256 canvas. Preserve the adult female fighter's exact body proportions, face, clear black rectangular glasses, wavy brown hair, detailed blue bandana, fitted green shirt, short charcoal cargo shorts, visible gray-green hiking socks and brown boots. Keep both hands empty and screen-left facing. No change in leg thickness, clothing or head size. Maintain crisp dark leg outline.",
+    "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/a6afc806-508b-4461-811a-7227c2512247/image.png",
+    "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/a6afc806-508b-4461-811a-7227c2512247/image.png",
+    "frame_count": 4,
+    "no_background": true,
+    "seed": 151130
+  },
+  "status": "processing",
+  "estimatedGenerations": 4,
+  "fps": 6,
+  "jobId": "a0ecea16-d7e6-4ab0-8c72-614f372b0bd2",
+  "assetId": "d54c96d4-aba6-5f20-9f5f-fb283ecd1b88",
+  "quotedGenerations": 4,
+  "receipt": "id: a0ecea16-d7e6-4ab0-8c72-614f372b0bd2\njob_id: a0ecea16-d7e6-4ab0-8c72-614f372b0bd2\naction: A seamless subtle fighting-idle breathing loop in place, facing screen left. Both boot soles remain planted on the original ground line y251 throughout. Small chest breathing, slight shoulder and raised-fist movement, minimal hair/bandana sway. Head movement no more than one or two pixels. No stepping, bouncing, turning or lowering the guard. Return to the exact original stance. Fixed camera, constant 224px standing body scale on transparent 256x256 canvas. Preserve the adult female fighter's exact body proportions, face, clear black rectangular glasses, wavy brown hair, detailed blue bandana, fitted green shirt, short charcoal cargo shorts, visible gray-green hiking socks and brown boots. Keep both hands empty and screen-left facing. No change in leg thickness, clothing or head size. Maintain crisp dark leg outline.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 151130\nasset_id: d54c96d4-aba6-5f20-9f5f-fb283ecd1b88\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"a0ecea16-d7e6-4ab0-8c72-614f372b0bd2\")"
+}

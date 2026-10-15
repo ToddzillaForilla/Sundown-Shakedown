@@ -1,13 +1,13 @@
 {
   "date": "2026-10-15",
-  "status": "source-review",
+  "status": "user-approved-source",
   "tool": "Animate with Text v3",
   "scope": "User-requested crouch, jump kick and jump punch source review",
   "source": "../retro-option-b-20261015/concept.png",
   "balanceBefore": 4851,
   "quotedGenerations": 20,
   "runtimeIntegrated": false,
-  "accepted": false,
+  "accepted": true,
   "requests": {
     "crouch": {
       "frame_count": 4,
@@ -113,5 +113,6 @@
     "tests": "79 passed",
     "build": "passed",
     "sourcePreview": "normal, slow and mirrored right checked"
-  }
+  },
+  "approval": "User: looks good enough for now; move on to Kristen (October 15, 2026). Approval applies to gallery assembly, not the unselected raw knee-lift kick."
 }

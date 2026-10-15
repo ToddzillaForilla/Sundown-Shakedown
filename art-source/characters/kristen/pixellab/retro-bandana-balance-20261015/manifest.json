@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-15",
+  "status": "bandana-proportions-review",
+  "scope": "One requested Pro edit: detailed blue bandana and slimmer thighs/calves balanced with upper body",
+  "tool": "Edit Image (Pro)",
+  "source": "../retro-hiking-socks-20261015/concept.png",
+  "request": {
+    "image_urls": [
+      "upload:124da0fa-cfc4-4fea-b884-7354649067c4"
+    ],
+    "description": "Revise this exact adult Kristen arcade-fighter sprite in TWO targeted ways. 1) BLUE NECK BANDANA: keep same size, blue color and neck placement, but add clearly readable traditional pale blue/off-white PAISLEY detail: tiny teardrop motifs, dotted edging and a narrow patterned border, crisp intentional pixel clusters; deeper blue triangular fabric folds, highlights on folded edges, readable cloth texture. A real patterned camping bandana, not a plain blue neck scarf. Keep pattern legible at native 256px canvas without noisy dithering. 2) LEG PROPORTIONS: both exposed thighs and calves currently look too thick/large relative to the slimmer torso and arms. Make them noticeably more SLENDER, about 15-20 percent narrower in local thigh/calf girth, smooth natural adult anatomical taper into knees and ankles, lighter athletic muscle definition instead of bulky muscular legs. Harmonize lower-body visual mass with her upper body. Keep leg length and overall height, joint positions and stance, and preserve balanced attractive adult proportions. Subtly tailor shorts leg openings to the slimmer thighs but keep same fitted short charcoal cargo shorts with pockets. Keep gray-green ribbed hiking socks and brown hiking boots. Preserve face/likeness, black glasses, wavy brown hair, fitted green shirt, defined waist, arm positions, hands, screen-left guard, 1990s arcade pixel style and cool natural palette. No enlarging head, widening upper body, shortening legs, anatomical row cuts, chibi or stocky build. Transparent 256x256, hair top y28, soles y251, total silhouette224px, no scale/recenter/flip. No props, text or background.",
+    "width": 256,
+    "height": 256,
+    "no_background": true,
+    "seed": 151125
+  },
+  "receipt": "id: 53f2e542-b699-482b-8b4d-c38cafaedce8\njob_id: 53f2e542-b699-482b-8b4d-c38cafaedce8\nmode: text\nframes: 1\nsize: 256x256px\ntransparent: True\nedit: Revise this exact adult Kristen arcade-fighter sprite in TWO targeted ways. 1) BLUE NECK BANDANA: keep same size, blue color and neck placement, but add clearly readable traditional pale blue/off-white PAISLEY detail: tiny teardrop motifs, dotted edging and a narrow patterned border, crisp intentional pixel clusters; deeper blue triangular fabric folds, highlights on folded edges, readable cloth texture. A real patterned camping bandana, not a plain blue neck scarf. Keep pattern legible at native 256px canvas without noisy dithering. 2) LEG PROPORTIONS: both exposed thighs and calves currently look too thick/large relative to the slimmer torso and arms. Make them noticeably more SLENDER, about 15-20 percent narrower in local thigh/calf girth, smooth natural adult anatomical taper into knees and ankles, lighter athletic muscle definition instead of bulky muscular legs. Harmonize lower-body visual mass with her upper body. Keep leg length and overall height, joint positions and stance, and preserve balanced attractive adult proportions. Subtly tailor shorts leg openings to the slimmer thighs but keep same fitted short charcoal cargo shorts with pockets. Keep gray-green ribbed hiking socks and brown hiking boots. Preserve face/likeness, black glasses, wavy brown hair, fitted green shirt, defined waist, arm positions, hands, screen-left guard, 1990s arcade pixel style and cool natural palette. No enlarging head, widening upper body, shortening legs, anatomical row cuts, chibi or stocky build. Transparent 256x256, hair top y28, soles y251, total silhouette224px, no scale/recenter/flip. No props, text or background.\nseed: 151125\nasset_id: 073f93fe-2439-59b1-847b-8b443705e82d\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"53f2e542-b699-482b-8b4d-c38cafaedce8\")",
+  "quotedGenerations": 10,
+  "balanceBefore": 4791,
+  "accepted": false,
+  "runtimeIntegrated": false,
+  "jobs": {
+    "concept": {
+      "jobId": "53f2e542-b699-482b-8b4d-c38cafaedce8",
+      "status": "completed",
+      "frameCount": 1,
+      "usage": {
+        "type": "generations",
+        "generations": 10
+      }
+    }
+  },
+  "balanceAfter": 4781,
+  "chargedGenerations": 10,
+  "rawGeneratedImage": "concept-0.png",
+  "selectedImage": "concept.png",
+  "freeExactCorrection": {
+    "tool": "PixelLab pixelart_workbench",
+    "inputImageId": "20ff0ff1-062f-45ae-a7f8-371a3f709b75",
+    "outputImageId": "a83812f9-a8ea-42e4-8aef-a314b160cb72",
+    "changes": "leg-patches.json",
+    "chargedGenerations": 0,
+    "changedPixels": 942,
+    "unexpectedChanges": 0
+  },
+  "measurements": {
+    "label": "Kristen — revised candidate",
+    "path": "art-source/characters/kristen/pixellab/retro-bandana-balance-20261015/concept.png",
+    "width": 256,
+    "height": 256,
+    "bounds": {
+      "left": 55,
+      "top": 28,
+      "right": 183,
+      "bottom": 251
+    },
+    "silhouetteHeight": 224,
+    "opaqueColors": 48,
+    "transparentPixels": 54749,
+    "edgeContact": false
+  },
+  "qualityNotes": "Pro edit added detailed light paisley-style bandana pattern and folds, but leg widths barely changed. Free guarded local pixel edit narrowed thighs/calves about 15-20% at their fuller sections with tapered transitions. Height and joint centerlines preserved, no vertical row deletion. Outside local leg region exactly matches the Pro output. Raw and earlier versions preserved. Source review only; approval pending."
+}
