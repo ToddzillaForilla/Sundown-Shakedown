@@ -1,0 +1,26 @@
+{
+  "outbound": {
+    "jobId": "4f650283-8eab-4c9d-abe5-7a95bac30c4e",
+    "quotedGenerations": 4,
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+      "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/d0f16386-275c-4d22-8d60-a07a91c1094d/image.png",
+      "frame_count": 4,
+      "no_background": true,
+      "seed": 151082,
+      "action": "Adult retro fighter executes a single powerful side kick LEFT. Chamber knee across torso, pivot hips away from camera, then extend heel left at waist height into EXACT final pose. At extension pull toes back and show the broad bottom sole with tread, heel leading. Preserve the same adult face size, long legs, lean build, glasses and mature beard throughout; NEVER grow the head, shorten legs or morph the body. Support shoe stays planted at y251. Fixed body scale and camera, no bouncing, traveling or chibi styling. End in the supplied impact pose."
+    }
+  },
+  "recovery": {
+    "jobId": "052bddd2-13ee-48b5-83c8-e5d2d6270ad5",
+    "quotedGenerations": 4,
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/d0f16386-275c-4d22-8d60-a07a91c1094d/image.png",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+      "frame_count": 4,
+      "no_background": true,
+      "seed": 151083,
+      "action": "Adult retro fighter recovers from side kick LEFT. Recoil kicking knee fully into chamber first, then rotate hips back and set foot down into EXACT original guard. Preserve adult head size and narrow mature face, long legs and lean proportions consistently through every frame. No body morphing, chibi styling, hopping, travel or scale changes. Support shoe remains at y251. Keep tattoo, clear black glasses and bare wrists. Return to the exact supplied original guard."
+    }
+  }
+}

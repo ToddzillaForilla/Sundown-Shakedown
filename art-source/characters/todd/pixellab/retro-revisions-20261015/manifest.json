@@ -1,0 +1,172 @@
+{
+  "date": "2026-10-15",
+  "scope": "Fix idle frame 2 and walk frame 8 glasses; preserve approved left punch, add alternating right punch; replace side kick with guided full-extension animation.",
+  "balanceBefore": 4933,
+  "runtimeIntegrated": false,
+  "accepted": false,
+  "jobs": {
+    "punchRight": {
+      "jobId": "f73c8da1-3275-45a1-800d-84ab56fa7185",
+      "quotedGenerations": 8,
+      "request": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 151041,
+        "action": "One clean straight RIGHT ARM punch toward screen left, then return to the original guard. The RIGHT ARM is the far arm WITHOUT tattoos: its fist begins on the LEFT side of the picture. Extend ONLY this bare untattooed arm fully toward screen left at chest height. Keep the tattooed LEFT arm bent close to the chest guarding the face throughout. This is the opposite hand from the previous tattooed-arm cross punch. Small shoulder rotation, planted feet, fixed ground line and body scale, no traveling or jumping. Retain both black glasses rims and clear lenses, same face, beard and bare wrists."
+      },
+      "status": "completed",
+      "frameCount": 9,
+      "usage": {
+        "type": "generations",
+        "generations": 8
+      }
+    },
+    "kickPose": {
+      "jobId": "dc9154cf-8c4e-498c-9841-b47bfdb812fb",
+      "quotedGenerations": 10,
+      "request": {
+        "image_urls": [
+          "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download"
+        ],
+        "description": "Change ONLY the pose to the full impact position of a classic arcade standing SIDE KICK toward screen LEFT. Entire kicking leg STRAIGHT from hip through knee to heel, almost horizontal at waist height. Heel at x=25,y=145; hip near x=130,y=145. Knee extended, toes pulled back, sole toward left. Supporting leg straight to foot near x=155,y=251, firmly grounded. Torso leans right for balance; fists raised. Keep exact character body size, pixel style, face, two black glasses rims with clear lenses, beard, black V-neck, jeans, sneakers, anatomical LEFT forearm tattoo, bare wrists. Transparent 256x256 canvas, entire character inside. No bent kicking knee, raised-knee front kick, low kick, jumping or extra limbs.",
+        "width": 256,
+        "height": 256,
+        "no_background": true,
+        "seed": 151042
+      },
+      "status": "completed",
+      "frameCount": 1,
+      "usage": {
+        "type": "generations",
+        "generations": 10
+      }
+    },
+    "kickOut": {
+      "jobId": "f4b04006-5793-46ff-b375-0e9fa3139337",
+      "quotedGenerations": 4,
+      "request": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/dc9154cf-8c4e-498c-9841-b47bfdb812fb/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 151043,
+        "action": "From the original guard, chamber the knee briefly, pivot the hip and drive the heel horizontally toward screen LEFT at waist height, ending in exactly the supplied full straight-leg SIDE KICK impact pose. Keep support foot firmly at y=251 and same body size. Only the kicking leg lifts. No hopping, travel, torso shrinking, bent-knee impact, extra limbs or watch. Preserve face, glasses and anatomical left forearm tattoo."
+      },
+      "status": "completed",
+      "frameCount": 5,
+      "usage": {
+        "type": "generations",
+        "generations": 4
+      }
+    },
+    "kickBack": {
+      "jobId": "dba5b9a2-f407-484a-858a-99a926096580",
+      "quotedGenerations": 4,
+      "request": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/dc9154cf-8c4e-498c-9841-b47bfdb812fb/download",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 151044,
+        "action": "Recover from the supplied fully extended waist-high SIDE KICK toward screen left. Bend kicking knee to recoil, bring the foot down and return smoothly to exactly the original guard ending pose. Keep support foot planted at y=251, same body proportions and ground line, no hopping, traveling, spinning or extra limbs. Preserve both glasses lenses, beard and left arm tattoo."
+      },
+      "status": "completed",
+      "frameCount": 5,
+      "usage": {
+        "type": "generations",
+        "generations": 4
+      }
+    }
+  },
+  "quotedGenerations": 26,
+  "glasses": {
+    "idle": {
+      "imageId": "8222ec51-372b-4aca-a324-81775cd619eb",
+      "changedPixels": 23,
+      "verifiedChangedPixels": 23
+    },
+    "walk": {
+      "imageId": "d5b43eb8-829d-48f0-8e60-bcc5dca1398b",
+      "changedPixels": 67,
+      "verifiedChangedPixels": 67
+    },
+    "idleFrame3": {
+      "imageId": "2c61a170-5688-4702-b0be-b4140fed37e0",
+      "changedPixels": 40,
+      "region": [
+        101,
+        42,
+        112,
+        51
+      ]
+    }
+  },
+  "clips": {
+    "crouch": {
+      "actualFrameCount": 5,
+      "title": "Crouch",
+      "fps": 6,
+      "source": "art-source/characters/todd/pixellab/retro-air-crouch-20261015/manifest.json",
+      "reviewNote": "Shallow crouch candidate"
+    },
+    "jumpKick": {
+      "actualFrameCount": 9,
+      "title": "Jump kick",
+      "fps": 10,
+      "source": "art-source/characters/todd/pixellab/retro-air-crouch-20261015/manifest.json",
+      "reviewNote": "Approved jump + side-kick frame assembly"
+    },
+    "jumpPunch": {
+      "actualFrameCount": 9,
+      "title": "Jump punch",
+      "fps": 10,
+      "source": "art-source/characters/todd/pixellab/retro-air-crouch-20261015/manifest.json",
+      "reviewNote": "Left-arm airborne punch"
+    },
+    "jump": {
+      "actualFrameCount": 9,
+      "title": "Jump",
+      "fps": 10,
+      "source": "art-source/characters/todd/pixellab/retro-jump-block-20261015/manifest.json"
+    },
+    "block": {
+      "actualFrameCount": 5,
+      "title": "Standing block",
+      "fps": 6,
+      "source": "art-source/characters/todd/pixellab/retro-jump-block-20261015/manifest.json"
+    },
+    "idle": {
+      "actualFrameCount": 5
+    },
+    "walk": {
+      "actualFrameCount": 9
+    },
+    "punch": {
+      "actualFrameCount": 9,
+      "title": "Left-arm punch"
+    },
+    "punchRight": {
+      "actualFrameCount": 9,
+      "title": "Right-arm punch"
+    },
+    "kick": {
+      "actualFrameCount": 9,
+      "title": "Cleaned side kick",
+      "source": "art-source/characters/todd/pixellab/retro-kick-cleanup-20261015/manifest.json"
+    },
+    "alternating": {
+      "actualFrameCount": 18,
+      "title": "Random punches — left arm favored"
+    }
+  },
+  "status": "revised-source-review",
+  "balanceAfter": 4907,
+  "chargedGenerations": 26,
+  "punchSelection": {
+    "rightProbability": 0.25,
+    "leftProbability": 0.75,
+    "scope": "source gallery; runtime integration pending"
+  }
+}

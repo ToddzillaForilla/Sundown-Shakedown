@@ -1,0 +1,109 @@
+{
+  "date": "2026-10-15",
+  "status": "generated-awaiting-review",
+  "scope": "User authorized Todd's four-clip pilot before Kristen: idle, walk, straight punch and standing mid side kick, based on approved Option B.",
+  "source": "../retro-option-b-20261015/concept.png",
+  "sourceJobId": "3d51b9df-6cdc-462a-8d09-8839c395c37a",
+  "mode": "Animate with Text v3",
+  "endpoint": "/animate-with-text-v3",
+  "workflow": "Loose-sprite v3 animation preserves the approved non-front-facing source without recreating a stored multi-direction character. Last-frame guidance uses the same v3 endpoint; no v2 interpolation used.",
+  "balanceBefore": 4961,
+  "estimatedGenerations": 28,
+  "accepted": false,
+  "runtimeIntegrated": false,
+  "clips": {
+    "idle": {
+      "request": {
+        "action": "A seamless subtle fighting-idle breathing loop in place, facing screen left throughout. Keep both feet planted at exactly the original ground line. Slight chest breathing and tiny natural movement of shoulders and raised fists, weight balanced between the feet. Head moves no more than one or two pixels; no bouncing, stepping, turning, arm lowering or change of stance. Finish at the original ready guard. Fixed camera and unchanged body scale. Preserve the original face, glasses, beard, left forearm tattoo and bare wrists.",
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 151028
+      },
+      "status": "completed",
+      "estimatedGenerations": 4,
+      "jobId": "654f3b0c-cd2a-4fbc-8ab8-1c2e62c86f3c",
+      "assetId": "a3972922-e51a-5779-ba1a-b3657709d43c",
+      "quotedGenerations": 4,
+      "actualFrameCount": 5,
+      "chargedGenerations": 4,
+      "firstFrameMatchesReferencePixels": false,
+      "lastFrameMatchesReferencePixels": false
+    },
+    "walk": {
+      "request": {
+        "action": "One seamless walking-in-place cycle facing screen left, as a controlled arcade fighter advancing while keeping a raised guard. Alternate clear left and right steps with distinct heel lift, passing pose and foot plant; grounded weighted footwork, no jogging or hopping. Keep torso, head and fists steady, preserve the original body proportions and scale. The character stays centered rather than traveling across the canvas. Finish back at the original stance so the cycle repeats. Fixed camera, same ground line, no turning, no watch, preserve left forearm tattoo.",
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 151029
+      },
+      "status": "completed",
+      "estimatedGenerations": 8,
+      "jobId": "921f894e-8bd1-414e-a417-7a90c9691a05",
+      "assetId": "41b2e40d-c603-5ad2-881d-495a28a6c0e8",
+      "quotedGenerations": 8,
+      "actualFrameCount": 9,
+      "chargedGenerations": 8,
+      "firstFrameMatchesReferencePixels": false,
+      "lastFrameMatchesReferencePixels": false
+    },
+    "punch": {
+      "request": {
+        "action": "One sharp straight lead-hand punch toward screen left at chest height, then retract smoothly to the exact original guard. Begin in the original planted fighting stance. Shift weight and rotate the shoulder slightly, extend the lead fist clearly left with a nearly straight elbow, keep the other hand guarding the face, then recoil and settle in the original stance. Feet remain firmly on the original ground line with no forward travel, no jumping or turning. Fixed camera, unchanged body scale, preserve face, glasses, beard, left forearm tattoo and bare wrists.",
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 151030
+      },
+      "status": "completed",
+      "estimatedGenerations": 8,
+      "jobId": "d80344d3-91c1-4704-b069-303d24b86e33",
+      "assetId": "b6c1c252-45ea-5da5-882e-bc3c0bd8f9f1",
+      "quotedGenerations": 8,
+      "actualFrameCount": 9,
+      "chargedGenerations": 8,
+      "firstFrameMatchesReferencePixels": false,
+      "lastFrameMatchesReferencePixels": false
+    },
+    "kick": {
+      "request": {
+        "action": "One standing SIDE KICK toward screen left at waist height, then return to the exact original fighting guard. Chamber the knee across the body, pivot on the supporting foot and turn the hip sideways. Drive the HEEL horizontally left at the opponent's midsection. Fully straighten the kicking knee so hip, knee and heel make a long nearly horizontal line. Briefly show full straight-leg extension with toes pulled back and heel leading. Lean torso slightly right for balance while support foot stays planted at the original ground line. Recoil into chamber, lower the foot and settle into the original guard. No bent-knee front kick, low kick, jump, spin, travel or extra limbs. Keep the whole body and extended foot inside the canvas, fixed camera and unchanged body proportions. Preserve face, glasses, beard, left forearm tattoo and bare wrists.",
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 151031
+      },
+      "status": "completed",
+      "estimatedGenerations": 8,
+      "jobId": "3c02652a-e724-4c62-b8a7-210539d24c44",
+      "assetId": "30108467-b415-5d35-afdc-d2f04dcec1ff",
+      "quotedGenerations": 8,
+      "actualFrameCount": 9,
+      "chargedGenerations": 8,
+      "firstFrameMatchesReferencePixels": false,
+      "lastFrameMatchesReferencePixels": false
+    }
+  },
+  "sourceSha256": "e4751bb7d9ba74c6d179e57dd60aad0a5e2a9eb1bba213c0a44a24437c67133d",
+  "idleSourceReview": {
+    "footBaselineRange": [
+      251,
+      251
+    ],
+    "silhouetteHeightRange": [
+      232,
+      236
+    ],
+    "edgeClipping": false,
+    "notes": "Visible likeness/guard/tattoo remain consistent. First returned frame has minor palette/alpha changes relative to the original reference; it is not pixel-identical."
+  },
+  "balanceAfter": 4941,
+  "receiptGenerationsTotal": 28,
+  "observedBalanceDelta": 20,
+  "accountingNote": "Job usage totals 28; live balance delta is 20. Unreconciled difference of 8."
+}

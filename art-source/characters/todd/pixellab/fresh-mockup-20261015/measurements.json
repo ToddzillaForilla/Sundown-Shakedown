@@ -1,0 +1,114 @@
+[
+  {
+    "direction": "south",
+    "width": 168,
+    "height": 168,
+    "bounds": {
+      "left": 57,
+      "top": 36,
+      "right": 111,
+      "bottom": 141
+    },
+    "silhouetteHeight": 106,
+    "bottomInset": 26,
+    "edgeClipping": false
+  },
+  {
+    "direction": "south-west",
+    "width": 168,
+    "height": 168,
+    "bounds": {
+      "left": 49,
+      "top": 36,
+      "right": 111,
+      "bottom": 140
+    },
+    "silhouetteHeight": 105,
+    "bottomInset": 27,
+    "edgeClipping": false
+  },
+  {
+    "direction": "west",
+    "width": 168,
+    "height": 168,
+    "bounds": {
+      "left": 67,
+      "top": 39,
+      "right": 102,
+      "bottom": 140
+    },
+    "silhouetteHeight": 102,
+    "bottomInset": 27,
+    "edgeClipping": false
+  },
+  {
+    "direction": "north-west",
+    "width": 168,
+    "height": 168,
+    "bounds": {
+      "left": 55,
+      "top": 35,
+      "right": 108,
+      "bottom": 137
+    },
+    "silhouetteHeight": 103,
+    "bottomInset": 30,
+    "edgeClipping": false
+  },
+  {
+    "direction": "north",
+    "width": 168,
+    "height": 168,
+    "bounds": {
+      "left": 57,
+      "top": 35,
+      "right": 113,
+      "bottom": 135
+    },
+    "silhouetteHeight": 101,
+    "bottomInset": 32,
+    "edgeClipping": false
+  },
+  {
+    "direction": "north-east",
+    "width": 168,
+    "height": 168,
+    "bounds": {
+      "left": 62,
+      "top": 35,
+      "right": 115,
+      "bottom": 137
+    },
+    "silhouetteHeight": 103,
+    "bottomInset": 30,
+    "edgeClipping": false
+  },
+  {
+    "direction": "east",
+    "width": 168,
+    "height": 168,
+    "bounds": {
+      "left": 65,
+      "top": 39,
+      "right": 100,
+      "bottom": 140
+    },
+    "silhouetteHeight": 102,
+    "bottomInset": 27,
+    "edgeClipping": false
+  },
+  {
+    "direction": "south-east",
+    "width": 168,
+    "height": 168,
+    "bounds": {
+      "left": 56,
+      "top": 36,
+      "right": 118,
+      "bottom": 140
+    },
+    "silhouetteHeight": 105,
+    "bottomInset": 27,
+    "edgeClipping": false
+  }
+]

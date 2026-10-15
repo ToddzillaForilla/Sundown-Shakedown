@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-15",
+  "status": "complete-awaiting-artistic-review",
+  "scope": "User confirmed historical corrected nine-frame side kick. One pose-guided retro candidate: Pro pose + v3 outbound/recovery, review before retry or integration.",
+  "balanceBefore": 4899,
+  "quotedGenerations": 18,
+  "accepted": false,
+  "runtimeIntegrated": false,
+  "source": "../retro-option-b-20261015/concept.png",
+  "motionReference": "../kick-correction-20261015",
+  "jobs": {
+    "pose": {
+      "jobId": "8e762dd8-38a4-4cf8-818a-3f6e884c656f",
+      "quotedGenerations": 10,
+      "request": {
+        "description": "Draw the approved adult retro Todd character in the SAME side-kick impact pose and body rotation as the old small kick reference. Copy POSE ONLY from old kick: hips turn sideways away from camera, back/side of black shirt visible, head looks over shoulder toward screen LEFT, supporting leg upright, striking heel driven LEFT at waist height, knee straight, torso leans RIGHT, tattooed near forearm follows the kicking direction for balance. This is a committed martial-arts side kick with hip rotation, NOT a front-on boxer lifting a straight leg. Keep exact mature adult proportions, face, full black glasses with clear lenses, beard, shading, crisp pixel style, black V-neck, jeans and sneakers from the approved RETRO standing reference. Bare wrists. Tattoo on anatomical left forearm only. 256x256 transparent, unchanged reference body scale, supporting sole near y251, full head and kicking heel inside canvas. Old chibi body proportions and old accessories must NOT transfer.",
+        "width": 256,
+        "height": 256,
+        "no_background": true,
+        "max_colors": 48,
+        "seed": 151071,
+        "reference_images": [
+          {
+            "url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+            "usage": "APPROVED adult retro Todd identity, body proportions, scale, costume and pixel style. Preserve all of these."
+          },
+          {
+            "file": "../kick-correction-20261015/kick-4.png",
+            "usage": "User-approved OLD SIDE KICK: copy ONLY the striking pose, hip turn, back/side torso angle and arm positioning. Do not copy childlike proportions or art style."
+          }
+        ],
+        "style_image_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download"
+      },
+      "status": "completed",
+      "frameCount": 1,
+      "usage": {
+        "type": "generations",
+        "generations": 10
+      }
+    },
+    "outbound": {
+      "jobId": "d18b6c2a-c611-4731-aa0f-3262f33fa8f5",
+      "quotedGenerations": 4,
+      "request": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/8e762dd8-38a4-4cf8-818a-3f6e884c656f/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 151072,
+        "action": "From the supplied fighting guard execute the opening of one forceful standing martial-arts SIDE KICK toward screen LEFT. Shift weight to support foot without sliding, chamber knee across torso, pivot hips and shoulders away from camera, then shoot heel horizontally left at waist height into EXACT supplied final rotated side-kick pose. Show back/side of shirt and look over shoulder toward target. Tattooed forearm extends with the kick for balance, other arm behind. End with kicking knee fully straight, heel leading. Compact chamber then powerful extension, no front kick or stiff leg raise, no hopping/spinning/travel. Fixed camera and body proportions; preserve glasses and bare wrists."
+      },
+      "status": "completed",
+      "frameCount": 5,
+      "usage": {
+        "type": "generations",
+        "generations": 4
+      }
+    },
+    "recovery": {
+      "jobId": "e5415f51-fe75-43b4-9538-2fae53b2ff0a",
+      "quotedGenerations": 4,
+      "request": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/8e762dd8-38a4-4cf8-818a-3f6e884c656f/download",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 151073,
+        "action": "Recover from the supplied fully extended rotated SIDE KICK into exactly the supplied original guard. FIRST bend kicking knee sharply back into a clear compact chamber, keeping heel elevated briefly. THEN turn hips toward original angle and set foot down, restoring both fists to guard. Do not swing the extended straight leg down or drag the foot. Supporting foot stays planted, no hopping, no travel or spin. Same adult body proportions, clear glasses rims, beard, black V-neck, left forearm tattoo, bare wrists and fixed camera."
+      },
+      "status": "completed",
+      "frameCount": 5,
+      "usage": {
+        "type": "generations",
+        "generations": 4
+      }
+    }
+  },
+  "clips": {
+    "reference": {
+      "actualFrameCount": 9,
+      "title": "Approved old kick — motion reference"
+    },
+    "kick": {
+      "actualFrameCount": 9,
+      "title": "Retro Todd — matching kick candidate"
+    }
+  },
+  "balanceAfter": 4881,
+  "chargedGenerations": 18
+}

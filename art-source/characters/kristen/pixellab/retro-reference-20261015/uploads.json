@@ -1,0 +1,11 @@
+{
+  "photo1": {
+    "source": "art-source/characters/kristen/references/kristen-reference-photo-1.jpg",
+    "ref": "upload:638fc2cb-35d6-4126-9a06-8dd7e7bb8086",
+    "upload_id": "638fc2cb-35d6-4126-9a06-8dd7e7bb8086",
+    "width": 768,
+    "height": 1024,
+    "n_frames": 1,
+    "expires_in_days": 3
+  }
+}

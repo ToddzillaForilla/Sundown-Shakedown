@@ -4,6 +4,8 @@ MCP and the project's direct REST v2 client are configured separately and use th
 
 ## Tool selection
 
+October 15, 2026 preference: use PixelLab for substantial art generation and editing when suitable. Todd lifted the earlier free/local-first preference and authorized subscription use for requested art work. Check live cost and balance, record charges, and keep batches scoped and reviewable. Purchases and materially expanded work require new authorization. Fresh character mockups must be approved before animation generation.
+
 Use Todd's following tool selections for project asset work, supplied October 15, 2026. These are user-selected tool labels; verify the current callable tool, version/mode, access, limits, and cost before use. Do not silently substitute another tool or version if a selected option is unavailable.
 
 | Asset task | Selected PixelLab tools |

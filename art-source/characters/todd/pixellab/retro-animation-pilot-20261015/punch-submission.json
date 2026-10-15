@@ -1,0 +1,7 @@
+{
+  "jobId": "d80344d3-91c1-4704-b069-303d24b86e33",
+  "assetId": "b6c1c252-45ea-5da5-882e-bc3c0bd8f9f1",
+  "quotedGenerations": 8,
+  "status": "processing",
+  "receipt": "id: d80344d3-91c1-4704-b069-303d24b86e33\njob_id: d80344d3-91c1-4704-b069-303d24b86e33\naction: One sharp straight lead-hand punch toward screen left at chest height, then retract smoothly to the exact original guard. Begin in the original planted fighting stance. Shift weight and rotate the shoulder slightly, extend the lead fist clearly left with a nearly straight elbow, keep the other hand guarding the face, then recoil and settle in the original stance. Feet remain firmly on the original ground line with no forward travel, no jumping or turning. Fixed camera, unchanged body scale, preserve face, glasses, beard, left forearm tattoo and bare wrists.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 151030\nasset_id: b6c1c252-45ea-5da5-882e-bc3c0bd8f9f1\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"d80344d3-91c1-4704-b069-303d24b86e33\")"
+}

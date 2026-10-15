@@ -1,0 +1,304 @@
+[
+  {
+    "name": "reference",
+    "title": "Previous kick — before cleanup",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52117,
+        "edgeClipping": false,
+        "sha256": "681117cd7e9d5ea91c80705b313a1631a696c58e9621bfb285e2576a738e6773"
+      },
+      {
+        "index": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 76,
+          "top": 18,
+          "right": 191,
+          "bottom": 251
+        },
+        "silhouetteHeight": 234,
+        "bottomInset": 4,
+        "transparentPixels": 53231,
+        "edgeClipping": false,
+        "sha256": "0b206681bf53e994ba17bbd0acbe3d0577d811c76d8baec98e86fc5ebe996bca"
+      },
+      {
+        "index": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 46,
+          "top": 18,
+          "right": 177,
+          "bottom": 251
+        },
+        "silhouetteHeight": 234,
+        "bottomInset": 4,
+        "transparentPixels": 54169,
+        "edgeClipping": false,
+        "sha256": "6fb18ac2d4529f167dc1594608fbb993070c1a7551a0412dd666d128c8e5fb67"
+      },
+      {
+        "index": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 45,
+          "top": 30,
+          "right": 207,
+          "bottom": 246
+        },
+        "silhouetteHeight": 217,
+        "bottomInset": 9,
+        "transparentPixels": 53718,
+        "edgeClipping": false,
+        "sha256": "c7d22053c80caa647d65bd2f390eac6e4062cfa786838c16ed7d9af8c9299dc3"
+      },
+      {
+        "index": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 29,
+          "top": 36,
+          "right": 205,
+          "bottom": 247
+        },
+        "silhouetteHeight": 212,
+        "bottomInset": 8,
+        "transparentPixels": 53929,
+        "edgeClipping": false,
+        "sha256": "61ec32f814be87fa7cb29fc9b933b5de10217d5dddd0d6b601df8ba20c297ccd"
+      },
+      {
+        "index": 5,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 32,
+          "top": 33,
+          "right": 205,
+          "bottom": 247
+        },
+        "silhouetteHeight": 215,
+        "bottomInset": 8,
+        "transparentPixels": 53869,
+        "edgeClipping": false,
+        "sha256": "67f28e3fb3ef3837d9bbb4f0d4ecf4f8e8e445b8872c33b620e7c160dbe33934"
+      },
+      {
+        "index": 6,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 53,
+          "top": 20,
+          "right": 182,
+          "bottom": 247
+        },
+        "silhouetteHeight": 228,
+        "bottomInset": 8,
+        "transparentPixels": 54249,
+        "edgeClipping": false,
+        "sha256": "5d0a774ba077b924765deca3f319dba41e323a442d55f3da06d1709bdfa911d0"
+      },
+      {
+        "index": 7,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 83,
+          "top": 12,
+          "right": 166,
+          "bottom": 245
+        },
+        "silhouetteHeight": 234,
+        "bottomInset": 10,
+        "transparentPixels": 56306,
+        "edgeClipping": false,
+        "sha256": "8296648f5f7ec9fd8a121482a3fb4025b60fc012fd46e6b441ed11de941478f3"
+      },
+      {
+        "index": 8,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52119,
+        "edgeClipping": false,
+        "sha256": "e9a5df7e4f033f7ff1844b25d985ab262403f125055561857ec46817c86da037"
+      }
+    ],
+    "fps": 12
+  },
+  {
+    "name": "kick",
+    "title": "Cleaned kick — candidate",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52119,
+        "edgeClipping": false,
+        "sha256": "fd7400df0e4e55db4bf7368948863a9123bf903d46e4eb5ad46aebdab525dd34"
+      },
+      {
+        "index": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 91,
+          "top": 24,
+          "right": 172,
+          "bottom": 251
+        },
+        "silhouetteHeight": 228,
+        "bottomInset": 4,
+        "transparentPixels": 56122,
+        "edgeClipping": false,
+        "sha256": "a0d8a639e50313cc0de556a65b137778826accd7fe989b0a6288db0f50ba082a"
+      },
+      {
+        "index": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 78,
+          "top": 14,
+          "right": 206,
+          "bottom": 251
+        },
+        "silhouetteHeight": 238,
+        "bottomInset": 4,
+        "transparentPixels": 53690,
+        "edgeClipping": false,
+        "sha256": "5845c11b1803f4df3ac2f7ae11cbd7ab3c61f10eee75f820a19ef05c8623103d"
+      },
+      {
+        "index": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 39,
+          "top": 18,
+          "right": 215,
+          "bottom": 251
+        },
+        "silhouetteHeight": 234,
+        "bottomInset": 4,
+        "transparentPixels": 53047,
+        "edgeClipping": false,
+        "sha256": "d2b864d39482dcb18230636f8f48104734937292468e2f87561ab152b0cf4fa9"
+      },
+      {
+        "index": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 31,
+          "top": 21,
+          "right": 224,
+          "bottom": 251
+        },
+        "silhouetteHeight": 231,
+        "bottomInset": 4,
+        "transparentPixels": 52794,
+        "edgeClipping": false,
+        "sha256": "bf6f130deab8af7b84efecbf8d1b1c4422fd212be0ea63a40d2d5ea1752994ac"
+      },
+      {
+        "index": 5,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 39,
+          "top": 18,
+          "right": 215,
+          "bottom": 251
+        },
+        "silhouetteHeight": 234,
+        "bottomInset": 4,
+        "transparentPixels": 53047,
+        "edgeClipping": false,
+        "sha256": "d2b864d39482dcb18230636f8f48104734937292468e2f87561ab152b0cf4fa9"
+      },
+      {
+        "index": 6,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 78,
+          "top": 14,
+          "right": 206,
+          "bottom": 251
+        },
+        "silhouetteHeight": 238,
+        "bottomInset": 4,
+        "transparentPixels": 53690,
+        "edgeClipping": false,
+        "sha256": "5845c11b1803f4df3ac2f7ae11cbd7ab3c61f10eee75f820a19ef05c8623103d"
+      },
+      {
+        "index": 7,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 91,
+          "top": 24,
+          "right": 172,
+          "bottom": 251
+        },
+        "silhouetteHeight": 228,
+        "bottomInset": 4,
+        "transparentPixels": 56122,
+        "edgeClipping": false,
+        "sha256": "a0d8a639e50313cc0de556a65b137778826accd7fe989b0a6288db0f50ba082a"
+      },
+      {
+        "index": 8,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52119,
+        "edgeClipping": false,
+        "sha256": "fd7400df0e4e55db4bf7368948863a9123bf903d46e4eb5ad46aebdab525dd34"
+      }
+    ],
+    "fps": 12
+  }
+]
