@@ -7,6 +7,7 @@ import {
   getHitStunMs,
   isHitInRange,
   resolvePlayerMoveSlot,
+  selectPunchAnimationSheet,
   type AttackAction,
   type AttackContext,
 } from './CombatAttacks';
@@ -49,6 +50,22 @@ describe('player move selection', () => {
 });
 
 describe('attack rules and content', () => {
+  it('selects the alternate punch at the configured probability threshold', () => {
+    const primary = characters.kristen.art.punchAttackSheet;
+    const alternate = characters.kristen.art.alternatePunchAttackSheet;
+
+    expect(primary).toBeDefined();
+    expect(alternate).toBeDefined();
+    expect(selectPunchAnimationSheet(primary, alternate, 0.25, 0.249)).toBe(alternate);
+    expect(selectPunchAnimationSheet(primary, alternate, 0.25, 0.25)).toBe(primary);
+    expect(selectPunchAnimationSheet(primary, undefined, 0.25, 0)).toBe(primary);
+
+    const toddPrimary = characters.todd.art.punchAttackSheet;
+    const toddAlternate = characters.todd.art.alternatePunchAttackSheet;
+    expect(selectPunchAnimationSheet(toddPrimary, toddAlternate, characters.todd.art.alternatePunchChance!, 0.249)).toBe(toddAlternate);
+    expect(selectPunchAnimationSheet(toddPrimary, toddAlternate, characters.todd.art.alternatePunchChance!, 0.25)).toBe(toddPrimary);
+  });
+
   it('hits only within range and in front of the attacker', () => {
     expect(isHitInRange(100, 172, 1, 72)).toBe(true);
     expect(isHitInRange(100, 173, 1, 72)).toBe(false);
@@ -83,7 +100,8 @@ describe('attack rules and content', () => {
       expect(getAuthoredAttackAnimation(character.moves, character.moves.crouchLight)).toBe('kick');
       expect(getAuthoredAttackAnimation(character.moves, character.moves.heavy)).toBe('punch');
       expect(getAuthoredAttackAnimation(character.moves, character.moves.heavy, true)).toBe('crouchPunch');
-      expect(getAuthoredAttackAnimation(character.moves, character.moves.airLight)).toBeUndefined();
+      expect(getAuthoredAttackAnimation(character.moves, character.moves.airLight)).toBe('airKick');
+      expect(getAuthoredAttackAnimation(character.moves, character.moves.airHeavy)).toBe('airPunch');
       expect(getAuthoredAttackAnimation(character.moves, character.moves.special)).toBeUndefined();
     }
   });

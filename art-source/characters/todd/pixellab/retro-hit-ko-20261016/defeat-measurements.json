@@ -1,0 +1,119 @@
+[
+  {
+    "frame": 0,
+    "file": "defeat-00.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 73,
+      "top": 16,
+      "right": 188,
+      "bottom": 251
+    },
+    "silhouetteHeight": 236
+  },
+  {
+    "frame": 1,
+    "file": "defeat-01.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 70,
+      "top": 22,
+      "right": 188,
+      "bottom": 251
+    },
+    "silhouetteHeight": 230
+  },
+  {
+    "frame": 2,
+    "file": "defeat-02.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 73,
+      "top": 25,
+      "right": 188,
+      "bottom": 251
+    },
+    "silhouetteHeight": 227
+  },
+  {
+    "frame": 3,
+    "file": "defeat-03.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 72,
+      "top": 17,
+      "right": 187,
+      "bottom": 251
+    },
+    "silhouetteHeight": 235
+  },
+  {
+    "frame": 4,
+    "file": "defeat-04.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 64,
+      "top": 20,
+      "right": 182,
+      "bottom": 250
+    },
+    "silhouetteHeight": 231
+  },
+  {
+    "frame": 5,
+    "file": "defeat-05.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 54,
+      "top": 29,
+      "right": 193,
+      "bottom": 241
+    },
+    "silhouetteHeight": 213
+  },
+  {
+    "frame": 6,
+    "file": "defeat-06.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 28,
+      "top": 51,
+      "right": 193,
+      "bottom": 254
+    },
+    "silhouetteHeight": 204
+  },
+  {
+    "frame": 7,
+    "file": "defeat-07.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 26,
+      "top": 130,
+      "right": 215,
+      "bottom": 252
+    },
+    "silhouetteHeight": 123
+  },
+  {
+    "frame": 8,
+    "file": "defeat-08.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 25,
+      "top": 151,
+      "right": 228,
+      "bottom": 252
+    },
+    "silhouetteHeight": 102
+  }
+]

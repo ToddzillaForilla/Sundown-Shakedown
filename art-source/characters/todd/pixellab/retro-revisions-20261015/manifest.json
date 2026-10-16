@@ -167,6 +167,27 @@
   "punchSelection": {
     "rightProbability": 0.25,
     "leftProbability": 0.75,
-    "scope": "source gallery; runtime integration pending"
+    "scope": "runtime and source gallery; left arm 75%, right arm 25%"
+  },
+  "runtimeIntegration": {
+    "status": "partial",
+    "integratedClips": [
+      "idle",
+      "walk",
+      "punch",
+      "punchRight",
+      "jump",
+      "block"
+    ],
+    "pendingClips": [
+      "kick",
+      "crouch",
+      "jumpKick",
+      "jumpPunch"
+    ],
+    "notes": [
+      "Old kick remains until corrected nine-frame side kick receives confirmation.",
+      "Hit and landing reactions remain on existing runtime sheets."
+    ]
   }
 }

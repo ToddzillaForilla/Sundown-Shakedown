@@ -17,6 +17,7 @@ export interface FighterAnimationContext {
   moving: boolean;
   blocking: boolean;
   crouching: boolean;
+  landingDurationMs?: number;
 }
 
 const LANDING_DURATION_MS = 110;
@@ -75,7 +76,7 @@ export class FighterAnimationStateMachine {
 
     if (this.landingPending) {
       this.landingPending = false;
-      this.landingUntil = context.now + LANDING_DURATION_MS;
+      this.landingUntil = context.now + Math.max(LANDING_DURATION_MS, context.landingDurationMs ?? 0);
       this.state = 'landing';
       return this.state;
     }

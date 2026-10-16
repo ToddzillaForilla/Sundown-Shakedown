@@ -1,0 +1,12 @@
+id: 848250e7-fae7-4e75-a128-feb5e25388b5
+job_id: 848250e7-fae7-4e75-a128-feb5e25388b5
+action: Natural 2D side-view forward walk cycle, stepping toward screen-left in the exact direction her face and nose point. Maintain a left-facing profile in every frame. The screen-left/front boot reaches forward and plants heel first; body weight transfers onto it and the torso passes over it. Then the screen-right/rear boot pushes off, lifts and swings forward past the planted leg to become the next front foot. Alternate this clear leftward stride rhythm. Never step backward toward screen-right, shuffle-cross the legs in place, slide both feet, turn, or mirror. Keep torso and raised guard pointed screen-left, with only subtle arm counter-swing. Fixed side camera, centered in-place cycle, grounded boot contact at y251. Preserve the reference face, glasses, hair, blue bandana, clothing, proportions, socks, boots, and crisp outline; no camera movement, extra props, or background.
+frames: 8
+size: 256x256px
+transparent: True
+last_frame: yes (interpolating to it)
+seed: 151132
+asset_id: 6b112f73-f222-5806-a38d-3c7da9c9f7b3
+asset_status: pending (saved when generation completes)
+cost: 8 generations
+status: processing (~30-180s)

@@ -8,8 +8,9 @@ const clips = [];
 for (const [name, record] of Object.entries(manifest.clips)) {
   if (!record.actualFrameCount) continue;
   const frames = [], measurements = [], tiles = [];
-  for (let index = 0; index < record.actualFrameCount; index++) {
-    const png = await readFile(`${root}/${record.reviewFramePrefix ?? name}-${index}.png`);
+  const frameOrder = record.reviewFrameOrder ?? Array.from({ length: record.actualFrameCount }, (_, index) => index);
+  for (const [sequenceIndex, sourceFrame] of frameOrder.entries()) {
+    const png = await readFile(`${root}/${record.reviewFramePrefix ?? name}-${sourceFrame}.png`);
     const { data, info } = await sharp(png).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
     let left = info.width, top = info.height, right = -1, bottom = -1, transparentPixels = 0;
     for (let y = 0; y < info.height; y++) for (let x = 0; x < info.width; x++) {
@@ -18,12 +19,12 @@ for (const [name, record] of Object.entries(manifest.clips)) {
       if (alpha > 8) { left = Math.min(left, x); right = Math.max(right, x); top = Math.min(top, y); bottom = Math.max(bottom, y); }
     }
     if (bottom < 0) throw new Error(`Empty frame: ${name}-${index}`);
-    measurements.push({ index, width: info.width, height: info.height, bounds: { left, top, right, bottom },
+    measurements.push({ index: sequenceIndex, sourceFrame, width: info.width, height: info.height, bounds: { left, top, right, bottom },
       silhouetteHeight: bottom - top + 1, bottomInset: info.height - 1 - bottom, transparentPixels,
       edgeClipping: left === 0 || top === 0 || right === info.width - 1 || bottom === info.height - 1,
       sha256: createHash('sha256').update(png).digest('hex') });
     frames.push(`data:image/png;base64,${png.toString('base64')}`);
-    tiles.push({ input: png, left: (index % 4) * info.width, top: Math.floor(index / 4) * (info.height + 20) + 20 });
+    tiles.push({ input: png, left: (sequenceIndex % 4) * info.width, top: Math.floor(sequenceIndex / 4) * (info.height + 20) + 20 });
   }
   const first = measurements[0];
   if (measurements.some(m => m.width !== first.width || m.height !== first.height)) throw new Error(`Unequal cells: ${name}`);
@@ -37,7 +38,7 @@ const html = `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="v
 <style>*{box-sizing:border-box}body{font:17px system-ui;background:#18232d;color:#eef3f6;margin:24px}main{max-width:1100px;margin:auto}p,small{color:#c4d5df}section{display:flex;gap:20px;flex-wrap:wrap}article{background:#304451;padding:18px;border-radius:12px}canvas{display:block;width:384px;height:320px;max-width:100%;image-rendering:pixelated}button,select{font:inherit;padding:8px;margin:5px}small{display:block;margin-top:10px}summary{cursor:pointer}img{image-rendering:pixelated}</style>
 <main><h1>Kristen — idle/walk pilot</h1><p>Approved Kristen standing reference · Animate with Text v3 · Source review before game integration</p><button id="pause">Pause</button><button id="previous">Previous frame</button><button id="next">Next frame</button>
 <label>Speed <select id="speed"><option value="1">Normal</option><option value="0.35">Slow</option></select></label><label><input id="flip" type="checkbox"> Face right</label>
-<p>All frames share a fixed 1× pixel scale. Three walk frames have whole-frame vertical registration corrections of 3–4px; raw frames are preserved. The line marks the approved reference's foot baseline. Preview rates are for review, not final combat timing.</p><section id="clips"></section>
+<p>All frames share a fixed 1× pixel scale. Three walk frames have whole-frame vertical registration corrections of 3–4px; raw frames are preserved. The walk review plays those same frames in reverse order to test forward stepping toward Kristen's screen-left facing. The line marks the approved reference's foot baseline. Preview rates are for review, not final combat timing.</p><section id="clips"></section>
 <details><summary>Approved standing reference</summary><img src="${reference}" width="256" height="256"></details></main>
 <script>const clips=${JSON.stringify(clips)};let paused=false,last=0;const items=[];const titles={idle:'Fighting idle',walk:'Walk',punch:'Straight punch',kick:'Side kick'};for(const clip of clips){const article=document.createElement('article');const heading=document.createElement('h2');heading.textContent=clip.title??titles[clip.name]??clip.name;article.append(heading);const canvas=document.createElement('canvas');canvas.width=384;canvas.height=320;article.append(canvas);const label=document.createElement('small');article.append(label);document.querySelector('#clips').append(article);items.push({...clip,canvas,label,frame:0,accumulator:0,images:clip.frames.map(src=>{const im=new Image();im.src=src;return im})})}
 const pause=document.querySelector('#pause');function stop(){paused=true;pause.textContent='Play'}pause.onclick=()=>{paused=!paused;pause.textContent=paused?'Play':'Pause'};function step(direction){stop();for(const item of items){item.frame=(item.frame+direction+item.images.length)%item.images.length;item.accumulator=0}}document.querySelector('#previous').onclick=()=>step(-1);document.querySelector('#next').onclick=()=>step(1);

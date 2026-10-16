@@ -6,7 +6,7 @@
   "source": "../retro-option-b-20261015/concept.png",
   "balanceBefore": 4851,
   "quotedGenerations": 20,
-  "runtimeIntegrated": false,
+  "runtimeIntegrated": true,
   "accepted": true,
   "requests": {
     "crouch": {

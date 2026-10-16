@@ -1,0 +1,6 @@
+job_id: 731697de-9303-4f01-a6c1-f77be874692d
+asset_id: a9a078db-6d1c-5e90-9210-7111dd859c74
+quoted_generations: 8
+seed: 151137
+frame_count: 8 (expected 9 images including input frame)
+mode: animate_image / Animate with Text v3

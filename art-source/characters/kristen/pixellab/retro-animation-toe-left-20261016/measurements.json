@@ -1,0 +1,168 @@
+{
+  "reviewRegistration": "Whole-frame vertical translation only; raw frames preserved",
+  "baselineY": 251,
+  "frames": [
+    {
+      "frame": 0,
+      "canvas": [
+        256,
+        256
+      ],
+      "bounds": [
+        55,
+        28,
+        183,
+        251
+      ],
+      "silhouetteHeight": 224,
+      "bottomInset": 4,
+      "verticalOffset": 0,
+      "alignedBaselineY": 251,
+      "edgeContact": false
+    },
+    {
+      "frame": 1,
+      "canvas": [
+        256,
+        256
+      ],
+      "bounds": [
+        54,
+        24,
+        176,
+        247
+      ],
+      "silhouetteHeight": 224,
+      "bottomInset": 8,
+      "verticalOffset": 4,
+      "alignedBaselineY": 251,
+      "edgeContact": false
+    },
+    {
+      "frame": 2,
+      "canvas": [
+        256,
+        256
+      ],
+      "bounds": [
+        52,
+        21,
+        178,
+        247
+      ],
+      "silhouetteHeight": 227,
+      "bottomInset": 8,
+      "verticalOffset": 4,
+      "alignedBaselineY": 251,
+      "edgeContact": false
+    },
+    {
+      "frame": 3,
+      "canvas": [
+        256,
+        256
+      ],
+      "bounds": [
+        50,
+        24,
+        180,
+        249
+      ],
+      "silhouetteHeight": 226,
+      "bottomInset": 6,
+      "verticalOffset": 2,
+      "alignedBaselineY": 251,
+      "edgeContact": false
+    },
+    {
+      "frame": 4,
+      "canvas": [
+        256,
+        256
+      ],
+      "bounds": [
+        50,
+        28,
+        181,
+        252
+      ],
+      "silhouetteHeight": 225,
+      "bottomInset": 3,
+      "verticalOffset": -1,
+      "alignedBaselineY": 251,
+      "edgeContact": false
+    },
+    {
+      "frame": 5,
+      "canvas": [
+        256,
+        256
+      ],
+      "bounds": [
+        50,
+        25,
+        180,
+        251
+      ],
+      "silhouetteHeight": 227,
+      "bottomInset": 4,
+      "verticalOffset": 0,
+      "alignedBaselineY": 251,
+      "edgeContact": false
+    },
+    {
+      "frame": 6,
+      "canvas": [
+        256,
+        256
+      ],
+      "bounds": [
+        52,
+        21,
+        177,
+        251
+      ],
+      "silhouetteHeight": 231,
+      "bottomInset": 4,
+      "verticalOffset": 0,
+      "alignedBaselineY": 251,
+      "edgeContact": false
+    },
+    {
+      "frame": 7,
+      "canvas": [
+        256,
+        256
+      ],
+      "bounds": [
+        54,
+        24,
+        175,
+        251
+      ],
+      "silhouetteHeight": 228,
+      "bottomInset": 4,
+      "verticalOffset": 0,
+      "alignedBaselineY": 251,
+      "edgeContact": false
+    },
+    {
+      "frame": 8,
+      "canvas": [
+        256,
+        256
+      ],
+      "bounds": [
+        55,
+        28,
+        183,
+        251
+      ],
+      "silhouetteHeight": 224,
+      "bottomInset": 4,
+      "verticalOffset": 0,
+      "alignedBaselineY": 251,
+      "edgeContact": false
+    }
+  ]
+}

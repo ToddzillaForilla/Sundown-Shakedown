@@ -1,0 +1,132 @@
+{
+  "registration": "Raw frames preserved; measured at source size without translation",
+  "baselineY": 251,
+  "frames": [
+    {
+      "frame": 0,
+      "bounds": [
+        55,
+        28,
+        184,
+        252
+      ],
+      "silhouetteHeight": 224,
+      "baselineBeforeY": 251,
+      "verticalOffset": 0,
+      "baselineAfterY": 251,
+      "edgeContact": false
+    },
+    {
+      "frame": 1,
+      "bounds": [
+        60,
+        29,
+        184,
+        248
+      ],
+      "silhouetteHeight": 219,
+      "baselineBeforeY": 247,
+      "verticalOffset": 0,
+      "baselineAfterY": 247,
+      "edgeContact": false
+    },
+    {
+      "frame": 2,
+      "bounds": [
+        50,
+        24,
+        184,
+        248
+      ],
+      "silhouetteHeight": 224,
+      "baselineBeforeY": 247,
+      "verticalOffset": 0,
+      "baselineAfterY": 247,
+      "edgeContact": false
+    },
+    {
+      "frame": 3,
+      "bounds": [
+        47,
+        22,
+        189,
+        248
+      ],
+      "silhouetteHeight": 226,
+      "baselineBeforeY": 247,
+      "verticalOffset": 0,
+      "baselineAfterY": 247,
+      "edgeContact": false
+    },
+    {
+      "frame": 4,
+      "bounds": [
+        46,
+        24,
+        200,
+        248
+      ],
+      "silhouetteHeight": 224,
+      "baselineBeforeY": 247,
+      "verticalOffset": 0,
+      "baselineAfterY": 247,
+      "edgeContact": false
+    },
+    {
+      "frame": 5,
+      "bounds": [
+        49,
+        23,
+        193,
+        248
+      ],
+      "silhouetteHeight": 225,
+      "baselineBeforeY": 247,
+      "verticalOffset": 0,
+      "baselineAfterY": 247,
+      "edgeContact": false
+    },
+    {
+      "frame": 6,
+      "bounds": [
+        49,
+        23,
+        184,
+        248
+      ],
+      "silhouetteHeight": 225,
+      "baselineBeforeY": 247,
+      "verticalOffset": 0,
+      "baselineAfterY": 247,
+      "edgeContact": false
+    },
+    {
+      "frame": 7,
+      "bounds": [
+        50,
+        27,
+        184,
+        248
+      ],
+      "silhouetteHeight": 221,
+      "baselineBeforeY": 247,
+      "verticalOffset": 0,
+      "baselineAfterY": 247,
+      "edgeContact": false
+    },
+    {
+      "frame": 8,
+      "bounds": [
+        55,
+        28,
+        184,
+        252
+      ],
+      "silhouetteHeight": 224,
+      "baselineBeforeY": 251,
+      "verticalOffset": 0,
+      "baselineAfterY": 251,
+      "edgeContact": false
+    }
+  ]
+}

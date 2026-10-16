@@ -1,0 +1,119 @@
+[
+  {
+    "frame": 0,
+    "file": "hit-00.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 73,
+      "top": 16,
+      "right": 188,
+      "bottom": 251
+    },
+    "silhouetteHeight": 236
+  },
+  {
+    "frame": 1,
+    "file": "hit-01.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 68,
+      "top": 21,
+      "right": 188,
+      "bottom": 251
+    },
+    "silhouetteHeight": 231
+  },
+  {
+    "frame": 2,
+    "file": "hit-02.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 63,
+      "top": 25,
+      "right": 188,
+      "bottom": 251
+    },
+    "silhouetteHeight": 227
+  },
+  {
+    "frame": 3,
+    "file": "hit-03.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 63,
+      "top": 19,
+      "right": 188,
+      "bottom": 251
+    },
+    "silhouetteHeight": 233
+  },
+  {
+    "frame": 4,
+    "file": "hit-04.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 66,
+      "top": 13,
+      "right": 188,
+      "bottom": 251
+    },
+    "silhouetteHeight": 239
+  },
+  {
+    "frame": 5,
+    "file": "hit-05.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 66,
+      "top": 12,
+      "right": 188,
+      "bottom": 251
+    },
+    "silhouetteHeight": 240
+  },
+  {
+    "frame": 6,
+    "file": "hit-06.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 68,
+      "top": 13,
+      "right": 188,
+      "bottom": 251
+    },
+    "silhouetteHeight": 239
+  },
+  {
+    "frame": 7,
+    "file": "hit-07.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 73,
+      "top": 15,
+      "right": 188,
+      "bottom": 251
+    },
+    "silhouetteHeight": 237
+  },
+  {
+    "frame": 8,
+    "file": "hit-08.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 73,
+      "top": 16,
+      "right": 188,
+      "bottom": 251
+    },
+    "silhouetteHeight": 236
+  }
+]

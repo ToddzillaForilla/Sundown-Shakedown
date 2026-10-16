@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-16",
+  "status": "partially-approved-source-only",
+  "scope": "Redo one source-only Kristen rear-side punch and one rear-side mid-height side kick, both traveling screen-left while retaining her starting facing",
+  "mode": "Animate with Text v3 via animate_image",
+  "endpoint": "/animate-with-text-v3",
+  "source": "art-source/characters/kristen/pixellab/retro-outline-clean-20261015/concept.png",
+  "sourceSha256": "c89031826ed59470d8750f6e84f09c3c83d1d23961cfb543d54dacee6e29dcda",
+  "sourceImageId": "a6afc806-508b-4461-811a-7227c2512247",
+  "sourceGeometry": {
+    "width": 256,
+    "height": 256,
+    "silhouetteHeightPx": 224,
+    "bootBaselineY": 251,
+    "transparent": true
+  },
+  "directionContract": {
+    "facing": "screen-left from approved three-quarter guard",
+    "torso": "keep face, chest, hips oriented screen-left without turning to viewer/right",
+    "punchLimb": "far-side/rear fist on image-right in source",
+    "kickLimb": "far-side/rear leg on image-right in source",
+    "support": "near-side/image-left leg stays planted during kick"
+  },
+  "motionReferences": {
+    "punch": "src/content/characters/todd/assets/sprites/todd-punch-attack-sheet-v7-arm-continuity.png",
+    "kick": "src/content/characters/todd/assets/sprites/todd-kick-attack-sheet-v3-mid-side.png",
+    "referenceRule": "Borrow motion rhythm only; do not copy Todd identity or appearance"
+  },
+  "balanceBefore": 4727.8,
+  "estimatedGenerations": 16,
+  "chargedGenerations": 16,
+  "accepted": false,
+  "runtimeIntegrated": false,
+  "userSelection": {
+    "punch": {
+      "status": "approved-so-far",
+      "assetId": "gallery:1792158063158",
+      "decisionDate": "2026-10-16",
+      "frameCount": 9,
+      "frameSize": [256, 256],
+      "frameDurationsMs": [100, 100, 100, 100, 100, 100, 100, 100, 100],
+      "notes": "User confirmed this PixelLab gallery punch as the current choice. It appears to preserve screen-left facing and extend the far-side fist toward screen-left. The earlier generated nine-frame punch below remains preserved as a rejected experiment. Source-only; runtime integration is pending.",
+      "previousSelection": {
+        "assetId": "gallery:1792158337812",
+        "status": "superseded-as-current-selection",
+        "frameCount": 6,
+        "frameDurationsMs": [100, 100, 100, 100, 100, 100]
+      },
+      "alternativePunch": {
+        "status": "in-progress-by-user",
+        "assetId": null,
+        "notes": "User is preparing an alternative punch in the style of Todd's two punch options and will provide its gallery reference when ready."
+      }
+    },
+    "kick": {
+      "status": "rejected-needs-new-pass",
+      "notes": "The generated kick turns toward the viewer and extends screen-right; the agreed 16-generation batch is fully spent."
+    }
+  },
+  "clips": {
+    "punch": {
+      "status": "completed",
+      "seed": 151136,
+      "frameCount": 8,
+      "estimatedGenerations": 8,
+      "frameRate": 12,
+      "firstFrameUrl": "https://api.pixellab.ai/mcp/pixel-tools/a6afc806-508b-4461-811a-7227c2512247/image.png",
+      "lastFrameUrl": "https://api.pixellab.ai/mcp/pixel-tools/a6afc806-508b-4461-811a-7227c2512247/image.png",
+      "actionFile": "punch-action.txt",
+      "jobId": "ec7bcfd1-d4d0-43fd-bbe7-3df83044bf31",
+      "assetId": "bfd1a6d2-44a5-50b5-9df0-815f980f7c39",
+      "quotedGenerations": 8,
+      "receipt": "art-source/characters/kristen/pixellab/retro-attack-direction-corrected-20261016/punch-submission.txt",
+      "actualFrameCount": 9,
+      "chargedGenerations": 8,
+      "firstFrameMatchesReferencePixels": false,
+      "lastFrameMatchesReferencePixels": false,
+      "review": {
+        "contactSheet": "punch-contact.png",
+        "phonePreview": "punch-phone-preview.gif",
+        "measurements": "punch-measurements.json",
+        "baselineMin": 251,
+        "baselineMax": 251,
+        "edgeContact": false,
+        "orientation": "Frames 3-5 turn Kristen into a screen-right-facing profile; extended fist travels screen-right, against requested facing",
+        "limb": "Extension does not use the specified far-side rear fist as requested",
+        "disposition": "Rejected for direction; no retry within agreed allowance"
+      }
+    },
+    "kick": {
+      "status": "completed",
+      "seed": 151137,
+      "frameCount": 8,
+      "estimatedGenerations": 8,
+      "frameRate": 12,
+      "firstFrameUrl": "https://api.pixellab.ai/mcp/pixel-tools/a6afc806-508b-4461-811a-7227c2512247/image.png",
+      "lastFrameUrl": "https://api.pixellab.ai/mcp/pixel-tools/a6afc806-508b-4461-811a-7227c2512247/image.png",
+      "actionFile": "kick-action.txt",
+      "jobId": "731697de-9303-4f01-a6c1-f77be874692d",
+      "assetId": "a9a078db-6d1c-5e90-9210-7111dd859c74",
+      "quotedGenerations": 8,
+      "receipt": "art-source/characters/kristen/pixellab/retro-attack-direction-corrected-20261016/kick-submission.txt",
+      "actualFrameCount": 9,
+      "chargedGenerations": 8,
+      "firstFrameMatchesReferencePixels": false,
+      "lastFrameMatchesReferencePixels": false,
+      "review": {
+        "contactSheet": "kick-contact.png",
+        "phonePreview": "kick-phone-preview.gif",
+        "measurements": "kick-measurements.json",
+        "baselineMin": 178,
+        "baselineMax": 251,
+        "edgeContact": false,
+        "orientation": "Torso turns toward viewer and kick extends screen-right",
+        "motion": "Raised knee and front-facing leg extension; not the requested horizontal rear-leg side kick toward screen-left",
+        "disposition": "Rejected for direction and motion; no retry within agreed allowance"
+      }
+    }
+  },
+  "balanceAfter": 4711.8
+}

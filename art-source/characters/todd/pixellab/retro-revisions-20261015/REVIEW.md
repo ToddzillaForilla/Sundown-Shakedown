@@ -1,12 +1,12 @@
 # Todd requested revisions — October 15, 2026
 
-Source review only; runtime integration remains pending. Rebuild with `node scripts/preview-todd-retro-revisions.mjs`. Originals in the earlier pilot are retained, including the rejected kick.
+Source review and runtime status: the approved idle, walk, left/right punches, jump, and standing block are now integrated. The rejected kick, crouch candidate, and jump attacks remain out of runtime. Rebuild with `node scripts/preview-todd-retro-revisions.mjs`. Originals in the earlier pilot are retained, including the rejected kick.
 
 ## Latest follow-up
 
 Idle frame 3 now has the same reference glasses repair, translated by (-3,+4) to match its head position. PixelLab image `2c61a170-5688-4702-b0be-b4140fed37e0` changed 40 pixels within x101–112, y42–51; every outside pixel was verified unchanged. The earlier frame-2 fix remains. Walking and both punch clips were explicitly approved and are preserved.
 
-Punch selection in this gallery is now independent weighted randomness: 75% right arm and 25% left, allowing repeated arms. This applies to automatic playback and accepted button/K presses; busy presses and keyboard repeats do not consume a choice. Threshold selection was checked with deterministic samples; the production build passed. Real-game integration remains pending.
+Punch selection in this gallery is independent weighted randomness: 75% tattooed left arm and 25% bare right arm, allowing repeated arms. The same weighting is now used for Todd's game punches; accepted attacks choose once, and cooldown/busy presses do not trigger extra choices.
 
 The guided kick was rejected. Before the user's request to identify the old kick arrived, one new 8-generation-quoted v3 job (`3ab3203a-2a4a-4ee2-beef-f185026055b7`) was submitted. Its status and receipts are separate in `fresh-kick-attempt.json` and `fresh-kick-job.json`; it is not selected and must not silently replace anything. Further kick work waits for confirmation of the historical **Corrected kick** in `../kick-correction-20261015/review.html` (nine frames, before the retro redesign). The latest source gallery labels the rejected kick accordingly.
 

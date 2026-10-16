@@ -1,10 +1,10 @@
-import type { CharacterDefinition, MoveDefinition } from '../../content/characters';
+import type { CharacterAnimationSheet, CharacterDefinition, MoveDefinition } from '../../content/characters';
 
 export const SUPER_METER_COST = 100;
 
 export type AttackAction = 'light' | 'heavy' | 'kick' | 'punch' | 'super';
 export type MoveSlot = keyof CharacterDefinition['moves'];
-export type AuthoredAttackAnimation = 'kick' | 'punch' | 'crouchPunch';
+export type AuthoredAttackAnimation = 'kick' | 'punch' | 'crouchPunch' | 'airKick' | 'airPunch';
 
 export interface AttackContext {
   grounded: boolean;
@@ -88,7 +88,19 @@ export function getAuthoredAttackAnimation(
   const slot = getMoveSlot(moves, move);
   if (slot === 'light' || slot === 'crouchLight') return 'kick';
   if (slot === 'heavy') return crouching ? 'crouchPunch' : 'punch';
+  if (slot === 'airLight') return 'airKick';
+  if (slot === 'airHeavy') return 'airPunch';
   return undefined;
+}
+
+export function selectPunchAnimationSheet(
+  primary: CharacterAnimationSheet | undefined,
+  alternate: CharacterAnimationSheet | undefined,
+  alternateChance: number,
+  roll: number,
+): CharacterAnimationSheet | undefined {
+  if (!primary || !alternate || alternateChance <= 0) return primary;
+  return roll < alternateChance ? alternate : primary;
 }
 
 export function getHitStunMs(move: MoveDefinition, blocked: boolean): number {

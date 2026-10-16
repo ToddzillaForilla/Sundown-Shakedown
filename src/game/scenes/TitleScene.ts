@@ -146,7 +146,7 @@ export class TitleScene extends Phaser.Scene {
 
   private createControlLegend(): void {
     this.add
-      .text(GAME_WIDTH / 2, 414, 'MOVE WASD  |  KICK J  |  PUNCH K  |  SPECIAL I  |  JUMP L', {
+      .text(GAME_WIDTH / 2, 414, 'MOVE WASD  |  JUMP SPACE  |  PUNCH J  |  KICK K  |  SPECIAL L', {
         color: '#f6e6e8',
         fontFamily: PIXEL_FONT,
         fontSize: '11px',

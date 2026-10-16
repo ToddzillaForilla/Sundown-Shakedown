@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Todd Hit and Defeat Animation Review</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #10171a; color: #e7e1d5; }
+    body { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    h1, h2 { color: #ffd45d; }
+    .note { color: #bdc4c4; }
+    section { border: 1px solid #52606a; margin: 24px 0; padding: 16px; background: #080b0d; }
+    .stage { display: grid; place-items: center; min-height: 300px; background-color: #14191c; background-image: linear-gradient(45deg,#1b2225 25%,transparent 25%),linear-gradient(-45deg,#1b2225 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#1b2225 75%),linear-gradient(-45deg,transparent 75%,#1b2225 75%); background-size: 24px 24px; background-position: 0 0,0 12px,12px -12px,-12px 0; }
+    .stage img { width: 256px; height: 256px; image-rendering: pixelated; }
+    .filmstrip { display: flex; overflow-x: auto; gap: 6px; margin-top: 12px; }
+    .filmstrip img { flex: 0 0 128px; width: 128px; height: 128px; image-rendering: pixelated; border: 1px solid #465057; }
+    .controls { display: flex; gap: 10px; align-items: center; margin-top: 12px; }
+    button, select { color: #ffd45d; background: #251014; border: 1px solid #d52d2d; padding: 8px 14px; font: inherit; }
+    .caution { border-left: 3px solid #e4a52a; padding-left: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Todd: Hit and Defeat Animation Candidates</h1>
+  <p class="note">Generated from the approved hands-free guard reference. This is source-art review only; neither clip is integrated in the game.</p>
+  <p class="caution">Review note: the defeat motion turns Todd more toward the camera in its middle frames. Check whether that reads clearly enough before runtime use.</p>
+  <main id="clips"></main>
+  <script>
+    const entries = [
+      { id: 'hit', title: 'Hit reaction', count: 5, fps: 12, description: 'A quick recoil and stumble, returning to his guard.' },
+      { id: 'defeat', title: 'Defeat / KO', count: 9, fps: 18, description: 'The final-hit reaction, buckle, fall, and grounded ending pose.' },
+    ];
+    const root = document.querySelector('#clips');
+    for (const clip of entries) {
+      const section = document.createElement('section');
+      section.innerHTML = `<h2>${clip.title}</h2><p>${clip.description}</p><div class="stage"><img alt="${clip.title} frame preview"></div><div class="controls"><button type="button">Pause</button><label>Speed <select><option value="1">Normal</option><option value="0.5">Half</option><option value="0.25">Quarter</option></select></label><span class="counter"></span></div><div class="filmstrip"></div>`;
+      const image = section.querySelector('.stage img');
+      const button = section.querySelector('button');
+      const select = section.querySelector('select');
+      const counter = section.querySelector('.counter');
+      const strip = section.querySelector('.filmstrip');
+      const files = Array.from({length: clip.count}, (_, i) => `${clip.id}-${String(i).padStart(2, '0')}.png`);
+      let frame = 0;
+      let playing = true;
+      let timer;
+      const show = () => { image.src = files[frame]; counter.textContent = `Frame ${frame + 1} / ${files.length}`; };
+      const play = () => { clearInterval(timer); timer = setInterval(() => { frame = (frame + 1) % files.length; show(); }, 1000 / clip.fps * (1 / Number(select.value))); };
+      for (const file of files) { const thumb = document.createElement('img'); thumb.src = file; thumb.alt = file; strip.append(thumb); }
+      button.addEventListener('click', () => { playing = !playing; button.textContent = playing ? 'Pause' : 'Play'; if (playing) play(); else clearInterval(timer); });
+      select.addEventListener('change', () => { if (playing) play(); });
+      show(); play(); root.append(section);
+    }
+  </script>
+</body>
+</html>

@@ -12,7 +12,13 @@ Use this exact reference for subsequent Kristen animation work: recognizable adu
 
 Verified source geometry: transparent 256×256 canvas, 224px silhouette, hair top y28, boot baseline y251, 58 colors. Todd's approved reference is 236px tall with the same baseline, making Kristen about 5.1% shorter. The final cleanup darkened 27 existing edge pixels on the screen-right leg without changing alpha, silhouette or any other pixels. Keep the approved source unchanged; save future experiments separately.
 
-This approval covers the standing reference. It remains source art; no Kristen rebuild animations or runtime integration have been performed. The next planned phase is a small idle/walk pilot, scoped before generation.
+This approval covers the standing reference. Kristen's scoped idle/walk source-art pilot is now generated and ready for review at [the pilot preview](../art-source/characters/kristen/pixellab/retro-animation-pilot-20261015/review.html). The manifest, prompts, job receipts, raw frames, and alignment records are preserved beside it. The 12-frame generation budget (5 idle frames and 9 walk frames, including each clip's reference frame) cost 12 generations; the recorded balance went from 4,781 to 4,769.
+
+The idle holds the approved 224px silhouette height and y251 baseline with no clipping; small per-frame glasses-detail variation remains. The first walk playback read as moving away from Kristen's screen-left gaze, and reversing its frame order did not resolve the concern. A leftward walk retry was generated October 16 with an explicit screen-left heel plant and weight transfer. [Phone-friendly walk preview](../art-source/characters/kristen/pixellab/retro-animation-leftwalk-20261016/walk-phone-preview.gif). It uses 8 generations (balance 4,759.8 to 4,751.8); all nine raw generated frames are preserved, with review copies registered to y251 by whole-frame translations of at most 4px.
+
+A second walk-only pass explicitly required both boots to point screen-left while stepping that way. [Phone-friendly preview](../art-source/characters/kristen/pixellab/retro-animation-toe-left-20261016/walk-phone-preview.gif) and [contact sheet](../art-source/characters/kristen/pixellab/retro-animation-toe-left-20261016/walk-toe-left-contact.png). It used 8 generations (balance 4,751.8 to 4,743.8); raw frames and review-only baseline-aligned copies are preserved. It still does not consistently turn both boots screen-left or read as a forward walk: several poses keep outward/front-facing boot angles and cross the legs. Both walk attempts remain unapproved and neither clip is integrated into runtime playback; the idle remains approved.
+
+The October 16 attack batch used its full 16-generation allowance. The generated punch and kick both missed the requested screen-left direction. Todd selected PixelLab gallery item `gallery:1792158063158` as the current punch choice (nine 256×256 frames, 100ms each); it keeps Kristen facing screen-left and extends the far-side fist left. The earlier six-frame selection, `gallery:1792158337812`, remains available. Todd is preparing an alternative punch and will provide its gallery reference when ready. The local [attack review](../art-source/characters/kristen/pixellab/retro-attack-direction-corrected-20261016/review.html) records these choices and preserves the rejected generated punch and kick. The current punch is source-art approved so far; runtime integration remains pending. The kick still needs another direction pass, which requires a newly scoped generation allowance.
 
 ## Revision provenance
 
@@ -32,7 +38,7 @@ Original generation provenance is recorded in [the original source manifest](../
 ## Proposed phases after reference approval
 
 1. Standing likeness, outfit and style beside Todd: approved October 15, 2026.
-2. Small idle/walk pilot; verify glasses, body proportions and foot registration before expanding.
+2. Small idle/walk pilot; generated and source-review ready October 15, 2026. Await review before expanding.
 3. Standing punches and side kick, with a review checkpoint for motion and anatomy.
 4. Jump, standing block and crouch, then air attacks in a separate review batch.
 5. Damage/KO and signature moves when the core set is ready; preserve plant/cooking/camping themes from the project plan.

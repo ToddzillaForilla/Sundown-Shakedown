@@ -81,17 +81,29 @@ export class FightScene extends Phaser.Scene {
           endFrame: character.art.idleSheet.frameCount - 1,
         });
       }
-      if (character.art.walkSheet && !this.textures.exists(character.art.walkSheet.textureKey)) {
-        this.load.spritesheet(character.art.walkSheet.textureKey, character.art.walkSheet.url, {
-          frameWidth: character.art.walkSheet.frameWidth,
-          frameHeight: character.art.walkSheet.frameHeight,
-          endFrame: character.art.walkSheet.frameCount - 1,
+      const queuedWalkTextureKeys = new Set<string>();
+      for (const walkSheet of [character.art.walkSheet, character.art.walkLeftSheet]) {
+        if (!walkSheet || this.textures.exists(walkSheet.textureKey) || queuedWalkTextureKeys.has(walkSheet.textureKey)) continue;
+        queuedWalkTextureKeys.add(walkSheet.textureKey);
+        this.load.spritesheet(walkSheet.textureKey, walkSheet.url, {
+          frameWidth: walkSheet.frameWidth,
+          frameHeight: walkSheet.frameHeight,
+          endFrame: walkSheet.frameCount - 1,
         });
       }
       for (const sheet of [
+        character.art.jumpSheet,
+        character.art.landingSheet,
+        character.art.crouchSheet,
+        character.art.blockSheet,
         character.art.kickAttackSheet,
         character.art.punchAttackSheet,
+        character.art.alternatePunchAttackSheet,
         character.art.crouchPunchAttackSheet,
+        character.art.airKickAttackSheet,
+        character.art.airPunchAttackSheet,
+        character.art.hitSheet,
+        character.art.defeatSheet,
       ]) {
         if (!sheet || this.textures.exists(sheet.textureKey)) continue;
         this.load.spritesheet(sheet.textureKey, sheet.url, {
@@ -296,10 +308,10 @@ export class FightScene extends Phaser.Scene {
       right: [Phaser.Input.Keyboard.KeyCodes.RIGHT, Phaser.Input.Keyboard.KeyCodes.D].map((code) => keyboard.addKey(code)),
       up: [Phaser.Input.Keyboard.KeyCodes.UP, Phaser.Input.Keyboard.KeyCodes.W].map((code) => keyboard.addKey(code)),
       down: [Phaser.Input.Keyboard.KeyCodes.DOWN, Phaser.Input.Keyboard.KeyCodes.S].map((code) => keyboard.addKey(code)),
-      kick: [keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.J)],
-      punch: [keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.K)],
-      jump: [keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.L)],
-      super: [keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.I)],
+      kick: [keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.K)],
+      punch: [keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.J)],
+      jump: [keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE)],
+      super: [keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.L)],
     };
   }
 
@@ -318,7 +330,7 @@ export class FightScene extends Phaser.Scene {
     const guide = this.add.text(
       GAME_WIDTH / 2,
       505,
-      'MOVE WASD  |  GUARD HOLD AWAY\nKICK J  |  PUNCH K  |  SPECIAL I  |  JUMP L  |  UPPERCUT S+K',
+      'MOVE WASD  |  GUARD HOLD AWAY\nJUMP SPACE  |  PUNCH J  |  KICK K  |  SPECIAL L  |  UPPERCUT S+J',
       {
       align: 'center',
       color: '#f4f0ff',
@@ -742,12 +754,17 @@ export class FightScene extends Phaser.Scene {
 
   private showMatchResult(winner: string): void {
     this.announcement
-      .setPosition(GAME_WIDTH / 2, 238)
       .setFontSize(34)
       .setLineSpacing(5);
     this.showAnnouncement(`${winner.toUpperCase()}\nSHAKES DOWN THE BACKYARD`);
 
     const buttonY = GAME_HEIGHT - 48;
+    const buttonTop = buttonY - 27;
+    const gap = 12;
+    this.announcement.setPosition(
+      GAME_WIDTH / 2,
+      buttonTop - gap - this.announcement.height / 2,
+    );
     this.createResultButton(GAME_WIDTH / 2 - 102, buttonY, 'REMATCH', () => this.scene.restart());
     this.createResultButton(GAME_WIDTH / 2 + 102, buttonY, 'CHARACTERS', () => this.scene.start('CharacterSelectScene'));
   }

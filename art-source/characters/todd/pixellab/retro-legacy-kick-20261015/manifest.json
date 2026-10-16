@@ -1,11 +1,23 @@
 {
   "date": "2026-10-15",
-  "status": "complete-awaiting-artistic-review",
+  "status": "approved-and-runtime-integrated",
   "scope": "User confirmed historical corrected nine-frame side kick. One pose-guided retro candidate: Pro pose + v3 outbound/recovery, review before retry or integration.",
   "balanceBefore": 4899,
   "quotedGenerations": 18,
-  "accepted": false,
-  "runtimeIntegrated": false,
+  "accepted": true,
+  "acceptedOn": "2026-10-16",
+  "runtimeIntegrated": true,
+  "runtimeExport": {
+    "path": "src/content/characters/todd/assets/sprites/todd-kick-retro-v1.png",
+    "frameOrder": [0, 1, 2, 3, 4, 5, 6, 7, 8],
+    "frameWidth": 256,
+    "frameHeight": 256,
+    "frameCount": 9,
+    "frameRate": 33,
+    "nativeFacing": -1,
+    "durationMs": 273,
+    "sourcePixels": "Alpha and visible RGBA pixels verified against the approved source frames."
+  },
   "source": "../retro-option-b-20261015/concept.png",
   "motionReference": "../kick-correction-20261015",
   "jobs": {

@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-16",
+  "status": "hit-and-defeat-approved-integrated",
+  "scope": "Revise Todd hit reaction with a visible wince and slight recoil, and revise his defeat animation with a more dramatic arcade KO and a motionless grounded final pose.",
+  "reference": {
+    "source": "src/content/characters/todd/assets/sprites/todd-idle-hands-free-v1.png",
+    "frame": "reference-guard-frame.png",
+    "crop": "Frame 0, 256x256 cell from the approved runtime idle sheet.",
+    "facing": "screen-left",
+    "identity": "Approved Option B Todd master; black V-neck, glasses, beard, dark jeans, sneakers, anatomical left forearm tattoo, bare wrists."
+  },
+  "tool": "PixelLab Animate with Text v3 via animate_image",
+  "allowance": {
+    "approvedGenerations": 16,
+    "quotedGenerations": 16,
+    "chargedGenerations": 16,
+    "directUsdCredits": 0
+  },
+  "clips": {
+    "hit": {
+      "jobId": "f239a537-e4b7-4751-a5e0-d14960d74c2d",
+      "assetId": "ef4cd9eb-8396-5040-872b-7da1184767ca",
+      "seed": 151220,
+      "requestedFrames": 8,
+      "actualFrameCount": 9,
+      "cellSize": [
+        256,
+        256
+      ],
+      "quotedGenerations": 8,
+      "chargedGenerations": 8,
+      "status": "completed",
+      "action": "A clear classic arcade hit-stun reaction. Start in this exact guard. A hit lands to the upper body: Todd visibly winces, squeezes his eyes shut, pinches his brows, and grimaces; his head snaps back, shoulders jerk, and torso recoils backward a small amount. Let his weight rock back briefly with both boots staying planted, then recover smoothly to the exact original guard by the final frame. The recoil should be small and sharp, not a deep crouch, knee lift, step, jump, or fall. Keep the screen-left facing, exact likeness, glasses, beard, tattoo, clothing, body proportions, scale, ground line, and transparent background. Fixed camera, no extra limbs, no pose drift.",
+      "downloadBase": "https://api.pixellab.ai/mcp/images/f239a537-e4b7-4751-a5e0-d14960d74c2d/download?index="
+    },
+    "defeat": {
+      "jobId": "5166eead-b945-4cde-9ead-82f827710bcb",
+      "assetId": "802eead5-75a6-5c21-8099-612ada3babcb",
+      "seed": 151221,
+      "requestedFrames": 8,
+      "actualFrameCount": 9,
+      "cellSize": [
+        256,
+        256
+      ],
+      "quotedGenerations": 8,
+      "chargedGenerations": 8,
+      "status": "completed",
+      "action": "A dramatic, classic arcade-fighting-game knockout. A decisive hit launches Todd backward in a short, readable arc: his chest snaps back, arms fling outward, and legs kick forward as his feet briefly leave the ground. He drops hard onto his back and settles into a final fully grounded, completely motionless knockout pose: eyes shut, head turned to the side, arms and legs limp and splayed. Hold that lifeless-looking final pose in the last frame. Preserve Todd's exact likeness, glasses, beard, left forearm tattoo, black shirt, jeans and shoes, and consistent adult proportions. Keep the opponent-facing screen-left orientation through the fall; no turning to face the camera, no spinning, no flipping, no shrinking, no clipping. Fixed camera, same body scale and pixel-art treatment as the reference, transparent background. Exaggerated arcade impact, but no blood or graphic injury.",
+      "downloadBase": "https://api.pixellab.ai/mcp/images/5166eead-b945-4cde-9ead-82f827710bcb/download?index="
+    }
+  },
+  "runtimeIntegrated": {
+    "hit": true,
+    "defeat": true
+  },
+  "frame8Cleanup": {
+    "file": "defeat-07-cleanup-user.png",
+    "sourceFilePreserved": "defeat-07.png",
+    "submittedSheet": "defeat-sheet-user-edited-3x.png",
+    "method": "Extracted the eighth displayed frame from Todd’s manually edited 3x PixelLab sheet and downsampled the 768x768 cell to the original 256x256 canvas with nearest-neighbor scaling.",
+    "scope": "Frame 8 of 9 only; the other eight displayed frames remain from their original source files.",
+    "artApproval": "approved",
+    "priorCandidate": "defeat-08-cleanup-final.png remains preserved but is not used in the review.",
+    "runtimeFile": "src/content/characters/todd/assets/sprites/todd-defeat-ko-v1.png",
+    "exportScript": "scripts/export-todd-defeat-ko.mjs"
+  },
+  "balanceAfter": 4605.7,
+  "review": "review.html",
+  "measurements": {
+    "hit": "hit-measurements.json",
+    "defeat": "defeat-measurements.json"
+  },
+  "reviewNotes": [
+    "Both clips contain 9 256x256 transparent frames, including the starting guard.",
+    "Hit clip has no crouching step; opaque feet remain around the original y251 baseline.",
+    "Defeat clip ends at y248 in a flat, motionless pose with eyes closed and limp limbs.",
+    "Hit reaction is approved and integrated at 24fps; the existing combat stun and action cooldown values are unchanged.",
+    "The approved nine-frame KO is integrated at 16fps. Displayed frame 8 uses Todd’s manual cleanup; the original frame and full edited sheet remain preserved."
+  ]
+}
