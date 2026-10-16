@@ -19,10 +19,10 @@ Current bindings are implemented in [FightScene.ts](../src/game/scenes/FightScen
 | Jump | Space | — | Bottom action button |
 | Punch | J | Right click | Top action button |
 | Kick | K | Left click | Left action button |
-| Crouching uppercut | S+J or Down+J | Crouch + right click | Down + Punch |
 | Special (Super) | L, when meter is full | Middle click, when meter is full | Right action button, when available |
 
 - W/Up is reserved and must not jump. Space also starts the game from the title screen. The touch D-pad Up button is visible but intentionally inactive.
+- Grounded punch input is ignored while crouching; K/left-click/touch Kick still performs the crouching low kick.
 - L dispatches the Super move when the meter is full; there is no separate special-move keyboard slot. Keep move resolution in [CombatAttacks.ts](../src/engine/combat/CombatAttacks.ts) distinct from visual descriptions.
 - Touch controls appear on touch-capable, coarse-pointer devices: translucent D-pad bottom-left and four-button diamond bottom-right. Preserve simultaneous direction/attack input and the four active pointers in [config.ts](../src/game/config.ts).
 - The touch Super button remains dim and inactive until the meter is full. Desktop readiness is communicated through the HUD rather than a permanent touch overlay.
@@ -45,7 +45,7 @@ The runtime uses authored sheets. Todd's approved retro idle, walk, jump, four-f
 
 | Fighter | Idle | Walk | Other authored sheets |
 |---|---|---|---|
-| Todd | 5 frames, 256x256 cells, 6 fps | 9 frames, 256x256 cells, 15 fps | 9-frame jump; 4-frame landing recovery at 18 fps; held pose from the approved 5-frame crouch; held standing guard; 9-frame approved side kick at 33 fps; weighted standing punches at 24 fps; 9-frame jump kick at 27 fps and jump punch at 15 fps; 9-frame hit reaction at 24 fps; 9-frame defeat/KO at 16 fps; older crouching punch |
+| Todd | 5 frames, 256x256 cells, 6 fps | 9 frames, 256x256 cells, 15 fps | 9-frame jump; 4-frame landing recovery at 18 fps; held pose from the approved 5-frame crouch; held standing guard; 9-frame approved side kick at 33 fps; weighted standing punches at 24 fps; 9-frame jump kick at 27 fps and jump punch at 15 fps; 9-frame hit reaction at 24 fps; 9-frame defeat/KO at 16 fps |
 | Kristen | 5 frames, 256x256 cells, 6 fps | 9 frames, 256x256 cells, 10 fps forward moving right and reversed moving left | Kick; primary and 25% alternate punch; block/hit/landing reactions |
 
 The shared [Fighter renderer](../src/engine/combat/Fighter.ts) uses walk while grounded movement is active, authored jump art when available (physics still controls the arc), dedicated crouch/block/hit/landing clips when available, and resumes the appropriate grounded or airborne clip after attacks. Air kick and punch use J and K while airborne. Preserve these transitions when changing sheets, frame rates, or action timing. Fighters without authored crouch art still compress their sprite; fighters without authored jump art tilt the paused sprite. Todd uses an authored defeat clip when knocked out; other fighters retain the code-driven fallback.

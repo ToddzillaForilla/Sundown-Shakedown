@@ -99,7 +99,6 @@ export class FightScene extends Phaser.Scene {
         character.art.kickAttackSheet,
         character.art.punchAttackSheet,
         character.art.alternatePunchAttackSheet,
-        character.art.crouchPunchAttackSheet,
         character.art.airKickAttackSheet,
         character.art.airPunchAttackSheet,
         character.art.hitSheet,
@@ -330,7 +329,7 @@ export class FightScene extends Phaser.Scene {
     const guide = this.add.text(
       GAME_WIDTH / 2,
       505,
-      'MOVE WASD  |  GUARD HOLD AWAY\nJUMP SPACE  |  PUNCH J  |  KICK K  |  SPECIAL L  |  UPPERCUT S+J',
+      'MOVE WASD  |  GUARD HOLD AWAY\nJUMP SPACE  |  PUNCH J  |  KICK K  |  SPECIAL L',
       {
       align: 'center',
       color: '#f4f0ff',

@@ -84,7 +84,6 @@ export interface CharacterDefinition {
     punchAttackSheet?: CharacterAnimationSheet;
     alternatePunchAttackSheet?: CharacterAnimationSheet;
     alternatePunchChance?: number;
-    crouchPunchAttackSheet?: CharacterAnimationSheet;
     airKickAttackSheet?: CharacterAnimationSheet;
     airPunchAttackSheet?: CharacterAnimationSheet;
     hitSheet?: CharacterAnimationSheet;

@@ -6,9 +6,9 @@ describe('fighter reaction facing', () => {
   it('uses Todd’s dedicated block sheet facing when a blocked hit plays it', () => {
     const todd = characters.todd;
 
-    expect(todd.art.blockSheet?.animationKey).toBe(todd.art.reactionSheet?.block.animationKey);
+    expect(todd.art.blockSheet?.animationKey).toBe('fighter-todd-block-v1');
     expect(todd.art.blockSheet?.nativeFacing).toBe(-1);
-    expect(todd.art.reactionSheet?.nativeFacing).toBe(1);
+    expect(todd.art.reactionSheet).toBeUndefined();
     expect(getReactionNativeFacing(todd, true)).toBe(-1);
   });
 

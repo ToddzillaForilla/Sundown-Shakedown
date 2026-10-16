@@ -97,7 +97,6 @@ export class Fighter {
       definition.art.kickAttackSheet,
       definition.art.punchAttackSheet,
       definition.art.alternatePunchAttackSheet,
-      definition.art.crouchPunchAttackSheet,
       definition.art.airKickAttackSheet,
       definition.art.airPunchAttackSheet,
       definition.art.hitSheet,
@@ -311,16 +310,14 @@ export class Fighter {
 
   attack(move: MoveDefinition, now: number): void {
     const presentation = getAttackPresentation(this.definition.moves, move);
-    const authoredAnimation = getAuthoredAttackAnimation(this.definition.moves, move, this.crouching);
+    const authoredAnimation = getAuthoredAttackAnimation(this.definition.moves, move);
     const attackSheet: CharacterAnimationSheet | undefined = authoredAnimation === 'kick'
       ? this.definition.art.kickAttackSheet
       : authoredAnimation === 'airKick'
         ? this.definition.art.airKickAttackSheet
         : authoredAnimation === 'airPunch'
           ? this.definition.art.airPunchAttackSheet
-        : authoredAnimation === 'crouchPunch'
-          ? this.definition.art.crouchPunchAttackSheet ?? this.definition.art.punchAttackSheet
-          : authoredAnimation === 'punch'
+        : authoredAnimation === 'punch'
             ? this.definition.art.alternatePunchAttackSheet
               ? selectPunchAnimationSheet(
                 this.definition.art.punchAttackSheet,

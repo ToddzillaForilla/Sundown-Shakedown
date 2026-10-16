@@ -12,10 +12,8 @@ import blockSheetUrl from './assets/sprites/todd-block-v1.png';
 import kickAttackSheetUrl from './assets/sprites/todd-kick-retro-v1.png';
 import punchAttackSheetUrl from './assets/sprites/todd-punch-left-75-v1.png';
 import alternatePunchAttackSheetUrl from './assets/sprites/todd-punch-right-25-v1.png';
-import crouchPunchAttackSheetUrl from './assets/sprites/todd-crouch-punch-attack-sheet-v1.png';
 import hitSheetUrl from './assets/sprites/todd-hit-reaction-v1.png';
 import defeatSheetUrl from './assets/sprites/todd-defeat-ko-v1.png';
-import reactionSheetUrl from './assets/sprites/todd-reactions-sheet-v1.png';
 import portraitUrl from './assets/portraits/todd-fighter-card-v3-facing-right.png';
 
 export const todd: CharacterDefinition = {
@@ -141,16 +139,6 @@ export const todd: CharacterDefinition = {
       frameRate: 24,
     },
     alternatePunchChance: 0.25,
-    crouchPunchAttackSheet: {
-      textureKey: 'fighter-todd-crouch-punch-attack-sheet-v1',
-      animationKey: 'fighter-todd-crouch-punch-attack-v1',
-      url: crouchPunchAttackSheetUrl,
-      nativeFacing: 1,
-      frameWidth: 320,
-      frameHeight: 430,
-      frameCount: 6,
-      frameRate: 12,
-    },
     hitSheet: {
       textureKey: 'fighter-todd-hit-reaction-v1',
       animationKey: 'fighter-todd-hit-reaction-v1',
@@ -170,28 +158,6 @@ export const todd: CharacterDefinition = {
       frameHeight: 256,
       frameCount: 9,
       frameRate: 16,
-    },
-    reactionSheet: {
-      textureKey: 'fighter-todd-reactions-sheet-v1',
-      url: reactionSheetUrl,
-      nativeFacing: 1,
-      frameWidth: 320,
-      frameHeight: 362,
-      frameCount: 6,
-      block: {
-        animationKey: 'fighter-todd-block-v1',
-        startFrame: 0,
-        endFrame: 1,
-        frameRate: 8,
-        repeat: -1,
-        yoyo: true,
-      },
-      hit: {
-        animationKey: 'fighter-todd-hit-v1',
-        startFrame: 2,
-        endFrame: 3,
-        frameRate: 12,
-      },
     },
   },
   palette: {

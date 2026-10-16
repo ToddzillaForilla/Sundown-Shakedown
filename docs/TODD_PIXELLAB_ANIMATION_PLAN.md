@@ -62,7 +62,7 @@ October 15 source-review addition: [jump and standing block](../art-source/chara
 | Batch | Clips | Purpose |
 |---|---|---|
 | Movement | Idle, forward walk, retreat, crouch, jump ascent, fall, landing | Replace reused or transformed movement poses |
-| Basic attacks | Standing mid side kick, low kick, standing punch, crouching uppercut, air kick, air punch | Distinct readable actions and stance recovery |
+| Basic attacks | Standing mid side kick, low kick, standing punch, crouching uppercut (paused; source art retained for rebuild), air kick, air punch | Distinct readable actions and stance recovery |
 | Reactions | Standing guard, crouching guard, hit reaction, knockout | Authored defensive/damage poses |
 | Signature moves | Glitch Surge special, System Crash Super | Technology-themed body animation with separate cyan effects |
 | Optional polish | Victory pose | Defer until the core set works |

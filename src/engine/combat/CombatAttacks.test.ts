@@ -35,10 +35,10 @@ describe('player move selection', () => {
     ['kick', grounded, 'crouchLight'],
     ['kick', { ...grounded, grounded: false }, 'airLight'],
     ['punch', grounded, 'heavy'],
-    ['punch', { ...grounded, down: true, movement: 1 }, 'heavy'],
+    ['punch', { ...grounded, crouching: true, down: true }, undefined],
     ['punch', { ...grounded, grounded: false }, 'airHeavy'],
     ['super', { ...grounded, meter: 100 }, 'super'],
-  ] as Array<[AttackAction, AttackContext, string]>)('maps %s input to %s', (action, context, expected) => {
+  ] as Array<[AttackAction, AttackContext, string | undefined]>)('maps %s input to %s', (action, context, expected) => {
     expect(resolvePlayerMoveSlot(action, context)).toBe(expected);
   });
 
@@ -99,7 +99,7 @@ describe('attack rules and content', () => {
       expect(getAuthoredAttackAnimation(character.moves, character.moves.light)).toBe('kick');
       expect(getAuthoredAttackAnimation(character.moves, character.moves.crouchLight)).toBe('kick');
       expect(getAuthoredAttackAnimation(character.moves, character.moves.heavy)).toBe('punch');
-      expect(getAuthoredAttackAnimation(character.moves, character.moves.heavy, true)).toBe('crouchPunch');
+      expect(getAuthoredAttackAnimation(character.moves, character.moves.heavy)).toBe('punch');
       expect(getAuthoredAttackAnimation(character.moves, character.moves.airLight)).toBe('airKick');
       expect(getAuthoredAttackAnimation(character.moves, character.moves.airHeavy)).toBe('airPunch');
       expect(getAuthoredAttackAnimation(character.moves, character.moves.special)).toBeUndefined();

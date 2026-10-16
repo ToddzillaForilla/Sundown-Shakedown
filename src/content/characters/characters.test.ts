@@ -92,20 +92,12 @@ describe('character content packages', () => {
         path: localPath(new URL('./todd/assets/sprites/todd-punch-right-25-v1.png', import.meta.url)),
       },
       {
-        definition: todd?.art.crouchPunchAttackSheet,
-        path: localPath(new URL('./todd/assets/sprites/todd-crouch-punch-attack-sheet-v1.png', import.meta.url)),
-      },
-      {
         definition: todd?.art.hitSheet,
         path: localPath(new URL('./todd/assets/sprites/todd-hit-reaction-v1.png', import.meta.url)),
       },
       {
         definition: todd?.art.defeatSheet,
         path: localPath(new URL('./todd/assets/sprites/todd-defeat-ko-v1.png', import.meta.url)),
-      },
-      {
-        definition: todd?.art.reactionSheet,
-        path: localPath(new URL('./todd/assets/sprites/todd-reactions-sheet-v1.png', import.meta.url)),
       },
       {
         definition: kristen?.art.idleSheet,
@@ -148,7 +140,7 @@ describe('character content packages', () => {
   it('assigns distinct complete frame ranges to configured reactions', () => {
     for (const character of characterList) {
       const reactions = character.art.reactionSheet;
-      expect(reactions).toBeDefined();
+      if (!reactions) continue;
       const clips = [reactions!.block, reactions!.hit, reactions!.landing].filter(
         (clip): clip is NonNullable<typeof clip> => clip !== undefined,
       );
@@ -156,7 +148,7 @@ describe('character content packages', () => {
         Array.from({ length: clip.endFrame - clip.startFrame + 1 }, (_, index) => clip.startFrame + index),
       );
 
-      expect(usedFrames).toEqual(character.id === 'todd' ? [0, 1, 2, 3] : [0, 1, 2, 3, 4, 5]);
+      expect(usedFrames).toEqual([0, 1, 2, 3, 4, 5]);
       expect(new Set(usedFrames).size).toBe(usedFrames.length);
     }
   });
@@ -166,14 +158,12 @@ describe('character content packages', () => {
     const kristen = characterList.find((character) => character.id === 'kristen');
 
     expect(todd?.art.nativeFacing).toBe(-1);
-    expect(todd?.art.reactionSheet?.nativeFacing).toBe(1);
     expect(todd?.art.kickAttackSheet?.nativeFacing).toBe(-1);
     expect(todd?.art.crouchSheet?.nativeFacing).toBe(-1);
     expect(todd?.art.airKickAttackSheet?.nativeFacing).toBe(-1);
     expect(todd?.art.airPunchAttackSheet?.nativeFacing).toBe(-1);
     expect(todd?.art.punchAttackSheet?.nativeFacing).toBe(-1);
     expect(todd?.art.alternatePunchAttackSheet?.nativeFacing).toBe(-1);
-    expect(todd?.art.crouchPunchAttackSheet?.nativeFacing).toBe(1);
     expect(todd?.art.hitSheet?.nativeFacing).toBe(-1);
     expect(kristen?.art.reactionSheet?.nativeFacing ?? 1).toBe(1);
   });
@@ -194,7 +184,7 @@ describe('character content packages', () => {
     expect(todd?.art.airPunchAttackSheet?.animationKey).toBe('fighter-todd-jump-punch-retro-v1');
     expect(todd?.art.blockSheet?.animationKey).toBe('fighter-todd-block-v1');
     expect(todd?.art.blockHoldFrame).toBe(2);
-    expect(todd?.art.reactionSheet?.landing).toBeUndefined();
+    expect(todd?.art.reactionSheet).toBeUndefined();
     expect(todd?.art.punchAttackSheet?.animationKey).toBe('fighter-todd-punch-left-75-v1');
     expect(todd?.art.alternatePunchAttackSheet?.animationKey).toBe('fighter-todd-punch-right-25-v1');
     expect(todd?.art.alternatePunchChance).toBe(0.25);

@@ -5,23 +5,8 @@ import sharp from 'sharp';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
-// Rebuild just this sheet while iterating, without regenerating other artwork.
-if (process.argv.includes('--todd-side-kick')) {
-  await prepareAnimationSheetFromComponents(
-    resolve(projectRoot, 'art-source/characters/todd/animations/todd-kick-attack-sheet-v3-mid-side.png'),
-    resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-kick-attack-sheet-v3-mid-side.png'),
-    'Todd',
-    'mid side kick',
-    { frameWidth: 320 },
-  );
-  process.exit(0);
-}
-
+// Legacy Kristen exports; Todd uses the dedicated retro export scripts.
 const characters = [
-  {
-    id: 'todd',
-    source: 'art-source/characters/todd/concepts/todd-fighter-concept-v2-laptop.png',
-  },
   {
     id: 'kristen',
     source: 'art-source/characters/kristen/concepts/kristen-fighter-concept-v1.png',
@@ -274,12 +259,6 @@ async function prepareAnimationSheetFromComponents(
 }
 
 await prepareAnimationSheetFromComponents(
-  resolve(projectRoot, 'art-source/characters/todd/animations/todd-idle-sheet-v2-laptop.png'),
-  resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-idle-sheet-v2-laptop.png'),
-  'Todd',
-  'idle',
-);
-await prepareAnimationSheetFromComponents(
   resolve(projectRoot, 'art-source/characters/kristen/animations/kristen-idle-sheet-v1.png'),
   resolve(projectRoot, 'src/content/characters/kristen/assets/sprites/kristen-idle-sheet-v1.png'),
   'Kristen',
@@ -291,33 +270,6 @@ await prepareAnimationSheetFromComponents(
   'Kristen',
   'walk',
   { poseScale: 0.5334 },
-);
-await prepareAnimationSheetFromComponents(
-  resolve(projectRoot, 'art-source/characters/todd/animations/todd-walk-sheet-v5-idle-scale.png'),
-  resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-walk-sheet-v5-idle-scale.png'),
-  'Todd',
-  'walk',
-);
-await prepareAnimationSheetFromComponents(
-  resolve(projectRoot, 'art-source/characters/todd/animations/todd-kick-attack-sheet-v3-mid-side.png'),
-  resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-kick-attack-sheet-v3-mid-side.png'),
-  'Todd',
-  'kick attack',
-  { frameWidth: 320 },
-);
-await prepareAnimationSheetFromComponents(
-  resolve(projectRoot, 'art-source/characters/todd/animations/todd-punch-attack-sheet-v7-arm-continuity.png'),
-  resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-punch-attack-sheet-v7-arm-continuity.png'),
-  'Todd',
-  'punch attack',
-  { poseScale: 0.821, frameWidth: 320, frameHeight: 430 },
-);
-await prepareAnimationSheetFromComponents(
-  resolve(projectRoot, 'art-source/characters/todd/animations/todd-crouch-punch-attack-sheet-v1.png'),
-  resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-crouch-punch-attack-sheet-v1.png'),
-  'Todd',
-  'crouching punch attack',
-  { frameWidth: 320, frameHeight: 430 },
 );
 await prepareAnimationSheetFromComponents(
   resolve(projectRoot, 'art-source/characters/kristen/animations/kristen-kick-attack-sheet-v2.png'),
@@ -334,50 +286,10 @@ await prepareAnimationSheetFromComponents(
   { poseScale: 0.6061, frameWidth: 320, frameHeight: 430 },
 );
 await prepareAnimationSheetFromComponents(
-  resolve(projectRoot, 'art-source/characters/todd/animations/todd-reactions-sheet-v1.png'),
-  resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-reactions-sheet-v1.png'),
-  'Todd',
-  'reaction',
-  { frameWidth: 320 },
-);
-await prepareAnimationSheetFromComponents(
   resolve(projectRoot, 'art-source/characters/kristen/animations/kristen-reactions-sheet-v1.png'),
   resolve(projectRoot, 'src/content/characters/kristen/assets/sprites/kristen-reactions-sheet-v1.png'),
   'Kristen',
   'reaction',
   { poseScale: 0.5334, frameWidth: 320 },
 );
-
-// The concept illustration intentionally has an atmospheric backdrop. Runtime
-// fighter and portrait assets come from a truly transparent animation frame.
-const toddLaptopIdleRuntime = resolve(
-  projectRoot,
-  'src/content/characters/todd/assets/sprites/todd-idle-sheet-v2-laptop.png',
-);
-const toddLaptopFrameCell = await sharp(toddLaptopIdleRuntime)
-  .extract({ left: 0, top: 0, width: 260, height: 362 })
-  .png()
-  .toBuffer();
-const toddLaptopFirstFrame = await sharp(toddLaptopFrameCell)
-  .trim({ background: { r: 0, g: 0, b: 0, alpha: 0 } })
-  .png()
-  .toBuffer();
-
-await sharp(toddLaptopFirstFrame)
-  .resize({ height: 384, fit: 'inside', kernel: sharp.kernel.nearest })
-  .png({ compressionLevel: 9, palette: true, colours: 256, dither: 0.25 })
-  .toFile(resolve(projectRoot, 'src/content/characters/todd/assets/sprites/todd-concept-fighter.png'));
-
-await sharp(toddLaptopFirstFrame)
-  .resize({
-    width: 320,
-    height: 320,
-    fit: 'contain',
-    kernel: sharp.kernel.nearest,
-    background: { r: 0, g: 0, b: 0, alpha: 0 },
-  })
-  .png({ compressionLevel: 9, palette: true, colours: 256, dither: 0.25 })
-  .toFile(resolve(projectRoot, 'src/content/characters/todd/assets/portraits/todd-portrait.png'));
-
-console.log('Prepared transparent Todd laptop fighter and portrait assets');
 
