@@ -113,7 +113,7 @@ describe('character content packages', () => {
       },
       {
         definition: kristen?.art.kickAttackSheet,
-        path: localPath(new URL('./kristen/assets/sprites/kristen-kick-attack-sheet-v2.png', import.meta.url)),
+        path: localPath(new URL('./kristen/assets/sprites/kristen-kick-v5.png', import.meta.url)),
       },
       {
         definition: kristen?.art.punchAttackSheet,
@@ -232,6 +232,19 @@ describe('character content packages', () => {
     expect(todd?.art.kickAttackSheet?.animationKey).toBe('fighter-todd-kick-retro-v1');
     expect(kickDuration).toBeCloseTo(previousKickDuration, 1);
     expect(kickDuration).toBeLessThan(todd!.moves.crouchLight.cooldownMs);
+  });
+
+  it('gives Kristen’s four-pose kick half a second for playback and recovery', () => {
+    const kristen = characterList.find((character) => character.id === 'kristen')!;
+    const kick = kristen.art.kickAttackSheet!;
+    expect(kick.frameCount).toBe(4);
+    expect(kick.frameRate).toBe(8);
+    const durationMs = (kick.frameCount / kick.frameRate) * 1000;
+    expect(durationMs).toBe(500);
+    // Fighter.attack waits for the longer of playback and the move cooldown.
+    for (const move of [kristen.moves.light, kristen.moves.crouchLight]) {
+      expect(Math.max(move.cooldownMs, durationMs)).toBe(500);
+    }
   });
 
   it('keeps Todd air attack clips within their existing cooldowns', () => {

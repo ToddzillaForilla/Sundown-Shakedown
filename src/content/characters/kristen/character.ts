@@ -8,7 +8,7 @@ import blockSheetUrl from './assets/sprites/kristen-block-v2.png';
 import hitSheetUrl from './assets/sprites/kristen-hit-v2.png';
 import defeatSheetUrl from './assets/sprites/kristen-ko-v1.png';
 import walkSheetUrl from './assets/sprites/kristen-walk-direction-combo-v1.png';
-import kickAttackSheetUrl from './assets/sprites/kristen-kick-attack-sheet-v2.png';
+import kickAttackSheetUrl from './assets/sprites/kristen-kick-v5.png';
 import punchMainAttackSheetUrl from './assets/sprites/kristen-punch-main-75-1792159772322.png';
 import punchAltAttackSheetUrl from './assets/sprites/kristen-punch-alt-25-1792159502161.png';
 import reactionSheetUrl from './assets/sprites/kristen-reactions-sheet-v1.png';
@@ -110,13 +110,15 @@ export const kristen: CharacterDefinition = {
       frameRate: 10,
     },
     kickAttackSheet: {
-      textureKey: 'fighter-kristen-kick-attack-sheet-v2',
-      animationKey: 'fighter-kristen-kick-attack-v2',
+      textureKey: 'fighter-kristen-kick-v5',
+      animationKey: 'fighter-kristen-kick-v5',
       url: kickAttackSheetUrl,
-      frameWidth: 320,
-      frameHeight: 362,
-      frameCount: 6,
-      frameRate: 22,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 4,
+      // Let each pose read for 125 ms, including extension and recovery.
+      frameRate: 8,
     },
     punchAttackSheet: {
       textureKey: 'fighter-kristen-punch-main-75-v1',
