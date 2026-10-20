@@ -1,0 +1,92 @@
+{
+  "source": "pixellab-a-Blocking-animation-where-she-1792414839981-3x.png",
+  "approval": "User supplied and selected this sheet for Kristen block on 2026-10-19.",
+  "grid": {
+    "columns": 3,
+    "rows": 3,
+    "sourceCell": 768,
+    "frameCount": 7,
+    "order": "row-major"
+  },
+  "export": {
+    "cell": 256,
+    "resize": "nearest",
+    "nativeFacing": -1,
+    "frameRate": 6,
+    "holdFrame": 4,
+    "perFrameAlignment": false
+  },
+  "reference": "First frame matches idle silhouette bounds [55,28,183,251]; common canvas preserved.",
+  "measurements": [
+    {
+      "frame": 0,
+      "bounds": [
+        55,
+        28,
+        183,
+        251
+      ],
+      "silhouetteHeight": 224
+    },
+    {
+      "frame": 1,
+      "bounds": [
+        60,
+        27,
+        183,
+        251
+      ],
+      "silhouetteHeight": 225
+    },
+    {
+      "frame": 2,
+      "bounds": [
+        69,
+        30,
+        183,
+        251
+      ],
+      "silhouetteHeight": 222
+    },
+    {
+      "frame": 3,
+      "bounds": [
+        69,
+        34,
+        183,
+        251
+      ],
+      "silhouetteHeight": 218
+    },
+    {
+      "frame": 4,
+      "bounds": [
+        69,
+        39,
+        183,
+        251
+      ],
+      "silhouetteHeight": 213
+    },
+    {
+      "frame": 5,
+      "bounds": [
+        69,
+        37,
+        183,
+        251
+      ],
+      "silhouetteHeight": 215
+    },
+    {
+      "frame": 6,
+      "bounds": [
+        69,
+        33,
+        183,
+        251
+      ],
+      "silhouetteHeight": 219
+    }
+  ]
+}

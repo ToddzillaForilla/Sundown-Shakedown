@@ -1,0 +1,91 @@
+{
+  "source": "pixellab-A-dramatic--classic-arcade-fig-1792417573691-3x.png",
+  "approval": "User supplied and selected this sheet for Kristen ko on 2026-10-19.",
+  "grid": {
+    "columns": 3,
+    "rows": 3,
+    "sourceCell": 768,
+    "frameCount": 7,
+    "order": "row-major"
+  },
+  "export": {
+    "cell": 256,
+    "resize": "nearest",
+    "nativeFacing": -1,
+    "frameRate": 12,
+    "perFrameAlignment": false
+  },
+  "reference": "First frame matches idle silhouette bounds [55,28,183,251]; common canvas preserved.",
+  "measurements": [
+    {
+      "frame": 0,
+      "bounds": [
+        55,
+        28,
+        183,
+        251
+      ],
+      "silhouetteHeight": 224
+    },
+    {
+      "frame": 1,
+      "bounds": [
+        47,
+        34,
+        187,
+        251
+      ],
+      "silhouetteHeight": 218
+    },
+    {
+      "frame": 2,
+      "bounds": [
+        39,
+        45,
+        215,
+        249
+      ],
+      "silhouetteHeight": 205
+    },
+    {
+      "frame": 3,
+      "bounds": [
+        28,
+        86,
+        215,
+        241
+      ],
+      "silhouetteHeight": 156
+    },
+    {
+      "frame": 4,
+      "bounds": [
+        44,
+        158,
+        225,
+        251
+      ],
+      "silhouetteHeight": 94
+    },
+    {
+      "frame": 5,
+      "bounds": [
+        21,
+        199,
+        235,
+        252
+      ],
+      "silhouetteHeight": 54
+    },
+    {
+      "frame": 6,
+      "bounds": [
+        21,
+        206,
+        235,
+        252
+      ],
+      "silhouetteHeight": 47
+    }
+  ]
+}

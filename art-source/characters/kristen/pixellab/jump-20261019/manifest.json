@@ -1,0 +1,91 @@
+{
+  "source": "pixellab-The-character-initiates-a-powe-1792183495845-3x.png",
+  "approval": "User supplied and selected this sheet for Kristen jump on 2026-10-19.",
+  "grid": {
+    "columns": 3,
+    "rows": 3,
+    "sourceCell": 768,
+    "frameCount": 7,
+    "order": "row-major"
+  },
+  "export": {
+    "cell": 256,
+    "resize": "nearest",
+    "nativeFacing": -1,
+    "frameRate": 7,
+    "perFrameAlignment": false
+  },
+  "reference": "First frame matches idle silhouette bounds [55,28,183,251]; common canvas preserved.",
+  "measurements": [
+    {
+      "frame": 0,
+      "bounds": [
+        55,
+        28,
+        183,
+        251
+      ],
+      "silhouetteHeight": 224
+    },
+    {
+      "frame": 1,
+      "bounds": [
+        63,
+        31,
+        177,
+        251
+      ],
+      "silhouetteHeight": 221
+    },
+    {
+      "frame": 2,
+      "bounds": [
+        61,
+        30,
+        186,
+        247
+      ],
+      "silhouetteHeight": 218
+    },
+    {
+      "frame": 3,
+      "bounds": [
+        60,
+        14,
+        180,
+        248
+      ],
+      "silhouetteHeight": 235
+    },
+    {
+      "frame": 4,
+      "bounds": [
+        68,
+        11,
+        167,
+        205
+      ],
+      "silhouetteHeight": 195
+    },
+    {
+      "frame": 5,
+      "bounds": [
+        69,
+        16,
+        169,
+        183
+      ],
+      "silhouetteHeight": 168
+    },
+    {
+      "frame": 6,
+      "bounds": [
+        71,
+        35,
+        179,
+        222
+      ],
+      "silhouetteHeight": 188
+    }
+  ]
+}

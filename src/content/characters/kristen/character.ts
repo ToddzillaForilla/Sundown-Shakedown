@@ -2,6 +2,11 @@ import type { CharacterDefinition } from '../types';
 import { kristenMoves } from './moves';
 import fighterUrl from './assets/sprites/kristen-concept-fighter.png';
 import idleSheetUrl from './assets/sprites/kristen-idle-retro-v1.png';
+import jumpSheetUrl from './assets/sprites/kristen-jump-v1.png';
+import crouchSheetUrl from './assets/sprites/kristen-crouch-v1.png';
+import blockSheetUrl from './assets/sprites/kristen-block-v2.png';
+import hitSheetUrl from './assets/sprites/kristen-hit-v2.png';
+import defeatSheetUrl from './assets/sprites/kristen-ko-v1.png';
 import walkSheetUrl from './assets/sprites/kristen-walk-direction-combo-v1.png';
 import kickAttackSheetUrl from './assets/sprites/kristen-kick-attack-sheet-v2.png';
 import punchMainAttackSheetUrl from './assets/sprites/kristen-punch-main-75-1792159772322.png';
@@ -29,6 +34,59 @@ export const kristen: CharacterDefinition = {
       frameHeight: 256,
       frameCount: 5,
       frameRate: 6,
+    },
+    jumpSheet: {
+      textureKey: 'fighter-kristen-jump-v1',
+      animationKey: 'fighter-kristen-jump-v1',
+      url: jumpSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      frameRate: 7,
+    },
+    crouchSheet: {
+      textureKey: 'fighter-kristen-crouch-v1',
+      animationKey: 'fighter-kristen-crouch-v1',
+      url: crouchSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      frameRate: 6,
+    },
+    crouchHoldFrame: 4,
+    blockSheet: {
+      textureKey: 'fighter-kristen-block-v2',
+      animationKey: 'fighter-kristen-block-v2',
+      url: blockSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      frameRate: 6,
+    },
+    blockHoldFrame: 4,
+    hitSheet: {
+      textureKey: 'fighter-kristen-hit-v2',
+      animationKey: 'fighter-kristen-hit-v2',
+      url: hitSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      // Fit the authored recoil within the existing 180 ms presentation window.
+      frameRate: 39,
+    },
+    defeatSheet: {
+      textureKey: 'fighter-kristen-ko-v1',
+      animationKey: 'fighter-kristen-ko-v1',
+      url: defeatSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      frameRate: 12,
     },
     walkSheet: {
       textureKey: 'fighter-kristen-walk-direction-combo-v1',
@@ -68,7 +126,7 @@ export const kristen: CharacterDefinition = {
       frameWidth: 256,
       frameHeight: 256,
       frameCount: 7,
-      frameRate: 13,
+      frameRate: 24,
     },
     alternatePunchAttackSheet: {
       textureKey: 'fighter-kristen-punch-alt-25-v1',
@@ -78,7 +136,7 @@ export const kristen: CharacterDefinition = {
       frameWidth: 256,
       frameHeight: 256,
       frameCount: 7,
-      frameRate: 13,
+      frameRate: 24,
     },
     alternatePunchChance: 0.25,
     reactionSheet: {
