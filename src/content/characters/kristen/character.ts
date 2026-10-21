@@ -117,8 +117,8 @@ export const kristen: CharacterDefinition = {
       frameWidth: 256,
       frameHeight: 256,
       frameCount: 4,
-      // Let each pose read for 125 ms, including extension and recovery.
-      frameRate: 8,
+      // Keep each pose readable with a slightly quicker 444 ms kick.
+      frameRate: 9,
     },
     punchAttackSheet: {
       textureKey: 'fighter-kristen-punch-main-75-v1',

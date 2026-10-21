@@ -229,7 +229,7 @@ export class FightScene extends Phaser.Scene {
     const playerHealthFrame = this.add.rectangle(230, 58, 370, 30, 0x180f25, 0.9).setStrokeStyle(3, 0xffd477);
     const opponentHealthFrame = this.add.rectangle(730, 58, 370, 30, 0x180f25, 0.9).setStrokeStyle(3, 0xffd477);
     this.playerHealthBar = this.add.rectangle(48, 58, 360, 20, 0x57c46b).setOrigin(0, 0.5);
-    this.opponentHealthBar = this.add.rectangle(912, 58, 360, 20, 0xe15d68).setOrigin(1, 0.5);
+    this.opponentHealthBar = this.add.rectangle(912, 58, 360, 20, 0x57c46b).setOrigin(1, 0.5);
     this.playerMeterFrame = this.add.rectangle(138, 85, 185, 14, 0x0b0810, 0.9).setStrokeStyle(2, 0x7a6c84, 0.75);
     this.opponentMeterFrame = this.add.rectangle(822, 85, 185, 14, 0x0b0810, 0.9).setStrokeStyle(2, 0x7a6c84, 0.75);
     this.playerMeterBar = this.add.rectangle(48, 85, SUPER_METER_WIDTH, 8, playerDefinition.palette.accent).setOrigin(0, 0.5);
@@ -579,19 +579,6 @@ export class FightScene extends Phaser.Scene {
       return;
     }
 
-    const swipe = this.add
-      .rectangle(attacker.x + direction * 58, attacker.y - 112, move.kind === 'heavy' ? 58 : 34, 7, color, 0.85)
-      .setAngle(direction * -18)
-      .setDepth(50)
-      .setBlendMode(Phaser.BlendModes.ADD);
-    this.tweens.add({
-      targets: swipe,
-      x: swipe.x + direction * 28,
-      alpha: 0,
-      scaleX: 1.7,
-      duration: move.kind === 'heavy' ? 180 : 110,
-      onComplete: () => swipe.destroy(),
-    });
   }
 
   private showHitBurst(defender: Fighter, move: MoveDefinition, blocked: boolean): void {
@@ -675,8 +662,12 @@ export class FightScene extends Phaser.Scene {
   }
 
   private updateHud(): void {
-    this.playerHealthBar.displayWidth = 360 * (this.player.health / this.player.definition.stats.maxHealth);
-    this.opponentHealthBar.displayWidth = 360 * (this.opponent.health / this.opponent.definition.stats.maxHealth);
+    const playerHealthRatio = this.player.health / this.player.definition.stats.maxHealth;
+    const opponentHealthRatio = this.opponent.health / this.opponent.definition.stats.maxHealth;
+    this.playerHealthBar.displayWidth = 360 * playerHealthRatio;
+    this.opponentHealthBar.displayWidth = 360 * opponentHealthRatio;
+    this.playerHealthBar.setFillStyle(playerHealthRatio < 0.2 ? 0xe15d68 : 0x57c46b);
+    this.opponentHealthBar.setFillStyle(opponentHealthRatio < 0.2 ? 0xe15d68 : 0x57c46b);
     this.playerMeterBar.displayWidth = SUPER_METER_WIDTH * (this.player.meter / 100);
     this.opponentMeterBar.displayWidth = SUPER_METER_WIDTH * (this.opponent.meter / 100);
     const playerSuperReady = canUseSuper(this.player.meter);

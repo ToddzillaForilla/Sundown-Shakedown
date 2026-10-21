@@ -234,16 +234,16 @@ describe('character content packages', () => {
     expect(kickDuration).toBeLessThan(todd!.moves.crouchLight.cooldownMs);
   });
 
-  it('gives Kristen’s four-pose kick half a second for playback and recovery', () => {
+  it('gives Kristen’s four-pose kick a slightly quicker playback and recovery', () => {
     const kristen = characterList.find((character) => character.id === 'kristen')!;
     const kick = kristen.art.kickAttackSheet!;
     expect(kick.frameCount).toBe(4);
-    expect(kick.frameRate).toBe(8);
-    const durationMs = (kick.frameCount / kick.frameRate) * 1000;
-    expect(durationMs).toBe(500);
+    expect(kick.frameRate).toBe(9);
+    const durationMs = Math.round((kick.frameCount / kick.frameRate) * 1000);
+    expect(durationMs).toBe(444);
     // Fighter.attack waits for the longer of playback and the move cooldown.
     for (const move of [kristen.moves.light, kristen.moves.crouchLight]) {
-      expect(Math.max(move.cooldownMs, durationMs)).toBe(500);
+      expect(Math.max(move.cooldownMs, durationMs)).toBe(444);
     }
   });
 

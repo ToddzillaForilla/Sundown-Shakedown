@@ -27,8 +27,6 @@ export class Fighter {
   private readonly scene: Phaser.Scene;
   private readonly visual: Phaser.GameObjects.Sprite;
   private readonly shadow: Phaser.GameObjects.Ellipse;
-  private readonly guardLabel: Phaser.GameObjects.Text;
-  private readonly guardShield: Phaser.GameObjects.Ellipse;
   private _blocking = false;
   private crouching = false;
   private movementDirection: -1 | 1 = 1;
@@ -45,21 +43,6 @@ export class Fighter {
     this.facing = facing;
 
     this.shadow = scene.add.ellipse(0, 4, 76, 12, 0x000000, 0.28);
-    this.guardLabel = scene.add
-      .text(0, -274, 'GUARD', {
-        color: '#dff6ff',
-        backgroundColor: '#163848',
-        fontFamily: 'Trebuchet MS, sans-serif',
-        fontSize: '13px',
-        fontStyle: 'bold',
-        padding: { x: 6, y: 3 },
-      })
-      .setOrigin(0.5)
-      .setVisible(false);
-    this.guardShield = scene.add
-      .ellipse(18, -112, 96, 210, 0x7bdcff, 0.08)
-      .setStrokeStyle(4, 0xdff6ff, 0.9)
-      .setVisible(false);
     const idleSheet = definition.art.idleSheet;
     this.visual = scene.add
       .sprite(0, 0, idleSheet?.textureKey ?? definition.art.fighterTextureKey)
@@ -154,7 +137,7 @@ export class Fighter {
     }
     this.refreshVisualScale(1, idleSheet?.nativeFacing);
 
-    this.view = scene.add.container(x, FIGHTER_GROUND_Y, [this.shadow, this.guardShield, this.visual, this.guardLabel]);
+    this.view = scene.add.container(x, FIGHTER_GROUND_Y, [this.shadow, this.visual]);
     this.setFacing(facing);
   }
 
@@ -186,7 +169,6 @@ export class Fighter {
     this.facing = facing;
     const visualFacing = resolveVisualFacing(facing, this.definition.art.nativeFacing);
     this.view.setScale(visualFacing, 1);
-    this.guardLabel.setScale(visualFacing, 1);
   }
 
   move(direction: -1 | 0 | 1, deltaSeconds: number): void {
@@ -205,14 +187,12 @@ export class Fighter {
 
   setBlocking(blocking: boolean): void {
     this._blocking = blocking;
-    this.refreshGuardPresentation();
   }
 
   setCrouching(crouching: boolean): void {
     if (this.crouching === crouching) return;
     this.crouching = crouching;
     this.refreshVisualScale();
-    this.refreshGuardPresentation();
   }
 
   updatePhysics(deltaSeconds: number): void {
@@ -394,16 +374,6 @@ export class Fighter {
         yoyo: true,
       });
     }
-    if (blocked) {
-      this.guardShield.setAlpha(1).setScale(1.12);
-      this.scene.tweens.add({
-        targets: this.guardShield,
-        alpha: 0.42,
-        scale: 1,
-        duration: 130,
-        ease: 'Power2',
-      });
-    }
     this.scene.time.delayedCall(presentationDuration, () => {
       if (this.presentationRevision !== revision || this.knockedOut) return;
       this.visual.setPosition(this._blocking ? -7 : 0, 0).setAngle(0);
@@ -497,19 +467,6 @@ export class Fighter {
       frameScale * multiplier * localFacing,
       frameScale * multiplier * (this.crouching && !this.definition.art.crouchSheet ? 0.78 : 1),
     );
-  }
-
-  private refreshGuardPresentation(): void {
-    this.guardLabel
-      .setText(this.crouching ? 'LOW GUARD' : 'STAND GUARD')
-      .setY(this.crouching ? -182 : -274)
-      .setVisible(this._blocking);
-    this.guardShield
-      .setPosition(18, this.crouching ? -68 : -112)
-      .setDisplaySize(96, this.crouching ? 118 : 210)
-      .setAlpha(0.72)
-      .setScale(1)
-      .setVisible(this._blocking);
   }
 
   private flashCombatFeedback(kind: CombatFeedbackKind): void {
