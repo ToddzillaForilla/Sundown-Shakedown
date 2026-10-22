@@ -1,0 +1,92 @@
+{
+  "source": "pixellab-She-lands-with-a-heavy--contro-1792680536627-3x.png",
+  "approval": "User supplied and requested landing-recovery integration on 2026-10-22.",
+  "grid": {
+    "columns": 3,
+    "rows": 3,
+    "sourceCell": 768,
+    "frameCount": 7,
+    "order": "row-major; last two cells unused"
+  },
+  "export": {
+    "cell": 256,
+    "resize": "nearest",
+    "nativeFacing": -1,
+    "frameRate": 28,
+    "perFrameAlignment": false
+  },
+  "reference": "Idle silhouette is 224 px with foot baseline y251; source frames preserve the same body scale and baseline. Legacy reaction sheet retained.",
+  "durationMs": 250,
+  "measurements": [
+    {
+      "frame": 0,
+      "bounds": [
+        55,
+        28,
+        183,
+        251
+      ],
+      "silhouetteHeight": 224
+    },
+    {
+      "frame": 1,
+      "bounds": [
+        58,
+        30,
+        183,
+        251
+      ],
+      "silhouetteHeight": 222
+    },
+    {
+      "frame": 2,
+      "bounds": [
+        61,
+        36,
+        183,
+        251
+      ],
+      "silhouetteHeight": 216
+    },
+    {
+      "frame": 3,
+      "bounds": [
+        64,
+        42,
+        187,
+        251
+      ],
+      "silhouetteHeight": 210
+    },
+    {
+      "frame": 4,
+      "bounds": [
+        67,
+        48,
+        190,
+        251
+      ],
+      "silhouetteHeight": 204
+    },
+    {
+      "frame": 5,
+      "bounds": [
+        67,
+        42,
+        190,
+        251
+      ],
+      "silhouetteHeight": 210
+    },
+    {
+      "frame": 6,
+      "bounds": [
+        66,
+        37,
+        188,
+        251
+      ],
+      "silhouetteHeight": 215
+    }
+  ]
+}

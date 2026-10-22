@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest';
 import sharp from 'sharp';
 import { characterList } from './index';
 
+const localPath = (url: URL) => decodeURIComponent(url.pathname).replace(/^\/([A-Za-z]:)/, '$1');
+
 describe('character content packages', () => {
   it('registers unique fighter identifiers', () => {
     const ids = characterList.map((character) => character.id);
@@ -45,7 +47,6 @@ describe('character content packages', () => {
   it('slices fighter animation sheets into complete frames', async () => {
     const todd = characterList.find((character) => character.id === 'todd');
     const kristen = characterList.find((character) => character.id === 'kristen');
-    const localPath = (url: URL) => decodeURIComponent(url.pathname).replace(/^\/([A-Za-z]:)/, '$1');
     const sheets = [
       {
         definition: todd?.art.idleSheet,
@@ -112,8 +113,20 @@ describe('character content packages', () => {
         path: localPath(new URL('./kristen/assets/sprites/kristen-walk-direction-combo-v1.png', import.meta.url)),
       },
       {
+        definition: kristen?.art.landingSheet,
+        path: localPath(new URL('./kristen/assets/sprites/kristen-landing-v2.png', import.meta.url)),
+      },
+      {
         definition: kristen?.art.kickAttackSheet,
         path: localPath(new URL('./kristen/assets/sprites/kristen-kick-v5.png', import.meta.url)),
+      },
+      {
+        definition: kristen?.art.airKickAttackSheet,
+        path: localPath(new URL('./kristen/assets/sprites/kristen-jump-kick-v1.png', import.meta.url)),
+      },
+      {
+        definition: kristen?.art.airPunchAttackSheet,
+        path: localPath(new URL('./kristen/assets/sprites/kristen-jump-punch-v1.png', import.meta.url)),
       },
       {
         definition: kristen?.art.punchAttackSheet,
@@ -234,6 +247,29 @@ describe('character content packages', () => {
     expect(kickDuration).toBeLessThan(todd!.moves.crouchLight.cooldownMs);
   });
 
+  it('uses Kristen’s seven-frame landing at idle scale with planted feet', async () => {
+    const kristen = characterList.find((character) => character.id === 'kristen')!;
+    const landing = kristen.art.landingSheet!;
+    expect(landing.frameCount).toBe(7);
+    expect(landing.nativeFacing).toBe(kristen.art.idleSheet!.nativeFacing);
+    expect(landing.frameWidth).toBe(kristen.art.idleSheet!.frameWidth);
+    expect(landing.frameHeight).toBe(kristen.art.idleSheet!.frameHeight);
+    expect(landing.frameCount / landing.frameRate * 1000).toBe(250);
+    const path = localPath(new URL('./kristen/assets/sprites/kristen-landing-v2.png', import.meta.url));
+    for (let index = 0; index < landing.frameCount; index += 1) {
+      const { data, info } = await sharp(path)
+        .extract({ left: index * 256, top: 0, width: 256, height: 256 })
+        .ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+      const opaquePixels = [];
+      for (let y = 0; y < 256; y += 1) for (let x = 0; x < 256; x += 1) {
+        if (data[(y * info.width + x) * 4 + 3]) opaquePixels.push({ x, y });
+      }
+      expect(opaquePixels.length).toBeGreaterThan(0);
+      expect(Math.max(...opaquePixels.map((pixel) => pixel.y))).toBe(251);
+      expect(opaquePixels.every(({ x, y }) => x > 0 && x < 255 && y > 0 && y < 255)).toBe(true);
+    }
+  });
+
   it('gives Kristen’s four-pose kick a slightly quicker playback and recovery', () => {
     const kristen = characterList.find((character) => character.id === 'kristen')!;
     const kick = kristen.art.kickAttackSheet!;
@@ -245,6 +281,26 @@ describe('character content packages', () => {
     for (const move of [kristen.moves.light, kristen.moves.crouchLight]) {
       expect(Math.max(move.cooldownMs, durationMs)).toBe(444);
     }
+  });
+
+  it('keeps Kristen’s authored jump kick within its existing action cooldown', () => {
+    const kristen = characterList.find((character) => character.id === 'kristen')!;
+    const kick = kristen.art.airKickAttackSheet!;
+    const durationMs = Math.round(kick.frameCount / kick.frameRate * 1000);
+    expect(kick.frameCount).toBe(7);
+    expect(kick.nativeFacing).toBe(kristen.art.idleSheet!.nativeFacing);
+    expect(durationMs).toBe(333);
+    expect(Math.max(kristen.moves.airLight.cooldownMs, durationMs)).toBe(350);
+  });
+
+  it('keeps Kristen’s authored jump punch within its existing action cooldown', () => {
+    const kristen = characterList.find((character) => character.id === 'kristen')!;
+    const punch = kristen.art.airPunchAttackSheet!;
+    const durationMs = Math.round(punch.frameCount / punch.frameRate * 1000);
+    expect(punch.frameCount).toBe(7);
+    expect(punch.nativeFacing).toBe(kristen.art.idleSheet!.nativeFacing);
+    expect(durationMs).toBe(333);
+    expect(Math.max(kristen.moves.airHeavy.cooldownMs, durationMs)).toBe(640);
   });
 
   it('keeps Todd air attack clips within their existing cooldowns', () => {

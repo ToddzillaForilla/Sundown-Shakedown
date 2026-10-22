@@ -3,7 +3,7 @@ import type { CharacterAnimationSheet, CharacterDefinition, MoveDefinition } fro
 import { getAttackPresentation, getAuthoredAttackAnimation, getHitStunMs, selectPunchAnimationSheet } from './CombatAttacks';
 import { calculateHitDamage } from './CombatBlocking';
 import { getCombatFlashProfile, type CombatFeedbackKind } from './CombatEffects';
-import { getReactionNativeFacing } from './FighterPresentation';
+import { getAnimationNativeFacing, getReactionNativeFacing } from './FighterPresentation';
 import { FighterAnimationStateMachine, type FighterAnimationState } from './FighterAnimationState';
 import {
   FIGHTER_GROUND_Y,
@@ -320,7 +320,11 @@ export class Fighter {
       this.refreshVisualScale(1, attackSheet.nativeFacing);
     } else {
       this.visual.anims.pause();
-      this.refreshVisualScale(presentation.scale);
+      // The frozen pose still uses its sheet's facing, including during specials/Supers.
+      this.refreshVisualScale(
+        presentation.scale,
+        getAnimationNativeFacing(this.definition, this.visual.anims.currentAnim?.key),
+      );
     }
     this.scene.tweens.add({
       targets: this.visual,

@@ -3,12 +3,15 @@ import { kristenMoves } from './moves';
 import fighterUrl from './assets/sprites/kristen-concept-fighter.png';
 import idleSheetUrl from './assets/sprites/kristen-idle-retro-v1.png';
 import jumpSheetUrl from './assets/sprites/kristen-jump-v1.png';
+import landingSheetUrl from './assets/sprites/kristen-landing-v2.png';
 import crouchSheetUrl from './assets/sprites/kristen-crouch-v1.png';
 import blockSheetUrl from './assets/sprites/kristen-block-v2.png';
 import hitSheetUrl from './assets/sprites/kristen-hit-v2.png';
 import defeatSheetUrl from './assets/sprites/kristen-ko-v1.png';
 import walkSheetUrl from './assets/sprites/kristen-walk-direction-combo-v1.png';
 import kickAttackSheetUrl from './assets/sprites/kristen-kick-v5.png';
+import airKickAttackSheetUrl from './assets/sprites/kristen-jump-kick-v1.png';
+import airPunchAttackSheetUrl from './assets/sprites/kristen-jump-punch-v1.png';
 import punchMainAttackSheetUrl from './assets/sprites/kristen-punch-main-75-1792159772322.png';
 import punchAltAttackSheetUrl from './assets/sprites/kristen-punch-alt-25-1792159502161.png';
 import reactionSheetUrl from './assets/sprites/kristen-reactions-sheet-v1.png';
@@ -44,6 +47,16 @@ export const kristen: CharacterDefinition = {
       frameHeight: 256,
       frameCount: 7,
       frameRate: 7,
+    },
+    landingSheet: {
+      textureKey: 'fighter-kristen-landing-v2',
+      animationKey: 'fighter-kristen-landing-v2',
+      url: landingSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      frameRate: 28,
     },
     crouchSheet: {
       textureKey: 'fighter-kristen-crouch-v1',
@@ -119,6 +132,26 @@ export const kristen: CharacterDefinition = {
       frameCount: 4,
       // Keep each pose readable with a slightly quicker 444 ms kick.
       frameRate: 9,
+    },
+    airKickAttackSheet: {
+      textureKey: 'fighter-kristen-jump-kick-v1',
+      animationKey: 'fighter-kristen-jump-kick-v1',
+      url: airKickAttackSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      frameRate: 21,
+    },
+    airPunchAttackSheet: {
+      textureKey: 'fighter-kristen-jump-punch-v1',
+      animationKey: 'fighter-kristen-jump-punch-v1',
+      url: airPunchAttackSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      frameRate: 21,
     },
     punchAttackSheet: {
       textureKey: 'fighter-kristen-punch-main-75-v1',
