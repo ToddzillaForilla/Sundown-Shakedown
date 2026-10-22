@@ -1,0 +1,127 @@
+{
+  "source": "User-supplied pixellab-sits-down-cross-legged-with-a--1792108745138-3x.png",
+  "sourceGrid": {
+    "columns": 4,
+    "rows": 4,
+    "cellSize": 768,
+    "usedFrames": 13
+  },
+  "frameSize": 256,
+  "frameRate": 8,
+  "loopFrames": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "nativeFacing": -1,
+  "measurements": [
+    {
+      "frame": 0,
+      "shiftY": 0,
+      "left": 73,
+      "right": 188,
+      "top": 16,
+      "bottom": 251
+    },
+    {
+      "frame": 1,
+      "shiftY": 0,
+      "left": 80,
+      "right": 202,
+      "top": 78,
+      "bottom": 251
+    },
+    {
+      "frame": 2,
+      "shiftY": -2,
+      "left": 88,
+      "right": 211,
+      "top": 118,
+      "bottom": 251
+    },
+    {
+      "frame": 3,
+      "shiftY": -2,
+      "left": 88,
+      "right": 216,
+      "top": 109,
+      "bottom": 251
+    },
+    {
+      "frame": 4,
+      "shiftY": -2,
+      "left": 88,
+      "right": 206,
+      "top": 106,
+      "bottom": 251
+    },
+    {
+      "frame": 5,
+      "shiftY": -2,
+      "left": 81,
+      "right": 207,
+      "top": 111,
+      "bottom": 251
+    },
+    {
+      "frame": 6,
+      "shiftY": -2,
+      "left": 80,
+      "right": 203,
+      "top": 116,
+      "bottom": 251
+    },
+    {
+      "frame": 7,
+      "shiftY": -2,
+      "left": 80,
+      "right": 205,
+      "top": 116,
+      "bottom": 251
+    },
+    {
+      "frame": 8,
+      "shiftY": -2,
+      "left": 80,
+      "right": 204,
+      "top": 116,
+      "bottom": 251
+    },
+    {
+      "frame": 9,
+      "shiftY": -2,
+      "left": 80,
+      "right": 203,
+      "top": 116,
+      "bottom": 251
+    },
+    {
+      "frame": 10,
+      "shiftY": -2,
+      "left": 80,
+      "right": 205,
+      "top": 116,
+      "bottom": 251
+    },
+    {
+      "frame": 11,
+      "shiftY": -2,
+      "left": 80,
+      "right": 204,
+      "top": 116,
+      "bottom": 251
+    },
+    {
+      "frame": 12,
+      "shiftY": -2,
+      "left": 80,
+      "right": 203,
+      "top": 116,
+      "bottom": 251
+    }
+  ]
+}

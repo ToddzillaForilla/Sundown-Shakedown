@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { createMusicToggle } from '../MusicToggle';
 import { characterList, type CharacterDefinition } from '../../content/characters';
 import type { Difficulty } from '../session';
 import { applyFightSelection, gameSession } from '../session';
@@ -45,6 +46,7 @@ export class CharacterSelectScene extends Phaser.Scene {
     this.createCharacterRoster();
     this.createDifficultySelector();
     this.createFightButton();
+    createMusicToggle(this);
 
     this.input.keyboard?.on('keydown-LEFT', () => this.changeCharacter(-1));
     this.input.keyboard?.on('keydown-RIGHT', () => this.changeCharacter(1));

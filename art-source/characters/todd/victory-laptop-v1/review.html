@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Todd victory playback review</title>
+<style>
+body{margin:0;background:#111;color:#eee;font:14px monospace}button{padding:10px;margin:4px}#game{width:min(960px,100vw);aspect-ratio:16/9}#status{white-space:pre-wrap;padding:8px}canvas{max-width:100%}
+</style>
+<button id="todd">Fight as Todd</button><button id="kristen">Fight as Kristen</button>
+<button id="win-todd">Todd wins round</button><button id="win-kristen">Kristen wins round</button>
+<button id="slow">Slow / normal animation</button><button id="mirror">Mirror fighters</button>
+<div id="game"></div><div id="status">Start a fight, then award two round wins to test the actual match-result flow.</div>
+<script type="module">
+import Phaser from 'phaser';
+import { gameConfig } from '/src/game/config.ts';
+import { gameSession } from '/src/game/session.ts';
+const game = new Phaser.Game({...gameConfig, scale:{...gameConfig.scale,autoCenter:Phaser.Scale.NO_CENTER}});
+let trace=[],last='',slow=false;
+const reviewCharacter = new URLSearchParams(location.search).get('fighter') ?? 'todd';
+document.title = `${reviewCharacter} victory playback review`;
+for (const name of ['todd','kristen']) document.getElementById(name).onclick=()=>{
+  for(const scene of game.scene.getScenes(true)) game.scene.stop(scene.scene.key);
+  gameSession.playerCharacter=name; trace=[]; last=''; game.scene.start('FightScene');
+};
+for(const name of ['todd','kristen']) document.getElementById('win-'+name).onclick=()=>{
+  const scene=game.scene.getScene('FightScene');
+  if(!scene?.roundActive)return;
+  for(const fighter of [scene.player,scene.opponent]) {
+    fighter.health=fighter.definition.id===name?1000:1;
+    if(fighter.health===1)fighter.takeHit(fighter.definition.moves.heavy,false,10000);
+  }
+  scene.endRound();
+};
+document.getElementById('slow').onclick=()=>{slow=!slow;game.anims.globalTimeScale=slow?0.3:1;};
+document.getElementById('mirror').onclick=()=>{
+  const scene=game.scene.getScene('FightScene');
+  for(const fighter of [scene.player,scene.opponent]){fighter.view.x=960-fighter.x;fighter.setFacing(fighter.facing===1?-1:1);}
+};
+game.events.on('poststep',()=>{
+  const scene=game.scene.getScene('FightScene');
+  if(!scene?.scene.isActive()||!scene.player)return;
+  const fighter=[scene.player,scene.opponent].find(f=>f.definition.id===reviewCharacter);
+  const anim=fighter.visual.anims.currentAnim?.key;
+  const frame=fighter.visual.frame.name;
+  const token=anim+':'+frame;
+  if(anim?.includes('victory')&&token!==last){trace.push(token.replace(fighter.definition.art.victorySheet.animationKey,''));last=token;}
+  document.getElementById('status').textContent=JSON.stringify({
+    wins:[scene.match.playerWins,scene.match.opponentWins],roundActive:scene.roundActive,
+    state:fighter.presentationState,animation:anim,frame,playing:fighter.visual.anims.isPlaying,
+    baseline:fighter.y,scale:fighter.visual.scaleY,
+    result:scene.announcement.text,intro:trace.filter(t=>t.startsWith(':')),frames:trace.slice(-21),
+  },null,2);
+});
+</script>
+</html>

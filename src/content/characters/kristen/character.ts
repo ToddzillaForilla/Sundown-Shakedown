@@ -8,6 +8,7 @@ import crouchSheetUrl from './assets/sprites/kristen-crouch-v1.png';
 import blockSheetUrl from './assets/sprites/kristen-block-v2.png';
 import hitSheetUrl from './assets/sprites/kristen-hit-v2.png';
 import defeatSheetUrl from './assets/sprites/kristen-ko-v1.png';
+import victorySheetUrl from './assets/sprites/kristen-victory-drink-v1.png';
 import walkSheetUrl from './assets/sprites/kristen-walk-direction-combo-v1.png';
 import kickAttackSheetUrl from './assets/sprites/kristen-kick-v5.png';
 import airKickAttackSheetUrl from './assets/sprites/kristen-jump-kick-v1.png';
@@ -28,6 +29,16 @@ export const kristen: CharacterDefinition = {
     portraitTextureKey: 'portrait-kristen',
     portraitUrl,
     renderScale: 0.96,
+    victorySheet: {
+      textureKey: 'fighter-kristen-victory-drink-v1',
+      animationKey: 'fighter-kristen-victory-drink-v1',
+      url: victorySheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 27,
+      frameRate: 12,
+    },
     idleSheet: {
       textureKey: 'fighter-kristen-idle-retro-v1',
       animationKey: 'fighter-kristen-idle-retro-v1',

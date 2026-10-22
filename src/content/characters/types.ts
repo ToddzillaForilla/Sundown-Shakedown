@@ -88,6 +88,8 @@ export interface CharacterDefinition {
     airPunchAttackSheet?: CharacterAnimationSheet;
     hitSheet?: CharacterAnimationSheet;
     defeatSheet?: CharacterAnimationSheet;
+    /** Without loopStartFrame, play once and hold the last frame. */
+    victorySheet?: CharacterAnimationSheet & { loopStartFrame?: number };
     reactionSheet?: CharacterReactionSheet;
   };
   palette: CharacterPalette;

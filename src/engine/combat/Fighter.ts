@@ -84,6 +84,7 @@ export class Fighter {
       definition.art.airPunchAttackSheet,
       definition.art.hitSheet,
       definition.art.defeatSheet,
+      definition.art.victorySheet,
     ]) {
       if (!sheet || scene.anims.exists(sheet.animationKey)) continue;
       scene.anims.create({
@@ -94,6 +95,17 @@ export class Fighter {
         }),
         frameRate: sheet.frameRate,
         repeat: 0,
+      });
+    }
+    const victory = definition.art.victorySheet;
+    if (victory?.loopStartFrame !== undefined && !scene.anims.exists(`${victory.animationKey}-loop`)) {
+      scene.anims.create({
+        key: `${victory.animationKey}-loop`,
+        frames: scene.anims.generateFrameNumbers(victory.textureKey, {
+          start: victory.loopStartFrame, end: victory.frameCount - 1,
+        }),
+        frameRate: victory.frameRate,
+        repeat: -1,
       });
     }
     const crouchSheet = definition.art.crouchSheet;
@@ -221,7 +233,7 @@ export class Fighter {
         : undefined,
     });
 
-    if (state === 'ko' || state === 'attack' || state === 'hit') return;
+    if (state === 'ko' || state === 'victory' || state === 'attack' || state === 'hit') return;
 
     if (state === 'crouch') {
       const crouchSheet = this.definition.art.crouchSheet;
@@ -399,6 +411,7 @@ export class Fighter {
   }
 
   reset(x: number, facing: 1 | -1): void {
+    this.visual.chain();
     this.scene.tweens.killTweensOf(this.visual);
     this.scene.tweens.killTweensOf(this.view);
     this.view.setPosition(x, FIGHTER_GROUND_Y);
@@ -461,6 +474,25 @@ export class Fighter {
       duration: 360,
       ease: 'Bounce.Out',
     });
+  }
+
+  playVictory(): void {
+    const sheet = this.definition.art.victorySheet;
+    if (!sheet || this.knockedOut || this.presentationState === 'victory') return;
+    this.presentationRevision += 1;
+    this.flashRevision += 1;
+    this.animationState.celebrate();
+    this.scene.tweens.killTweensOf(this.visual);
+    this.scene.tweens.killTweensOf(this.view);
+    this.velocityY = 0;
+    this.view.setY(FIGHTER_GROUND_Y);
+    this.setBlocking(false);
+    this.setCrouching(false);
+    this.visual.clearTint().setPosition(0, 0).setAngle(0).setAlpha(1);
+    this.visual.chain();
+    this.visual.play(sheet.animationKey);
+    if (sheet.loopStartFrame !== undefined) this.visual.chain(`${sheet.animationKey}-loop`);
+    this.refreshVisualScale(1, sheet.nativeFacing);
   }
 
   private refreshVisualScale(multiplier = 1, animationNativeFacing?: 1 | -1): void {

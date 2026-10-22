@@ -53,6 +53,14 @@ describe('character content packages', () => {
         path: localPath(new URL('./todd/assets/sprites/todd-idle-hands-free-v1.png', import.meta.url)),
       },
       {
+        definition: todd?.art.victorySheet,
+        path: localPath(new URL('./todd/assets/sprites/todd-victory-laptop-v1.png', import.meta.url)),
+      },
+      {
+        definition: kristen?.art.victorySheet,
+        path: localPath(new URL('./kristen/assets/sprites/kristen-victory-drink-v1.png', import.meta.url)),
+      },
+      {
         definition: todd?.art.walkSheet,
         path: localPath(new URL('./todd/assets/sprites/todd-walk-hands-free-v1.png', import.meta.url)),
       },

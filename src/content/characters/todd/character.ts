@@ -14,6 +14,7 @@ import punchAttackSheetUrl from './assets/sprites/todd-punch-left-75-v1.png';
 import alternatePunchAttackSheetUrl from './assets/sprites/todd-punch-right-25-v1.png';
 import hitSheetUrl from './assets/sprites/todd-hit-reaction-v1.png';
 import defeatSheetUrl from './assets/sprites/todd-defeat-ko-v1.png';
+import victorySheetUrl from './assets/sprites/todd-victory-laptop-v1.png';
 import portraitUrl from './assets/portraits/todd-fighter-card-v3-facing-right.png';
 
 export const todd: CharacterDefinition = {
@@ -158,6 +159,17 @@ export const todd: CharacterDefinition = {
       frameHeight: 256,
       frameCount: 9,
       frameRate: 16,
+    },
+    victorySheet: {
+      textureKey: 'fighter-todd-victory-laptop-v1',
+      animationKey: 'fighter-todd-victory-laptop-v1',
+      url: victorySheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 13,
+      frameRate: 8,
+      loopStartFrame: 6,
     },
   },
   palette: {

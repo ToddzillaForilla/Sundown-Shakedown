@@ -8,6 +8,7 @@ export type FighterAnimationState =
   | 'landing'
   | 'attack'
   | 'hit'
+  | 'victory'
   | 'ko';
 
 export interface FighterAnimationContext {
@@ -42,13 +43,13 @@ export class FighterAnimationStateMachine {
   }
 
   beginAttack(now: number, durationMs: number): void {
-    if (this.state === 'ko') return;
+    if (this.state === 'ko' || this.state === 'victory') return;
     this.state = 'attack';
     this.lockedUntil = now + durationMs;
   }
 
   beginHit(now: number, durationMs: number): void {
-    if (this.state === 'ko') return;
+    if (this.state === 'ko' || this.state === 'victory') return;
     this.state = 'hit';
     this.lockedUntil = now + durationMs;
   }
@@ -59,8 +60,15 @@ export class FighterAnimationStateMachine {
     this.landingPending = false;
   }
 
+  celebrate(): void {
+    if (this.state === 'ko') return;
+    this.state = 'victory';
+    this.lockedUntil = Number.POSITIVE_INFINITY;
+    this.landingPending = false;
+  }
+
   update(context: FighterAnimationContext): FighterAnimationState {
-    if (this.state === 'ko') return this.state;
+    if (this.state === 'ko' || this.state === 'victory') return this.state;
 
     if (!this.wasGrounded && context.grounded) this.landingPending = true;
     this.wasGrounded = context.grounded;

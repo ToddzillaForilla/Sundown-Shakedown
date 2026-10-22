@@ -22,6 +22,7 @@ import { GAME_HEIGHT, GAME_WIDTH } from '../config';
 import { PlayerInputBuffer, resolveDirectionalIntent, type BufferedAction } from '../input/PlayerInput';
 import { shouldShowTouchControls, TouchControls } from '../input/TouchControls';
 import { gameSession } from '../session';
+import { createMusicToggle } from '../MusicToggle';
 
 type ControlAction = 'left' | 'right' | 'up' | 'down' | 'kick' | 'punch' | 'jump' | 'super';
 const PIXEL_FONT = '"Courier New", Courier, monospace';
@@ -103,6 +104,7 @@ export class FightScene extends Phaser.Scene {
         character.art.airPunchAttackSheet,
         character.art.hitSheet,
         character.art.defeatSheet,
+        character.art.victorySheet,
       ]) {
         if (!sheet || this.textures.exists(sheet.textureKey)) continue;
         this.load.spritesheet(sheet.textureKey, sheet.url, {
@@ -146,6 +148,7 @@ export class FightScene extends Phaser.Scene {
     this.createHud(playerDefinition, opponentDefinition);
     this.createKeyboardControls();
     this.createMouseControls();
+    createMusicToggle(this);
     this.touch = shouldShowTouchControls() ? new TouchControls(this) : undefined;
     this.showControlGuide();
     this.startRound();
@@ -736,17 +739,19 @@ export class FightScene extends Phaser.Scene {
     const announcement = result.winner === 'draw' ? 'DRAW' : `${winner.toUpperCase()} WINS`;
     this.showAnnouncement(announcement);
     if (result.matchOver) {
-      this.time.delayedCall(900, () => this.showMatchResult(winner));
+      const winningFighter = result.winner === 'player' ? this.player : this.opponent;
+      this.time.delayedCall(900, () => this.showMatchResult(winningFighter));
       return;
     }
     this.time.delayedCall(1600, () => this.startRound());
   }
 
-  private showMatchResult(winner: string): void {
+  private showMatchResult(winner: Fighter): void {
     this.announcement
       .setFontSize(34)
       .setLineSpacing(5);
-    this.showAnnouncement(`${winner.toUpperCase()}\nSHAKES DOWN THE BACKYARD`);
+    this.showAnnouncement(`${winner.definition.displayName.toUpperCase()}\nSHAKES DOWN THE BACKYARD`);
+    winner.playVictory();
 
     const buttonY = GAME_HEIGHT - 48;
     const buttonTop = buttonY - 27;
