@@ -73,6 +73,23 @@ For phone testing, use the computer's current LAN address and Vite port on a rea
 
 For a production preview, run `npm run build` followed by `npm run preview` and open its printed URL. Local builds and previews do not publish or update a hosted site.
 
+## GitHub Pages hosting
+
+The [Pages workflow](.github/workflows/pages.yml) tests and builds the game, then deploys only `dist/`. It runs when `PixelLab-assets-added` is pushed, since that branch contains the current playable game; `main` is an older snapshot. If development moves to another branch, update the workflow trigger and the `github-pages` environment's allowed deployment branches together.
+
+To enable hosting in [the GitHub repository](https://github.com/ToddzillaForilla/Sundown-Shakedown), choose **Settings → Pages → Build and deployment → Source → GitHub Actions**. Allow `PixelLab-assets-added` to deploy to the `github-pages` environment if branch restrictions are enabled. The expected address after a successful deployment is `https://ToddzillaForilla.github.io/Sundown-Shakedown/`.
+
+The workflow reads the Pages base path from GitHub. To check that repository subpath locally:
+
+```powershell
+npm run build -- --base=/Sundown-Shakedown/
+npm run preview -- --base=/Sundown-Shakedown/
+```
+
+Open the printed preview origin with `/Sundown-Shakedown/` appended. Regular `npm run build` still produces a root-hosted build. The web manifest and app icons support either location.
+
+The previous ChatGPT Sites deployment is separate. Enabling GitHub Pages does not take that copy offline; keep it available until the replacement is verified.
+
 ## Controls
 
 | Action | Keyboard | Mouse | Touch |
