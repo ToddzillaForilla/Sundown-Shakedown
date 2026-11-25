@@ -1,0 +1,7 @@
+{
+  "jobId": "3c02652a-e724-4c62-b8a7-210539d24c44",
+  "assetId": "30108467-b415-5d35-afdc-d2f04dcec1ff",
+  "quotedGenerations": 8,
+  "status": "processing",
+  "receipt": "id: 3c02652a-e724-4c62-b8a7-210539d24c44\njob_id: 3c02652a-e724-4c62-b8a7-210539d24c44\naction: One standing SIDE KICK toward screen left at waist height, then return to the exact original fighting guard. Chamber the knee across the body, pivot on the supporting foot and turn the hip sideways. Drive the HEEL horizontally left at the opponent's midsection. Fully straighten the kicking knee so hip, knee and heel make a long nearly horizontal line. Briefly show full straight-leg extension with toes pulled back and heel leading. Lean torso slightly right for balance while support foot stays planted at the original ground line. Recoil into chamber, lower the foot and settle into the original guard. No bent-knee front kick, low kick, jump, spin, travel or extra limbs. Keep the whole body and extended foot inside the canvas, fixed camera and unchanged body proportions. Preserve face, glasses, beard, left forearm tattoo and bare wrists.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 151031\nasset_id: 30108467-b415-5d35-afdc-d2f04dcec1ff\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"3c02652a-e724-4c62-b8a7-210539d24c44\")"
+}

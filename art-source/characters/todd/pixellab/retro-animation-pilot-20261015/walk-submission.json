@@ -1,0 +1,7 @@
+{
+  "jobId": "921f894e-8bd1-414e-a417-7a90c9691a05",
+  "assetId": "41b2e40d-c603-5ad2-881d-495a28a6c0e8",
+  "quotedGenerations": 8,
+  "status": "processing",
+  "receipt": "id: 921f894e-8bd1-414e-a417-7a90c9691a05\njob_id: 921f894e-8bd1-414e-a417-7a90c9691a05\naction: One seamless walking-in-place cycle facing screen left, as a controlled arcade fighter advancing while keeping a raised guard. Alternate clear left and right steps with distinct heel lift, passing pose and foot plant; grounded weighted footwork, no jogging or hopping. Keep torso, head and fists steady, preserve the original body proportions and scale. The character stays centered rather than traveling across the canvas. Finish back at the original stance so the cycle repeats. Fixed camera, same ground line, no turning, no watch, preserve left forearm tattoo.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 151029\nasset_id: 41b2e40d-c603-5ad2-881d-495a28a6c0e8\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"921f894e-8bd1-414e-a417-7a90c9691a05\")"
+}

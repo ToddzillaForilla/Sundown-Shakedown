@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { showdownMusic } from '../../content/audio';
 import { GAME_HEIGHT, GAME_WIDTH } from '../config';
 
 const TITLE_DEPTH = 10;
@@ -9,6 +10,10 @@ export class TitleScene extends Phaser.Scene {
 
   constructor() {
     super('TitleScene');
+  }
+
+  preload(): void {
+    if (!this.cache.audio.exists(showdownMusic.key)) this.load.audio(showdownMusic.key, showdownMusic.url);
   }
 
   create(): void {
@@ -146,7 +151,7 @@ export class TitleScene extends Phaser.Scene {
 
   private createControlLegend(): void {
     this.add
-      .text(GAME_WIDTH / 2, 414, 'MOVE WASD  |  KICK J  |  PUNCH K  |  SPECIAL I  |  JUMP L', {
+      .text(GAME_WIDTH / 2, 414, 'MOVE WASD  |  JUMP SPACE  |  PUNCH J  |  KICK K  |  SPECIAL L', {
         color: '#f6e6e8',
         fontFamily: PIXEL_FONT,
         fontSize: '11px',
@@ -180,6 +185,11 @@ export class TitleScene extends Phaser.Scene {
   private startGame(): void {
     if (this.isStarting) return;
     this.isStarting = true;
+    // The global sound manager keeps one track playing across scenes and rematches.
+    // Start on player input to respect browser autoplay restrictions.
+    if (this.cache.audio.exists(showdownMusic.key) && !this.sound.get(showdownMusic.key)) {
+      this.sound.add(showdownMusic.key, { loop: true, volume: 0.35 }).play();
+    }
     this.cameras.main.flash(70, 255, 210, 80);
     this.cameras.main.fadeOut(180, 0, 0, 0);
     this.time.delayedCall(180, () => this.scene.start('CharacterSelectScene'));

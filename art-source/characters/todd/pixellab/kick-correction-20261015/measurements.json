@@ -1,0 +1,311 @@
+[
+  {
+    "label": "Original kick",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 128,
+        "height": 164,
+        "bounds": {
+          "left": 33,
+          "top": 37,
+          "right": 86,
+          "bottom": 139
+        },
+        "silhouetteHeight": 103,
+        "bottomInset": 24,
+        "touchesEdge": false
+      },
+      {
+        "index": 1,
+        "width": 128,
+        "height": 164,
+        "bounds": {
+          "left": 31,
+          "top": 35,
+          "right": 86,
+          "bottom": 139
+        },
+        "silhouetteHeight": 105,
+        "bottomInset": 24,
+        "touchesEdge": false
+      },
+      {
+        "index": 2,
+        "width": 128,
+        "height": 164,
+        "bounds": {
+          "left": 27,
+          "top": 30,
+          "right": 82,
+          "bottom": 136
+        },
+        "silhouetteHeight": 107,
+        "bottomInset": 27,
+        "touchesEdge": false
+      },
+      {
+        "index": 3,
+        "width": 128,
+        "height": 164,
+        "bounds": {
+          "left": 23,
+          "top": 26,
+          "right": 85,
+          "bottom": 136
+        },
+        "silhouetteHeight": 111,
+        "bottomInset": 27,
+        "touchesEdge": false
+      },
+      {
+        "index": 4,
+        "width": 128,
+        "height": 164,
+        "bounds": {
+          "left": 15,
+          "top": 23,
+          "right": 86,
+          "bottom": 136
+        },
+        "silhouetteHeight": 114,
+        "bottomInset": 27,
+        "touchesEdge": false
+      },
+      {
+        "index": 5,
+        "width": 128,
+        "height": 164,
+        "bounds": {
+          "left": 30,
+          "top": 27,
+          "right": 88,
+          "bottom": 132
+        },
+        "silhouetteHeight": 106,
+        "bottomInset": 31,
+        "touchesEdge": false
+      },
+      {
+        "index": 6,
+        "width": 128,
+        "height": 164,
+        "bounds": {
+          "left": 33,
+          "top": 37,
+          "right": 86,
+          "bottom": 139
+        },
+        "silhouetteHeight": 103,
+        "bottomInset": 24,
+        "touchesEdge": false
+      }
+    ]
+  },
+  {
+    "label": "Corrected kick",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 51,
+          "top": 37,
+          "right": 104,
+          "bottom": 139
+        },
+        "silhouetteHeight": 103,
+        "bottomInset": 24,
+        "touchesEdge": false
+      },
+      {
+        "index": 1,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 51,
+          "top": 35,
+          "right": 100,
+          "bottom": 139
+        },
+        "silhouetteHeight": 105,
+        "bottomInset": 24,
+        "touchesEdge": false
+      },
+      {
+        "index": 2,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 56,
+          "top": 34,
+          "right": 98,
+          "bottom": 137
+        },
+        "silhouetteHeight": 104,
+        "bottomInset": 26,
+        "touchesEdge": false
+      },
+      {
+        "index": 3,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 38,
+          "top": 26,
+          "right": 106,
+          "bottom": 137
+        },
+        "silhouetteHeight": 112,
+        "bottomInset": 26,
+        "touchesEdge": false
+      },
+      {
+        "index": 4,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 35,
+          "top": 29,
+          "right": 114,
+          "bottom": 139
+        },
+        "silhouetteHeight": 111,
+        "bottomInset": 24,
+        "touchesEdge": false
+      },
+      {
+        "index": 5,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 32,
+          "top": 26,
+          "right": 112,
+          "bottom": 139
+        },
+        "silhouetteHeight": 114,
+        "bottomInset": 24,
+        "touchesEdge": false
+      },
+      {
+        "index": 6,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 30,
+          "top": 29,
+          "right": 117,
+          "bottom": 139
+        },
+        "silhouetteHeight": 111,
+        "bottomInset": 24,
+        "touchesEdge": false
+      },
+      {
+        "index": 7,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 41,
+          "top": 29,
+          "right": 108,
+          "bottom": 138
+        },
+        "silhouetteHeight": 110,
+        "bottomInset": 25,
+        "touchesEdge": false
+      },
+      {
+        "index": 8,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 52,
+          "top": 37,
+          "right": 104,
+          "bottom": 139
+        },
+        "silhouetteHeight": 103,
+        "bottomInset": 24,
+        "touchesEdge": false
+      }
+    ]
+  },
+  {
+    "label": "Reference idle",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 128,
+        "height": 164,
+        "bounds": {
+          "left": 33,
+          "top": 37,
+          "right": 86,
+          "bottom": 139
+        },
+        "silhouetteHeight": 103,
+        "bottomInset": 24,
+        "touchesEdge": false
+      },
+      {
+        "index": 1,
+        "width": 128,
+        "height": 164,
+        "bounds": {
+          "left": 35,
+          "top": 34,
+          "right": 89,
+          "bottom": 139
+        },
+        "silhouetteHeight": 106,
+        "bottomInset": 24,
+        "touchesEdge": false
+      },
+      {
+        "index": 2,
+        "width": 128,
+        "height": 164,
+        "bounds": {
+          "left": 37,
+          "top": 32,
+          "right": 91,
+          "bottom": 139
+        },
+        "silhouetteHeight": 108,
+        "bottomInset": 24,
+        "touchesEdge": false
+      },
+      {
+        "index": 3,
+        "width": 128,
+        "height": 164,
+        "bounds": {
+          "left": 35,
+          "top": 36,
+          "right": 88,
+          "bottom": 139
+        },
+        "silhouetteHeight": 104,
+        "bottomInset": 24,
+        "touchesEdge": false
+      },
+      {
+        "index": 4,
+        "width": 128,
+        "height": 164,
+        "bounds": {
+          "left": 33,
+          "top": 37,
+          "right": 86,
+          "bottom": 139
+        },
+        "silhouetteHeight": 103,
+        "bottomInset": 24,
+        "touchesEdge": false
+      }
+    ]
+  }
+]

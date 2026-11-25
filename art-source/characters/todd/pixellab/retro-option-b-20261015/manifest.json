@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-15",
+  "status": "approved-master-reference",
+  "scope": "One alternate retro Street Fighter-like Todd concept, preserve Option A; user will review before any animations.",
+  "jobId": "3d51b9df-6cdc-462a-8d09-8839c395c37a",
+  "assetId": "24d1909c-8e34-5ae3-b4f8-fb47f295937a",
+  "model": "Create Image (Pro)",
+  "referencePhoto": "../fresh-mockup-20261015/reference-original.jpg",
+  "referenceUpload": "../fresh-mockup-20261015/reference-upload.png",
+  "request": {
+    "description": "A single full-body pixel-art sprite of Todd, an ORIGINAL playable fighter for a 1990s arcade fighting game, facing SCREEN LEFT in a three-quarter fighting guard. Use the supplied PHOTO for his facial likeness: short side-swept brown hair, full neatly trimmed brown beard, black rectangular glasses, recognizable adult face. Clothing: plain black short-sleeve V-neck T-shirt, dark indigo charcoal jeans, black low-top sneakers. Colorful floral tattoo on his ANATOMICAL LEFT forearm (the near visible forearm in this left-facing pose); right forearm has no tattoo. Both wrists completely bare, no watch or wristbands. Strong retro Street Fighter II / Street Fighter Alpha era sprite-art influence: CPS-2 arcade pixel craftsmanship, mature athletic adult proportions about 6.5 to 7 heads tall, relatively small head, long legs, broad but plausible shoulders, expressive muscular forearms, powerful readable silhouette, dramatic stepped cel-shading, carefully clustered pixels, restrained selective dark outlines, crisp hand-pixelled edges. He should look like a grown man in a classic 2D fighting-game roster, NOT chibi, NOT a big-headed RPG character, NOT top-down. Feet planted apart on the same ground line, knees bent slightly, torso turned toward opponent, both fists raised in a confident balanced boxing guard, elbows relaxed. Eye-level orthographic side-view fighting-game camera. Whole body from hair to shoes fits with transparent margin on every side, no cropping, no scenery, no text, no effects, no props. Fill about 85 percent of canvas height with the body. One fighter only. Cool neutral colors, natural skin tones, blue-black clothing shadows. Preserve detailed likeness and tattoo rather than enlarging the head.",
+    "width": 256,
+    "height": 256,
+    "max_colors": 48,
+    "no_background": true,
+    "reference_images": [
+      {
+        "url": "upload:0b6d58a1-107f-4c7f-90b7-3729f51fc310",
+        "usage": "Photo likeness reference ONLY: Todd's face, glasses, hair, beard, black V-neck, and colorful anatomical LEFT forearm tattoo. Translate him into the requested tall adult 1990s arcade-fighter sprite proportions; do not copy the photograph's crop or background."
+      }
+    ],
+    "seed": 151027
+  },
+  "quotedGenerations": 10,
+  "chargedGenerations": 10,
+  "balanceBefore": 4971,
+  "accepted": true,
+  "runtimeIntegrated": false,
+  "balanceAfter": 4961,
+  "downloadUrl": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+  "actualCanvas": {
+    "width": 256,
+    "height": 256
+  },
+  "silhouetteHeight": 236,
+  "sourceReview": {
+    "visibleLeftForearmTattoo": true,
+    "noWatchVisible": true,
+    "edgeClipping": false,
+    "notes": [
+      "Taller adult proportions and stronger stepped shading than Option A.",
+      "Photo-inspired face, black rectangular glasses, V-neck shirt, jeans and sneakers are visible.",
+      "Only this pose exists; tattoo continuity across rotations and animation remain unverified."
+    ]
+  },
+  "approvedDate": "2026-10-15",
+  "approval": "User selected Option B over Option A: option b is so much better lets ditch a and go with b"
+}

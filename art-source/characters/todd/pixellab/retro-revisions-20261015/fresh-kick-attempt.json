@@ -1,0 +1,22 @@
+{
+  "request": {
+    "first_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+    "last_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+    "frame_count": 8,
+    "no_background": true,
+    "seed": 151061,
+    "action": "A crisp classic 1990s arcade fighter SIDE KICK to screen LEFT, a single continuous action. Start in guard. Compact knee chamber across the body, pivot the planted support foot, snap the heel LEFT through the opponent's waist with the kicking leg fully straight. Torso rotates SIDEWAYS and leans slightly right; arms stay in guard. Immediately recoil knee to chamber then set foot down into the exact starting stance. Keep the support foot grounded on the original baseline and the body at the same size. No hopping, sliding, front-facing kick, stiff leg lift, held-out leg, spin or extra limbs. Clear powerful silhouette, whole foot inside canvas. Preserve glasses with both rims, bare wrists and left forearm tattoo."
+  },
+  "jobId": "3ab3203a-2a4a-4ee2-beef-f185026055b7",
+  "quotedGenerations": 8,
+  "status": "completed",
+  "note": "Submitted before user requested confirmation of the earlier corrected kick. Do not treat this candidate as selected.",
+  "usage": {
+    "type": "generations",
+    "generations": 8
+  },
+  "selected": false,
+  "balanceBefore": 4907,
+  "balanceAfter": 4899,
+  "chargedGenerations": 8
+}

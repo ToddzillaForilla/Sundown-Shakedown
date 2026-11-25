@@ -1,0 +1,240 @@
+[
+  {
+    "name": "jump",
+    "title": "Jump",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52119,
+        "edgeClipping": false,
+        "sha256": "467290fbd01bba564a32a323c0d6fd0b3d50966173f8a142345efaefd549227d"
+      },
+      {
+        "index": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 20,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 232,
+        "bottomInset": 4,
+        "transparentPixels": 52016,
+        "edgeClipping": false,
+        "sha256": "2fde462d7c741c1c582187562e46f1cecd758e8cc38e5df3ac22c0adec3917d9"
+      },
+      {
+        "index": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 70,
+          "top": 14,
+          "right": 183,
+          "bottom": 250
+        },
+        "silhouetteHeight": 237,
+        "bottomInset": 5,
+        "transparentPixels": 51970,
+        "edgeClipping": false,
+        "sha256": "95dc8170b3ef622181bf32a7c3d28121e7068e3ad9bc14a2eb3b9c352d3469e7"
+      },
+      {
+        "index": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 64,
+          "top": 12,
+          "right": 171,
+          "bottom": 229
+        },
+        "silhouetteHeight": 218,
+        "bottomInset": 26,
+        "transparentPixels": 52610,
+        "edgeClipping": false,
+        "sha256": "4cb961bae8f0f7deb5d292ddd8a215398099f11d1ffb7db66616507526c2a0a0"
+      },
+      {
+        "index": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 59,
+          "top": 15,
+          "right": 167,
+          "bottom": 214
+        },
+        "silhouetteHeight": 200,
+        "bottomInset": 41,
+        "transparentPixels": 53369,
+        "edgeClipping": false,
+        "sha256": "ec1b7ccaaeefcf09eb100153eb637ee53c3452ec07b07aa460a0ed459a77ce2f"
+      },
+      {
+        "index": 5,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 63,
+          "top": 13,
+          "right": 172,
+          "bottom": 226
+        },
+        "silhouetteHeight": 214,
+        "bottomInset": 29,
+        "transparentPixels": 52714,
+        "edgeClipping": false,
+        "sha256": "a1143170da8bf671f8490a4fff19653d09f3bb2ab1fd9b5b5dd0fce8dbf365e2"
+      },
+      {
+        "index": 6,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 69,
+          "top": 11,
+          "right": 184,
+          "bottom": 240
+        },
+        "silhouetteHeight": 230,
+        "bottomInset": 15,
+        "transparentPixels": 52158,
+        "edgeClipping": false,
+        "sha256": "464f428a8acced38d99332976261055ad50cad88b634a16f3e4834d5daf2dcee"
+      },
+      {
+        "index": 7,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 74,
+          "top": 11,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 241,
+        "bottomInset": 4,
+        "transparentPixels": 51819,
+        "edgeClipping": false,
+        "sha256": "db14e855f7aafba692890d830e3fb186305e9991b0d05456bd64dd333b8386f5"
+      },
+      {
+        "index": 8,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52119,
+        "edgeClipping": false,
+        "sha256": "afca96fd7bf754e9df959176cc37bbd30bd5c319ed36781a26ac7687fca58518"
+      }
+    ],
+    "fps": 12
+  },
+  {
+    "name": "block",
+    "title": "Standing block",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52119,
+        "edgeClipping": false,
+        "sha256": "098d1adf9e00266fb3780499be7b8bc7ae8f4bf83a7ebdbb022ffb2c9341506d"
+      },
+      {
+        "index": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 19,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 233,
+        "bottomInset": 4,
+        "transparentPixels": 52464,
+        "edgeClipping": false,
+        "sha256": "0830dcbe2c45979cd480e8f8831b82a5a90addb1948f4ed50a35517955bfa100"
+      },
+      {
+        "index": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 24,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 228,
+        "bottomInset": 4,
+        "transparentPixels": 52593,
+        "edgeClipping": false,
+        "sha256": "3c8d617373f7e28a951531a2b3b54b55e2eb4202551cfd312b956c5514b92e4a"
+      },
+      {
+        "index": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 19,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 233,
+        "bottomInset": 4,
+        "transparentPixels": 52342,
+        "edgeClipping": false,
+        "sha256": "44adcf05b363e55fd0703e417530ecdbe9de149864a15c867cd61f4e136dc277"
+      },
+      {
+        "index": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52120,
+        "edgeClipping": false,
+        "sha256": "2d9bf35ccdb3a9fc2bb09afef83c08c106d3ab82d7354af793d4a9964aa97068"
+      }
+    ],
+    "fps": 12
+  }
+]

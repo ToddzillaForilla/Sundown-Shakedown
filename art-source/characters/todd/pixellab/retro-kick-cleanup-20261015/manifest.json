@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-15",
+  "status": "complete-awaiting-artistic-review",
+  "scope": "User requests reduced old-design morphing and visible shoe sole at max reach; one master-only edited impact pose plus v3 outbound/recovery.",
+  "balanceBefore": 4881,
+  "quotedGenerations": 18,
+  "accepted": false,
+  "runtimeIntegrated": false,
+  "source": "../retro-option-b-20261015/concept.png",
+  "referenceDirectory": "art-source/characters/todd/pixellab/retro-legacy-kick-20261015",
+  "referenceTitle": "Previous kick — before cleanup",
+  "referenceScale": 1,
+  "pageTitle": "Todd — kick identity and sole cleanup",
+  "jobs": {
+    "pose": {
+      "jobId": "9d457a8b-4fd8-42da-80db-f33c6914a494",
+      "quotedGenerations": 10,
+      "request": {
+        "image_urls": [
+          "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download"
+        ],
+        "width": 256,
+        "height": 256,
+        "no_background": true,
+        "seed": 151081,
+        "description": "Edit ONLY this approved adult fighter into a fully extended LEFTWARD side-kick impact pose. Preserve his exact mature narrow face, small adult head-to-body ratio, black rectangular glasses, brown hair and beard, lean adult build, long legs, black V-neck, dark denim and black sneakers; same pixel density and shading. Do not make him stockier, larger-headed, shorter-legged, younger or cartoon/chibi. Turn hips and torso sideways away from camera, show back/side of shirt; look over shoulder LEFT. Lean right. Extend kicking leg fully straight at waist height to LEFT. DORSIFLEX ankle: pull toes back toward shin, heel leads. Rotate sneaker in a three-quarter underside view so we clearly see the broad dark rubber BOTTOM SOLE and a few tread grooves, not only its side wall. Heel reaches x18, foot y110–140; leave transparent margin. Tattooed left forearm extends in kick direction, other arm behind. Support leg remains adult-length with its shoe firmly at y251. Maintain original body size and transparent 256x256 canvas. No watch, no extra limbs, no copying any older character design."
+      },
+      "status": "completed",
+      "frameCount": 1,
+      "usage": {
+        "type": "generations",
+        "generations": 10
+      }
+    },
+    "outbound": {
+      "jobId": "4f650283-8eab-4c9d-abe5-7a95bac30c4e",
+      "quotedGenerations": 4,
+      "request": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/d0f16386-275c-4d22-8d60-a07a91c1094d/image.png",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 151082,
+        "action": "Adult retro fighter executes a single powerful side kick LEFT. Chamber knee across torso, pivot hips away from camera, then extend heel left at waist height into EXACT final pose. At extension pull toes back and show the broad bottom sole with tread, heel leading. Preserve the same adult face size, long legs, lean build, glasses and mature beard throughout; NEVER grow the head, shorten legs or morph the body. Support shoe stays planted at y251. Fixed body scale and camera, no bouncing, traveling or chibi styling. End in the supplied impact pose."
+      },
+      "status": "completed",
+      "frameCount": 5,
+      "usage": {
+        "type": "generations",
+        "generations": 4
+      }
+    },
+    "recovery": {
+      "jobId": "052bddd2-13ee-48b5-83c8-e5d2d6270ad5",
+      "quotedGenerations": 4,
+      "request": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/d0f16386-275c-4d22-8d60-a07a91c1094d/image.png",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 151083,
+        "action": "Adult retro fighter recovers from side kick LEFT. Recoil kicking knee fully into chamber first, then rotate hips back and set foot down into EXACT original guard. Preserve adult head size and narrow mature face, long legs and lean proportions consistently through every frame. No body morphing, chibi styling, hopping, travel or scale changes. Support shoe remains at y251. Keep tattoo, clear black glasses and bare wrists. Return to the exact supplied original guard."
+      },
+      "status": "completed",
+      "frameCount": 5,
+      "usage": {
+        "type": "generations",
+        "generations": 4
+      }
+    }
+  },
+  "anchorCorrection": {
+    "method": "PixelLab exact copy_region",
+    "imageId": "d0f16386-275c-4d22-8d60-a07a91c1094d",
+    "translation": [
+      0,
+      9
+    ],
+    "originalBottom": 242,
+    "targetBottom": 251,
+    "scale": 1,
+    "verifiedExactTranslation": true
+  },
+  "assembly": "recovery-palindrome",
+  "assemblyNote": "Use grounded recovery in reverse then forward for a matched nine-frame cycle. Dedicated outbound completed and preserved separately; not auto-selected.",
+  "groundCorrections": [
+    {
+      "index": 1,
+      "shift": 3,
+      "imageId": "fae2e123-3c0d-4b7d-b2d8-596dbf715d2a"
+    },
+    {
+      "index": 2,
+      "shift": 3,
+      "imageId": "648e5731-a338-47ba-93fd-b32eafd45baf"
+    },
+    {
+      "index": 3,
+      "shift": 14,
+      "imageId": "abdcbcb4-81c0-4c46-bf71-63f091f8a4dc"
+    }
+  ],
+  "clips": {
+    "reference": {
+      "actualFrameCount": 9,
+      "title": "Previous kick — before cleanup"
+    },
+    "kick": {
+      "actualFrameCount": 9,
+      "title": "Cleaned kick — candidate"
+    }
+  },
+  "frameOrder": [
+    4,
+    3,
+    2,
+    1,
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "balanceAfter": 4863,
+  "chargedGenerations": 18
+}

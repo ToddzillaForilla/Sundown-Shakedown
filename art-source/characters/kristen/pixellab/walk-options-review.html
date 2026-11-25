@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kristen — walking options</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 20px; color: #edf3f6; background: #18232d; font: 16px/1.5 system-ui, sans-serif; }
+    main { max-width: 1100px; margin: 0 auto; }
+    h1 { margin: 0 0 8px; font-size: 1.6rem; }
+    .intro { margin: 0 0 20px; color: #c5d3dc; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px; }
+    article { min-width: 0; padding: 14px; border: 1px solid #506574; border-radius: 12px; background: #263744; }
+    h2 { margin: 0 0 8px; font-size: 1.15rem; }
+    p { margin: 8px 0; color: #d0dce3; }
+    .kind { color: #9fc3d6; font-size: .9rem; }
+    img { display: block; width: 100%; max-width: 768px; height: auto; margin: 10px auto; image-rendering: pixelated; background: #304451; border-radius: 6px; }
+    a { color: #9ed5ff; }
+    .note { margin-top: 18px; padding: 12px 14px; border-left: 3px solid #91aab8; background: #263744; color: #d0dce3; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Kristen — walking options</h1>
+  <p class="intro">Compare the four preserved walk previews. Options 1 and 2 use the same original generated frames in different playback orders; options 3 and 4 are separate walk-only generations. These remain source-art previews, not runtime animations.</p>
+  <section class="grid">
+    <article>
+      <h2>1. Original walk · generated order</h2>
+      <div class="kind">Original pilot · frames 0 → 8</div>
+      <img src="retro-animation-pilot-20261015/walk-generated-order-preview.gif" alt="Kristen original walk animation in generated frame order">
+      <p>The first walk cycle as PixelLab returned it.</p>
+      <a href="retro-animation-pilot-20261015/walk-contact.png">View its contact sheet</a>
+    </article>
+    <article>
+      <h2>2. Original walk · reversed playback</h2>
+      <div class="kind">Same original frames · frame 0, then 8 → 1</div>
+      <img src="retro-animation-pilot-20261015/walk-phone-preview.gif" alt="Kristen original walk animation with generated frames played in reverse order">
+      <p>A review-only frame-order change; the generated pixels are the same as option 1.</p>
+      <a href="retro-animation-pilot-20261015/manifest.json">View original pilot details</a>
+    </article>
+    <article>
+      <h2>3. Screen-left stride retry</h2>
+      <div class="kind">Separate generation · explicit leftward heel plant and weight transfer</div>
+      <img src="retro-animation-leftwalk-20261016/walk-phone-preview.gif" alt="Kristen screen-left stride retry">
+      <p>A dedicated retry aimed at stepping toward her screen-left facing.</p>
+      <a href="retro-animation-leftwalk-20261016/walk-left-contact.png">View its contact sheet</a>
+    </article>
+    <article>
+      <h2>4. Toe-left retry</h2>
+      <div class="kind">Separate generation · both boots instructed to point screen-left</div>
+      <img src="retro-animation-toe-left-20261016/walk-phone-preview.gif" alt="Kristen walk retry with both boot toes instructed to point screen-left">
+      <p>The latest retry, with the foot direction called out explicitly.</p>
+      <a href="retro-animation-toe-left-20261016/walk-toe-left-contact.png">View its contact sheet</a>
+    </article>
+  </section>
+  <p class="note">Choose by option number. I have not marked a walk approved or integrated any of these into the game.</p>
+</main>
+</body>
+</html>

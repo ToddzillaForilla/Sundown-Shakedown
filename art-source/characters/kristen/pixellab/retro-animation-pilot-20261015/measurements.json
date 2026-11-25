@@ -1,0 +1,252 @@
+[
+  {
+    "name": "idle",
+    "measurements": [
+      {
+        "index": 0,
+        "sourceFrame": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 55,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "bottomInset": 4,
+        "transparentPixels": 54362,
+        "edgeClipping": false,
+        "sha256": "7eb30f22fd944532cff6392daa6fe15501f46f1781d77a47d2669a291ae12d1c"
+      },
+      {
+        "index": 1,
+        "sourceFrame": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 58,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "bottomInset": 4,
+        "transparentPixels": 54260,
+        "edgeClipping": false,
+        "sha256": "0f240ce4eb82a8ecd4434c00edac83af37daa565d99309d5620a7d20ab0ec261"
+      },
+      {
+        "index": 2,
+        "sourceFrame": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 62,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "bottomInset": 4,
+        "transparentPixels": 54297,
+        "edgeClipping": false,
+        "sha256": "a7c09fd826b0ebcd8c3f5712a49a780021c7f06bb1ad1d0dfa0c3f6e1f9b4ad8"
+      },
+      {
+        "index": 3,
+        "sourceFrame": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 61,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "bottomInset": 4,
+        "transparentPixels": 54222,
+        "edgeClipping": false,
+        "sha256": "b242ae754428d894223bd7b7f11c8d674c83c6dc5796cf0299c310e9c2db12bd"
+      },
+      {
+        "index": 4,
+        "sourceFrame": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 55,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "bottomInset": 4,
+        "transparentPixels": 54361,
+        "edgeClipping": false,
+        "sha256": "8b41ff9cdb84268f1639072c1125d8aa51ac9340926a711e963bf12ba641a1d0"
+      }
+    ],
+    "fps": 6
+  },
+  {
+    "name": "walk",
+    "measurements": [
+      {
+        "index": 0,
+        "sourceFrame": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 55,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "bottomInset": 4,
+        "transparentPixels": 54362,
+        "edgeClipping": false,
+        "sha256": "a56647abdebfe0b32385106c8af67fb0de836f1494b8a65a85b4fd49f0fcb848"
+      },
+      {
+        "index": 1,
+        "sourceFrame": 8,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 55,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "bottomInset": 4,
+        "transparentPixels": 54361,
+        "edgeClipping": false,
+        "sha256": "78bdd71ff9d1b1fab32f956efbb5f28d8f7a4c1d52a8833e71f9a96450bbb73c"
+      },
+      {
+        "index": 2,
+        "sourceFrame": 7,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 53,
+          "top": 22,
+          "right": 173,
+          "bottom": 251
+        },
+        "silhouetteHeight": 230,
+        "bottomInset": 4,
+        "transparentPixels": 54252,
+        "edgeClipping": false,
+        "sha256": "d1c8c4e0d2be3228409cde8a2f4a4ba9b3084b9d578388efcb2f2e3e15452be5"
+      },
+      {
+        "index": 3,
+        "sourceFrame": 6,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 51,
+          "top": 22,
+          "right": 171,
+          "bottom": 251
+        },
+        "silhouetteHeight": 230,
+        "bottomInset": 4,
+        "transparentPixels": 54926,
+        "edgeClipping": false,
+        "sha256": "f1c29c4765298a83db8162a9584a4693bc0018e6986d1219de38767d7b115d68"
+      },
+      {
+        "index": 4,
+        "sourceFrame": 5,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 52,
+          "top": 27,
+          "right": 170,
+          "bottom": 251
+        },
+        "silhouetteHeight": 225,
+        "bottomInset": 4,
+        "transparentPixels": 55302,
+        "edgeClipping": false,
+        "sha256": "9208e138a43f39ed6afe50146521cb654630cb4e30cecd4871c26d015bc7ffc0"
+      },
+      {
+        "index": 5,
+        "sourceFrame": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 52,
+          "top": 28,
+          "right": 175,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "bottomInset": 4,
+        "transparentPixels": 54903,
+        "edgeClipping": false,
+        "sha256": "5e534ffb6c7a290919e4e4f35dab660fcb5651c9e6b6fa89da01114031a67ad3"
+      },
+      {
+        "index": 6,
+        "sourceFrame": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 52,
+          "top": 27,
+          "right": 172,
+          "bottom": 251
+        },
+        "silhouetteHeight": 225,
+        "bottomInset": 4,
+        "transparentPixels": 55206,
+        "edgeClipping": false,
+        "sha256": "88e43897caad4fb8eb9330bf0adf2682ffeb37b3aee7ad59599072e6cd184b01"
+      },
+      {
+        "index": 7,
+        "sourceFrame": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 53,
+          "top": 25,
+          "right": 173,
+          "bottom": 251
+        },
+        "silhouetteHeight": 227,
+        "bottomInset": 4,
+        "transparentPixels": 54781,
+        "edgeClipping": false,
+        "sha256": "37f99476ca0b4a22fde9f549cd37683f9b6b7d1f144d2e1e7922eaf677f9b2c4"
+      },
+      {
+        "index": 8,
+        "sourceFrame": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 54,
+          "top": 29,
+          "right": 174,
+          "bottom": 251
+        },
+        "silhouetteHeight": 223,
+        "bottomInset": 4,
+        "transparentPixels": 54350,
+        "edgeClipping": false,
+        "sha256": "939f0cc3b43a44acbfda484c4b608b7977e14e98a48b02569169314a69f357bd"
+      }
+    ],
+    "fps": 8
+  }
+]

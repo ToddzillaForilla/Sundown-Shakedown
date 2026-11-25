@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-15",
+  "status": "standing-socks-review",
+  "scope": "One requested hiking socks edit; preserve approved athletic standing design",
+  "tool": "Edit Image (Pro)",
+  "source": "../retro-athletic-20261015/concept.png",
+  "request": {
+    "image_urls": [
+      "upload:21be8060-dbab-4f01-836b-c2aa2b3053e7"
+    ],
+    "description": "Change ONLY the socks on this exact Kristen pixel-art sprite. Add a matching pair of visible wool HIKING SOCKS on BOTH ankles, muted cool gray-green wool, short crew height reaching the lower calf about 10-14 pixels above each brown boot collar, subtle ribbed folded cuffs, slightly darker shaded sides. The socks cover the lower shins above the existing boots, while knees and most calves stay bare. Keep boots exactly as they are. Preserve EVERYTHING ELSE exactly: approved lean athletic body silhouette, long legs, defined waist, fitted charcoal short cargo shorts, green shirt, blue bandana, adult face, black glasses, wavy brown hair, empty hands, exact screen-left guard pose, all limb positions, size, pixel style, colors and transparency. Do not redraw anatomy, change outfit elsewhere, move feet, mirror, scale or recenter. Maintain transparent 256x256 canvas, hair top y28, boot sole baseline y251, 224px silhouette. Only socks are new.",
+    "width": 256,
+    "height": 256,
+    "no_background": true,
+    "seed": 151124
+  },
+  "receipt": "id: 6b03d7d2-225e-4180-b02a-7a45963016f2\njob_id: 6b03d7d2-225e-4180-b02a-7a45963016f2\nmode: text\nframes: 1\nsize: 256x256px\ntransparent: True\nedit: Change ONLY the socks on this exact Kristen pixel-art sprite. Add a matching pair of visible wool HIKING SOCKS on BOTH ankles, muted cool gray-green wool, short crew height reaching the lower calf about 10-14 pixels above each brown boot collar, subtle ribbed folded cuffs, slightly darker shaded sides. The socks cover the lower shins above the existing boots, while knees and most calves stay bare. Keep boots exactly as they are. Preserve EVERYTHING ELSE exactly: approved lean athletic body silhouette, long legs, defined waist, fitted charcoal short cargo shorts, green shirt, blue bandana, adult face, black glasses, wavy brown hair, empty hands, exact screen-left guard pose, all limb positions, size, pixel style, colors and transparency. Do not redraw anatomy, change outfit elsewhere, move feet, mirror, scale or recenter. Maintain transparent 256x256 canvas, hair top y28, boot sole baseline y251, 224px silhouette. Only socks are new.\nseed: 151124\nasset_id: 024524a6-9ac2-5bb8-a41b-47874330fdc7\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"6b03d7d2-225e-4180-b02a-7a45963016f2\")",
+  "quotedGenerations": 10,
+  "balanceBefore": 4801,
+  "accepted": false,
+  "runtimeIntegrated": false,
+  "jobs": {
+    "concept": {
+      "jobId": "6b03d7d2-225e-4180-b02a-7a45963016f2",
+      "status": "completed",
+      "frameCount": 1,
+      "usage": {
+        "type": "generations",
+        "generations": 10
+      }
+    }
+  },
+  "balanceAfter": 4791,
+  "chargedGenerations": 10,
+  "rawGeneratedImage": "concept-0.png",
+  "measurements": {
+    "label": "Kristen — revised candidate",
+    "path": "art-source/characters/kristen/pixellab/retro-hiking-socks-20261015/concept.png",
+    "width": 256,
+    "height": 256,
+    "bounds": {
+      "left": 55,
+      "top": 28,
+      "right": 183,
+      "bottom": 251
+    },
+    "silhouetteHeight": 224,
+    "opaqueColors": 49,
+    "transparentPixels": 54361,
+    "edgeContact": false
+  },
+  "qualityNotes": "Visible ribbed gray-green hiking socks on both ankles. Height 224px and sole baseline y251 unchanged; proportions, pose and face visually consistent. Pro edit re-quantized colors across sprite (49 colors versus original 48), so outside-sock pixels are not byte-identical. No geometric postprocessing. Transparent margins, no edge contact. Source review only; no animation or runtime changes."
+}

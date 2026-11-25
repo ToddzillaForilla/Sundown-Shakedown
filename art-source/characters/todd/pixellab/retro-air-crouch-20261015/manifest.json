@@ -1,0 +1,118 @@
+{
+  "date": "2026-10-15",
+  "status": "user-approved-source",
+  "tool": "Animate with Text v3",
+  "scope": "User-requested crouch, jump kick and jump punch source review",
+  "source": "../retro-option-b-20261015/concept.png",
+  "balanceBefore": 4851,
+  "quotedGenerations": 20,
+  "runtimeIntegrated": true,
+  "accepted": true,
+  "requests": {
+    "crouch": {
+      "frame_count": 4,
+      "seed": 151101,
+      "action": "One guarded CROUCH and rise cycle, facing screen LEFT throughout. Start in the supplied standing guard, bend both knees deeply and lower hips into a stable low fighting crouch, fists guarding the face, torso upright with slight forward lean. Hold the lowest crouch briefly, then stand back into the exact original guard. Both shoes remain planted on the original y251 ground line, in the same positions; no stepping, kneeling, sitting or attack. This is real joint bending, not scaling or squashing the whole body. Keep the exact mature adult body scale, brown hair and beard, black rectangular glasses with clear lenses and both rims intact, black V-neck shirt, dark jeans, black sneakers, anatomical LEFT forearm tattoo and bare wrists. No watch, effects, extra limbs or camera change. Entire sprite stays within the 256x256 transparent canvas; do not shrink the adult body to fit."
+    },
+    "jumpKick": {
+      "frame_count": 8,
+      "seed": 151102,
+      "action": "One JUMP KICK pose cycle facing screen LEFT. Start in supplied guard, bend knees, tuck both feet off floor, chamber knee, then extend one leg into a straight horizontal SIDE KICK toward LEFT at opponent torso height, heel leading with shoe underside visible. Other leg stays bent in air; neither foot supports body at impact. Recoil, extend legs ready to land, return to exact original guard. No grounded kick, spins or somersault. POSES ONLY: torso stays roughly at original image position; lifted/bent legs show flight. Game handles whole-body vertical travel separately, so do not translate body upward. Preserve exact adult scale, brown hair/beard, black glasses with clear lenses and intact rims, black V-neck, jeans, sneakers, tattoo on anatomical LEFT forearm, bare wrists. No watch, effects or extra limbs. Keep sprite inside 256x256 without shrinking body."
+    },
+    "jumpPunch": {
+      "frame_count": 8,
+      "seed": 151103,
+      "action": "One JUMP PUNCH pose cycle facing screen LEFT. Start in supplied guard, bend knees, tuck both feet off floor, then throw a straight anatomical LEFT ARM punch toward screen LEFT at head height while airborne. Tattooed left forearm extends, right fist guards face. Both knees/feet clearly lifted during punch; no supporting foot. Retract fist, extend legs ready to land, return to exact original guard. No grounded punch, uppercut or spin. POSES ONLY: keep torso roughly at original image position; game handles whole-body vertical travel, no upward body translation. Preserve exact adult scale, brown hair/beard, black glasses with clear lenses and intact rims, black V-neck, jeans, sneakers, tattoo on anatomical LEFT forearm, bare wrists. No watch, effects or extra limbs. Keep sprite inside 256x256 without shrinking body."
+    }
+  },
+  "jobs": {
+    "crouch": {
+      "jobId": "e75dbf18-1cef-4625-b60f-0d451d952968",
+      "assetId": "d46aff34-5bbc-52dd-91ed-ed9d005871ef",
+      "quotedGenerations": 4,
+      "status": "completed",
+      "receipt": "id: e75dbf18-1cef-4625-b60f-0d451d952968\njob_id: e75dbf18-1cef-4625-b60f-0d451d952968\naction: One guarded CROUCH and rise cycle, facing screen LEFT throughout. Start in the supplied standing guard, bend both knees deeply and lower hips into a stable low fighting crouch, fists guarding the face, torso upright with slight forward lean. Hold the lowest crouch briefly, then stand back into the exact original guard. Both shoes remain planted on the original y251 ground line, in the same positions; no stepping, kneeling, sitting or attack. This is real joint bending, not scaling or squashing the whole body. Keep the exact mature adult body scale, brown hair and beard, black rectangular glasses with clear lenses and both rims intact, black V-neck shirt, dark jeans, black sneakers, anatomical LEFT forearm tattoo and bare wrists. No watch, effects, extra limbs or camera change. Entire sprite stays within the 256x256 transparent canvas; do not shrink the adult body to fit.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 151101\nasset_id: d46aff34-5bbc-52dd-91ed-ed9d005871ef\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e75dbf18-1cef-4625-b60f-0d451d952968\")",
+      "frameCount": 5,
+      "usage": {
+        "type": "generations",
+        "generations": 4
+      }
+    },
+    "jumpKick": {
+      "jobId": "c5617540-87cf-4886-9808-63da3968cd09",
+      "assetId": "bc514c3a-df1e-56d8-aa10-1569d9d962c6",
+      "quotedGenerations": 8,
+      "status": "completed",
+      "receipt": "id: c5617540-87cf-4886-9808-63da3968cd09\njob_id: c5617540-87cf-4886-9808-63da3968cd09\naction: One JUMP KICK pose cycle facing screen LEFT. Start in supplied guard, bend knees, tuck both feet off floor, chamber knee, then extend one leg into a straight horizontal SIDE KICK toward LEFT at opponent torso height, heel leading with shoe underside visible. Other leg stays bent in air; neither foot supports body at impact. Recoil, extend legs ready to land, return to exact original guard. No grounded kick, spins or somersault. POSES ONLY: torso stays roughly at original image position; lifted/bent legs show flight. Game handles whole-body vertical travel separately, so do not translate body upward. Preserve exact adult scale, brown hair/beard, black glasses with clear lenses and intact rims, black V-neck, jeans, sneakers, tattoo on anatomical LEFT forearm, bare wrists. No watch, effects or extra limbs. Keep sprite inside 256x256 without shrinking body.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 151102\nasset_id: bc514c3a-df1e-56d8-aa10-1569d9d962c6\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"c5617540-87cf-4886-9808-63da3968cd09\")",
+      "frameCount": 9,
+      "usage": {
+        "type": "generations",
+        "generations": 8
+      }
+    },
+    "jumpPunch": {
+      "jobId": "4372f859-985b-434a-8e4c-0dc5543fd589",
+      "assetId": "c0ae6c60-8a23-5006-a143-bfd99564c0b5",
+      "quotedGenerations": 8,
+      "status": "completed",
+      "receipt": "id: 4372f859-985b-434a-8e4c-0dc5543fd589\njob_id: 4372f859-985b-434a-8e4c-0dc5543fd589\naction: One JUMP PUNCH pose cycle facing screen LEFT. Start in supplied guard, bend knees, tuck both feet off floor, then throw a straight anatomical LEFT ARM punch toward screen LEFT at head height while airborne. Tattooed left forearm extends, right fist guards face. Both knees/feet clearly lifted during punch; no supporting foot. Retract fist, extend legs ready to land, return to exact original guard. No grounded punch, uppercut or spin. POSES ONLY: keep torso roughly at original image position; game handles whole-body vertical travel, no upward body translation. Preserve exact adult scale, brown hair/beard, black glasses with clear lenses and intact rims, black V-neck, jeans, sneakers, tattoo on anatomical LEFT forearm, bare wrists. No watch, effects or extra limbs. Keep sprite inside 256x256 without shrinking body.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 151103\nasset_id: c0ae6c60-8a23-5006-a143-bfd99564c0b5\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"4372f859-985b-434a-8e4c-0dc5543fd589\")",
+      "frameCount": 9,
+      "usage": {
+        "type": "generations",
+        "generations": 8
+      }
+    }
+  },
+  "clips": {
+    "crouch": {
+      "actualFrameCount": 5,
+      "title": "Crouch — shallow candidate",
+      "fps": 6
+    },
+    "jumpKick": {
+      "actualFrameCount": 9,
+      "title": "Raw generated kick — knee lift, not selected",
+      "fps": 10
+    },
+    "jumpPunch": {
+      "actualFrameCount": 9,
+      "title": "Jump punch",
+      "fps": 10
+    }
+  },
+  "reviewOverrides": {
+    "jumpKick": {
+      "reason": "Raw generated kick never extends beyond knee lift. Reuse approved jump takeoff/landing and cleaned side-kick extension at fixed scale, with preview-only arc. No additional generation.",
+      "frames": [
+        "art-source/characters/todd/pixellab/retro-jump-block-20261015/jump-0.png",
+        "art-source/characters/todd/pixellab/retro-jump-block-20261015/jump-1.png",
+        "art-source/characters/todd/pixellab/retro-jump-block-20261015/jump-3.png",
+        "art-source/characters/todd/pixellab/retro-kick-cleanup-20261015/kick-3.png",
+        "art-source/characters/todd/pixellab/retro-kick-cleanup-20261015/kick-4.png",
+        "art-source/characters/todd/pixellab/retro-kick-cleanup-20261015/kick-5.png",
+        "art-source/characters/todd/pixellab/retro-jump-block-20261015/jump-6.png",
+        "art-source/characters/todd/pixellab/retro-jump-block-20261015/jump-7.png",
+        "art-source/characters/todd/pixellab/retro-jump-block-20261015/jump-8.png"
+      ]
+    }
+  },
+  "qualityNotes": {
+    "crouch": "Shallow crouch rather than requested deep crouch; needs user review.",
+    "jumpKick": "Raw output fails extension criterion. Source gallery uses explicit approved-frame assembly instead; user review pending."
+  },
+  "balanceAfterInitialCheck": 4839,
+  "reportedJobGenerations": 20,
+  "billingNote": "Final live balance reconciles with all 20 reported generations; final 8 posted after initial completion-time check.",
+  "balanceAfter": 4831,
+  "chargedGenerations": 20,
+  "validation": {
+    "dimensions": "256x256",
+    "crouchFootBaseline": 251,
+    "edgeContact": false,
+    "runtimeVerified": false,
+    "tests": "79 passed",
+    "build": "passed",
+    "sourcePreview": "normal, slow and mirrored right checked"
+  },
+  "approval": "User: looks good enough for now; move on to Kristen (October 15, 2026). Approval applies to gallery assembly, not the unselected raw knee-lift kick."
+}

@@ -1,0 +1,50 @@
+{
+  "status": "kick-pilot-awaiting-review",
+  "reference": "art-source/characters/kristen/pixellab/retro-outline-clean-20261015/concept.png",
+  "mode": "Animate with Text v3",
+  "balanceBefore": 4601.6,
+  "proposedGenerationCap": 60,
+  "firstPilotCap": 8,
+  "clips": {
+    "kick": 8,
+    "block": 4,
+    "hit": 8,
+    "landing": 4,
+    "jump": 8,
+    "crouch": 4,
+    "airKick": 8,
+    "airPunch": 8,
+    "defeat": 8
+  },
+  "reviewGate": "Review kick pilot before subsequent batches. Preserve originals. Do not integrate rejected output. No retries or purchases included.",
+  "submittedJobs": [
+    {
+      "clip": "kick",
+      "jobId": "7b1a9aa3-4742-4c41-929a-9f1b655269d8",
+      "assetId": "433def56-ccb6-5212-91c7-53d0c1572aef",
+      "quotedGenerations": 8,
+      "seed": 161601,
+      "requestedFrames": 8,
+      "status": "completed",
+      "actualFrameCount": 9,
+      "chargedGenerations": 8
+    }
+  ],
+  "chargedGenerations": 8,
+  "authorizedGenerationCap": 60,
+  "authorization": "User approved 60-generation scope and 8-generation kick pilot in this chat.",
+  "referenceSha256": "c89031826ed59470d8750f6e84f09c3c83d1d23961cfb543d54dacee6e29dcda",
+  "balanceAfter": {
+    "credits": {
+      "type": "usd",
+      "usd": 0
+    },
+    "subscription": {
+      "type": "generations",
+      "status": "active",
+      "plan": "Tier 2: Pixel Artisan",
+      "generations": 4601.6,
+      "total": 5000
+    }
+  }
+}

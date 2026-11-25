@@ -11,6 +11,19 @@ const grounded: FighterAnimationContext = {
 };
 
 describe('fighter animation transitions', () => {
+  it('holds victory through movement and stale attack/hit recovery until reset', () => {
+    const machine = new FighterAnimationStateMachine();
+    machine.beginAttack(0, 300);
+    machine.celebrate();
+    machine.beginHit(200, 300);
+    machine.beginAttack(500, 200);
+    expect(machine.update({ ...grounded, now: 20000, moving: true, crouching: true })).toBe('victory');
+    machine.reset();
+    expect(machine.update(grounded)).toBe('idle');
+    machine.knockOut();
+    machine.celebrate();
+    expect(machine.current).toBe('ko');
+  });
   it('transitions idle to walk and back to idle', () => {
     const machine = new FighterAnimationStateMachine();
     expect(machine.update(grounded)).toBe('idle');
@@ -27,11 +40,30 @@ describe('fighter animation transitions', () => {
     expect(machine.update({ ...grounded, now: 511 })).toBe('idle');
   });
 
+  it('holds an authored landing recovery for the full clip duration', () => {
+    const machine = new FighterAnimationStateMachine();
+    machine.reset(false);
+    expect(machine.update({ ...grounded, now: 10, grounded: false, velocityY: 120 })).toBe('fall');
+    expect(machine.update({ ...grounded, now: 100, landingDurationMs: 4 / 18 * 1000 })).toBe('landing');
+    expect(machine.update({ ...grounded, now: 321 })).toBe('landing');
+    expect(machine.update({ ...grounded, now: 323 })).toBe('idle');
+  });
+
   it('holds attack through recovery before returning to movement', () => {
     const machine = new FighterAnimationStateMachine();
     machine.beginAttack(100, 180);
     expect(machine.update({ ...grounded, now: 200, moving: true })).toBe('attack');
     expect(machine.update({ ...grounded, now: 281, moving: true })).toBe('walk');
+  });
+
+  it('returns to jump or fall when an air attack ends before landing', () => {
+    const machine = new FighterAnimationStateMachine();
+    machine.reset(false);
+    machine.beginAttack(100, 180);
+
+    expect(machine.update({ ...grounded, now: 200, grounded: false, velocityY: -90 })).toBe('attack');
+    expect(machine.update({ ...grounded, now: 281, grounded: false, velocityY: -90 })).toBe('jump');
+    expect(machine.update({ ...grounded, now: 300, grounded: false, velocityY: 70 })).toBe('fall');
   });
 
   it('allows hit stun to interrupt attack recovery', () => {

@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-15",
+  "status": "standing-reference-review",
+  "scope": "One standing reference only; user review before animation phases",
+  "model": "Create Image (Pro)",
+  "jobId": "bdec32d7-519c-4754-94be-87ef1f2c7aa5",
+  "assetId": "079b1e4c-feed-51ec-adc0-859183a12494",
+  "request": {
+    "description": "A single full-body pixel-art sprite of Kristen, an ORIGINAL adult female playable fighter in the SAME 1990s arcade fighting-game roster as the supplied Todd STYLE reference. Use Kristen PHOTOS for recognizable adult facial likeness: shoulder-length wavy dark brown hair, side part, large black rectangular glasses with clear lenses, warm natural light skin, confident playful expression. Use her OLD CONCEPT only for outfit: muted forest-green short-sleeve shirt, blue patterned bandana at neck, dark charcoal cargo pants, brown hiking boots. Hands EMPTY, both fists raised in balanced standing fighting guard, elbows relaxed, knees slightly bent, feet planted apart. No frying pan, plant, vines, weapon, hat, backpack, text or magical effects. Facing SCREEN LEFT in a three-quarter fighting stance, eye-level orthographic side-view arcade fighter camera. Match Todd's exact pixel density, detail level, CPS-2 / Street Fighter II and Alpha era hand-pixelled craftsmanship, crisp clusters, selective dark outlines, stepped dramatic cel shading, cool neutral shadows and natural skin tones. Mature plausible adult proportions about 6.5 to 7 heads tall, relatively small head, long legs, sturdy athletic natural build, NOT chibi or RPG character, NOT pin-up or exaggerated anatomy. Do not copy Todd's face, beard, tattoo or clothes. Keep Kristen's own likeness and green/blue outfit. Single transparent 256x256 sprite, whole body fits with margins, feet near y251 and hair near y16, roughly 232px silhouette height to match Todd's source scale. No scenery, no ground shadow, no frame or text.",
+    "width": 256,
+    "height": 256,
+    "max_colors": 48,
+    "no_background": true,
+    "seed": 151121,
+    "style_image_url": "upload:9c47d5f6-467b-4161-9678-bcf751490088",
+    "style_copy": [
+      "outline",
+      "detail",
+      "shading"
+    ],
+    "reference_images": [
+      {
+        "url": "upload:638fc2cb-35d6-4126-9a06-8dd7e7bb8086",
+        "usage": "Kristen primary likeness only: adult face, wavy dark brown hair, black rectangular glasses. Do not copy room, text, photo crop or held jacket."
+      },
+      {
+        "url": "upload:8eb82000-8320-4709-b61c-f0954fe009e9",
+        "usage": "Kristen secondary facial/profile likeness and natural adult build. Do not copy hiking pole, hat, scenery, shorts or sunglasses."
+      },
+      {
+        "url": "upload:c33d495c-86ce-49fe-9f89-da6e7248980d",
+        "usage": "Existing Kristen OUTFIT and identity design only: green shirt, blue neck bandana, charcoal cargo pants, hiking boots. NO pan, vines, background or warm lighting. Replace its rendering with Todd's exact pixel style."
+      },
+      {
+        "url": "upload:9c47d5f6-467b-4161-9678-bcf751490088",
+        "usage": "STYLE AND SCALE ONLY: approved Todd sprite. Match pixel density, adult proportions, outline, shading and guard staging. Do not copy male features, hair/beard, tattoo or outfit."
+      }
+    ]
+  },
+  "receipt": "id: bdec32d7-519c-4754-94be-87ef1f2c7aa5\njob_id: bdec32d7-519c-4754-94be-87ef1f2c7aa5\nmodel: pro\ndescription: A single full-body pixel-art sprite of Kristen, an ORIGINAL adult female playable fighter in the SAME 1990s arcade fighting-game roster as the supplied Todd STYLE reference. Use Kristen PHOTOS for recognizable adult facial likeness: shoulder-length wavy dark brown hair, side part, large black rectangular glasses with clear lenses, warm natural light skin, confident playful expression. Use her OLD CONCEPT only for outfit: muted forest-green short-sleeve shirt, blue patterned bandana at neck, dark charcoal cargo pants, brown hiking boots. Hands EMPTY, both fists raised in balanced standing fighting guard, elbows relaxed, knees slightly bent, feet planted apart. No frying pan, plant, vines, weapon, hat, backpack, text or magical effects. Facing SCREEN LEFT in a three-quarter fighting stance, eye-level orthographic side-view arcade fighter camera. Match Todd's exact pixel density, detail level, CPS-2 / Street Fighter II and Alpha era hand-pixelled craftsmanship, crisp clusters, selective dark outlines, stepped dramatic cel shading, cool neutral shadows and natural skin tones. Mature plausible adult proportions about 6.5 to 7 heads tall, relatively small head, long legs, sturdy athletic natural build, NOT chibi or RPG character, NOT pin-up or exaggerated anatomy. Do not copy Todd's face, beard, tattoo or clothes. Keep Kristen's own likeness and green/blue outfit. Single transparent 256x256 sprite, whole body fits with margins, feet near y251 and hair near y16, roughly 232px silhouette height to match Todd's source scale. No scenery, no ground shadow, no frame or text.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 4\nstyle_image: yes (outline, detail, shading)\nmax colours: 48 per image\nseed: 151121\nasset_id: 079b1e4c-feed-51ec-adc0-859183a12494\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"bdec32d7-519c-4754-94be-87ef1f2c7aa5\")",
+  "balanceBefore": 4831,
+  "quotedGenerations": 10,
+  "accepted": false,
+  "runtimeIntegrated": false,
+  "jobs": {
+    "concept": {
+      "jobId": "bdec32d7-519c-4754-94be-87ef1f2c7aa5",
+      "status": "completed",
+      "frameCount": 1,
+      "usage": {
+        "type": "generations",
+        "generations": 10
+      }
+    }
+  },
+  "balanceAfter": 4821,
+  "chargedGenerations": 10,
+  "measurements": {
+    "label": "Kristen — standing candidate",
+    "path": "art-source/characters/kristen/pixellab/retro-reference-20261015/concept.png",
+    "width": 256,
+    "height": 256,
+    "bounds": {
+      "left": 73,
+      "top": 15,
+      "right": 187,
+      "bottom": 251
+    },
+    "silhouetteHeight": 237,
+    "opaqueColors": 48,
+    "transparentPixels": 51815,
+    "edgeContact": false
+  },
+  "qualityNotes": "Adult guard, facial glasses/hair and green shirt/blue bandana/cargo pants/boots preserved. Matches Todd y251 baseline, 48 colors and native pixel scale. Likeness and style await user acceptance."
+}

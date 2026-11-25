@@ -1,0 +1,238 @@
+[
+  {
+    "name": "idle",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 55,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "bottomInset": 4,
+        "transparentPixels": 54362,
+        "edgeClipping": false,
+        "sha256": "7eb30f22fd944532cff6392daa6fe15501f46f1781d77a47d2669a291ae12d1c"
+      },
+      {
+        "index": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 58,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "bottomInset": 4,
+        "transparentPixels": 54260,
+        "edgeClipping": false,
+        "sha256": "0f240ce4eb82a8ecd4434c00edac83af37daa565d99309d5620a7d20ab0ec261"
+      },
+      {
+        "index": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 62,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "bottomInset": 4,
+        "transparentPixels": 54297,
+        "edgeClipping": false,
+        "sha256": "a7c09fd826b0ebcd8c3f5712a49a780021c7f06bb1ad1d0dfa0c3f6e1f9b4ad8"
+      },
+      {
+        "index": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 61,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "bottomInset": 4,
+        "transparentPixels": 54222,
+        "edgeClipping": false,
+        "sha256": "b242ae754428d894223bd7b7f11c8d674c83c6dc5796cf0299c310e9c2db12bd"
+      },
+      {
+        "index": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 55,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "bottomInset": 4,
+        "transparentPixels": 54361,
+        "edgeClipping": false,
+        "sha256": "8b41ff9cdb84268f1639072c1125d8aa51ac9340926a711e963bf12ba641a1d0"
+      }
+    ],
+    "fps": 6
+  },
+  {
+    "name": "walk",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 55,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "bottomInset": 4,
+        "transparentPixels": 54362,
+        "edgeClipping": false,
+        "sha256": "03499c30e45e36d16b231f5eba6c9342597524c1199769b357c06b7be3e21480"
+      },
+      {
+        "index": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 54,
+          "top": 25,
+          "right": 174,
+          "bottom": 247
+        },
+        "silhouetteHeight": 223,
+        "bottomInset": 8,
+        "transparentPixels": 54350,
+        "edgeClipping": false,
+        "sha256": "4a4186dddecf8379878b21b2b6b0e6a52024b3daca508c27c7077bdd7b13342e"
+      },
+      {
+        "index": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 53,
+          "top": 21,
+          "right": 173,
+          "bottom": 247
+        },
+        "silhouetteHeight": 227,
+        "bottomInset": 8,
+        "transparentPixels": 54781,
+        "edgeClipping": false,
+        "sha256": "a16846b69c6be805f1951343ef3a2f541538bdd5f460b5383551e89032904e5c"
+      },
+      {
+        "index": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 52,
+          "top": 24,
+          "right": 172,
+          "bottom": 248
+        },
+        "silhouetteHeight": 225,
+        "bottomInset": 7,
+        "transparentPixels": 55206,
+        "edgeClipping": false,
+        "sha256": "28067792eb27eb4a99fa4f4a2d984c6bd4e3efc0e62aa344cdacc98a141b9f24"
+      },
+      {
+        "index": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 52,
+          "top": 28,
+          "right": 175,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "bottomInset": 4,
+        "transparentPixels": 54903,
+        "edgeClipping": false,
+        "sha256": "bb04daf6753f91c99be5086e527c085ac2d591c83b6c0aa17d56af1c11d05c91"
+      },
+      {
+        "index": 5,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 52,
+          "top": 27,
+          "right": 170,
+          "bottom": 251
+        },
+        "silhouetteHeight": 225,
+        "bottomInset": 4,
+        "transparentPixels": 55302,
+        "edgeClipping": false,
+        "sha256": "732a30b9932e8730799cb53a04838f3c986be0ca31ccc26a542f2a2e8768c3eb"
+      },
+      {
+        "index": 6,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 51,
+          "top": 22,
+          "right": 171,
+          "bottom": 251
+        },
+        "silhouetteHeight": 230,
+        "bottomInset": 4,
+        "transparentPixels": 54926,
+        "edgeClipping": false,
+        "sha256": "13fffa240a3760d8c2b163a6a827f8fc0b33ae2b14113e3233e55c51aaaff5e8"
+      },
+      {
+        "index": 7,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 53,
+          "top": 22,
+          "right": 173,
+          "bottom": 251
+        },
+        "silhouetteHeight": 230,
+        "bottomInset": 4,
+        "transparentPixels": 54252,
+        "edgeClipping": false,
+        "sha256": "5211e317b228f3dd7244ca336cdc72bff9ca9b1437c56a288e0237a2c91611aa"
+      },
+      {
+        "index": 8,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 55,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "bottomInset": 4,
+        "transparentPixels": 54361,
+        "edgeClipping": false,
+        "sha256": "1d334e9089a2fe764ab2a5193f56119ad0cc099a0132dfe6abd902fd5d93f0b5"
+      }
+    ],
+    "fps": 8
+  }
+]

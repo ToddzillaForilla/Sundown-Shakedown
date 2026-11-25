@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-15",
+  "status": "standing-revision-review",
+  "scope": "One requested standing revision: slightly slimmer, about 5 percent shorter than Todd, short cargo shorts",
+  "tool": "Edit Image (Pro)",
+  "source": "../retro-reference-20261015/concept.png",
+  "request": {
+    "description": "Edit only this Kristen standing fighter sprite. Make her SLIGHTLY slimmer in torso, waist and limbs, a subtle natural change. Make her a little SHORTER: target total silhouette height about 224 pixels instead of original 237, with hair top near y28 and boot soles still at y251. Preserve mature adult proportions; do not enlarge head or make chibi. Replace long charcoal cargo pants with charcoal short CARGO SHORTS ending at upper/mid thigh, with readable side cargo pockets, natural bare legs, same brown hiking boots. Preserve her exact adult facial likeness, black rectangular glasses with clear lenses, shoulder-length wavy brown hair, green short sleeve shirt, blue neck bandana, empty-handed fighting guard facing screen LEFT, stance, crisp retro arcade pixel style, shading and palette. Keep transparent 256x256 canvas and planted boot baseline y251. No extra accessories or background. This is a modest build/height adjustment and clothing change, not a redesign.",
+    "width": 256,
+    "height": 256,
+    "no_background": true,
+    "seed": 151122
+  },
+  "receipt": "id: 4ffc6e6a-d831-4f75-9d15-5a3e6c396029\njob_id: 4ffc6e6a-d831-4f75-9d15-5a3e6c396029\nmode: text\nframes: 1\nsize: 256x256px\ntransparent: True\nedit: Edit only this Kristen standing fighter sprite. Make her SLIGHTLY slimmer in torso, waist and limbs, a subtle natural change. Make her a little SHORTER: target total silhouette height about 224 pixels instead of original 237, with hair top near y28 and boot soles still at y251. Preserve mature adult proportions; do not enlarge head or make chibi. Replace long charcoal cargo pants with charcoal short CARGO SHORTS ending at upper/mid thigh, with readable side cargo pockets, natural bare legs, same brown hiking boots. Preserve her exact adult facial likeness, black rectangular glasses with clear lenses, shoulder-length wavy brown hair, green short sleeve shirt, blue neck bandana, empty-handed fighting guard facing screen LEFT, stance, crisp retro arcade pixel style, shading and palette. Keep transparent 256x256 canvas and planted boot baseline y251. No extra accessories or background. This is a modest build/height adjustment and clothing change, not a redesign.\nseed: 151122\nasset_id: 7a558fe8-1c77-5dbc-aa96-b373b3943698\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"4ffc6e6a-d831-4f75-9d15-5a3e6c396029\")",
+  "quotedGenerations": 10,
+  "balanceBefore": 4821,
+  "accepted": false,
+  "runtimeIntegrated": false,
+  "jobs": {
+    "concept": {
+      "jobId": "4ffc6e6a-d831-4f75-9d15-5a3e6c396029",
+      "status": "completed",
+      "frameCount": 1,
+      "usage": {
+        "type": "generations",
+        "generations": 10
+      }
+    }
+  },
+  "balanceAfter": 4811,
+  "chargedGenerations": 10,
+  "measurements": {
+    "label": "Kristen — revised candidate",
+    "path": "art-source/characters/kristen/pixellab/retro-shorts-20261015/concept.png",
+    "width": 256,
+    "height": 256,
+    "bounds": {
+      "left": 75,
+      "top": 28,
+      "right": 185,
+      "bottom": 251
+    },
+    "silhouetteHeight": 224,
+    "opaqueColors": 53,
+    "transparentPixels": 53182,
+    "edgeContact": false
+  },
+  "exactAdjustments": "adjustments.json",
+  "selectedImageId": "802c5856-2840-445b-8659-ff2ea9267bce",
+  "rawGeneratedImage": "concept-0.png"
+}

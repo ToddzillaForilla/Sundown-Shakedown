@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-15",
+  "status": "retired-option-a",
+  "scope": "User requested a fresh photo-based Todd mockup; PixelLab spending authorized for this mockup. Animations wait for user approval.",
+  "method": "PixelLab Create Character Pro",
+  "balanceBefore": 4996,
+  "requestedSize": 168,
+  "referencePhoto": "reference-original.jpg",
+  "uploadReference": "reference-upload.png",
+  "description": "Full-body adult male arcade fighting-game character based closely on the supplied real reference photo. Preserve recognizable likeness: side-swept short brown hair, shaped full brown beard, large rectangular black-rim glasses, expressive eyebrows and face from the photograph. Black short-sleeve V-neck T-shirt, dark charcoal indigo jeans, black low-top sneakers. Colorful floral tattoo on LEFT forearm as seen in the photo; other forearm is bare. Both wrists bare: NO WATCH, no wristband, no bracelet, no wrist device. Empty bare hands raised in a relaxed ready-to-fight guard, feet firmly planted apart, knees slightly flexed. Natural adult fighter anatomy, realistic long torso and legs, approximately seven heads tall, normal-sized head and hands, mature proportions. Detailed late-1990s 2D arcade fighting-game pixel art, crisp pixels, subtle selective dark outlines, dimensional restrained shading, cool natural neutral palette, readable face and tattoo. Orthographic side-view game camera at waist height, no overhead/top-down perspective. Entire body visible with generous transparent margin for animation. Consistent body size and foot baseline across directions. No laptop, props, weapons, effects, text, scenery, glow or accessories.",
+  "mcpCapabilityMismatch": "MCP wrapper rejected size 168 before submission, reporting max 128; official REST schema allows 32-168. Using documented Pro REST endpoint at 168.",
+  "quotedGenerations": null,
+  "chargedGenerations": 25,
+  "accepted": false,
+  "runtimeIntegrated": false,
+  "characterId": "90989a91-68e7-460c-945d-5a67305c3368",
+  "jobId": "e93c73c7-c052-4e69-8605-fd8b1f424eed",
+  "endpoint": "/create-character-pro",
+  "seed": 151026,
+  "quotedGenerationsRange": [
+    10,
+    25
+  ],
+  "balanceAfter": 4971,
+  "returnedCanvas": {
+    "width": 168,
+    "height": 168
+  },
+  "sourceReview": {
+    "noWatchVisible": true,
+    "edgeClipping": false,
+    "silhouetteHeightRange": [
+      101,
+      106
+    ],
+    "bottomInsetRange": [
+      26,
+      32
+    ],
+    "notes": [
+      "South-west and south-east use a raised guard; pure east/west views lower their arms.",
+      "The model retained compact stylized proportions despite a natural adult seven-heads brief.",
+      "A larger requested canvas did not yield a proportionally taller silhouette: south-west body is 105px tall.",
+      "Tattoo and likeness require user artistic acceptance before new animation generation."
+    ]
+  },
+  "supersededBy": "../retro-option-b-20261015/concept.png"
+}

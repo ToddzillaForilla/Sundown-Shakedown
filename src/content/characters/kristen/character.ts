@@ -1,12 +1,22 @@
 import type { CharacterDefinition } from '../types';
 import { kristenMoves } from './moves';
 import fighterUrl from './assets/sprites/kristen-concept-fighter.png';
-import idleSheetUrl from './assets/sprites/kristen-idle-sheet-v1.png';
-import walkSheetUrl from './assets/sprites/kristen-walk-sheet-v1-hands-free.png';
-import kickAttackSheetUrl from './assets/sprites/kristen-kick-attack-sheet-v2.png';
-import punchAttackSheetUrl from './assets/sprites/kristen-punch-attack-sheet-v3.png';
+import idleSheetUrl from './assets/sprites/kristen-idle-retro-v1.png';
+import jumpSheetUrl from './assets/sprites/kristen-jump-v1.png';
+import landingSheetUrl from './assets/sprites/kristen-landing-v2.png';
+import crouchSheetUrl from './assets/sprites/kristen-crouch-v1.png';
+import blockSheetUrl from './assets/sprites/kristen-block-v2.png';
+import hitSheetUrl from './assets/sprites/kristen-hit-v2.png';
+import defeatSheetUrl from './assets/sprites/kristen-ko-v1.png';
+import victorySheetUrl from './assets/sprites/kristen-victory-drink-v1.png';
+import walkSheetUrl from './assets/sprites/kristen-walk-direction-combo-v1.png';
+import kickAttackSheetUrl from './assets/sprites/kristen-kick-v5.png';
+import airKickAttackSheetUrl from './assets/sprites/kristen-jump-kick-v1.png';
+import airPunchAttackSheetUrl from './assets/sprites/kristen-jump-punch-v1.png';
+import punchMainAttackSheetUrl from './assets/sprites/kristen-punch-main-75-1792159772322.png';
+import punchAltAttackSheetUrl from './assets/sprites/kristen-punch-alt-25-1792159502161.png';
 import reactionSheetUrl from './assets/sprites/kristen-reactions-sheet-v1.png';
-import portraitUrl from './assets/portraits/kristen-portrait.png';
+import portraitUrl from './assets/portraits/kristen-fighter-card-v1.png';
 
 export const kristen: CharacterDefinition = {
   id: 'kristen',
@@ -19,42 +29,162 @@ export const kristen: CharacterDefinition = {
     portraitTextureKey: 'portrait-kristen',
     portraitUrl,
     renderScale: 0.96,
+    victorySheet: {
+      textureKey: 'fighter-kristen-victory-drink-v1',
+      animationKey: 'fighter-kristen-victory-drink-v1',
+      url: victorySheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 27,
+      frameRate: 12,
+    },
     idleSheet: {
-      textureKey: 'fighter-kristen-idle-sheet-v1',
-      animationKey: 'fighter-kristen-idle-v1',
+      textureKey: 'fighter-kristen-idle-retro-v1',
+      animationKey: 'fighter-kristen-idle-retro-v1',
       url: idleSheetUrl,
-      frameWidth: 260,
-      frameHeight: 362,
-      frameCount: 6,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 5,
+      frameRate: 6,
+    },
+    jumpSheet: {
+      textureKey: 'fighter-kristen-jump-v1',
+      animationKey: 'fighter-kristen-jump-v1',
+      url: jumpSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
       frameRate: 7,
     },
+    landingSheet: {
+      textureKey: 'fighter-kristen-landing-v2',
+      animationKey: 'fighter-kristen-landing-v2',
+      url: landingSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      frameRate: 28,
+    },
+    crouchSheet: {
+      textureKey: 'fighter-kristen-crouch-v1',
+      animationKey: 'fighter-kristen-crouch-v1',
+      url: crouchSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      frameRate: 6,
+    },
+    crouchHoldFrame: 4,
+    blockSheet: {
+      textureKey: 'fighter-kristen-block-v2',
+      animationKey: 'fighter-kristen-block-v2',
+      url: blockSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      frameRate: 6,
+    },
+    blockHoldFrame: 4,
+    hitSheet: {
+      textureKey: 'fighter-kristen-hit-v2',
+      animationKey: 'fighter-kristen-hit-v2',
+      url: hitSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      // Fit the authored recoil within the existing 180 ms presentation window.
+      frameRate: 39,
+    },
+    defeatSheet: {
+      textureKey: 'fighter-kristen-ko-v1',
+      animationKey: 'fighter-kristen-ko-v1',
+      url: defeatSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      frameRate: 12,
+    },
     walkSheet: {
-      textureKey: 'fighter-kristen-walk-sheet-v1-hands-free',
-      animationKey: 'fighter-kristen-walk-v1-hands-free',
+      textureKey: 'fighter-kristen-walk-direction-combo-v1',
+      animationKey: 'fighter-kristen-walk-right-retro-v1',
       url: walkSheetUrl,
-      frameWidth: 260,
-      frameHeight: 362,
-      frameCount: 6,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 9,
+      frameRate: 10,
+    },
+    walkLeftSheet: {
+      textureKey: 'fighter-kristen-walk-direction-combo-v1',
+      animationKey: 'fighter-kristen-walk-left-retro-v1',
+      url: walkSheetUrl,
+      frameOrder: [0, 8, 7, 6, 5, 4, 3, 2, 1],
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 9,
       frameRate: 10,
     },
     kickAttackSheet: {
-      textureKey: 'fighter-kristen-kick-attack-sheet-v2',
-      animationKey: 'fighter-kristen-kick-attack-v2',
+      textureKey: 'fighter-kristen-kick-v5',
+      animationKey: 'fighter-kristen-kick-v5',
       url: kickAttackSheetUrl,
-      frameWidth: 320,
-      frameHeight: 362,
-      frameCount: 6,
-      frameRate: 22,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 4,
+      // Keep each pose readable with a slightly quicker 444 ms kick.
+      frameRate: 9,
+    },
+    airKickAttackSheet: {
+      textureKey: 'fighter-kristen-jump-kick-v1',
+      animationKey: 'fighter-kristen-jump-kick-v1',
+      url: airKickAttackSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      frameRate: 21,
+    },
+    airPunchAttackSheet: {
+      textureKey: 'fighter-kristen-jump-punch-v1',
+      animationKey: 'fighter-kristen-jump-punch-v1',
+      url: airPunchAttackSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      frameRate: 21,
     },
     punchAttackSheet: {
-      textureKey: 'fighter-kristen-punch-attack-sheet-v3',
-      animationKey: 'fighter-kristen-punch-attack-v3',
-      url: punchAttackSheetUrl,
-      frameWidth: 320,
-      frameHeight: 430,
-      frameCount: 6,
-      frameRate: 12,
+      textureKey: 'fighter-kristen-punch-main-75-v1',
+      animationKey: 'fighter-kristen-punch-main-75-v1',
+      url: punchMainAttackSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      frameRate: 24,
     },
+    alternatePunchAttackSheet: {
+      textureKey: 'fighter-kristen-punch-alt-25-v1',
+      animationKey: 'fighter-kristen-punch-alt-25-v1',
+      url: punchAltAttackSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 7,
+      frameRate: 24,
+    },
+    alternatePunchChance: 0.25,
     reactionSheet: {
       textureKey: 'fighter-kristen-reactions-sheet-v1',
       url: reactionSheetUrl,

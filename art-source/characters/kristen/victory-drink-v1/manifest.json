@@ -1,0 +1,232 @@
+{
+  "source": "User-supplied pixellab-Reach-into-a-pocket-to-pull-ou-1792695634290-3x.png",
+  "sourceGrid": {
+    "columns": 6,
+    "rows": 5,
+    "cellSize": 768,
+    "usedFrames": 27
+  },
+  "frameSize": 256,
+  "frameRate": 12,
+  "holdFrame": 26,
+  "nativeFacing": -1,
+  "note": "The tossed can exits the right edge of source frame 24; preserved as supplied. One common scale and pivot match the idle pose.",
+  "measurements": [
+    {
+      "frame": 0,
+      "shiftY": 0,
+      "left": 55,
+      "right": 183,
+      "top": 28,
+      "bottom": 251
+    },
+    {
+      "frame": 1,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 33,
+      "bottom": 251
+    },
+    {
+      "frame": 2,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 36,
+      "bottom": 251
+    },
+    {
+      "frame": 3,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 36,
+      "bottom": 251
+    },
+    {
+      "frame": 4,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 33,
+      "bottom": 251
+    },
+    {
+      "frame": 5,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 28,
+      "bottom": 251
+    },
+    {
+      "frame": 6,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 28,
+      "bottom": 251
+    },
+    {
+      "frame": 7,
+      "shiftY": 0,
+      "left": 69,
+      "right": 185,
+      "top": 28,
+      "bottom": 251
+    },
+    {
+      "frame": 8,
+      "shiftY": 0,
+      "left": 69,
+      "right": 185,
+      "top": 28,
+      "bottom": 251
+    },
+    {
+      "frame": 9,
+      "shiftY": 0,
+      "left": 69,
+      "right": 185,
+      "top": 28,
+      "bottom": 251
+    },
+    {
+      "frame": 10,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 28,
+      "bottom": 251
+    },
+    {
+      "frame": 11,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 26,
+      "bottom": 251
+    },
+    {
+      "frame": 12,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 22,
+      "bottom": 251
+    },
+    {
+      "frame": 13,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 7,
+      "bottom": 251
+    },
+    {
+      "frame": 14,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 7,
+      "bottom": 251
+    },
+    {
+      "frame": 15,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 6,
+      "bottom": 251
+    },
+    {
+      "frame": 16,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 6,
+      "bottom": 251
+    },
+    {
+      "frame": 17,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 6,
+      "bottom": 251
+    },
+    {
+      "frame": 18,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 6,
+      "bottom": 251
+    },
+    {
+      "frame": 19,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 6,
+      "bottom": 251
+    },
+    {
+      "frame": 20,
+      "shiftY": 0,
+      "left": 69,
+      "right": 183,
+      "top": 8,
+      "bottom": 251
+    },
+    {
+      "frame": 21,
+      "shiftY": 0,
+      "left": 69,
+      "right": 208,
+      "top": 25,
+      "bottom": 251
+    },
+    {
+      "frame": 22,
+      "shiftY": 0,
+      "left": 69,
+      "right": 201,
+      "top": 25,
+      "bottom": 251
+    },
+    {
+      "frame": 23,
+      "shiftY": 0,
+      "left": 69,
+      "right": 233,
+      "top": 25,
+      "bottom": 251
+    },
+    {
+      "frame": 24,
+      "shiftY": 0,
+      "left": 69,
+      "right": 255,
+      "top": 25,
+      "bottom": 251
+    },
+    {
+      "frame": 25,
+      "shiftY": 4,
+      "left": 67,
+      "right": 189,
+      "top": 24,
+      "bottom": 251
+    },
+    {
+      "frame": 26,
+      "shiftY": 0,
+      "left": 50,
+      "right": 198,
+      "top": 5,
+      "bottom": 251
+    }
+  ]
+}

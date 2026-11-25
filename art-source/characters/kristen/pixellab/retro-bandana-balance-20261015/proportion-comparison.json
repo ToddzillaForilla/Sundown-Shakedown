@@ -1,0 +1,295 @@
+{
+  "metrics": [
+    {
+      "path": "art-source/characters/kristen/pixellab/retro-hiking-socks-20261015/concept.png",
+      "legRegionOpaquePixels": 2770,
+      "rows": [
+        {
+          "y": 155,
+          "runs": [
+            {
+              "left": 92,
+              "right": 120,
+              "width": 29
+            },
+            {
+              "left": 126,
+              "right": 159,
+              "width": 34
+            }
+          ]
+        },
+        {
+          "y": 165,
+          "runs": [
+            {
+              "left": 91,
+              "right": 116,
+              "width": 26
+            },
+            {
+              "left": 135,
+              "right": 163,
+              "width": 29
+            }
+          ]
+        },
+        {
+          "y": 175,
+          "runs": [
+            {
+              "left": 91,
+              "right": 112,
+              "width": 22
+            },
+            {
+              "left": 144,
+              "right": 165,
+              "width": 22
+            }
+          ]
+        },
+        {
+          "y": 185,
+          "runs": [
+            {
+              "left": 90,
+              "right": 107,
+              "width": 18
+            },
+            {
+              "left": 150,
+              "right": 166,
+              "width": 17
+            }
+          ]
+        },
+        {
+          "y": 195,
+          "runs": [
+            {
+              "left": 82,
+              "right": 102,
+              "width": 21
+            },
+            {
+              "left": 148,
+              "right": 165,
+              "width": 18
+            }
+          ]
+        },
+        {
+          "y": 205,
+          "runs": [
+            {
+              "left": 78,
+              "right": 96,
+              "width": 19
+            },
+            {
+              "left": 150,
+              "right": 165,
+              "width": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "art-source/characters/kristen/pixellab/retro-bandana-balance-20261015/concept-0.png",
+      "legRegionOpaquePixels": 2755,
+      "rows": [
+        {
+          "y": 155,
+          "runs": [
+            {
+              "left": 92,
+              "right": 120,
+              "width": 29
+            },
+            {
+              "left": 126,
+              "right": 159,
+              "width": 34
+            }
+          ]
+        },
+        {
+          "y": 165,
+          "runs": [
+            {
+              "left": 91,
+              "right": 116,
+              "width": 26
+            },
+            {
+              "left": 135,
+              "right": 162,
+              "width": 28
+            }
+          ]
+        },
+        {
+          "y": 175,
+          "runs": [
+            {
+              "left": 91,
+              "right": 112,
+              "width": 22
+            },
+            {
+              "left": 144,
+              "right": 165,
+              "width": 22
+            }
+          ]
+        },
+        {
+          "y": 185,
+          "runs": [
+            {
+              "left": 89,
+              "right": 107,
+              "width": 19
+            },
+            {
+              "left": 150,
+              "right": 166,
+              "width": 17
+            }
+          ]
+        },
+        {
+          "y": 195,
+          "runs": [
+            {
+              "left": 82,
+              "right": 102,
+              "width": 21
+            },
+            {
+              "left": 148,
+              "right": 165,
+              "width": 18
+            }
+          ]
+        },
+        {
+          "y": 205,
+          "runs": [
+            {
+              "left": 78,
+              "right": 96,
+              "width": 19
+            },
+            {
+              "left": 149,
+              "right": 164,
+              "width": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "art-source/characters/kristen/pixellab/retro-bandana-balance-20261015/concept.png",
+      "legRegionOpaquePixels": 2390,
+      "rows": [
+        {
+          "y": 155,
+          "runs": [
+            {
+              "left": 93,
+              "right": 120,
+              "width": 28
+            },
+            {
+              "left": 127,
+              "right": 158,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "y": 165,
+          "runs": [
+            {
+              "left": 94,
+              "right": 114,
+              "width": 21
+            },
+            {
+              "left": 138,
+              "right": 160,
+              "width": 23
+            }
+          ]
+        },
+        {
+          "y": 175,
+          "runs": [
+            {
+              "left": 93,
+              "right": 111,
+              "width": 19
+            },
+            {
+              "left": 146,
+              "right": 164,
+              "width": 19
+            }
+          ]
+        },
+        {
+          "y": 185,
+          "runs": [
+            {
+              "left": 90,
+              "right": 106,
+              "width": 17
+            },
+            {
+              "left": 151,
+              "right": 165,
+              "width": 15
+            }
+          ]
+        },
+        {
+          "y": 195,
+          "runs": [
+            {
+              "left": 84,
+              "right": 100,
+              "width": 17
+            },
+            {
+              "left": 150,
+              "right": 163,
+              "width": 14
+            }
+          ]
+        },
+        {
+          "y": 205,
+          "runs": [
+            {
+              "left": 80,
+              "right": 95,
+              "width": 16
+            },
+            {
+              "left": 150,
+              "right": 163,
+              "width": 14
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "guardedPatchChangedPixels": 942,
+  "changesOutsideLegRegion": 0,
+  "legRegionAreaReductionPercent": 13.718411552346566
+}

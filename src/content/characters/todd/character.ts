@@ -1,13 +1,21 @@
 import type { CharacterDefinition } from '../types';
 import { toddMoves } from './moves';
 import fighterUrl from './assets/sprites/todd-concept-fighter.png';
-import idleSheetUrl from './assets/sprites/todd-idle-sheet-v2-laptop.png';
-import walkSheetUrl from './assets/sprites/todd-walk-sheet-v5-idle-scale.png';
-import kickAttackSheetUrl from './assets/sprites/todd-kick-attack-sheet-v2.png';
-import punchAttackSheetUrl from './assets/sprites/todd-punch-attack-sheet-v7-arm-continuity.png';
-import crouchPunchAttackSheetUrl from './assets/sprites/todd-crouch-punch-attack-sheet-v1.png';
-import reactionSheetUrl from './assets/sprites/todd-reactions-sheet-v1.png';
-import portraitUrl from './assets/portraits/todd-portrait-v2.png';
+import idleSheetUrl from './assets/sprites/todd-idle-hands-free-v1.png';
+import walkSheetUrl from './assets/sprites/todd-walk-hands-free-v1.png';
+import jumpSheetUrl from './assets/sprites/todd-jump-v1.png';
+import landingSheetUrl from './assets/sprites/todd-jump-recovery-v1.png';
+import crouchSheetUrl from './assets/sprites/todd-crouch-retro-v1.png';
+import airKickAttackSheetUrl from './assets/sprites/todd-jump-kick-retro-v1.png';
+import airPunchAttackSheetUrl from './assets/sprites/todd-jump-punch-retro-v1.png';
+import blockSheetUrl from './assets/sprites/todd-block-v1.png';
+import kickAttackSheetUrl from './assets/sprites/todd-kick-retro-v1.png';
+import punchAttackSheetUrl from './assets/sprites/todd-punch-left-75-v1.png';
+import alternatePunchAttackSheetUrl from './assets/sprites/todd-punch-right-25-v1.png';
+import hitSheetUrl from './assets/sprites/todd-hit-reaction-v1.png';
+import defeatSheetUrl from './assets/sprites/todd-defeat-ko-v1.png';
+import victorySheetUrl from './assets/sprites/todd-victory-laptop-v1.png';
+import portraitUrl from './assets/portraits/todd-fighter-card-v3-facing-right.png';
 
 export const todd: CharacterDefinition = {
   id: 'todd',
@@ -22,80 +30,146 @@ export const todd: CharacterDefinition = {
     nativeFacing: -1,
     renderScale: 0.91,
     idleSheet: {
-      textureKey: 'fighter-todd-idle-sheet-v2-laptop',
-      animationKey: 'fighter-todd-idle-v2-laptop',
+      textureKey: 'fighter-todd-idle-hands-free-v1',
+      animationKey: 'fighter-todd-idle-hands-free-v1',
       url: idleSheetUrl,
-      frameWidth: 260,
-      frameHeight: 362,
-      frameCount: 6,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 5,
       frameRate: 6,
     },
     walkSheet: {
-      textureKey: 'fighter-todd-walk-sheet-v5-idle-scale',
-      animationKey: 'fighter-todd-walk-v5-idle-scale',
+      textureKey: 'fighter-todd-walk-hands-free-v1',
+      animationKey: 'fighter-todd-walk-hands-free-v1',
       url: walkSheetUrl,
-      frameWidth: 260,
-      frameHeight: 362,
-      frameCount: 6,
-      frameRate: 10,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 9,
+      frameRate: 15,
     },
+    jumpSheet: {
+      textureKey: 'fighter-todd-jump-v1',
+      animationKey: 'fighter-todd-jump-v1',
+      url: jumpSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 9,
+      frameRate: 8.5,
+    },
+    landingSheet: {
+      textureKey: 'fighter-todd-jump-recovery-v1',
+      animationKey: 'fighter-todd-jump-recovery-v1',
+      url: landingSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 4,
+      frameRate: 18,
+    },
+    crouchSheet: {
+      textureKey: 'fighter-todd-crouch-retro-v1',
+      animationKey: 'fighter-todd-crouch-retro-v1',
+      url: crouchSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 5,
+      frameRate: 6,
+    },
+    crouchHoldFrame: 2,
+    airKickAttackSheet: {
+      textureKey: 'fighter-todd-jump-kick-retro-v1',
+      animationKey: 'fighter-todd-jump-kick-retro-v1',
+      url: airKickAttackSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 9,
+      frameRate: 27,
+    },
+    airPunchAttackSheet: {
+      textureKey: 'fighter-todd-jump-punch-retro-v1',
+      animationKey: 'fighter-todd-jump-punch-retro-v1',
+      url: airPunchAttackSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 9,
+      frameRate: 15,
+    },
+    blockSheet: {
+      textureKey: 'fighter-todd-block-v1',
+      animationKey: 'fighter-todd-block-v1',
+      url: blockSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 5,
+      frameRate: 6,
+    },
+    blockHoldFrame: 2,
     kickAttackSheet: {
-      textureKey: 'fighter-todd-kick-attack-sheet-v2',
-      animationKey: 'fighter-todd-kick-attack-v2',
+      textureKey: 'fighter-todd-kick-retro-v1',
+      animationKey: 'fighter-todd-kick-retro-v1',
       url: kickAttackSheetUrl,
-      nativeFacing: 1,
-      frameWidth: 320,
-      frameHeight: 362,
-      frameCount: 6,
-      frameRate: 22,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 9,
+      frameRate: 33,
     },
     punchAttackSheet: {
-      textureKey: 'fighter-todd-punch-attack-sheet-v7-arm-continuity',
-      animationKey: 'fighter-todd-punch-attack-v7-arm-continuity',
+      textureKey: 'fighter-todd-punch-left-75-v1',
+      animationKey: 'fighter-todd-punch-left-75-v1',
       url: punchAttackSheetUrl,
       nativeFacing: -1,
-      frameWidth: 320,
-      frameHeight: 430,
-      frameCount: 6,
-      frameRate: 12,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 9,
+      frameRate: 24,
     },
-    crouchPunchAttackSheet: {
-      textureKey: 'fighter-todd-crouch-punch-attack-sheet-v1',
-      animationKey: 'fighter-todd-crouch-punch-attack-v1',
-      url: crouchPunchAttackSheetUrl,
-      nativeFacing: 1,
-      frameWidth: 320,
-      frameHeight: 430,
-      frameCount: 6,
-      frameRate: 12,
+    alternatePunchAttackSheet: {
+      textureKey: 'fighter-todd-punch-right-25-v1',
+      animationKey: 'fighter-todd-punch-right-25-v1',
+      url: alternatePunchAttackSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 9,
+      frameRate: 24,
     },
-    reactionSheet: {
-      textureKey: 'fighter-todd-reactions-sheet-v1',
-      url: reactionSheetUrl,
-      nativeFacing: 1,
-      frameWidth: 320,
-      frameHeight: 362,
-      frameCount: 6,
-      block: {
-        animationKey: 'fighter-todd-block-v1',
-        startFrame: 0,
-        endFrame: 1,
-        frameRate: 8,
-        repeat: -1,
-        yoyo: true,
-      },
-      hit: {
-        animationKey: 'fighter-todd-hit-v1',
-        startFrame: 2,
-        endFrame: 3,
-        frameRate: 12,
-      },
-      landing: {
-        animationKey: 'fighter-todd-landing-v1',
-        startFrame: 4,
-        endFrame: 5,
-        frameRate: 18,
-      },
+    alternatePunchChance: 0.25,
+    hitSheet: {
+      textureKey: 'fighter-todd-hit-reaction-v1',
+      animationKey: 'fighter-todd-hit-reaction-v1',
+      url: hitSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 9,
+      frameRate: 24,
+    },
+    defeatSheet: {
+      textureKey: 'fighter-todd-defeat-ko-v1',
+      animationKey: 'fighter-todd-defeat-ko-v1',
+      url: defeatSheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 9,
+      frameRate: 16,
+    },
+    victorySheet: {
+      textureKey: 'fighter-todd-victory-laptop-v1',
+      animationKey: 'fighter-todd-victory-laptop-v1',
+      url: victorySheetUrl,
+      nativeFacing: -1,
+      frameWidth: 256,
+      frameHeight: 256,
+      frameCount: 13,
+      frameRate: 8,
+      loopStartFrame: 6,
     },
   },
   palette: {
@@ -112,4 +186,3 @@ export const todd: CharacterDefinition = {
   },
   moves: toddMoves,
 };
-

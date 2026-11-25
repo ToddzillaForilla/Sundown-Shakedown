@@ -1,0 +1,17 @@
+{
+  "request": {
+    "action": "One seamless walking-in-place cycle of a controlled arcade fighter advancing toward screen left while maintaining the raised guard. Alternate left and right steps with clear heel lift, passing pose and weight transfer. Plant the supporting boot at original ground line y251; lift only the moving boot. Grounded careful walking, no hopping or jogging. Keep torso, head and hands steady, body centered with no travel across canvas. Return to original guard stance for the loop. Fixed side-view camera and constant body scale, all limbs inside the 256x256 canvas. Preserve the adult female fighter's exact body proportions, face, clear black rectangular glasses, wavy brown hair, detailed blue bandana, fitted green shirt, short charcoal cargo shorts, visible gray-green hiking socks and brown boots. Keep both hands empty and screen-left facing. No change in leg thickness, clothing or head size. Maintain crisp dark leg outline.",
+    "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/a6afc806-508b-4461-811a-7227c2512247/image.png",
+    "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/a6afc806-508b-4461-811a-7227c2512247/image.png",
+    "frame_count": 8,
+    "no_background": true,
+    "seed": 151131
+  },
+  "status": "processing",
+  "estimatedGenerations": 8,
+  "fps": 8,
+  "jobId": "beb8e0a4-b7eb-4463-abfa-017ac6c35d94",
+  "assetId": "c5491780-d5ee-57cd-ace5-560a60bc4801",
+  "quotedGenerations": 8,
+  "receipt": "id: beb8e0a4-b7eb-4463-abfa-017ac6c35d94\njob_id: beb8e0a4-b7eb-4463-abfa-017ac6c35d94\naction: One seamless walking-in-place cycle of a controlled arcade fighter advancing toward screen left while maintaining the raised guard. Alternate left and right steps with clear heel lift, passing pose and weight transfer. Plant the supporting boot at original ground line y251; lift only the moving boot. Grounded careful walking, no hopping or jogging. Keep torso, head and hands steady, body centered with no travel across canvas. Return to original guard stance for the loop. Fixed side-view camera and constant body scale, all limbs inside the 256x256 canvas. Preserve the adult female fighter's exact body proportions, face, clear black rectangular glasses, wavy brown hair, detailed blue bandana, fitted green shirt, short charcoal cargo shorts, visible gray-green hiking socks and brown boots. Keep both hands empty and screen-left facing. No change in leg thickness, clothing or head size. Maintain crisp dark leg outline.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 151131\nasset_id: c5491780-d5ee-57cd-ace5-560a60bc4801\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"beb8e0a4-b7eb-4463-abfa-017ac6c35d94\")"
+}

@@ -1,0 +1,304 @@
+[
+  {
+    "name": "reference",
+    "title": "Approved old kick — motion reference",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 51,
+          "top": 37,
+          "right": 104,
+          "bottom": 139
+        },
+        "silhouetteHeight": 103,
+        "bottomInset": 24,
+        "transparentPixels": 23635,
+        "edgeClipping": false,
+        "sha256": "69a98140dc61193fa8c3979e237144f4dc8c05f67cec458034b2b4d4ced5199e"
+      },
+      {
+        "index": 1,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 51,
+          "top": 35,
+          "right": 100,
+          "bottom": 139
+        },
+        "silhouetteHeight": 105,
+        "bottomInset": 24,
+        "transparentPixels": 23797,
+        "edgeClipping": false,
+        "sha256": "06f4f6440653e0c7fd98b7235f438b5aaad5f7fd58cde1eb643f089701a9771a"
+      },
+      {
+        "index": 2,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 56,
+          "top": 34,
+          "right": 98,
+          "bottom": 137
+        },
+        "silhouetteHeight": 104,
+        "bottomInset": 26,
+        "transparentPixels": 23962,
+        "edgeClipping": false,
+        "sha256": "95cdb20cf8389b6a08229c5f8fc7da0860ea3f825c957a329ffb79d604c96a42"
+      },
+      {
+        "index": 3,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 38,
+          "top": 26,
+          "right": 106,
+          "bottom": 137
+        },
+        "silhouetteHeight": 112,
+        "bottomInset": 26,
+        "transparentPixels": 23454,
+        "edgeClipping": false,
+        "sha256": "1a73de809f9c2997560dd2988b71b437b8d2020150852bc56eddedc127cacdc3"
+      },
+      {
+        "index": 4,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 35,
+          "top": 29,
+          "right": 114,
+          "bottom": 139
+        },
+        "silhouetteHeight": 111,
+        "bottomInset": 24,
+        "transparentPixels": 23390,
+        "edgeClipping": false,
+        "sha256": "e10f999cad83b59c18a5a6f5a08d13fd85f38d786df4fd2943cf5241a2a86dc2"
+      },
+      {
+        "index": 5,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 32,
+          "top": 26,
+          "right": 112,
+          "bottom": 139
+        },
+        "silhouetteHeight": 114,
+        "bottomInset": 24,
+        "transparentPixels": 23356,
+        "edgeClipping": false,
+        "sha256": "6d61bb8ccd42fa1f76771fa1ddff573520d5120b576b9489fae3013731229e7c"
+      },
+      {
+        "index": 6,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 30,
+          "top": 29,
+          "right": 117,
+          "bottom": 139
+        },
+        "silhouetteHeight": 111,
+        "bottomInset": 24,
+        "transparentPixels": 23348,
+        "edgeClipping": false,
+        "sha256": "651fd8442b38c50680ec6970b8333bc3efaeda748de2cb0db4094e9f8c3c1a8e"
+      },
+      {
+        "index": 7,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 41,
+          "top": 29,
+          "right": 108,
+          "bottom": 138
+        },
+        "silhouetteHeight": 110,
+        "bottomInset": 25,
+        "transparentPixels": 23688,
+        "edgeClipping": false,
+        "sha256": "a51a5d03b8a4c9fdd6b161372fb9ac8cf613496ad16eba17bf2fc0c7f1a8c136"
+      },
+      {
+        "index": 8,
+        "width": 164,
+        "height": 164,
+        "bounds": {
+          "left": 52,
+          "top": 37,
+          "right": 104,
+          "bottom": 139
+        },
+        "silhouetteHeight": 103,
+        "bottomInset": 24,
+        "transparentPixels": 23611,
+        "edgeClipping": false,
+        "sha256": "3ca61cdd1de1101f4b6aedd7db55914049320c9d10d9d3a48955cdc9abf6a428"
+      }
+    ],
+    "fps": 12
+  },
+  {
+    "name": "kick",
+    "title": "Retro Todd — matching kick candidate",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52117,
+        "edgeClipping": false,
+        "sha256": "681117cd7e9d5ea91c80705b313a1631a696c58e9621bfb285e2576a738e6773"
+      },
+      {
+        "index": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 76,
+          "top": 18,
+          "right": 191,
+          "bottom": 251
+        },
+        "silhouetteHeight": 234,
+        "bottomInset": 4,
+        "transparentPixels": 53231,
+        "edgeClipping": false,
+        "sha256": "0b206681bf53e994ba17bbd0acbe3d0577d811c76d8baec98e86fc5ebe996bca"
+      },
+      {
+        "index": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 46,
+          "top": 18,
+          "right": 177,
+          "bottom": 251
+        },
+        "silhouetteHeight": 234,
+        "bottomInset": 4,
+        "transparentPixels": 54169,
+        "edgeClipping": false,
+        "sha256": "6fb18ac2d4529f167dc1594608fbb993070c1a7551a0412dd666d128c8e5fb67"
+      },
+      {
+        "index": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 45,
+          "top": 30,
+          "right": 207,
+          "bottom": 246
+        },
+        "silhouetteHeight": 217,
+        "bottomInset": 9,
+        "transparentPixels": 53718,
+        "edgeClipping": false,
+        "sha256": "c7d22053c80caa647d65bd2f390eac6e4062cfa786838c16ed7d9af8c9299dc3"
+      },
+      {
+        "index": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 29,
+          "top": 36,
+          "right": 205,
+          "bottom": 247
+        },
+        "silhouetteHeight": 212,
+        "bottomInset": 8,
+        "transparentPixels": 53929,
+        "edgeClipping": false,
+        "sha256": "61ec32f814be87fa7cb29fc9b933b5de10217d5dddd0d6b601df8ba20c297ccd"
+      },
+      {
+        "index": 5,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 32,
+          "top": 33,
+          "right": 205,
+          "bottom": 247
+        },
+        "silhouetteHeight": 215,
+        "bottomInset": 8,
+        "transparentPixels": 53869,
+        "edgeClipping": false,
+        "sha256": "67f28e3fb3ef3837d9bbb4f0d4ecf4f8e8e445b8872c33b620e7c160dbe33934"
+      },
+      {
+        "index": 6,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 53,
+          "top": 20,
+          "right": 182,
+          "bottom": 247
+        },
+        "silhouetteHeight": 228,
+        "bottomInset": 8,
+        "transparentPixels": 54249,
+        "edgeClipping": false,
+        "sha256": "5d0a774ba077b924765deca3f319dba41e323a442d55f3da06d1709bdfa911d0"
+      },
+      {
+        "index": 7,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 83,
+          "top": 12,
+          "right": 166,
+          "bottom": 245
+        },
+        "silhouetteHeight": 234,
+        "bottomInset": 10,
+        "transparentPixels": 56306,
+        "edgeClipping": false,
+        "sha256": "8296648f5f7ec9fd8a121482a3fb4025b60fc012fd46e6b441ed11de941478f3"
+      },
+      {
+        "index": 8,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52119,
+        "edgeClipping": false,
+        "sha256": "e9a5df7e4f033f7ff1844b25d985ab262403f125055561857ec46817c86da037"
+      }
+    ],
+    "fps": 12
+  }
+]

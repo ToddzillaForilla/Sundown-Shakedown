@@ -22,6 +22,7 @@ import { GAME_HEIGHT, GAME_WIDTH } from '../config';
 import { PlayerInputBuffer, resolveDirectionalIntent, type BufferedAction } from '../input/PlayerInput';
 import { shouldShowTouchControls, TouchControls } from '../input/TouchControls';
 import { gameSession } from '../session';
+import { createMusicToggle } from '../MusicToggle';
 
 type ControlAction = 'left' | 'right' | 'up' | 'down' | 'kick' | 'punch' | 'jump' | 'super';
 const PIXEL_FONT = '"Courier New", Courier, monospace';
@@ -81,17 +82,29 @@ export class FightScene extends Phaser.Scene {
           endFrame: character.art.idleSheet.frameCount - 1,
         });
       }
-      if (character.art.walkSheet && !this.textures.exists(character.art.walkSheet.textureKey)) {
-        this.load.spritesheet(character.art.walkSheet.textureKey, character.art.walkSheet.url, {
-          frameWidth: character.art.walkSheet.frameWidth,
-          frameHeight: character.art.walkSheet.frameHeight,
-          endFrame: character.art.walkSheet.frameCount - 1,
+      const queuedWalkTextureKeys = new Set<string>();
+      for (const walkSheet of [character.art.walkSheet, character.art.walkLeftSheet]) {
+        if (!walkSheet || this.textures.exists(walkSheet.textureKey) || queuedWalkTextureKeys.has(walkSheet.textureKey)) continue;
+        queuedWalkTextureKeys.add(walkSheet.textureKey);
+        this.load.spritesheet(walkSheet.textureKey, walkSheet.url, {
+          frameWidth: walkSheet.frameWidth,
+          frameHeight: walkSheet.frameHeight,
+          endFrame: walkSheet.frameCount - 1,
         });
       }
       for (const sheet of [
+        character.art.jumpSheet,
+        character.art.landingSheet,
+        character.art.crouchSheet,
+        character.art.blockSheet,
         character.art.kickAttackSheet,
         character.art.punchAttackSheet,
-        character.art.crouchPunchAttackSheet,
+        character.art.alternatePunchAttackSheet,
+        character.art.airKickAttackSheet,
+        character.art.airPunchAttackSheet,
+        character.art.hitSheet,
+        character.art.defeatSheet,
+        character.art.victorySheet,
       ]) {
         if (!sheet || this.textures.exists(sheet.textureKey)) continue;
         this.load.spritesheet(sheet.textureKey, sheet.url, {
@@ -135,6 +148,7 @@ export class FightScene extends Phaser.Scene {
     this.createHud(playerDefinition, opponentDefinition);
     this.createKeyboardControls();
     this.createMouseControls();
+    createMusicToggle(this);
     this.touch = shouldShowTouchControls() ? new TouchControls(this) : undefined;
     this.showControlGuide();
     this.startRound();
@@ -218,7 +232,7 @@ export class FightScene extends Phaser.Scene {
     const playerHealthFrame = this.add.rectangle(230, 58, 370, 30, 0x180f25, 0.9).setStrokeStyle(3, 0xffd477);
     const opponentHealthFrame = this.add.rectangle(730, 58, 370, 30, 0x180f25, 0.9).setStrokeStyle(3, 0xffd477);
     this.playerHealthBar = this.add.rectangle(48, 58, 360, 20, 0x57c46b).setOrigin(0, 0.5);
-    this.opponentHealthBar = this.add.rectangle(912, 58, 360, 20, 0xe15d68).setOrigin(1, 0.5);
+    this.opponentHealthBar = this.add.rectangle(912, 58, 360, 20, 0x57c46b).setOrigin(1, 0.5);
     this.playerMeterFrame = this.add.rectangle(138, 85, 185, 14, 0x0b0810, 0.9).setStrokeStyle(2, 0x7a6c84, 0.75);
     this.opponentMeterFrame = this.add.rectangle(822, 85, 185, 14, 0x0b0810, 0.9).setStrokeStyle(2, 0x7a6c84, 0.75);
     this.playerMeterBar = this.add.rectangle(48, 85, SUPER_METER_WIDTH, 8, playerDefinition.palette.accent).setOrigin(0, 0.5);
@@ -296,10 +310,10 @@ export class FightScene extends Phaser.Scene {
       right: [Phaser.Input.Keyboard.KeyCodes.RIGHT, Phaser.Input.Keyboard.KeyCodes.D].map((code) => keyboard.addKey(code)),
       up: [Phaser.Input.Keyboard.KeyCodes.UP, Phaser.Input.Keyboard.KeyCodes.W].map((code) => keyboard.addKey(code)),
       down: [Phaser.Input.Keyboard.KeyCodes.DOWN, Phaser.Input.Keyboard.KeyCodes.S].map((code) => keyboard.addKey(code)),
-      kick: [keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.J)],
-      punch: [keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.K)],
-      jump: [keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.L)],
-      super: [keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.I)],
+      kick: [keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.K)],
+      punch: [keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.J)],
+      jump: [keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE)],
+      super: [keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.L)],
     };
   }
 
@@ -318,7 +332,7 @@ export class FightScene extends Phaser.Scene {
     const guide = this.add.text(
       GAME_WIDTH / 2,
       505,
-      'MOVE WASD  |  GUARD HOLD AWAY\nKICK J  |  PUNCH K  |  SPECIAL I  |  JUMP L  |  UPPERCUT S+K',
+      'MOVE WASD  |  GUARD HOLD AWAY\nJUMP SPACE  |  PUNCH J  |  KICK K  |  SPECIAL L',
       {
       align: 'center',
       color: '#f4f0ff',
@@ -568,19 +582,6 @@ export class FightScene extends Phaser.Scene {
       return;
     }
 
-    const swipe = this.add
-      .rectangle(attacker.x + direction * 58, attacker.y - 112, move.kind === 'heavy' ? 58 : 34, 7, color, 0.85)
-      .setAngle(direction * -18)
-      .setDepth(50)
-      .setBlendMode(Phaser.BlendModes.ADD);
-    this.tweens.add({
-      targets: swipe,
-      x: swipe.x + direction * 28,
-      alpha: 0,
-      scaleX: 1.7,
-      duration: move.kind === 'heavy' ? 180 : 110,
-      onComplete: () => swipe.destroy(),
-    });
   }
 
   private showHitBurst(defender: Fighter, move: MoveDefinition, blocked: boolean): void {
@@ -664,8 +665,12 @@ export class FightScene extends Phaser.Scene {
   }
 
   private updateHud(): void {
-    this.playerHealthBar.displayWidth = 360 * (this.player.health / this.player.definition.stats.maxHealth);
-    this.opponentHealthBar.displayWidth = 360 * (this.opponent.health / this.opponent.definition.stats.maxHealth);
+    const playerHealthRatio = this.player.health / this.player.definition.stats.maxHealth;
+    const opponentHealthRatio = this.opponent.health / this.opponent.definition.stats.maxHealth;
+    this.playerHealthBar.displayWidth = 360 * playerHealthRatio;
+    this.opponentHealthBar.displayWidth = 360 * opponentHealthRatio;
+    this.playerHealthBar.setFillStyle(playerHealthRatio < 0.2 ? 0xe15d68 : 0x57c46b);
+    this.opponentHealthBar.setFillStyle(opponentHealthRatio < 0.2 ? 0xe15d68 : 0x57c46b);
     this.playerMeterBar.displayWidth = SUPER_METER_WIDTH * (this.player.meter / 100);
     this.opponentMeterBar.displayWidth = SUPER_METER_WIDTH * (this.opponent.meter / 100);
     const playerSuperReady = canUseSuper(this.player.meter);
@@ -734,20 +739,27 @@ export class FightScene extends Phaser.Scene {
     const announcement = result.winner === 'draw' ? 'DRAW' : `${winner.toUpperCase()} WINS`;
     this.showAnnouncement(announcement);
     if (result.matchOver) {
-      this.time.delayedCall(900, () => this.showMatchResult(winner));
+      const winningFighter = result.winner === 'player' ? this.player : this.opponent;
+      this.time.delayedCall(900, () => this.showMatchResult(winningFighter));
       return;
     }
     this.time.delayedCall(1600, () => this.startRound());
   }
 
-  private showMatchResult(winner: string): void {
+  private showMatchResult(winner: Fighter): void {
     this.announcement
-      .setPosition(GAME_WIDTH / 2, 238)
       .setFontSize(34)
       .setLineSpacing(5);
-    this.showAnnouncement(`${winner.toUpperCase()}\nSHAKES DOWN THE BACKYARD`);
+    this.showAnnouncement(`${winner.definition.displayName.toUpperCase()}\nSHAKES DOWN THE BACKYARD`);
+    winner.playVictory();
 
     const buttonY = GAME_HEIGHT - 48;
+    const buttonTop = buttonY - 27;
+    const gap = 12;
+    this.announcement.setPosition(
+      GAME_WIDTH / 2,
+      buttonTop - gap - this.announcement.height / 2,
+    );
     this.createResultButton(GAME_WIDTH / 2 - 102, buttonY, 'REMATCH', () => this.scene.restart());
     this.createResultButton(GAME_WIDTH / 2 + 102, buttonY, 'CHARACTERS', () => this.scene.start('CharacterSelectScene'));
   }

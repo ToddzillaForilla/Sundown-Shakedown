@@ -1,10 +1,10 @@
-import type { CharacterDefinition, MoveDefinition } from '../../content/characters';
+import type { CharacterAnimationSheet, CharacterDefinition, MoveDefinition } from '../../content/characters';
 
 export const SUPER_METER_COST = 100;
 
 export type AttackAction = 'light' | 'heavy' | 'kick' | 'punch' | 'super';
 export type MoveSlot = keyof CharacterDefinition['moves'];
-export type AuthoredAttackAnimation = 'kick' | 'punch' | 'crouchPunch';
+export type AuthoredAttackAnimation = 'kick' | 'punch' | 'airKick' | 'airPunch';
 
 export interface AttackContext {
   grounded: boolean;
@@ -44,7 +44,10 @@ export function resolvePlayerMoveSlot(
 ): MoveSlot | undefined {
   const airborne = !context.grounded || context.launchedThisFrame;
   if (action === 'super') return canUseSuper(context.meter) ? 'super' : undefined;
-  if (action === 'punch') return airborne ? 'airHeavy' : 'heavy';
+  if (action === 'punch') {
+    if (airborne) return 'airHeavy';
+    return context.crouching ? undefined : 'heavy';
+  }
   if (action === 'heavy') {
     if (airborne) return 'airHeavy';
     return context.down && context.movement === context.facing ? 'special' : 'heavy';
@@ -83,12 +86,23 @@ export function getAttackPresentation(
 export function getAuthoredAttackAnimation(
   moves: CharacterDefinition['moves'],
   move: MoveDefinition,
-  crouching = false,
 ): AuthoredAttackAnimation | undefined {
   const slot = getMoveSlot(moves, move);
   if (slot === 'light' || slot === 'crouchLight') return 'kick';
-  if (slot === 'heavy') return crouching ? 'crouchPunch' : 'punch';
+  if (slot === 'heavy') return 'punch';
+  if (slot === 'airLight') return 'airKick';
+  if (slot === 'airHeavy') return 'airPunch';
   return undefined;
+}
+
+export function selectPunchAnimationSheet(
+  primary: CharacterAnimationSheet | undefined,
+  alternate: CharacterAnimationSheet | undefined,
+  alternateChance: number,
+  roll: number,
+): CharacterAnimationSheet | undefined {
+  if (!primary || !alternate || alternateChance <= 0) return primary;
+  return roll < alternateChance ? alternate : primary;
 }
 
 export function getHitStunMs(move: MoveDefinition, blocked: boolean): number {

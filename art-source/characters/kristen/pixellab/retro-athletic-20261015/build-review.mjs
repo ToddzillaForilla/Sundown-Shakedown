@@ -1,0 +1,12 @@
+import {readFile, writeFile} from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
+import sharp from 'sharp';
+const root='art-source/characters/kristen/pixellab/retro-athletic-20261015';
+const adjusted=await sharp(`${root}/concept-0.png`).flop().resize(240,240,{kernel:'nearest'}).png().toBuffer();
+await sharp({create:{width:256,height:256,channels:4,background:{r:0,g:0,b:0,alpha:0}}}).composite([{input:adjusted,left:8,top:16}]).png().toFile(`${root}/concept.png`);
+await writeFile(`${root}/adjustments.json`,JSON.stringify({source:'concept-0.png',output:'concept.png',operations:['Horizontal mirror to face screen left','Uniform nearest-neighbor scale: 256x256 to 240x240','Place at x8,y16 on transparent 256x256 canvas'],scale:0.9375,anatomicalRowCuts:false,rawOutputPreserved:true},null,2));
+execFileSync(process.execPath,['scripts/preview-kristen-retro-reference.mjs',root]);
+let html=await readFile(`${root}/review.html`,'utf8');
+html=html.replace('Edit Image (Pro)','Create Image (Pro)').replace('Requested revision: a slightly slimmer build, a little shorter than Todd, and short cargo shorts. The previous pants version is preserved below.','Requested revision: a noticeably leaner athletic silhouette, defined waist, longer-looking legs and fitted short cargo shorts. The Pro result was mirrored to face left and uniformly scaled to be about 5% shorter than Todd. No anatomical row cuts; the raw output is preserved.');
+await writeFile(`${root}/review.html`,html);
+console.log(await readFile(`${root}/measurements.json`,'utf8'));

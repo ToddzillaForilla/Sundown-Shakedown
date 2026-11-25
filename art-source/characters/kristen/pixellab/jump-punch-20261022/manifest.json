@@ -1,0 +1,92 @@
+{
+  "source": "pixellab-The-character-launches-into-a--1792683245115-3x.png",
+  "approval": "User supplied and requested jump-punch integration on 2026-10-22.",
+  "grid": {
+    "columns": 3,
+    "rows": 3,
+    "sourceCell": 768,
+    "frameCount": 7,
+    "order": "row-major; last two cells unused"
+  },
+  "export": {
+    "cell": 256,
+    "resize": "nearest",
+    "nativeFacing": -1,
+    "frameRate": 21,
+    "perFrameAlignment": false
+  },
+  "reference": "Idle silhouette is 224 px with foot baseline y251; first frame matches idle scale and baseline. Airborne poses retain authored offsets; no per-frame normalization. Existing airHeavy cooldown is 640 ms.",
+  "durationMs": 333.3333333333333,
+  "measurements": [
+    {
+      "frame": 0,
+      "bounds": [
+        55,
+        28,
+        183,
+        251
+      ],
+      "silhouetteHeight": 224
+    },
+    {
+      "frame": 1,
+      "bounds": [
+        54,
+        32,
+        183,
+        251
+      ],
+      "silhouetteHeight": 220
+    },
+    {
+      "frame": 2,
+      "bounds": [
+        56,
+        37,
+        184,
+        251
+      ],
+      "silhouetteHeight": 215
+    },
+    {
+      "frame": 3,
+      "bounds": [
+        73,
+        23,
+        195,
+        212
+      ],
+      "silhouetteHeight": 190
+    },
+    {
+      "frame": 4,
+      "bounds": [
+        60,
+        17,
+        193,
+        182
+      ],
+      "silhouetteHeight": 166
+    },
+    {
+      "frame": 5,
+      "bounds": [
+        17,
+        19,
+        188,
+        191
+      ],
+      "silhouetteHeight": 173
+    },
+    {
+      "frame": 6,
+      "bounds": [
+        12,
+        25,
+        193,
+        251
+      ],
+      "silhouetteHeight": 227
+    }
+  ]
+}

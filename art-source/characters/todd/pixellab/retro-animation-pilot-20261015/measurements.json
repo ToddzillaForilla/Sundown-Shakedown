@@ -1,0 +1,538 @@
+[
+  {
+    "name": "idle",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52119,
+        "edgeClipping": false,
+        "sha256": "796b8eee33a30961686b4c4fc4e0fd302b653ab9ef08d24174060e6faa6c1ca2"
+      },
+      {
+        "index": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 18,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 234,
+        "bottomInset": 4,
+        "transparentPixels": 52134,
+        "edgeClipping": false,
+        "sha256": "2a9a46220ea9483315a965046b26a8b520d723f2c7ecae4f64d6ffb4062b193e"
+      },
+      {
+        "index": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 72,
+          "top": 20,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 232,
+        "bottomInset": 4,
+        "transparentPixels": 52230,
+        "edgeClipping": false,
+        "sha256": "d8db4236474ce9d37610e5af8c07eaebb9bdb8dc4ebd35cb91d1a943d2865c3e"
+      },
+      {
+        "index": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 18,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 234,
+        "bottomInset": 4,
+        "transparentPixels": 52118,
+        "edgeClipping": false,
+        "sha256": "cd68feb60aa721f9ca4a3afae3da5b48d4cff29fa5e7e283d4eef28619d9667c"
+      },
+      {
+        "index": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52119,
+        "edgeClipping": false,
+        "sha256": "f3502d77187d8ffb6bb1265c5f062503858cd2a8d414c496576a640d804fa304"
+      }
+    ],
+    "fps": 6
+  },
+  {
+    "name": "walk",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52119,
+        "edgeClipping": false,
+        "sha256": "d54b61a20b166c8ccdf5b11f7f7a7fbb37b99b6af09e7c99201c40a3739dc291"
+      },
+      {
+        "index": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 71,
+          "top": 14,
+          "right": 191,
+          "bottom": 250
+        },
+        "silhouetteHeight": 237,
+        "bottomInset": 5,
+        "transparentPixels": 52138,
+        "edgeClipping": false,
+        "sha256": "4b7968f61df6ad9840be92c6b992050d48b97d7c7dd811882ab02f59e33be962"
+      },
+      {
+        "index": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 72,
+          "top": 8,
+          "right": 175,
+          "bottom": 245
+        },
+        "silhouetteHeight": 238,
+        "bottomInset": 10,
+        "transparentPixels": 52644,
+        "edgeClipping": false,
+        "sha256": "aabf8472cab573fb453f20cffb01bf94ece9e790d12d54f13d70977320b991f6"
+      },
+      {
+        "index": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 78,
+          "top": 10,
+          "right": 172,
+          "bottom": 250
+        },
+        "silhouetteHeight": 241,
+        "bottomInset": 5,
+        "transparentPixels": 53642,
+        "edgeClipping": false,
+        "sha256": "622da9a47e21962ba260a9a44acbd40005752de3b93d43a4c347a12b6393a087"
+      },
+      {
+        "index": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 75,
+          "top": 16,
+          "right": 182,
+          "bottom": 250
+        },
+        "silhouetteHeight": 235,
+        "bottomInset": 5,
+        "transparentPixels": 52638,
+        "edgeClipping": false,
+        "sha256": "41c582692982cef1eaf1d1b3b2274b00fc75b4dd619c66d9e20a1df1a2a62e8f"
+      },
+      {
+        "index": 5,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 71,
+          "top": 16,
+          "right": 184,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 53018,
+        "edgeClipping": false,
+        "sha256": "c370eb6d4a9cf1c7285bfff71a123a6a256bc36264999a8591f316cd7ca8bc77"
+      },
+      {
+        "index": 6,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 8,
+          "right": 170,
+          "bottom": 251
+        },
+        "silhouetteHeight": 244,
+        "bottomInset": 4,
+        "transparentPixels": 53162,
+        "edgeClipping": false,
+        "sha256": "a63bdce2d5132f88f37863ef9694577624b3cf6446599065de5469e626274e72"
+      },
+      {
+        "index": 7,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 78,
+          "top": 9,
+          "right": 173,
+          "bottom": 251
+        },
+        "silhouetteHeight": 243,
+        "bottomInset": 4,
+        "transparentPixels": 52023,
+        "edgeClipping": false,
+        "sha256": "669e1c0fcaf31f0d50309e37c8e7f6e3df97d32d0ef4301823fb56c9e0ddb78d"
+      },
+      {
+        "index": 8,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52120,
+        "edgeClipping": false,
+        "sha256": "1744a830dc3a5db6eba7cdc5cdc6b52c90082640e4c9443fb204c98e04b178f4"
+      }
+    ],
+    "fps": 8
+  },
+  {
+    "name": "punch",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52119,
+        "edgeClipping": false,
+        "sha256": "dc1add06b4ea8d8be5a87f40181b9b07ec0b7a772d10b3e63396928357b449b6"
+      },
+      {
+        "index": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52119,
+        "edgeClipping": false,
+        "sha256": "0fee6011f7a9ceaa068702759fb06609a3952798329ba458b2c7ce8aed087e7e"
+      },
+      {
+        "index": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52387,
+        "edgeClipping": false,
+        "sha256": "ee25ccd894f09c2d9745469f59c73eb07320a9415c5d1132dc64fd63524954be"
+      },
+      {
+        "index": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 57,
+          "top": 16,
+          "right": 191,
+          "bottom": 252
+        },
+        "silhouetteHeight": 237,
+        "bottomInset": 3,
+        "transparentPixels": 52675,
+        "edgeClipping": false,
+        "sha256": "af007fd6062e63a808a9dd04c391a75cf0d0ba95fc49eb2c356d865fe7214c87"
+      },
+      {
+        "index": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 22,
+          "top": 21,
+          "right": 192,
+          "bottom": 252
+        },
+        "silhouetteHeight": 232,
+        "bottomInset": 3,
+        "transparentPixels": 52438,
+        "edgeClipping": false,
+        "sha256": "0b73e1737a92a30593c740abec6036ece47716e7243df9282af8122ee73c54b9"
+      },
+      {
+        "index": 5,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 36,
+          "top": 20,
+          "right": 191,
+          "bottom": 252
+        },
+        "silhouetteHeight": 233,
+        "bottomInset": 3,
+        "transparentPixels": 52632,
+        "edgeClipping": false,
+        "sha256": "e966299a24a4cc9e3597354c6f615a97c29f7578ccfea42a2d9d93c35cba564f"
+      },
+      {
+        "index": 6,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 18,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 234,
+        "bottomInset": 4,
+        "transparentPixels": 52424,
+        "edgeClipping": false,
+        "sha256": "f4ae6b40d3f25599f1769d158d17f285df979abbbb3e796e86793a0f4b302edf"
+      },
+      {
+        "index": 7,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 17,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 235,
+        "bottomInset": 4,
+        "transparentPixels": 52142,
+        "edgeClipping": false,
+        "sha256": "f182967326a1c81c225dc0e70dcecab22c5acf9c01e1956120cafa8d5117ac43"
+      },
+      {
+        "index": 8,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52119,
+        "edgeClipping": false,
+        "sha256": "93143c9d7c155954909cc0996a870e08215a88ea31c761bfa8c60be7ea56f965"
+      }
+    ],
+    "fps": 12
+  },
+  {
+    "name": "kick",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52120,
+        "edgeClipping": false,
+        "sha256": "2299fcd738246015ee908cc3d916fadb973400768b9b3fb60617bae1e2635e73"
+      },
+      {
+        "index": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 19,
+          "right": 190,
+          "bottom": 251
+        },
+        "silhouetteHeight": 233,
+        "bottomInset": 4,
+        "transparentPixels": 52184,
+        "edgeClipping": false,
+        "sha256": "bd3d1169a145123f460fab49b05601d2c1e1c4571db09ea16e222be11ca6cc11"
+      },
+      {
+        "index": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 15,
+          "right": 157,
+          "bottom": 245
+        },
+        "silhouetteHeight": 231,
+        "bottomInset": 10,
+        "transparentPixels": 54323,
+        "edgeClipping": false,
+        "sha256": "7651fdef1f2f752a2588f4aebd6c78f462825d02f57e0ae3fff0cc6ad61120b8"
+      },
+      {
+        "index": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 37,
+          "top": 10,
+          "right": 156,
+          "bottom": 245
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 10,
+        "transparentPixels": 53797,
+        "edgeClipping": false,
+        "sha256": "f47c25a29589a9989c55e45c9b357d1edfa44f9fd89671c8cdb0d1280f2259a0"
+      },
+      {
+        "index": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 40,
+          "top": 16,
+          "right": 158,
+          "bottom": 245
+        },
+        "silhouetteHeight": 230,
+        "bottomInset": 10,
+        "transparentPixels": 53887,
+        "edgeClipping": false,
+        "sha256": "26344d640bd3166f89a277a1b86c2e7312785b54a642ce346c98d40b649d9557"
+      },
+      {
+        "index": 5,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 58,
+          "top": 12,
+          "right": 156,
+          "bottom": 245
+        },
+        "silhouetteHeight": 234,
+        "bottomInset": 10,
+        "transparentPixels": 54752,
+        "edgeClipping": false,
+        "sha256": "e6b8bcfd657421957aeb0bbe5689ebc2fac10ab7f3d67cbb4f04b4f23df84f77"
+      },
+      {
+        "index": 6,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 12,
+          "right": 166,
+          "bottom": 245
+        },
+        "silhouetteHeight": 234,
+        "bottomInset": 10,
+        "transparentPixels": 52991,
+        "edgeClipping": false,
+        "sha256": "bc6db5f55b767f63ccbf49e5675ccd4d1115c14a535aabd58a7362efe67cba3b"
+      },
+      {
+        "index": 7,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 15,
+          "right": 187,
+          "bottom": 251
+        },
+        "silhouetteHeight": 237,
+        "bottomInset": 4,
+        "transparentPixels": 52267,
+        "edgeClipping": false,
+        "sha256": "7d1cddbe9533aa34fbf6479036e270b9d9234ce3e163ee64b975f523ea1fae59"
+      },
+      {
+        "index": 8,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52111,
+        "edgeClipping": false,
+        "sha256": "015a0c954a48b252aabd4ccd6a81b2143b2d41752cd6e9231e59ee3c5fd6af65"
+      }
+    ],
+    "fps": 12
+  }
+]

@@ -1,0 +1,9 @@
+job_id: eea01be1-6079-4936-b601-7775476c51a2
+asset_id: 8d6d0e7d-e731-50d0-9d52-cda7672a6868
+asset_status: pending
+quoted_generations: 8
+seed: 151135
+frame_count: 8 (get_image expected to return 9 frames including the unchanged input frame)
+first_frame_url: approved Kristen reference (image id a6afc806-508b-4461-811a-7227c2512247)
+last_frame_url: approved Kristen reference (image id a6afc806-508b-4461-811a-7227c2512247)
+mode: animate_image / Animate with Text v3

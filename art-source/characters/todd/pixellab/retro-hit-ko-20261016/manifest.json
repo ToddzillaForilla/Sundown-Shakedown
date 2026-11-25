@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-16",
+  "status": "awaiting-art-review",
+  "scope": "Create a short authored Todd hit reaction and an authored defeat/KO sequence for source review; integrate only after review.",
+  "reference": {
+    "source": "src/content/characters/todd/assets/sprites/todd-idle-hands-free-v1.png",
+    "frame": "reference-guard-frame.png",
+    "crop": "Frame 0, 256x256 cell from the approved runtime idle sheet.",
+    "identity": "Approved Option B Todd master; black V-neck, glasses, beard, dark jeans, sneakers, anatomical left forearm tattoo, bare wrists.",
+    "facing": "screen-left"
+  },
+  "tool": "PixelLab Animate with Text v3 via animate_image",
+  "allowance": {
+    "approvedGenerations": 12,
+    "quotedGenerations": 12,
+    "chargedGenerations": 12,
+    "directUsdCredits": 0
+  },
+  "clips": {
+    "hit": {
+      "jobId": "46c658d6-552a-487e-8431-051c5b76c82b",
+      "assetId": "aa2afb2d-951a-55d0-9820-aae5e72c8edf",
+      "seed": 151210,
+      "requestedFrames": 4,
+      "expectedOutputFrames": 5,
+      "cellSize": [
+        256,
+        256
+      ],
+      "quotedGenerations": 4,
+      "chargedGenerations": 4,
+      "status": "completed",
+      "action": "A short, readable fighting-game hit reaction: begin in the exact guarded stance, take one sharp impact to the upper body, recoil backward with a brief shoulder and head snap, stagger one small step without leaving the ground line, then recover cleanly to the exact starting guard. Keep the same screen-left facing, fixed camera, body scale, silhouette proportions, and feet baseline. No turning, no jumping, no attack, no extra limbs, no lingering pose. Preserve the exact character design and transparent background.",
+      "actualFrameCount": 5,
+      "downloadBase": "https://api.pixellab.ai/mcp/images/46c658d6-552a-487e-8431-051c5b76c82b/download?index="
+    },
+    "defeat": {
+      "jobId": "93fa5a51-0e9c-408f-a2f9-2a9ee2ccc798",
+      "assetId": "5ef30914-22ee-5817-8430-104bcfbfd30d",
+      "seed": 151211,
+      "requestedFrames": 8,
+      "actualFrameCount": 9,
+      "cellSize": [
+        256,
+        256
+      ],
+      "quotedGenerations": 8,
+      "chargedGenerations": 8,
+      "status": "completed",
+      "downloadBase": "https://api.pixellab.ai/mcp/images/93fa5a51-0e9c-408f-a2f9-2a9ee2ccc798/download?index=",
+      "action": "A dramatic but non-graphic arcade-fighter defeat sequence after a decisive hit. Start from this exact standing guard, absorb the impact and recoil backward, take one unsteady step, buckle at the knees, drop onto one knee, then tip down onto the ground on his side/back. Finish fully grounded and still, with a natural folded-leg pose and one arm across the torso. Preserve screen-left facing, the exact character identity and clothes, body scale, fixed camera, transparent background, and consistent pixel-art style. Keep the entire body visible and within the canvas. Do not spin, flip, jump, slide across the floor, change proportions, or end standing."
+    }
+  },
+  "runtimeIntegrated": false,
+  "balanceAfter": 4621.7,
+  "reviewNotes": [
+    "Both clips retain 256x256 canvases and transparent backgrounds.",
+    "Hit clip starts and ends in the guard, with a slight 6px variation in minimum opaque foot baseline during the step.",
+    "Defeat clip ends grounded at y252; silhouette height decreases naturally while falling.",
+    "The defeat motion turns Todd toward the camera in middle frames; review facing consistency before runtime integration."
+  ],
+  "review": "review.html",
+  "measurements": {
+    "hit": "hit-measurements.json",
+    "defeat": "defeat-measurements.json"
+  }
+}

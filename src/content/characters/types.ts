@@ -30,6 +30,7 @@ export interface CharacterAnimationSheet {
   textureKey: string;
   animationKey: string;
   url: string;
+  frameOrder?: readonly number[];
   nativeFacing?: 1 | -1;
   frameWidth: number;
   frameHeight: number;
@@ -55,7 +56,7 @@ export interface CharacterReactionSheet {
   frameCount: number;
   block: CharacterAnimationClip;
   hit: CharacterAnimationClip;
-  landing: CharacterAnimationClip;
+  landing?: CharacterAnimationClip;
 }
 
 export interface CharacterDefinition {
@@ -72,9 +73,23 @@ export interface CharacterDefinition {
     renderScale?: number;
     idleSheet?: CharacterAnimationSheet;
     walkSheet?: CharacterAnimationSheet;
+    walkLeftSheet?: CharacterAnimationSheet;
+    jumpSheet?: CharacterAnimationSheet;
+    landingSheet?: CharacterAnimationSheet;
+    crouchSheet?: CharacterAnimationSheet;
+    crouchHoldFrame?: number;
+    blockSheet?: CharacterAnimationSheet;
+    blockHoldFrame?: number;
     kickAttackSheet?: CharacterAnimationSheet;
     punchAttackSheet?: CharacterAnimationSheet;
-    crouchPunchAttackSheet?: CharacterAnimationSheet;
+    alternatePunchAttackSheet?: CharacterAnimationSheet;
+    alternatePunchChance?: number;
+    airKickAttackSheet?: CharacterAnimationSheet;
+    airPunchAttackSheet?: CharacterAnimationSheet;
+    hitSheet?: CharacterAnimationSheet;
+    defeatSheet?: CharacterAnimationSheet;
+    /** Without loopStartFrame, play once and hold the last frame. */
+    victorySheet?: CharacterAnimationSheet & { loopStartFrame?: number };
     reactionSheet?: CharacterReactionSheet;
   };
   palette: CharacterPalette;

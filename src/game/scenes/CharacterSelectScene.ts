@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { createMusicToggle } from '../MusicToggle';
 import { characterList, type CharacterDefinition } from '../../content/characters';
 import type { Difficulty } from '../session';
 import { applyFightSelection, gameSession } from '../session';
@@ -11,6 +12,8 @@ interface CharacterCard {
   container: Phaser.GameObjects.Container;
   background: Phaser.GameObjects.Rectangle;
   portrait: Phaser.GameObjects.Image;
+  frame: Phaser.GameObjects.Graphics;
+  nameplate: Phaser.GameObjects.Rectangle;
   name: Phaser.GameObjects.Text;
   tagline: Phaser.GameObjects.Text;
   badge: Phaser.GameObjects.Text;
@@ -43,6 +46,7 @@ export class CharacterSelectScene extends Phaser.Scene {
     this.createCharacterRoster();
     this.createDifficultySelector();
     this.createFightButton();
+    createMusicToggle(this);
 
     this.input.keyboard?.on('keydown-LEFT', () => this.changeCharacter(-1));
     this.input.keyboard?.on('keydown-RIGHT', () => this.changeCharacter(1));
@@ -116,56 +120,58 @@ export class CharacterSelectScene extends Phaser.Scene {
     index: number,
   ): CharacterCard {
     const background = this.add
-      .rectangle(0, 0, 252, 286, 0x080508, 0.9)
-      .setStrokeStyle(2, 0x4a1820, 0.85)
+      .rectangle(0, 0, 228, 300, 0x08090b, 0.98)
+      .setStrokeStyle(2, 0x74828d, 0.95)
       .setInteractive({ useHandCursor: true });
 
-    const isTodd = character.id === 'todd';
     const portrait = this.add
-      .image(0, isTodd ? -2 : -28, character.art.portraitTextureKey)
-      .setDisplaySize(isTodd ? 270 : 218, isTodd ? 270 : 218);
+      .image(0, -17, character.art.portraitTextureKey)
+      .setDisplaySize(200, 200);
 
-    const infoPanel = this.add.rectangle(0, 109, 248, 68, 0x080508, 0.98);
+    const frame = this.add.graphics();
+    const nameplate = this.add
+      .rectangle(0, 123, 190, 34, 0xc8bd96, 1)
+      .setStrokeStyle(2, 0x9c7c3d, 1);
 
     const name = this.add
-      .text(0, 94, character.displayName.toUpperCase(), {
-        color: '#ad9da3',
-        fontFamily: 'Impact, Haettenschweiler, sans-serif',
-        fontSize: '28px',
-        letterSpacing: 2,
-        stroke: '#22060b',
-        strokeThickness: 4,
+      .text(0, 117, character.displayName.toUpperCase(), {
+        color: '#241b16',
+        fontFamily: PIXEL_FONT,
+        fontSize: '20px',
+        fontStyle: 'bold',
+        letterSpacing: 1,
       })
       .setOrigin(0.5);
 
     const tagline = this.add
-      .text(0, 124, character.tagline.toUpperCase(), {
+      .text(0, 143, character.tagline.toUpperCase(), {
         align: 'center',
-        color: '#8f8188',
+        color: '#c5bba8',
         fontFamily: PIXEL_FONT,
-        fontSize: '10px',
+        fontSize: '8px',
         fontStyle: 'bold',
       })
       .setOrigin(0.5);
 
     const badge = this.add
-      .text(-107, -130, 'P1', {
-        color: '#130308',
-        backgroundColor: '#ffb000',
+      .text(-100, -112, 'P1\nREADY', {
+        color: '#ffca55',
+        backgroundColor: '#171417',
         fontFamily: PIXEL_FONT,
-        fontSize: '13px',
+        fontSize: '9px',
         fontStyle: 'bold',
-        padding: { x: 7, y: 4 },
+        lineSpacing: -2,
+        padding: { x: 4, y: 3 },
       })
       .setOrigin(0, 0.5);
 
-    const container = this.add.container(x, y, [background, portrait, infoPanel, name, tagline, badge]);
+    const container = this.add.container(x, y, [background, portrait, frame, nameplate, name, tagline, badge]);
     background.on('pointerup', () => {
       this.selectedIndex = index;
       this.renderSelection();
     });
 
-    return { container, background, portrait, name, tagline, badge };
+    return { container, background, portrait, frame, nameplate, name, tagline, badge };
   }
 
   private createDifficultySelector(): void {
@@ -237,11 +243,23 @@ export class CharacterSelectScene extends Phaser.Scene {
     this.characterCards.forEach((card, index) => {
       const selected = index === this.selectedIndex;
       card.background
-        .setFillStyle(selected ? 0x180408 : 0x050505, selected ? 0.98 : 0.82)
-        .setStrokeStyle(selected ? 4 : 2, selected ? 0xffb000 : 0x4a1820, selected ? 1 : 0.85);
-      card.portrait.setAlpha(selected ? 1 : 0.48);
-      card.name.setColor(selected ? '#ffb000' : '#766a70');
-      card.tagline.setColor(selected ? '#f4f0ff' : '#685f64');
+        .setFillStyle(selected ? 0x11100d : 0x08090b, 0.98)
+        .setStrokeStyle(selected ? 3 : 2, selected ? 0xe5ac4a : 0x74828d, 1);
+      card.portrait.setAlpha(selected ? 1 : 0.76);
+      card.frame.clear();
+      card.frame.lineStyle(2, selected ? 0xf2bd59 : 0x8796a2, 1);
+      card.frame.strokeRect(-105, -126, 210, 218);
+      card.frame.lineStyle(1, selected ? 0x9b682d : 0x46545f, 1);
+      card.frame.strokeRect(-101, -122, 202, 210);
+      const cornerColor = selected ? 0xffd77c : 0x9cabb6;
+      card.frame.fillStyle(cornerColor, 1);
+      for (const [cornerX, cornerY] of [[-105, -126], [99, -126], [-105, 84], [99, 84]]) {
+        card.frame.fillRect(cornerX, cornerY, 6, 6);
+      }
+      card.nameplate.setFillStyle(selected ? 0xd6c797 : 0x9da3a1, 1);
+      card.nameplate.setStrokeStyle(2, selected ? 0xffc75d : 0x74828d, 1);
+      card.name.setColor('#241b16');
+      card.tagline.setColor(selected ? '#f2ddad' : '#9ea4a4');
       card.badge.setVisible(selected);
     });
 

@@ -1,0 +1,391 @@
+[
+  {
+    "name": "crouch",
+    "title": "Crouch — shallow candidate",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52120,
+        "edgeClipping": false,
+        "sha256": "1fa2fca1e56367fbdec77c861cac5bf6385a5a1793d512b8dcb43a36de66fa09"
+      },
+      {
+        "index": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 23,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 229,
+        "bottomInset": 4,
+        "transparentPixels": 52414,
+        "edgeClipping": false,
+        "sha256": "d6915437d29a8472218f0bc51c86da573dd6aa4f19cb85b04c2587641a0bbb51"
+      },
+      {
+        "index": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 72,
+          "top": 32,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 220,
+        "bottomInset": 4,
+        "transparentPixels": 52627,
+        "edgeClipping": false,
+        "sha256": "75d5d74bfede489959645937c0f5e2510fe46c892b31782a49b26ba35af0afd7"
+      },
+      {
+        "index": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 22,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 230,
+        "bottomInset": 4,
+        "transparentPixels": 52352,
+        "edgeClipping": false,
+        "sha256": "fbf038ecf221e133b46b078fbaa123abfd09ab3521a21e0054b8c4f391697354"
+      },
+      {
+        "index": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52120,
+        "edgeClipping": false,
+        "sha256": "dc803badb89e13c8d858a57a1205ac8c7f46439896bd3202dec57d743a3f7a8b"
+      }
+    ],
+    "fps": 6
+  },
+  {
+    "name": "jumpKick",
+    "title": "Raw generated kick — knee lift, not selected",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52119,
+        "edgeClipping": false,
+        "sha256": "b61abc5936b5f048e8101ac0a7719ac82c1e705eca9ea64023be565f7c92739a"
+      },
+      {
+        "index": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 21,
+          "right": 187,
+          "bottom": 250
+        },
+        "silhouetteHeight": 230,
+        "bottomInset": 5,
+        "transparentPixels": 52258,
+        "edgeClipping": false,
+        "sha256": "ac4a089ac787f6e12bb324796436b358bf48193ff71968e82b516c2b31f67636"
+      },
+      {
+        "index": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 65,
+          "top": 13,
+          "right": 171,
+          "bottom": 245
+        },
+        "silhouetteHeight": 233,
+        "bottomInset": 10,
+        "transparentPixels": 53049,
+        "edgeClipping": false,
+        "sha256": "943ca1d8bfb9ad347fe57232d77bb2915b276576e98d882c075688351e90f3bc"
+      },
+      {
+        "index": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 56,
+          "top": 6,
+          "right": 187,
+          "bottom": 245
+        },
+        "silhouetteHeight": 240,
+        "bottomInset": 10,
+        "transparentPixels": 53103,
+        "edgeClipping": false,
+        "sha256": "7a0e36bf3c6101c7113836a7f78294a44cd7926e38eca33a9beb9dc6b3bcd972"
+      },
+      {
+        "index": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 56,
+          "top": 10,
+          "right": 187,
+          "bottom": 245
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 10,
+        "transparentPixels": 52160,
+        "edgeClipping": false,
+        "sha256": "531e82ba511d8b690ae71dad56e66f618c593e6b800539f4b8be464226e816d1"
+      },
+      {
+        "index": 5,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 56,
+          "top": 8,
+          "right": 187,
+          "bottom": 245
+        },
+        "silhouetteHeight": 238,
+        "bottomInset": 10,
+        "transparentPixels": 53371,
+        "edgeClipping": false,
+        "sha256": "7d7fa4e1570e1cf11adaf76a798c6340d040319473c39b28bc242916f8663660"
+      },
+      {
+        "index": 6,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 61,
+          "top": 9,
+          "right": 183,
+          "bottom": 245
+        },
+        "silhouetteHeight": 237,
+        "bottomInset": 10,
+        "transparentPixels": 52345,
+        "edgeClipping": false,
+        "sha256": "4c0e3a4fd0c0f25475f207f4cf7866133b56c2642d624cfd355f8eef221a9160"
+      },
+      {
+        "index": 7,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 69,
+          "top": 11,
+          "right": 186,
+          "bottom": 245
+        },
+        "silhouetteHeight": 235,
+        "bottomInset": 10,
+        "transparentPixels": 51883,
+        "edgeClipping": false,
+        "sha256": "d566e6a8c84107c91b4d882060bdc1de2b3dd8329559cce4ffa2b3cb89418d4f"
+      },
+      {
+        "index": 8,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52120,
+        "edgeClipping": false,
+        "sha256": "7fceb1ad387ea2410f043fd739f6186f78d3e31807a5c3ebe4587be18229088f"
+      }
+    ],
+    "fps": 10
+  },
+  {
+    "name": "jumpPunch",
+    "title": "Jump punch",
+    "measurements": [
+      {
+        "index": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52125,
+        "edgeClipping": false,
+        "sha256": "f74cf623a70068ee1b60d36bb5101808479c35482c87fa9307868a8b12b1a692"
+      },
+      {
+        "index": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 20,
+          "right": 189,
+          "bottom": 251
+        },
+        "silhouetteHeight": 232,
+        "bottomInset": 4,
+        "transparentPixels": 52209,
+        "edgeClipping": false,
+        "sha256": "34bdecea6314aa110c5b5e01b322d365435437fc9ae95cb8f3c1625e6c88b4be"
+      },
+      {
+        "index": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 71,
+          "top": 17,
+          "right": 190,
+          "bottom": 251
+        },
+        "silhouetteHeight": 235,
+        "bottomInset": 4,
+        "transparentPixels": 52153,
+        "edgeClipping": false,
+        "sha256": "1ccd1f62dad82c8eb41d07b7efc17e5a8f2b8dd2a0a83e2dade6c257ab6b0ff1"
+      },
+      {
+        "index": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 67,
+          "top": 9,
+          "right": 193,
+          "bottom": 245
+        },
+        "silhouetteHeight": 237,
+        "bottomInset": 10,
+        "transparentPixels": 52755,
+        "edgeClipping": false,
+        "sha256": "16b2ef8242d5fa28056af3a93702f9260580a8c62a77cea1d43667bc46cecf25"
+      },
+      {
+        "index": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 17,
+          "top": 9,
+          "right": 188,
+          "bottom": 245
+        },
+        "silhouetteHeight": 237,
+        "bottomInset": 10,
+        "transparentPixels": 52823,
+        "edgeClipping": false,
+        "sha256": "c9f816531489c517388f08aeb6b13aec583c81732c9a5e9d3b4dba64512b4038"
+      },
+      {
+        "index": 5,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 21,
+          "top": 10,
+          "right": 190,
+          "bottom": 245
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 10,
+        "transparentPixels": 52737,
+        "edgeClipping": false,
+        "sha256": "be2cf8b8b033700bd1eb66a922af32b0afb2c178b9fa8226fecc7a1c2e10bc58"
+      },
+      {
+        "index": 6,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 53,
+          "top": 7,
+          "right": 193,
+          "bottom": 245
+        },
+        "silhouetteHeight": 239,
+        "bottomInset": 10,
+        "transparentPixels": 52172,
+        "edgeClipping": false,
+        "sha256": "f24e82c7451bca6ce705e03475d0a14da5edcc6f1d22a8e75a510ffdd021ef53"
+      },
+      {
+        "index": 7,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 66,
+          "top": 11,
+          "right": 187,
+          "bottom": 251
+        },
+        "silhouetteHeight": 241,
+        "bottomInset": 4,
+        "transparentPixels": 51881,
+        "edgeClipping": false,
+        "sha256": "0fe844c53e374c81c91e42bb493655d111d567049c403260e1be6eee78659596"
+      },
+      {
+        "index": 8,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 73,
+          "top": 16,
+          "right": 188,
+          "bottom": 251
+        },
+        "silhouetteHeight": 236,
+        "bottomInset": 4,
+        "transparentPixels": 52119,
+        "edgeClipping": false,
+        "sha256": "71c2bd20df0a2cc4e8f4f6cc9eac4a5170475711ae60acfca7834a54b4d5ca69"
+      }
+    ],
+    "fps": 10
+  }
+]

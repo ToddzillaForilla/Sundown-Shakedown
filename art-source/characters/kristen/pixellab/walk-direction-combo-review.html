@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kristen — left/right walk sequence test</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 20px; color: #edf3f6; background: #18232d; font: 16px/1.5 system-ui, sans-serif; }
+    main { max-width: 1000px; margin: 0 auto; }
+    h1 { margin: 0 0 8px; font-size: 1.55rem; }
+    .intro { margin: 0 0 18px; color: #c5d3dc; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px; }
+    article { min-width: 0; padding: 14px; border: 1px solid #506574; border-radius: 12px; background: #263744; }
+    h2 { margin: 0; font-size: 1.2rem; }
+    .arrow { margin: 5px 0; color: #9ed5ff; font-size: 1.45rem; font-weight: 700; }
+    img { display: block; width: 100%; height: auto; margin: 10px auto; image-rendering: pixelated; background: #304451; border-radius: 6px; }
+    p { color: #d0dce3; }
+    .note { margin-top: 18px; padding: 12px 14px; border-left: 3px solid #91aab8; background: #263744; color: #d0dce3; }
+    a { color: #9ed5ff; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Kristen — left/right walk sequence test</h1>
+  <p class="intro">Proposed pairing: option 1 while moving right; option 2 while moving left. The two loops use the same generated frames, with option 2 played in reverse order.</p>
+  <section class="grid">
+    <article>
+      <h2>Moving right · option 1</h2>
+      <div class="arrow" aria-label="moving right">→</div>
+      <img src="retro-animation-pilot-20261015/walk-generated-order-preview.gif" alt="Option 1 Kristen walk sequence for moving right">
+      <p>Original generated frame order.</p>
+    </article>
+    <article>
+      <h2>Moving left · option 2</h2>
+      <div class="arrow" aria-label="moving left">←</div>
+      <img src="retro-animation-pilot-20261015/walk-phone-preview.gif" alt="Option 2 Kristen walk sequence for moving left">
+      <p>Same frames with the playback order reversed.</p>
+    </article>
+  </section>
+  <p class="note">Review-only pairing. The game currently uses one walk animation for either movement direction. A runtime version would select the sequence from movement direction while keeping the fighter's facing controlled by the opponent. No walk has been integrated or approved yet.</p>
+  <p><a href="walk-options-review.html">Back to all walking options</a></p>
+</main>
+</body>
+</html>

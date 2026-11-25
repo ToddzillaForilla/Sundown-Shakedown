@@ -1,0 +1,8 @@
+{
+  "action": "Side-view fighting-game kick toward the LEFT edge of the image. From this left-facing guard, lift the rear knee toward the left, extend the boot horizontally leftward at waist height with heel leading, retract the knee, and return to the same guard. The opponent is off-screen LEFT. Keep the supporting boot planted on the original ground line. Keep the same left-facing three-quarter view throughout, with no camera rotation or facing reversal. Preserve the exact character, green shirt, charcoal shorts, blue neck bandana, glasses, hiking socks and boots. Fixed body proportions and scale, fixed 256x256 transparent canvas, full body visible. A clear fully extended side kick followed by recovery, no jump or spin.",
+  "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/a6afc806-508b-4461-811a-7227c2512247/image.png",
+  "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/a6afc806-508b-4461-811a-7227c2512247/image.png",
+  "frame_count": 8,
+  "no_background": true,
+  "seed": 161601
+}

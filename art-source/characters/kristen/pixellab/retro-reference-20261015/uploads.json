@@ -1,0 +1,38 @@
+{
+  "photo1": {
+    "source": "art-source/characters/kristen/references/kristen-reference-photo-1.jpg",
+    "ref": "upload:638fc2cb-35d6-4126-9a06-8dd7e7bb8086",
+    "upload_id": "638fc2cb-35d6-4126-9a06-8dd7e7bb8086",
+    "width": 768,
+    "height": 1024,
+    "n_frames": 1,
+    "expires_in_days": 3
+  },
+  "photo2": {
+    "source": "art-source/characters/kristen/references/kristen-reference-photo-2.jpg",
+    "ref": "upload:8eb82000-8320-4709-b61c-f0954fe009e9",
+    "upload_id": "8eb82000-8320-4709-b61c-f0954fe009e9",
+    "width": 768,
+    "height": 1024,
+    "n_frames": 1,
+    "expires_in_days": 3
+  },
+  "outfit": {
+    "source": "art-source/characters/kristen/concepts/kristen-fighter-concept-v1.png",
+    "ref": "upload:c33d495c-86ce-49fe-9f89-da6e7248980d",
+    "upload_id": "c33d495c-86ce-49fe-9f89-da6e7248980d",
+    "width": 1024,
+    "height": 1536,
+    "n_frames": 1,
+    "expires_in_days": 3
+  },
+  "toddStyle": {
+    "source": "art-source/characters/todd/pixellab/retro-option-b-20261015/concept.png",
+    "ref": "upload:9c47d5f6-467b-4161-9678-bcf751490088",
+    "upload_id": "9c47d5f6-467b-4161-9678-bcf751490088",
+    "width": 256,
+    "height": 256,
+    "n_frames": 1,
+    "expires_in_days": 3
+  }
+}

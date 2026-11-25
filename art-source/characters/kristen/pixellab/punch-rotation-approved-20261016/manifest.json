@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-16",
+  "status": "approved-source-export-runtime-integrated",
+  "character": "kristen",
+  "selection": {
+    "primary": {
+      "assetId": "gallery:1792159772322",
+      "chance": 0.75,
+      "sourceFile": "gallery-1792159772322-3x.png",
+      "runtimeFile": "src/content/characters/kristen/assets/sprites/kristen-punch-main-75-1792159772322.png"
+    },
+    "alternate": {
+      "assetId": "gallery:1792159502161",
+      "chance": 0.25,
+      "sourceFile": "gallery-1792159502161-3x.png",
+      "runtimeFile": "src/content/characters/kristen/assets/sprites/kristen-punch-alt-25-1792159502161.png"
+    }
+  },
+  "sourceExport": {
+    "format": "PNG RGBA",
+    "dimensions": [2304, 2304],
+    "layout": "3 columns by 3 rows; 7 populated cells in row-major order",
+    "exportScale": 3,
+    "sourceCellSize": [768, 768],
+    "nativeCellSize": [256, 256],
+    "frameCount": 7,
+    "sourceFrameDurationMs": 100,
+    "nativeFacing": "screen-left",
+    "baselineY": 252,
+    "preparation": "Each fixed 768x768 grid cell was nearest-neighbor reduced 3x to its 256x256 native canvas; transparent padding and common baseline were retained. Pixel-block analysis confirmed exact 3x replication."
+  },
+  "runtime": {
+    "layout": "horizontal strip",
+    "frameSize": [256, 256],
+    "frameCount": 7,
+    "frameRate": 13,
+    "nativeFacing": -1,
+    "alternateRoll": "uniform random per standing punch; alternate when roll < 0.25",
+    "actionLockMs": 550,
+    "timingNote": "The 7-frame clip completes in about 538ms, leaving Kristen's existing 550ms heavy cooldown as the effective action lock."
+  },
+  "generationCost": 0
+}

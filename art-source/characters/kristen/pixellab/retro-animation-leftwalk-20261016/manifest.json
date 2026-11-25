@@ -1,0 +1,290 @@
+{
+  "date": "2026-10-16",
+  "status": "source-review-ready",
+  "scope": "Single Kristen leftward walk retry only",
+  "source": "art-source/characters/kristen/pixellab/retro-outline-clean-20261015/concept.png",
+  "sourceSha256": "c89031826ed59470d8750f6e84f09c3c83d1d23961cfb543d54dacee6e29dcda",
+  "mode": "Animate with Text v3",
+  "endpoint": "/animate-with-text-v3",
+  "jobId": "848250e7-fae7-4e75-a128-feb5e25388b5",
+  "seed": 151132,
+  "balanceBefore": 4759.8,
+  "balanceAfter": 4751.8,
+  "estimatedGenerations": 8,
+  "chargedGenerations": 8,
+  "chargedGenerations": 8,
+  "accepted": false,
+  "runtimeIntegrated": false,
+  "action": "Natural 2D side-view forward walk cycle, stepping toward screen-left in the exact direction her face and nose point. Maintain a left-facing profile in every frame. The screen-left/front boot reaches forward and plants heel first; body weight transfers onto it and the torso passes over it. Then the screen-right/rear boot pushes off, lifts and swings forward past the planted leg to become the next front foot. Alternate this clear leftward stride rhythm. Never step backward toward screen-right, shuffle-cross the legs in place, slide both feet, turn, or mirror. Keep torso and raised guard pointed screen-left, with only subtle arm counter-swing. Fixed side camera, centered in-place cycle, grounded boot contact at y251. Preserve the reference face, glasses, hair, blue bandana, clothing, proportions, socks, boots, and crisp outline; no camera movement, extra props, or background.",
+  "firstFrameUrl": "https://api.pixellab.ai/mcp/pixel-tools/a6afc806-508b-4461-811a-7227c2512247/image.png",
+  "lastFrameUrl": "https://api.pixellab.ai/mcp/pixel-tools/a6afc806-508b-4461-811a-7227c2512247/image.png",
+  "frameCount": 8,
+  "jobStatus": "completed",
+  "actualFrameCount": 9,
+  "assetId": null,
+  "review": {
+    "frames": [
+      {
+        "index": 0,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 55,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "opaquePixels": 11175,
+        "baselineY": 251,
+        "edgeClipping": false
+      },
+      {
+        "index": 1,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 58,
+          "top": 26,
+          "right": 180,
+          "bottom": 247
+        },
+        "silhouetteHeight": 222,
+        "opaquePixels": 11241,
+        "baselineY": 247,
+        "edgeClipping": false
+      },
+      {
+        "index": 2,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 58,
+          "top": 22,
+          "right": 187,
+          "bottom": 247
+        },
+        "silhouetteHeight": 226,
+        "opaquePixels": 10555,
+        "baselineY": 247,
+        "edgeClipping": false
+      },
+      {
+        "index": 3,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 54,
+          "top": 25,
+          "right": 192,
+          "bottom": 248
+        },
+        "silhouetteHeight": 224,
+        "opaquePixels": 10668,
+        "baselineY": 248,
+        "edgeClipping": false
+      },
+      {
+        "index": 4,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 53,
+          "top": 30,
+          "right": 193,
+          "bottom": 252
+        },
+        "silhouetteHeight": 223,
+        "opaquePixels": 10877,
+        "baselineY": 252,
+        "edgeClipping": false
+      },
+      {
+        "index": 5,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 54,
+          "top": 27,
+          "right": 192,
+          "bottom": 251
+        },
+        "silhouetteHeight": 225,
+        "opaquePixels": 10557,
+        "baselineY": 251,
+        "edgeClipping": false
+      },
+      {
+        "index": 6,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 57,
+          "top": 23,
+          "right": 186,
+          "bottom": 251
+        },
+        "silhouetteHeight": 229,
+        "opaquePixels": 10635,
+        "baselineY": 251,
+        "edgeClipping": false
+      },
+      {
+        "index": 7,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 56,
+          "top": 23,
+          "right": 179,
+          "bottom": 251
+        },
+        "silhouetteHeight": 229,
+        "opaquePixels": 11245,
+        "baselineY": 251,
+        "edgeClipping": false
+      },
+      {
+        "index": 8,
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 55,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        },
+        "silhouetteHeight": 224,
+        "opaquePixels": 11173,
+        "baselineY": 251,
+        "edgeClipping": false
+      }
+    ],
+    "baselineRangeY": [
+      247,
+      252
+    ],
+    "clipping": false,
+    "accepted": false,
+    "runtimeIntegrated": false,
+    "alignmentMethod": "Whole-frame vertical translation only; generated raw frames preserved",
+    "alignmentShifts": [
+      {
+        "frame": 0,
+        "dx": 0,
+        "dy": 0,
+        "baselineY": 251,
+        "bounds": {
+          "left": 55,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        }
+      },
+      {
+        "frame": 1,
+        "dx": 0,
+        "dy": 4,
+        "baselineY": 251,
+        "bounds": {
+          "left": 58,
+          "top": 30,
+          "right": 180,
+          "bottom": 251
+        }
+      },
+      {
+        "frame": 2,
+        "dx": 0,
+        "dy": 4,
+        "baselineY": 251,
+        "bounds": {
+          "left": 58,
+          "top": 26,
+          "right": 187,
+          "bottom": 251
+        }
+      },
+      {
+        "frame": 3,
+        "dx": 0,
+        "dy": 3,
+        "baselineY": 251,
+        "bounds": {
+          "left": 54,
+          "top": 28,
+          "right": 192,
+          "bottom": 251
+        }
+      },
+      {
+        "frame": 4,
+        "dx": 0,
+        "dy": -1,
+        "baselineY": 251,
+        "bounds": {
+          "left": 53,
+          "top": 29,
+          "right": 193,
+          "bottom": 251
+        }
+      },
+      {
+        "frame": 5,
+        "dx": 0,
+        "dy": 0,
+        "baselineY": 251,
+        "bounds": {
+          "left": 54,
+          "top": 27,
+          "right": 192,
+          "bottom": 251
+        }
+      },
+      {
+        "frame": 6,
+        "dx": 0,
+        "dy": 0,
+        "baselineY": 251,
+        "bounds": {
+          "left": 57,
+          "top": 23,
+          "right": 186,
+          "bottom": 251
+        }
+      },
+      {
+        "frame": 7,
+        "dx": 0,
+        "dy": 0,
+        "baselineY": 251,
+        "bounds": {
+          "left": 56,
+          "top": 23,
+          "right": 179,
+          "bottom": 251
+        }
+      },
+      {
+        "frame": 8,
+        "dx": 0,
+        "dy": 0,
+        "baselineY": 251,
+        "bounds": {
+          "left": 55,
+          "top": 28,
+          "right": 183,
+          "bottom": 251
+        }
+      }
+    ],
+    "baselineRangeYBeforeAlignment": [
+      247,
+      252
+    ],
+    "baselineRangeYAfterAlignment": [
+      251,
+      251
+    ]
+  }
+}

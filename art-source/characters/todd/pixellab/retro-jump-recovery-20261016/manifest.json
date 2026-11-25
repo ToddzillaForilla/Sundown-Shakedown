@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-16",
+  "status": "approved-integrated",
+  "scope": "Four-frame, in-place landing recovery after Todd's jump animation.",
+  "tool": "PixelLab Animate with Text v3 via animate_image",
+  "generation": {
+    "jobId": "52f9c206-c13d-4726-8fdf-d0f58351b919",
+    "assetId": "ddcd018a-cbed-5b25-b0b2-f9aca7fff0bd",
+    "assetStatus": "saved-to-PixelLab-gallery",
+    "inputImage": "recovery-start.png",
+    "inputProvenance": "Approved Todd jump sheet, displayed frame 8 of 9 (zero-based frame index 7).",
+    "endingGuide": "recovery-end-guide.png",
+    "endingGuideProvenance": "Approved Todd idle sheet, frame 1 (zero-based frame index 0).",
+    "prompt": "Todd absorbs the jump landing in place: bend both knees and lower his hips briefly with both sneakers planted, then rise smoothly back to his relaxed upright fighting guard matching the supplied final-frame guide. Keep the same screen-left three-quarter facing, keep his feet on the same ground baseline and his body centered without horizontal travel. Show four distinct recovery poses with a clear impact absorption and controlled rise. Preserve the exact character design and outfit from the input.",
+    "requestedGeneratedFrames": 4,
+    "returnedFramesIncludingUnchangedInput": 5,
+    "runtimeCandidates": ["recovery-01-aligned.png", "recovery-02-aligned.png", "recovery-03-aligned.png", "recovery-04-aligned.png"],
+    "reviewPage": "review.html",
+    "reviewImage": "recovery-review.png",
+    "dimensions": "256x256 per frame",
+    "transparentBackground": true,
+    "quotedGenerations": 4,
+    "chargedGenerations": 4,
+    "directCreditChargeUsd": 0,
+    "balanceBeforeGenerations": 4605.6,
+    "balanceAfterGenerations": 4601.6
+  },
+  "alignment": {
+    "script": "scripts/export-todd-jump-recovery.mjs",
+    "method": "Preserve generated pixels and translate each frame vertically so its lowest opaque pixel aligns to Todd's approved y=251 ground baseline. Original generated frames are retained unchanged.",
+    "targetGroundLine": 251,
+    "verticalOffsets": [13, 22, 7, 0],
+    "reviewNote": "Frame 2 has a brief rebound with one boot lifted; accepted as part of the approved recovery."
+  },
+  "runtimeIntegrated": true,
+  "runtimeSheet": "src/content/characters/todd/assets/sprites/todd-jump-recovery-v1.png",
+  "runtimeFrameCount": 4,
+  "runtimeFrameRate": 18,
+  "artApproval": "approved"
+}

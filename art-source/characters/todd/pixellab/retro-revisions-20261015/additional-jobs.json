@@ -1,0 +1,26 @@
+{
+  "kickOut": {
+    "jobId": "f4b04006-5793-46ff-b375-0e9fa3139337",
+    "quotedGenerations": 4,
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/dc9154cf-8c4e-498c-9841-b47bfdb812fb/download",
+      "frame_count": 4,
+      "no_background": true,
+      "seed": 151043,
+      "action": "From the original guard, chamber the knee briefly, pivot the hip and drive the heel horizontally toward screen LEFT at waist height, ending in exactly the supplied full straight-leg SIDE KICK impact pose. Keep support foot firmly at y=251 and same body size. Only the kicking leg lifts. No hopping, travel, torso shrinking, bent-knee impact, extra limbs or watch. Preserve face, glasses and anatomical left forearm tattoo."
+    }
+  },
+  "kickBack": {
+    "jobId": "dba5b9a2-f407-484a-858a-99a926096580",
+    "quotedGenerations": 4,
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/dc9154cf-8c4e-498c-9841-b47bfdb812fb/download",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/3d51b9df-6cdc-462a-8d09-8839c395c37a/download",
+      "frame_count": 4,
+      "no_background": true,
+      "seed": 151044,
+      "action": "Recover from the supplied fully extended waist-high SIDE KICK toward screen left. Bend kicking knee to recoil, bring the foot down and return smoothly to exactly the original guard ending pose. Keep support foot planted at y=251, same body proportions and ground line, no hopping, traveling, spinning or extra limbs. Preserve both glasses lenses, beard and left arm tattoo."
+    }
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "height": {
+    "imageId": "eb81085a-8544-4aa0-8e96-efddb2bfa083",
+    "changes": [
+      {
+        "operation": "copy_region",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "source_layer": "image",
+        "source_frame": 1,
+        "region": [
+          0,
+          0,
+          255,
+          12
+        ],
+        "at": [
+          0,
+          15
+        ],
+        "reason": "Clear old upper margin for shorter stature"
+      },
+      {
+        "operation": "copy_region",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "source_layer": "image",
+        "source_frame": 1,
+        "region": [
+          0,
+          15,
+          255,
+          123
+        ],
+        "at": [
+          0,
+          28
+        ],
+        "reason": "Shorten torso and legs slightly, retain exact face pixels and planted boot baseline"
+      },
+      {
+        "operation": "copy_region",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "source_layer": "image",
+        "source_frame": 1,
+        "region": [
+          0,
+          128,
+          255,
+          165
+        ],
+        "at": [
+          0,
+          137
+        ],
+        "reason": "Shorten torso and legs slightly, retain exact face pixels and planted boot baseline"
+      },
+      {
+        "operation": "copy_region",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "source_layer": "image",
+        "source_frame": 1,
+        "region": [
+          0,
+          169,
+          255,
+          199
+        ],
+        "at": [
+          0,
+          175
+        ],
+        "reason": "Shorten torso and legs slightly, retain exact face pixels and planted boot baseline"
+      },
+      {
+        "operation": "copy_region",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "source_layer": "image",
+        "source_frame": 1,
+        "region": [
+          0,
+          203,
+          255,
+          219
+        ],
+        "at": [
+          0,
+          206
+        ],
+        "reason": "Shorten torso and legs slightly, retain exact face pixels and planted boot baseline"
+      },
+      {
+        "operation": "copy_region",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "source_layer": "image",
+        "source_frame": 1,
+        "region": [
+          0,
+          223,
+          255,
+          251
+        ],
+        "at": [
+          0,
+          223
+        ],
+        "reason": "Shorten torso and legs slightly, retain exact face pixels and planted boot baseline"
+      }
+    ]
+  },
+  "slim": {
+    "imageId": "802c5856-2840-445b-8659-ff2ea9267bce",
+    "changes": [
+      {
+        "operation": "copy_region",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "source_layer": "image",
+        "source_frame": 1,
+        "region": [
+          0,
+          100,
+          57,
+          251
+        ],
+        "at": [
+          73,
+          100
+        ],
+        "reason": "Clear old body footprint before subtle narrowing"
+      },
+      {
+        "operation": "copy_region",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "source_layer": "image",
+        "source_frame": 1,
+        "region": [
+          0,
+          100,
+          57,
+          251
+        ],
+        "at": [
+          131,
+          100
+        ],
+        "reason": "Clear old body footprint before subtle narrowing"
+      },
+      {
+        "operation": "copy_region",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "source_layer": "image",
+        "source_frame": 1,
+        "region": [
+          73,
+          100,
+          97,
+          251
+        ],
+        "at": [
+          75,
+          100
+        ],
+        "reason": "Narrow body by four columns while preserving head and face"
+      },
+      {
+        "operation": "copy_region",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "source_layer": "image",
+        "source_frame": 1,
+        "region": [
+          99,
+          100,
+          120,
+          251
+        ],
+        "at": [
+          100,
+          100
+        ],
+        "reason": "Narrow body by four columns while preserving head and face"
+      },
+      {
+        "operation": "copy_region",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "source_layer": "image",
+        "source_frame": 1,
+        "region": [
+          122,
+          100,
+          143,
+          251
+        ],
+        "at": [
+          122,
+          100
+        ],
+        "reason": "Narrow body by four columns while preserving head and face"
+      },
+      {
+        "operation": "copy_region",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "source_layer": "image",
+        "source_frame": 1,
+        "region": [
+          145,
+          100,
+          166,
+          251
+        ],
+        "at": [
+          144,
+          100
+        ],
+        "reason": "Narrow body by four columns while preserving head and face"
+      },
+      {
+        "operation": "copy_region",
+        "layer": "image",
+        "frames": [
+          1
+        ],
+        "source_layer": "image",
+        "source_frame": 1,
+        "region": [
+          168,
+          100,
+          187,
+          251
+        ],
+        "at": [
+          166,
+          100
+        ],
+        "reason": "Narrow body by four columns while preserving head and face"
+      }
+    ]
+  },
+  "note": "Free exact row/column edits after Pro did not shorten character. No interpolation or per-preview fitting. Height reduced 13px, lower body footprint narrowed four columns. Original retained."
+}

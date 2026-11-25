@@ -4,4 +4,9 @@ dist/
 .npm-cache/
 coverage/
 *.log
+.env
+.env.local
+.env.*.local
+sites/sundown-shakedown/
+sites/sundown-shakedown-deploy.tar.gz
 

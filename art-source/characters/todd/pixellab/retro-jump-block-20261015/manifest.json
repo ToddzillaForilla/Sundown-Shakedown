@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-15",
+  "status": "user-approved-source",
+  "scope": "Requested jump and standing block source animation review",
+  "tool": "Animate with Text v3",
+  "source": "../retro-option-b-20261015/concept.png",
+  "balanceBefore": 4863,
+  "quotedGenerations": 12,
+  "runtimeIntegrated": false,
+  "accepted": true,
+  "jobs": {
+    "jump": {
+      "jobId": "2bacbee3-4564-4b21-b52d-a8c3d8174be5",
+      "assetId": "5a9e4ac3-2c12-5617-a0d1-223f3d5d855b",
+      "seed": 151091,
+      "requestedFrameCount": 8,
+      "quotedGenerations": 8,
+      "action": "Complete jump pose cycle: guard, knee preload, airborne knee tuck with fists guarding, legs extend to land, landing absorption, return to exact guard. Pose animation only, no whole-body translation, spin or somersault. Preserve adult identity, glasses, tattoo, bare wrists and 256x256 canvas.",
+      "status": "completed",
+      "frameCount": 9,
+      "usage": {
+        "type": "generations",
+        "generations": 8
+      }
+    },
+    "block": {
+      "jobId": "8c4292d1-8aaa-4a22-9ebd-97a9cb9bb3dc",
+      "assetId": "51fbe2bb-949a-5e23-9084-d69f3ee88c69",
+      "seed": 151092,
+      "requestedFrameCount": 4,
+      "quotedGenerations": 4,
+      "action": "Standing defensive block: raise both forearms into tight protective high guard, elbows tucked, slight lean away, hold briefly, return to exact guard. Shoes planted on original y251 ground line. Preserve adult identity, glasses, anatomical left forearm tattoo and bare wrists. No shield, effects, extra limbs or travel.",
+      "submissionNote": "Initial URL fetch timed out before job creation; submitted same local reference inline instead.",
+      "status": "completed",
+      "frameCount": 5,
+      "usage": {
+        "type": "generations",
+        "generations": 4
+      }
+    }
+  },
+  "clips": {
+    "jump": {
+      "actualFrameCount": 9,
+      "title": "Jump"
+    },
+    "block": {
+      "actualFrameCount": 5,
+      "title": "Standing block"
+    }
+  },
+  "balanceAfter": 4855,
+  "observedBalanceDelta": 8,
+  "reportedJobGenerations": 12,
+  "costNote": "Completed jobs report 8+4 generations; observed account balance changed by 8. Billing discrepancy retained rather than inferred.",
+  "approval": "User: great those look good (October 15, 2026)",
+  "balanceReconciliation": {
+    "laterBalance": 4851,
+    "note": "Next live balance check shows prior 4-generation block charge posted. Total before/after difference is now 12, matching job usage."
+  }
+}

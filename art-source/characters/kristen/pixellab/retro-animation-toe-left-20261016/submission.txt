@@ -1,0 +1,12 @@
+id: d54a7a1c-49f8-4f07-9396-40a3ea7ca649
+job_id: d54a7a1c-49f8-4f07-9396-40a3ea7ca649
+action: Forward side-view walk toward screen-left, the same direction Kristen's nose and guard point; never retreat right. Both brown boots remain side-on with toes at the screen-left end and heels screen-right in every frame; no toe pivot, right-pointing toes, or soles toward camera. Alternate clear forward strides: the front/left boot reaches about 8px left, heel lands with toe-left; weight passes over it; the rear/right boot pushes off, lifts and swings underneath toward left to land ahead. Repeat a natural leftward weight transfer; feet stay separated, not crossed or sliding. Keep head, chest and guard facing left, with subtle arm counter-swing and slight forward lean. Fixed camera, centered in-place loop, boots grounded at y251, return to original guard. Preserve Kristen's exact identity, outfit, proportions, socks, boots and crisp outlines. No mirroring, turning or background; transparent.
+frames: 8
+size: 256x256px
+transparent: True
+last_frame: yes (interpolating to it)
+seed: 151133
+asset_id: e0ccbab9-3ef5-5b92-9dfa-839c8900af8c
+asset_status: pending (saved when generation completes)
+cost: 8 generations
+status: processing (~30-180s)

@@ -1,0 +1,67 @@
+[
+  {
+    "frame": 0,
+    "file": "hit-00.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 73,
+      "top": 16,
+      "right": 188,
+      "bottom": 251
+    },
+    "silhouetteHeight": 236
+  },
+  {
+    "frame": 1,
+    "file": "hit-01.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 66,
+      "top": 21,
+      "right": 191,
+      "bottom": 249
+    },
+    "silhouetteHeight": 229
+  },
+  {
+    "frame": 2,
+    "file": "hit-02.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 60,
+      "top": 25,
+      "right": 189,
+      "bottom": 245
+    },
+    "silhouetteHeight": 221
+  },
+  {
+    "frame": 3,
+    "file": "hit-03.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 65,
+      "top": 18,
+      "right": 191,
+      "bottom": 251
+    },
+    "silhouetteHeight": 234
+  },
+  {
+    "frame": 4,
+    "file": "hit-04.png",
+    "width": 256,
+    "height": 256,
+    "opaqueBounds": {
+      "left": 73,
+      "top": 16,
+      "right": 188,
+      "bottom": 251
+    },
+    "silhouetteHeight": 236
+  }
+]

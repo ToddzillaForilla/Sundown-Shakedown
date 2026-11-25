@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Todd — Jump Landing Recovery Review</title>
+  <style>
+    :root { color-scheme: dark; font: 16px/1.5 system-ui, sans-serif; background: #090d10; color: #edf2f5; }
+    body { max-width: 1180px; margin: 0 auto; padding: 28px; }
+    h1 { margin: 0; color: #ffd24c; font-size: clamp(1.7rem, 4vw, 2.5rem); }
+    .intro { color: #d0dae0; max-width: 760px; }
+    .status { display: inline-block; border: 1px solid #d9aa2d; color: #ffd24c; padding: 4px 10px; border-radius: 4px; font-size: .85rem; }
+    .preview { display: grid; grid-template-columns: minmax(260px, 1fr) minmax(260px, 1fr); gap: 18px; margin-top: 24px; }
+    .panel { border: 1px solid #34434d; background: #10171b; padding: 16px; }
+    h2 { font-size: 1.15rem; margin: 0 0 10px; }
+    .stage { display: grid; place-items: center; min-height: 330px; background-color: #141a1e; background-image: linear-gradient(45deg,#1c2429 25%,transparent 25%),linear-gradient(-45deg,#1c2429 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#1c2429 75%),linear-gradient(-45deg,transparent 75%,#1c2429 75%); background-size: 24px 24px; background-position: 0 0,0 12px,12px -12px,-12px 0; }
+    .stage img { width: min(100%, 320px); image-rendering: pixelated; }
+    .sequence { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    figure { margin: 0; border: 1px solid #34434d; background: #0b1013; padding: 6px; text-align: center; }
+    figure img { width: 100%; image-rendering: pixelated; background-color: #171e22; background-image: linear-gradient(45deg,#252e34 25%,transparent 25%),linear-gradient(-45deg,#252e34 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#252e34 75%),linear-gradient(-45deg,transparent 75%,#252e34 75%); background-size: 12px 12px; background-position: 0 0,0 6px,6px -6px,-6px 0; }
+    figcaption { font-size: .85rem; color: #c6d1d7; }
+    button { margin: 12px 8px 0 0; padding: 9px 14px; border: 1px solid #d82c34; color: #ffd24c; background: #210c0f; font: inherit; cursor: pointer; }
+    .meta { color: #9eacb5; font-size: .9rem; }
+    @media (max-width: 680px) { body { padding: 16px; } .preview { grid-template-columns: 1fr; } .stage { min-height: 280px; } }
+  </style>
+</head>
+<body>
+  <span class="status">APPROVED · IN GAME</span>
+  <h1>Todd — Jump Landing Recovery</h1>
+  <p class="intro">A four-frame recovery from the jump’s low contact pose back to Todd’s ready stance. Frame 2 has a brief rebound with one boot lifted. The generated frames are shown with a shared ground baseline; the untouched PixelLab outputs are preserved alongside them.</p>
+  <main class="preview">
+    <section class="panel">
+      <h2>Play the four-frame recovery</h2>
+      <div class="stage"><img id="player" src="recovery-01-aligned.png" alt="Todd landing recovery frame 1 of 4"></div>
+      <button id="play">Play</button><button id="pause">Pause</button>
+      <p class="meta">One pass, 4 frames. The last frame settles into the approved idle stance.</p>
+    </section>
+    <section class="panel">
+      <h2>Frames</h2>
+      <div class="sequence">
+        <figure><img src="recovery-01-aligned.png" alt="Recovery frame 1"><figcaption>1 · absorb</figcaption></figure>
+        <figure><img src="recovery-02-aligned.png" alt="Recovery frame 2"><figcaption>2 · rebound</figcaption></figure>
+        <figure><img src="recovery-03-aligned.png" alt="Recovery frame 3"><figcaption>3 · rise</figcaption></figure>
+        <figure><img src="recovery-04-aligned.png" alt="Recovery frame 4"><figcaption>4 · ready</figcaption></figure>
+      </div>
+    </section>
+  </main>
+  <p class="meta">PixelLab Animate with Text v3 · 256×256 cells · 4 generated frames · 4 subscription generations · $0 direct credits. Todd’s approved jump and idle artwork were used as motion start and ending guides.</p>
+  <script>
+    const frames = [1, 2, 3, 4].map((n) => `recovery-${String(n).padStart(2, '0')}-aligned.png`);
+    const player = document.querySelector('#player');
+    let timer;
+    let index = 0;
+    function play() {
+      clearInterval(timer);
+      index = 0;
+      player.src = frames[index];
+      timer = setInterval(() => {
+        index += 1;
+        if (index >= frames.length) { clearInterval(timer); return; }
+        player.src = frames[index];
+      }, 180);
+    }
+    document.querySelector('#play').addEventListener('click', play);
+    document.querySelector('#pause').addEventListener('click', () => clearInterval(timer));
+    play();
+  </script>
+</body>
+</html>

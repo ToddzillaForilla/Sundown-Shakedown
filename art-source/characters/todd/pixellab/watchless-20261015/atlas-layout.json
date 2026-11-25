@@ -1,0 +1,218 @@
+[
+  {
+    "clip": "idle",
+    "index": 0,
+    "path": "art-source/characters/todd/pixellab/photo-character/idle-0.png",
+    "width": 128,
+    "height": 164,
+    "x": 0,
+    "y": 0
+  },
+  {
+    "clip": "idle",
+    "index": 1,
+    "path": "art-source/characters/todd/pixellab/photo-character/idle-1.png",
+    "width": 128,
+    "height": 164,
+    "x": 164,
+    "y": 0
+  },
+  {
+    "clip": "idle",
+    "index": 2,
+    "path": "art-source/characters/todd/pixellab/photo-character/idle-2.png",
+    "width": 128,
+    "height": 164,
+    "x": 328,
+    "y": 0
+  },
+  {
+    "clip": "idle",
+    "index": 3,
+    "path": "art-source/characters/todd/pixellab/photo-character/idle-3.png",
+    "width": 128,
+    "height": 164,
+    "x": 492,
+    "y": 0
+  },
+  {
+    "clip": "idle",
+    "index": 4,
+    "path": "art-source/characters/todd/pixellab/photo-character/idle-4.png",
+    "width": 128,
+    "height": 164,
+    "x": 0,
+    "y": 164
+  },
+  {
+    "clip": "walk",
+    "index": 0,
+    "path": "art-source/characters/todd/pixellab/photo-character/walk-0.png",
+    "width": 128,
+    "height": 164,
+    "x": 164,
+    "y": 164
+  },
+  {
+    "clip": "walk",
+    "index": 1,
+    "path": "art-source/characters/todd/pixellab/photo-character/walk-1.png",
+    "width": 128,
+    "height": 164,
+    "x": 328,
+    "y": 164
+  },
+  {
+    "clip": "walk",
+    "index": 2,
+    "path": "art-source/characters/todd/pixellab/photo-character/walk-2.png",
+    "width": 128,
+    "height": 164,
+    "x": 492,
+    "y": 164
+  },
+  {
+    "clip": "walk",
+    "index": 3,
+    "path": "art-source/characters/todd/pixellab/photo-character/walk-3.png",
+    "width": 128,
+    "height": 164,
+    "x": 0,
+    "y": 328
+  },
+  {
+    "clip": "walk",
+    "index": 4,
+    "path": "art-source/characters/todd/pixellab/photo-character/walk-4.png",
+    "width": 128,
+    "height": 164,
+    "x": 164,
+    "y": 328
+  },
+  {
+    "clip": "punch",
+    "index": 0,
+    "path": "art-source/characters/todd/pixellab/photo-character/punch-0.png",
+    "width": 128,
+    "height": 164,
+    "x": 328,
+    "y": 328
+  },
+  {
+    "clip": "punch",
+    "index": 1,
+    "path": "art-source/characters/todd/pixellab/photo-character/punch-1.png",
+    "width": 128,
+    "height": 164,
+    "x": 492,
+    "y": 328
+  },
+  {
+    "clip": "punch",
+    "index": 2,
+    "path": "art-source/characters/todd/pixellab/photo-character/punch-2.png",
+    "width": 128,
+    "height": 164,
+    "x": 0,
+    "y": 492
+  },
+  {
+    "clip": "punch",
+    "index": 3,
+    "path": "art-source/characters/todd/pixellab/photo-character/punch-3.png",
+    "width": 128,
+    "height": 164,
+    "x": 164,
+    "y": 492
+  },
+  {
+    "clip": "punch",
+    "index": 4,
+    "path": "art-source/characters/todd/pixellab/photo-character/punch-4.png",
+    "width": 128,
+    "height": 164,
+    "x": 328,
+    "y": 492
+  },
+  {
+    "clip": "kick",
+    "index": 0,
+    "path": "art-source/characters/todd/pixellab/kick-correction-20261015/kick-0.png",
+    "width": 164,
+    "height": 164,
+    "x": 492,
+    "y": 492
+  },
+  {
+    "clip": "kick",
+    "index": 1,
+    "path": "art-source/characters/todd/pixellab/kick-correction-20261015/kick-1.png",
+    "width": 164,
+    "height": 164,
+    "x": 0,
+    "y": 656
+  },
+  {
+    "clip": "kick",
+    "index": 2,
+    "path": "art-source/characters/todd/pixellab/kick-correction-20261015/kick-2.png",
+    "width": 164,
+    "height": 164,
+    "x": 164,
+    "y": 656
+  },
+  {
+    "clip": "kick",
+    "index": 3,
+    "path": "art-source/characters/todd/pixellab/kick-correction-20261015/kick-3.png",
+    "width": 164,
+    "height": 164,
+    "x": 328,
+    "y": 656
+  },
+  {
+    "clip": "kick",
+    "index": 4,
+    "path": "art-source/characters/todd/pixellab/kick-correction-20261015/kick-4.png",
+    "width": 164,
+    "height": 164,
+    "x": 492,
+    "y": 656
+  },
+  {
+    "clip": "kick",
+    "index": 5,
+    "path": "art-source/characters/todd/pixellab/kick-correction-20261015/kick-5.png",
+    "width": 164,
+    "height": 164,
+    "x": 0,
+    "y": 820
+  },
+  {
+    "clip": "kick",
+    "index": 6,
+    "path": "art-source/characters/todd/pixellab/kick-correction-20261015/kick-6.png",
+    "width": 164,
+    "height": 164,
+    "x": 164,
+    "y": 820
+  },
+  {
+    "clip": "kick",
+    "index": 7,
+    "path": "art-source/characters/todd/pixellab/kick-correction-20261015/kick-7.png",
+    "width": 164,
+    "height": 164,
+    "x": 328,
+    "y": 820
+  },
+  {
+    "clip": "kick",
+    "index": 8,
+    "path": "art-source/characters/todd/pixellab/kick-correction-20261015/kick-8.png",
+    "width": 164,
+    "height": 164,
+    "x": 492,
+    "y": 820
+  }
+]

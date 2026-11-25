@@ -1,0 +1,61 @@
+{
+  "source": "pixellab-a-front-kick--kicking-out-the--1792437535396-3x (3).png",
+  "approval": "User supplied and requested integration of this edited sheet on 2026-10-20.",
+  "grid": {
+    "columns": 3,
+    "rows": 3,
+    "sourceCell": 768,
+    "frameCount": 4,
+    "order": "row-major; remaining five cells intentionally unused"
+  },
+  "export": {
+    "cell": 256,
+    "resize": "nearest",
+    "nativeFacing": -1,
+    "frameRate": 8,
+    "perFrameAlignment": false
+  },
+  "reference": "Fixed source cells preserve authored body anchors and scale; idle baseline is y251. Previous sources and exports retained.",
+  "measurements": [
+    {
+      "frame": 0,
+      "bounds": [
+        68,
+        32,
+        182,
+        251
+      ],
+      "silhouetteHeight": 220
+    },
+    {
+      "frame": 1,
+      "bounds": [
+        105,
+        28,
+        204,
+        249
+      ],
+      "silhouetteHeight": 222
+    },
+    {
+      "frame": 2,
+      "bounds": [
+        29,
+        27,
+        206,
+        247
+      ],
+      "silhouetteHeight": 221
+    },
+    {
+      "frame": 3,
+      "bounds": [
+        105,
+        28,
+        204,
+        249
+      ],
+      "silhouetteHeight": 222
+    }
+  ]
+}
