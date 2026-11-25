@@ -2,6 +2,10 @@
 
 **Neighborhood combat. Backyard bragging rights.**
 
+**[Play Sundown Shakedown](https://toddzillaforilla.github.io/Sundown-Shakedown/)**
+
+**Work in progress:** Sundown Shakedown is still very much in active development. Expect unfinished features, rough edges, and changes to gameplay, artwork, and presentation as the game takes shape.
+
 A browser-first, 2D arcade fighting game starring Todd and Kristen. Detailed late-1990s pixel art, hobby-inspired powers, and a good-natured neighborhood roast meet quick matches you can play with a keyboard, mouse, or phone touchscreen.
 
 ![Todd and Kristen facing off in the Backyard, with health bars, Super meters, and the round timer](docs/screenshots/backyard-fight.jpg)
