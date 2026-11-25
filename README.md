@@ -14,7 +14,7 @@ An AI-assisted, browser-first, 2D arcade fighting game starring Todd and Kristen
 
 Sundown Shakedown is a personal creative project built through an iterative, AI-assisted workflow. Todd supplied the concept, creative direction, feedback, and decisions; Codex generated most of the code and helped implement, debug, test, and refine the game across iterations. AI tools, including PixelLab, also contributed to the artwork.
 
-The repository documents the resulting game and its technical setup. It should be understood as an AI-assisted creation, rather than a claim that Todd manually wrote most of the code or independently engineered every system.
+Most of the code was generated with AI. I shaped the concept and creative direction, reviewed iterations, and used AI-assisted debugging and testing to refine the game.
 
 ## The game
 
