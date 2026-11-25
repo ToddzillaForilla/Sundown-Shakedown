@@ -85,9 +85,9 @@ For a production preview, run `npm run build` followed by `npm run preview` and 
 
 ## GitHub Pages hosting
 
-The [Pages workflow](.github/workflows/pages.yml) tests and builds the game, then deploys only `dist/`. It runs when `PixelLab-assets-added` is pushed, since that branch contains the current playable game; `main` is an older snapshot. If development moves to another branch, update the workflow trigger and the `github-pages` environment's allowed deployment branches together.
+The active game is on `main`, the repository's default and only branch. The [Pages workflow](.github/workflows/pages.yml) tests and builds the game, then deploys only `dist/`. It runs on pushes to `main` and can also be started manually from GitHub Actions. If development moves to another branch, update the workflow trigger and the `github-pages` environment's allowed deployment branches together.
 
-To enable hosting in [the GitHub repository](https://github.com/ToddzillaForilla/Sundown-Shakedown), choose **Settings → Pages → Build and deployment → Source → GitHub Actions**. Allow `PixelLab-assets-added` to deploy to the `github-pages` environment if branch restrictions are enabled. The expected address after a successful deployment is `https://ToddzillaForilla.github.io/Sundown-Shakedown/`.
+To configure hosting in [the GitHub repository](https://github.com/ToddzillaForilla/Sundown-Shakedown), choose **Settings → Pages → Build and deployment → Source → GitHub Actions**. Allow `main` to deploy to the `github-pages` environment if branch restrictions are enabled. The demo is hosted at [Play Sundown Shakedown](https://toddzillaforilla.github.io/Sundown-Shakedown/).
 
 The workflow reads the Pages base path from GitHub. To check that repository subpath locally:
 

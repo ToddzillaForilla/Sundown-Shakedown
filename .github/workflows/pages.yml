@@ -2,7 +2,7 @@ name: Deploy game to GitHub Pages
 
 on:
   push:
-    branches: [PixelLab-assets-added]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
